@@ -2,7 +2,7 @@
 
 Financial news, charted by the companies it names.
 
-NewsMind pulls the financial news wire, scores the tone of every headline with FinBERT, links each story to the companies it mentions, and draws the result as an interactive mindmap: the story at the centre, sectors on the inner ring, companies on the middle ring, and other stories about those companies as outer stars.
+NewsMind pulls the financial news wire, scores the tone of every headline with FinBERT, links each story to the companies it mentions, and draws the whole wire as a 3D point cloud: every point is a story coloured by tone, every cluster is a company, and neighbouring clusters share a sector. Choosing a story turns the cloud to face it and fires links out to the companies it names.
 
 Inspired by [BettaFish](https://github.com/666ghj/BettaFish) (multi-agent sentiment analysis) and [Stock-Prediction](https://github.com/alisonmitchell/Stock-Prediction) (ML price prediction).
 
@@ -44,9 +44,15 @@ Tests: `python -m pytest tests`
 ## Using the site
 
 - Scroll the wire on the left. The story on the reading line is the one charted on the right.
-- Hover a company or an outer star for details. Select a company to filter the wire to it. Select a star to jump to that story.
+- Move the mouse to tilt the cloud. Hover a point to see its headline, and select it to read that story. Select a company label to filter the wire to it.
 - Drag the seam between the two halves to resize them.
 - Focus mode strips the page down to the headline, the companies and the tone.
+
+## Live site
+
+https://noobmaster69zz.github.io/newsmind/ (published by `.github/workflows/pages.yml` on every push to `main` that touches `frontend/`).
+
+The point-cloud chart takes its cue from the particle brain on [mindcorpus.org](https://mindcorpus.org/).
 
 ## Status
 

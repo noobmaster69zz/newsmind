@@ -56,8 +56,9 @@
 
     <section class="chart-pane" aria-label="Chart for the selected story">
       <div class="chart" id="chart">
-        <svg class="map" id="map" role="group" aria-label="Companies named in the selected story"></svg>
-        <p class="legend">Rings from the centre: sectors, the companies this story names, other stories on those companies.</p>
+        <canvas class="cloud" id="cloud" aria-hidden="true"></canvas>
+        <div class="labels" id="labels" role="group" aria-label="Companies on the wire"></div>
+        <p class="legend">Every point is a story, coloured by how its headline reads. Each cluster is a company, and neighbouring clusters share a sector.</p>
         <p class="chart-empty" id="chartEmpty" hidden>No tracked company is named in this story.</p>
         <div class="tip" id="tip" role="tooltip" hidden></div>
       </div>

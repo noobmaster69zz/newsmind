@@ -1,9 +1,8 @@
-/* NewsMind front end. No framework: one data file, one SVG chart, one canvas sky. */
+/* NewsMind front end. No framework: one data file, one point-cloud chart, one canvas sky. */
 (() => {
   'use strict';
 
   const $ = (sel) => document.querySelector(sel);
-  const SVGNS = 'http://www.w3.org/2000/svg';
   const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const wide = matchMedia('(min-width: 861px)');
@@ -13,7 +12,7 @@
     stamp: $('#stamp'), focus: $('#focus'), split: $('#split'), seam: $('#seam'),
     dateline: $('#dateline'), headline: $('#headline'), wire: $('#wire'),
     scopeCompany: $('#scopeCompany'), scopeAll: $('#scopeAll'), tickerClear: $('#tickerClear'),
-    chart: $('#chart'), map: $('#map'), tip: $('#tip'), chartEmpty: $('#chartEmpty'),
+    chart: $('#chart'), cloud: $('#cloud'), labels: $('#labels'), tip: $('#tip'), chartEmpty: $('#chartEmpty'),
     card: $('#card'), toneText: $('#toneText'), toneScore: $('#toneScore'),
     meterMark: $('#meterMark'), summary: $('#summary'), readLink: $('#readLink'),
   };
@@ -25,6 +24,7 @@
   };
 
   const focusOn = () => document.body.dataset.focus === 'on';
+  const still = () => reduced.matches || focusOn();
 
   /* ---------- Formatting ---------- */
   const fmtTime = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', hour12: false });
@@ -35,6 +35,7 @@
   const signed = (n) => (n > 0 ? '+' : n < 0 ? '−' : '') + Math.abs(n).toFixed(2);
   const toneClass = (label) => 'tone-' + (label || 'unscored');
   const moodLabel = (avg) => (avg == null ? 'unscored' : avg > 0.15 ? 'positive' : avg < -0.15 ? 'negative' : 'neutral');
+  const TONE_RGB = { positive: '6,182,212', negative: '224,82,122', neutral: '170,174,182', unscored: '170,174,182' };
 
   function setTone(el, label) {
     el.classList.remove('tone-positive', 'tone-negative', 'tone-neutral', 'tone-unscored');
@@ -75,6 +76,7 @@
       els.stamp.textContent = `Wire pulled ${fmtDay.format(pulled)}, ${fmtTime.format(pulled)}`;
       els.scopeCompany.textContent = `Company stories (${state.all.filter((s) => s.tickers.length).length})`;
       els.scopeAll.textContent = `Whole wire (${state.all.length})`;
+      buildCloud();
       applyFilters(null);
     } catch (err) {
       root.classList.remove('booting');
@@ -209,7 +211,7 @@
     state.shown = story.id;
     showStage(story);
     showCard(story);
-    drawMap(true);
+    chartStory(true);
   }
 
   function goTo(idx, instant) {
@@ -224,7 +226,7 @@
   }
 
   /* ---------- Inertial scrolling for the wire ---------- */
-  const glide = { target: 0, current: 0, raf: 0 };
+  const glide = { target: 0, current: 0, raf: 0, last: 0 };
   const maxScroll = () => els.wire.scrollHeight - els.wire.clientHeight;
 
   function scrollWireTo(y, instant) {
@@ -236,12 +238,17 @@
       els.wire.scrollTop = y;
       return;
     }
-    if (!glide.raf) glide.current = els.wire.scrollTop;
     glide.target = y;
-    if (!glide.raf) glide.raf = requestAnimationFrame(glideStep);
+    if (!glide.raf) {
+      glide.current = els.wire.scrollTop;
+      glide.last = performance.now();
+      glide.raf = requestAnimationFrame(glideStep);
+    }
   }
 
-  function glideStep() {
+  function glideStep(now) {
+    const dt = clamp(now - glide.last, 0, 400);
+    glide.last = now;
     const d = glide.target - glide.current;
     if (Math.abs(d) < 0.5) {
       glide.current = glide.target;
@@ -249,7 +256,7 @@
       glide.raf = 0;
       return;
     }
-    glide.current += d * 0.14;
+    glide.current += d * (1 - Math.exp(-dt / 110)); // time-based, so the glide feels the same at any refresh rate
     els.wire.scrollTop = glide.current;
     glide.raf = requestAnimationFrame(glideStep);
   }
@@ -295,7 +302,7 @@
     els.dateline.textContent = `${story.source}, ${fmtLong.format(new Date(story.publishedAt))}`;
     els.headline.textContent = story.headline;
     fitHeadline();
-    if (!reduced.matches && !focusOn()) {
+    if (!still()) {
       els.headline.classList.remove('glitch');
       void els.headline.offsetWidth; // restart the animation
       els.headline.classList.add('glitch');
@@ -323,7 +330,7 @@
       els.toneScore.textContent = '';
       els.meterMark.style.setProperty('--pos', '0.5');
     } else {
-      els.toneText.textContent = `FinBERT reads the headline as ${story.toneLabel}`;
+      els.toneText.textContent = `${story.toneLabel[0].toUpperCase()}${story.toneLabel.slice(1)} headline, per FinBERT`;
       els.toneScore.textContent = signed(story.tone);
       els.meterMark.style.setProperty('--pos', ((story.tone + 1) / 2).toFixed(3));
     }
@@ -340,210 +347,384 @@
     }
   }
 
-  /* ---------- Chart ---------- */
-  const map = { nodes: [], edges: [], info: new WeakMap() };
+  /* ---------- Chart: the wire as a point cloud ----------
+     Every story is a point, coloured by tone. Stories gather around the company
+     they name; companies in the same sector sit together. Stories that name no
+     tracked company form the thin outer shell. Choosing a story turns the cloud
+     to face it and fires links out to its companies and their other stories. */
+  const cloud = {
+    ctx: els.cloud.getContext('2d'),
+    W: 0, H: 0, dpr: 1,
+    pts: [], dust: [], centers: new Map(), byId: new Map(),
+    sel: null, selTickers: new Set(), hover: null,
+    yaw: 0.5, pitch: -0.15, tyaw: 0.5, tpitch: -0.15,
+    grow: 0, fire: 1, raf: 0, last: 0,
+  };
+  const mouse = { x: 0, y: 0, sx: 0, sy: 0, cx: -9999, cy: -9999 };
 
-  function mk(name, attrs, parent) {
-    const el = document.createElementNS(SVGNS, name);
-    for (const k in attrs) el.setAttribute(k, attrs[k]);
-    if (parent) parent.append(el);
-    return el;
-  }
-
-  function place(el, x, y, depth) {
-    const node = { el, x, y, depth, px: x, py: y };
-    map.nodes.push(node);
-    return node;
-  }
-
-  function link(a, b, ring, parent) {
-    const el = mk('line', { class: `edge edge-${ring}`, pathLength: 1 }, parent);
-    map.edges.push({ el, a, b });
-  }
-
-  function drawMap(animate) {
-    const story = state.list[state.active];
-    const W = els.chart.clientWidth, H = els.chart.clientHeight;
-    if (!story || !W || !H) return;
-
-    hideTip();
-    const svg = els.map;
-    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    svg.replaceChildren();
-    svg.classList.toggle('draw', Boolean(animate) && !reduced.matches && !focusOn());
-    map.nodes = [];
-    map.edges = [];
-
-    const cx = W / 2, cy = H / 2 - 12; // nudged up to leave room for the legend line
-    const R = Math.max(110, Math.min(W, H - 24) / 2 - 46);
-    const radii = [R * 0.32, R * 0.64, R * 0.97];
-    const depth = [5, 11, 19];
-    const at = (deg, r) => [cx + r * Math.cos(deg * Math.PI / 180), cy + r * Math.sin(deg * Math.PI / 180)];
-
-    const gOrbits = mk('g', {}, svg), gEdges = mk('g', {}, svg), gNodes = mk('g', {}, svg);
-    radii.forEach((r, i) => place(mk('circle', { class: `orbit orbit-${i + 1}`, r }, gOrbits), cx, cy, depth[i]));
-
-    const gCore = mk('g', { class: `core ${toneClass(story.toneLabel)}` }, gNodes);
-    mk('circle', { class: 'halo', r: 22 }, gCore);
-    mk('circle', { class: 'dot', r: 6.5 }, gCore);
-    mk('text', { y: 30, 'text-anchor': 'middle' }, gCore).textContent = story.source;
-    const core = place(gCore, cx, cy, 0);
-
-    const tickers = story.tickers
-      .filter((t) => state.companies[t])
-      .sort((a, b) => state.companies[a].sector.localeCompare(state.companies[b].sector) || a.localeCompare(b))
-      .slice(0, 8);
-    const n = tickers.length;
-    els.chartEmpty.hidden = n > 0;
-
-    const spacing = n > 1 ? Math.min(360 / n, 72) : 0;
-    const first = n === 1 ? -42 : -90 - (spacing * (n - 1)) / 2;
-    const angle = new Map(tickers.map((t, i) => [t, first + i * spacing]));
-
-    const sectors = new Map();
-    for (const t of tickers) {
-      const s = state.companies[t].sector;
-      if (!sectors.has(s)) sectors.set(s, []);
-      sectors.get(s).push(t);
+  // Seeded random numbers, so the cloud has the same shape on every visit.
+  function seeded(text) {
+    let h = 1779033703 ^ text.length;
+    for (let i = 0; i < text.length; i++) {
+      h = Math.imul(h ^ text.charCodeAt(i), 3432918353);
+      h = (h << 13) | (h >>> 19);
     }
+    return () => {
+      h = Math.imul(h ^ (h >>> 16), 2246822507);
+      h = Math.imul(h ^ (h >>> 13), 3266489909);
+      return ((h ^= h >>> 16) >>> 0) / 4294967296;
+    };
+  }
+  const gauss = (rnd) => Math.sqrt(-2 * Math.log(rnd() + 1e-9)) * Math.cos(2 * Math.PI * rnd());
 
-    // Boxes a sector label must stay clear of: the core, every company pill and its name.
-    const taken = [[cx - 44, cy - 14, cx + 44, cy + 40]];
-    for (const t of tickers) {
-      const [tx, ty] = at(angle.get(t), radii[1]);
-      const half = Math.max(Math.max(48, t.length * 10 + 24), state.companies[t].name.length * 6.6) / 2;
-      taken.push([tx - half, ty - 16, tx + half, ty + 38]);
-    }
-    const overlap = (a, b) =>
-      Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+  function buildCloud() {
+    const tickers = Object.keys(state.companies);
+    const sectors = [...new Set(tickers.map((t) => state.companies[t].sector))].sort();
 
-    for (const [sector, members] of sectors) {
-      const a = members.reduce((sum, t) => sum + angle.get(t), 0) / members.length;
-      const [sx, sy] = at(a, radii[0]);
-      const g = mk('g', { class: 'sector' }, gNodes);
-      mk('circle', { r: 3.5 }, g);
-
-      // Try four spots around the dot and keep the one that collides least.
-      const lw = sector.length * 7.6;
-      const spots = [
-        { x: 0, y: -11, anchor: 'middle', box: [sx - lw / 2, sy - 26, sx + lw / 2, sy - 6] },
-        { x: 11, y: 4.5, anchor: 'start', box: [sx + 9, sy - 9, sx + 11 + lw, sy + 9] },
-        { x: -11, y: 4.5, anchor: 'end', box: [sx - 11 - lw, sy - 9, sx - 9, sy + 9] },
-        { x: 0, y: 20, anchor: 'middle', box: [sx - lw / 2, sy + 8, sx + lw / 2, sy + 26] },
-      ];
-      let best = spots[0], bestCost = Infinity;
-      for (const spot of spots) {
-        let cost = taken.reduce((sum, box) => sum + overlap(spot.box, box), 0);
-        if (spot.box[0] < 4 || spot.box[2] > W - 4) cost += 1e6;
-        if (cost < bestCost) { best = spot; bestCost = cost; }
-      }
-      taken.push(best.box);
-      const label = mk('text', { x: best.x, y: best.y, 'text-anchor': best.anchor }, g);
-      label.textContent = sector;
-      const sNode = place(g, sx, sy, depth[0]);
-      link(core, sNode, 1, gEdges);
-
-      for (const t of members) {
+    // Sector centres spread evenly over a sphere; companies ring their sector centre.
+    const sectorAt = new Map(sectors.map((s, i) => {
+      const y = 1 - (2 * (i + 0.5)) / sectors.length;
+      const r = Math.sqrt(1 - y * y), a = i * 2.39996;
+      return [s, [Math.cos(a) * r * 0.7, y * 0.7, Math.sin(a) * r * 0.7]];
+    }));
+    for (const s of sectors) {
+      const members = tickers.filter((t) => state.companies[t].sector === s).sort();
+      const c = sectorAt.get(s);
+      const len = Math.hypot(...c);
+      const n = c.map((v) => v / len);
+      let u = [n[1], -n[0], 0];
+      if (Math.hypot(...u) < 0.1) u = [0, n[2], -n[1]];
+      const ul = Math.hypot(...u);
+      u = u.map((v) => v / ul);
+      const v = [n[1] * u[2] - n[2] * u[1], n[2] * u[0] - n[0] * u[2], n[0] * u[1] - n[1] * u[0]];
+      const turn = seeded(s)() * Math.PI * 2;
+      members.forEach((t, i) => {
+        const a = turn + (i / members.length) * Math.PI * 2;
+        const ring = members.length === 1 ? 0 : 0.14 + members.length * 0.034;
+        const pos = c.map((base, k) => base + (u[k] * Math.cos(a) + v[k] * Math.sin(a)) * ring);
         const company = state.companies[t];
-        const ta = angle.get(t);
-        const [tx, ty] = at(ta, radii[1]);
-        const others = state.byTicker.get(t).filter((s) => s.id !== story.id);
-        const avg = state.mood.get(t);
-        const gT = mk('g', {
-          class: `ticker ${toneClass(moodLabel(avg))}${state.ticker === t ? ' filtered' : ''}`,
-          role: 'button', tabindex: 0,
-          'aria-pressed': String(state.ticker === t),
-          'aria-label': `${company.name}. Show only ${company.name} stories in the wire`,
-        }, gNodes);
-        const w = Math.max(48, t.length * 10 + 24);
-        mk('rect', { x: -w / 2, y: -14, width: w, height: 28, rx: 14 }, gT);
-        mk('text', { class: 'sym', y: 5, 'text-anchor': 'middle' }, gT).textContent = t;
-        mk('text', { class: 'name', y: 31, 'text-anchor': 'middle' }, gT).textContent = company.name;
-        const tNode = place(gT, tx, ty, depth[1]);
-        link(sNode, tNode, 2, gEdges);
-        const count = state.byTicker.get(t).length;
-        map.info.set(gT, {
-          kind: 'ticker', ticker: t, node: tNode,
-          title: `${company.name}, ${company.sector}`,
-          text: `${count} ${count === 1 ? 'story' : 'stories'} on the wire` +
-            (avg == null ? '' : `, average tone ${signed(avg)}`) +
-            (state.ticker === t ? '. Select to show every company again.' : '. Select to filter the wire.'),
-        });
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = `co ${toneClass(moodLabel(state.mood.get(t)))}`;
+        el.dataset.t = t;
+        el.setAttribute('aria-pressed', 'false');
+        el.setAttribute('aria-label', `${company.name}. Show only ${company.name} stories in the wire`);
+        const sym = document.createElement('span');
+        sym.className = 'co-sym';
+        sym.textContent = t;
+        const name = document.createElement('span');
+        name.className = 'co-name';
+        name.textContent = company.name;
+        el.append(sym);
+        if (company.name.toUpperCase() !== t) el.append(name);
+        els.labels.append(el);
+        cloud.centers.set(t, { t, x: pos[0], y: pos[1], z: pos[2], el, sx: 0, sy: 0 });
 
-        const rel = others.slice(0, n === 1 ? 8 : 5);
-        const fan = n === 1 ? 105 : Math.min(spacing * 0.78, 90);
-        const gap = rel.length > 1 ? Math.min(fan / (rel.length - 1), 15) : 0;
-        rel.forEach((other, j) => {
-          const [rx, ry] = at(ta + (j - (rel.length - 1) / 2) * gap, radii[2]);
-          const gR = mk('g', {
-            class: `rel ${toneClass(other.toneLabel)}`, role: 'button', tabindex: 0,
-            'aria-label': `Go to story: ${other.headline}`,
-          }, gNodes);
-          mk('circle', { class: 'hit', r: 13 }, gR);
-          mk('circle', { class: 'star', r: 4 }, gR);
-          const rNode = place(gR, rx, ry, depth[2]);
-          link(tNode, rNode, 3, gEdges);
-          map.info.set(gR, {
-            kind: 'rel', id: other.id, node: rNode,
-            title: other.headline,
-            text: `${other.source}, ${fmtDay.format(new Date(other.publishedAt))}` +
-              (other.tone == null ? '' : `, tone ${signed(other.tone)}`),
-          });
-        });
+        // Haze marks where a company sits; busier companies get a denser haze.
+        // It takes the colour of the company's average tone, so the cloud doubles as a mood map.
+        const rnd = seeded('dust' + t);
+        const count = Math.min(460, 110 + state.byTicker.get(t).length * 10);
+        const rgb = TONE_RGB[moodLabel(state.mood.get(t))];
+        for (let d = 0; d < count; d++) {
+          cloud.dust.push({ rgb, x: pos[0] + gauss(rnd) * 0.13, y: pos[1] + gauss(rnd) * 0.13, z: pos[2] + gauss(rnd) * 0.13 });
+        }
+      });
+    }
+
+    for (const s of state.all) {
+      const rnd = seeded(s.id);
+      const named = s.tickers.filter((t) => cloud.centers.has(t));
+      let x, y, z;
+      if (named.length) {
+        x = y = z = 0;
+        for (const t of named) { const c = cloud.centers.get(t); x += c.x; y += c.y; z += c.z; }
+        x = x / named.length + gauss(rnd) * 0.07;
+        y = y / named.length + gauss(rnd) * 0.07;
+        z = z / named.length + gauss(rnd) * 0.07;
+      } else {
+        const yy = rnd() * 2 - 1, a = rnd() * Math.PI * 2, rr = Math.sqrt(1 - yy * yy), shell = 1.02 + rnd() * 0.1;
+        x = Math.cos(a) * rr * shell; y = yy * shell; z = Math.sin(a) * rr * shell;
+      }
+      const pt = { x, y, z, story: s, named, rgb: TONE_RGB[s.toneLabel || 'unscored'], sx: 0, sy: 0, k: 1, shown: false };
+      pt.far = Math.hypot(x, y, z);
+      cloud.pts.push(pt);
+      cloud.byId.set(s.id, pt);
+    }
+    for (const d of cloud.dust) d.far = Math.hypot(d.x, d.y, d.z);
+    sizeCloud();
+  }
+
+  function sizeCloud() {
+    cloud.W = els.chart.clientWidth;
+    cloud.H = els.chart.clientHeight;
+    cloud.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    els.cloud.width = Math.round(cloud.W * cloud.dpr);
+    els.cloud.height = Math.round(cloud.H * cloud.dpr);
+    render(); // resizing a canvas wipes it, so redraw in the same frame to avoid a blank flash
+    kick();
+  }
+
+  // Point the cloud at the chosen story and mark its companies.
+  function chartStory(animate) {
+    const story = state.list[state.active];
+    const pt = story && cloud.byId.get(story.id);
+    if (!pt) return;
+    hideTip();
+    cloud.sel = pt;
+    cloud.selTickers = new Set(pt.named);
+    cloud.tyaw = Math.atan2(pt.x, -pt.z);
+    cloud.tpitch = clamp(Math.atan2(-pt.y, Math.hypot(pt.x, pt.z)) * 0.8, -0.7, 0.7);
+    if (animate) cloud.fire = 0;
+    els.chartEmpty.hidden = pt.named.length > 0;
+    for (const [t, c] of cloud.centers) {
+      c.el.classList.toggle('on', cloud.selTickers.has(t));
+      c.el.classList.toggle('filtered', state.ticker === t);
+      c.el.setAttribute('aria-pressed', String(state.ticker === t));
+    }
+    kick();
+  }
+
+  const angleGap = (to, from) => {
+    let d = (to - from) % (Math.PI * 2);
+    if (d > Math.PI) d -= Math.PI * 2;
+    if (d < -Math.PI) d += Math.PI * 2;
+    return d;
+  };
+
+  function kick() { if (!cloud.raf) { cloud.last = performance.now(); cloud.raf = requestAnimationFrame(frame); } }
+
+  function frame(now) {
+    // Everything below is driven by elapsed time, so it runs the same at 30, 60 or 120 frames a second.
+    const dt = clamp(now - cloud.last, 0, 400);
+    cloud.last = now;
+    let busy = false;
+    const calm = still();
+    const ease = 1 - Math.exp(-dt / 190);
+
+    if (cloud.grow < 1) { cloud.grow = calm ? 1 : Math.min(1, cloud.grow + dt / 1500); busy = true; }
+    if (cloud.fire < 1) { cloud.fire = calm ? 1 : Math.min(1, cloud.fire + dt / 950); busy = true; }
+
+    const tilt = wide.matches && !calm;
+    const tx = tilt ? mouse.x : 0, ty = tilt ? mouse.y : 0;
+    mouse.sx += (tx - mouse.sx) * ease;
+    mouse.sy += (ty - mouse.sy) * ease;
+    if (Math.abs(tx - mouse.sx) > 0.002 || Math.abs(ty - mouse.sy) > 0.002) busy = true;
+    else { mouse.sx = tx; mouse.sy = ty; }
+    root.style.setProperty('--mx', mouse.sx.toFixed(3));
+    root.style.setProperty('--my', mouse.sy.toFixed(3));
+
+    const goalYaw = cloud.tyaw + mouse.sx * 0.42, goalPitch = cloud.tpitch + mouse.sy * 0.26;
+    const dy = angleGap(goalYaw, cloud.yaw), dp = goalPitch - cloud.pitch;
+    if (calm || (Math.abs(dy) < 0.0008 && Math.abs(dp) < 0.0008)) {
+      cloud.yaw = goalYaw; cloud.pitch = goalPitch;
+    } else {
+      cloud.yaw += dy * ease; cloud.pitch += dp * ease;
+      busy = true;
+    }
+
+    render();
+    cloud.raf = busy ? requestAnimationFrame(frame) : 0;
+  }
+
+  function render() {
+    const { ctx, W, H, dpr } = cloud;
+    if (!W || !H) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    const cyaw = Math.cos(cloud.yaw), syaw = Math.sin(cloud.yaw);
+    const cpit = Math.cos(cloud.pitch), spit = Math.sin(cloud.pitch);
+    const S = Math.min(W, H - 20) * 0.47, ox = W / 2, oy = H / 2 - 10, D = 3.4;
+    const project = (p) => {
+      const x1 = p.x * cyaw + p.z * syaw, z1 = -p.x * syaw + p.z * cyaw;
+      const y2 = p.y * cpit - z1 * spit, z2 = p.y * spit + z1 * cpit;
+      p.k = D / (D + z2);
+      p.sx = ox + x1 * S * p.k;
+      p.sy = oy + y2 * S * p.k;
+    };
+
+    // The cloud builds outward from its core on first load.
+    const reach = cloud.grow * 1.35;
+    const sel = cloud.sel, linked = cloud.selTickers.size > 0;
+    ctx.globalCompositeOperation = 'lighter';
+
+    if (!focusOn()) {
+      let ink = '';
+      for (const d of cloud.dust) {
+        if (d.far > reach) continue;
+        project(d);
+        if (d.rgb !== ink) { ink = d.rgb; ctx.fillStyle = `rgb(${ink})`; }
+        ctx.globalAlpha = clamp(0.15 + (d.k - 0.76) * 0.75, 0.08, 0.72);
+        const s = 1.25 * d.k;
+        ctx.fillRect(d.sx, d.sy, s, s);
       }
     }
-    applyParallax();
+
+    for (const c of cloud.centers.values()) project(c);
+    for (const pt of cloud.pts) { project(pt); pt.shown = pt.far <= reach; }
+
+    // Links: story -> its companies, then each company -> its other stories.
+    if (sel && linked) {
+      const a = clamp(cloud.fire * 2, 0, 1), b = clamp(cloud.fire * 2 - 1, 0, 1);
+      ctx.lineWidth = 1;
+      for (const t of cloud.selTickers) {
+        const c = cloud.centers.get(t);
+        ctx.globalAlpha = 0.75;
+        ctx.strokeStyle = `rgb(${sel.rgb})`;
+        ctx.beginPath();
+        ctx.moveTo(sel.sx, sel.sy);
+        ctx.lineTo(sel.sx + (c.sx - sel.sx) * a, sel.sy + (c.sy - sel.sy) * a);
+        ctx.stroke();
+        if (b > 0) {
+          for (const pt of cloud.pts) {
+            if (pt === sel || !pt.named.includes(t)) continue;
+            ctx.globalAlpha = 0.2;
+            ctx.strokeStyle = `rgb(${pt.rgb})`;
+            ctx.beginPath();
+            ctx.moveTo(c.sx, c.sy);
+            ctx.lineTo(c.sx + (pt.sx - c.sx) * b, c.sy + (pt.sy - c.sy) * b);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    for (const pt of cloud.pts) {
+      if (!pt.shown) continue;
+      const hot = pt === sel || (linked && pt.named.some((t) => cloud.selTickers.has(t)));
+      const base = pt.named.length ? 2.3 : 1.4;
+      const r = (base + (hot ? 0.7 : 0)) * pt.k;
+      ctx.globalAlpha = hot ? 1 : clamp((linked ? 0.3 : 0.5) + (pt.k - 0.76) * 0.5, 0.16, 0.8);
+      ctx.fillStyle = `rgb(${pt.rgb})`;
+      ctx.beginPath();
+      ctx.arc(pt.sx, pt.sy, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.globalCompositeOperation = 'source-over';
+    if (sel) {
+      const glow = ctx.createRadialGradient(sel.sx, sel.sy, 0, sel.sx, sel.sy, 26);
+      glow.addColorStop(0, `rgba(${sel.rgb},0.5)`);
+      glow.addColorStop(1, `rgba(${sel.rgb},0)`);
+      ctx.globalAlpha = focusOn() ? 0 : 1;
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(sel.sx, sel.sy, 26, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = `rgb(${sel.rgb})`;
+      ctx.beginPath();
+      ctx.arc(sel.sx, sel.sy, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = 'rgb(236,230,220)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(sel.sx, sel.sy, 9, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    if (cloud.hover && cloud.hover !== sel) {
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = 'rgb(236,230,220)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(cloud.hover.sx, cloud.hover.sy, 7, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+
+    // Company labels ride on their cluster. Nearer clusters read stronger.
+    const seen = clamp(cloud.grow * 2 - 0.6, 0, 1);
+    for (const [t, c] of cloud.centers) {
+      const on = cloud.selTickers.has(t) || state.ticker === t;
+      // A named company's pill sits just above its cluster so it never covers the story point.
+      c.el.style.transform = `translate(${c.sx.toFixed(1)}px, ${(c.sy - (on ? 30 : 0)).toFixed(1)}px) translate(-50%, -50%)`;
+      c.el.style.opacity = (seen * (on ? 1 : clamp(0.2 + (c.k - 0.76) * 1.25, 0.16, 0.9))).toFixed(2);
+      c.el.style.zIndex = String((on ? 1000 : 0) + Math.round(c.k * 100));
+    }
   }
 
-  function infoFor(target) {
-    const g = target.closest && target.closest('.ticker, .rel');
-    return g ? map.info.get(g) : null;
-  }
-
-  function showTip(info) {
+  /* ---------- Chart interaction ---------- */
+  function showTip(title, text, x, y) {
     const strong = document.createElement('strong');
-    strong.textContent = info.title;
+    strong.textContent = title;
     const span = document.createElement('span');
-    span.textContent = info.text;
+    span.textContent = text;
     els.tip.replaceChildren(strong, span);
     els.tip.hidden = false;
-    const W = els.chart.clientWidth;
     const half = els.tip.offsetWidth / 2 + 8;
-    const below = info.node.py < els.tip.offsetHeight + 40;
+    const below = y < els.tip.offsetHeight + 40;
     els.tip.classList.toggle('below', below);
-    els.tip.style.left = `${clamp(info.node.px, half, Math.max(half, W - half))}px`;
-    els.tip.style.top = `${info.node.py + (below ? 24 : -24)}px`;
+    els.tip.style.left = `${clamp(x, half, Math.max(half, cloud.W - half))}px`;
+    els.tip.style.top = `${y + (below ? 22 : -22)}px`;
   }
 
   function hideTip() { els.tip.hidden = true; }
 
-  function activate(info) {
-    if (info.kind === 'ticker') {
-      state.ticker = state.ticker === info.ticker ? null : info.ticker;
-      const keep = state.shown;
-      applyFilters(keep);
-      drawMap(false);
-    } else {
-      if (!state.list.some((s) => s.id === info.id)) {
-        state.ticker = null;
-        const target = state.all.find((s) => s.id === info.id);
-        if (target && !target.tickers.length) state.scope = 'all';
-        applyFilters(info.id);
-      } else {
-        goTo(state.list.findIndex((s) => s.id === info.id), false);
-      }
-    }
+  function companyTip(t) {
+    const company = state.companies[t], c = cloud.centers.get(t);
+    const count = state.byTicker.get(t).length, avg = state.mood.get(t);
+    showTip(`${company.name}, ${company.sector}`,
+      `${count} ${count === 1 ? 'story' : 'stories'} on the wire` +
+      (avg == null ? '' : `, average tone ${signed(avg)}`) +
+      (state.ticker === t ? '. Select to show every company again.' : '. Select to filter the wire.'),
+      c.sx, c.sy);
   }
 
-  els.map.addEventListener('pointerover', (e) => { const i = infoFor(e.target); if (i) showTip(i); });
-  els.map.addEventListener('pointerout', (e) => { if (infoFor(e.target)) hideTip(); });
-  els.map.addEventListener('focusin', (e) => { const i = infoFor(e.target); if (i) showTip(i); });
-  els.map.addEventListener('focusout', hideTip);
-  els.map.addEventListener('click', (e) => { const i = infoFor(e.target); if (i) activate(i); });
-  els.map.addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    const i = infoFor(e.target);
-    if (i) { e.preventDefault(); activate(i); }
+  function pickCompany(t) {
+    state.ticker = state.ticker === t ? null : t;
+    applyFilters(state.shown);
+    chartStory(false);
+  }
+
+  function pickStory(id) {
+    if (state.list.some((s) => s.id === id)) {
+      goTo(state.list.findIndex((s) => s.id === id), false);
+      return;
+    }
+    state.ticker = null;
+    const target = state.all.find((s) => s.id === id);
+    if (target && !target.tickers.length) state.scope = 'all';
+    applyFilters(id);
+  }
+
+  els.labels.addEventListener('click', (e) => { const b = e.target.closest('.co'); if (b) pickCompany(b.dataset.t); });
+  els.labels.addEventListener('pointerover', (e) => { const b = e.target.closest('.co'); if (b) companyTip(b.dataset.t); });
+  els.labels.addEventListener('pointerout', (e) => { if (e.target.closest('.co')) hideTip(); });
+  els.labels.addEventListener('focusin', (e) => { const b = e.target.closest('.co'); if (b) companyTip(b.dataset.t); });
+  els.labels.addEventListener('focusout', hideTip);
+
+  function storyUnder(e) {
+    const r = els.cloud.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    let best = null, bestD = 121;
+    for (const pt of cloud.pts) {
+      if (!pt.shown) continue;
+      const d = (pt.sx - x) ** 2 + (pt.sy - y) ** 2;
+      if (d < bestD) { best = pt; bestD = d; }
+    }
+    return best;
+  }
+
+  els.cloud.addEventListener('pointermove', (e) => {
+    const pt = storyUnder(e);
+    if (pt === cloud.hover) return;
+    cloud.hover = pt;
+    els.cloud.style.cursor = pt ? 'pointer' : '';
+    if (pt) {
+      const s = pt.story;
+      showTip(s.headline,
+        `${s.source}, ${fmtDay.format(new Date(s.publishedAt))}` + (s.tone == null ? '' : `, tone ${signed(s.tone)}`) +
+        (pt === cloud.sel ? '. This is the story on screen.' : '. Select to read it.'),
+        pt.sx, pt.sy);
+    } else {
+      hideTip();
+    }
+    kick();
+  });
+  els.cloud.addEventListener('pointerleave', () => { cloud.hover = null; hideTip(); kick(); });
+  els.cloud.addEventListener('click', (e) => {
+    const pt = storyUnder(e);
+    if (pt && pt !== cloud.sel) pickStory(pt.story.id);
   });
 
   /* ---------- Filters ---------- */
@@ -552,47 +733,16 @@
   els.tickerClear.addEventListener('click', () => {
     state.ticker = null;
     applyFilters(state.shown);
-    drawMap(false);
+    chartStory(false);
   });
 
-  /* ---------- Pointer: chart parallax and card sheen ---------- */
-  const mouse = { x: 0, y: 0, sx: 0, sy: 0, cx: -9999, cy: -9999, raf: 0 };
-  const parallaxOn = () => wide.matches && !reduced.matches && !focusOn();
-
-  function applyParallax() {
-    root.style.setProperty('--mx', mouse.sx.toFixed(3));
-    root.style.setProperty('--my', mouse.sy.toFixed(3));
-    for (const nd of map.nodes) {
-      nd.px = nd.x - mouse.sx * nd.depth;
-      nd.py = nd.y - mouse.sy * nd.depth;
-      nd.el.setAttribute('transform', `translate(${nd.px.toFixed(1)} ${nd.py.toFixed(1)})`);
-    }
-    for (const e of map.edges) {
-      e.el.setAttribute('x1', e.a.px.toFixed(1));
-      e.el.setAttribute('y1', e.a.py.toFixed(1));
-      e.el.setAttribute('x2', e.b.px.toFixed(1));
-      e.el.setAttribute('y2', e.b.py.toFixed(1));
-    }
-  }
-
-  function parallaxStep() {
-    const tx = parallaxOn() ? mouse.x : 0, ty = parallaxOn() ? mouse.y : 0;
-    mouse.sx += (tx - mouse.sx) * 0.09;
-    mouse.sy += (ty - mouse.sy) * 0.09;
-    const settled = Math.abs(tx - mouse.sx) < 0.002 && Math.abs(ty - mouse.sy) < 0.002;
-    if (settled) { mouse.sx = tx; mouse.sy = ty; }
-    applyParallax();
-    mouse.raf = settled ? 0 : requestAnimationFrame(parallaxStep);
-  }
-
-  const kickParallax = () => { if (!mouse.raf) mouse.raf = requestAnimationFrame(parallaxStep); };
-
+  /* ---------- Pointer: cloud tilt and card sheen ---------- */
   window.addEventListener('pointermove', (e) => {
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
     mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
     mouse.cx = e.clientX;
     mouse.cy = e.clientY;
-    kickParallax();
+    kick();
     const r = els.card.getBoundingClientRect();
     if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom) {
       els.card.style.setProperty('--px', `${e.clientX - r.left}px`);
@@ -633,7 +783,7 @@
     document.body.dataset.focus = on ? 'on' : 'off';
     els.focus.setAttribute('aria-pressed', String(on));
     try { localStorage.setItem('newsmind-focus', on ? 'on' : 'off'); } catch (_) { /* private mode */ }
-    kickParallax();
+    kick();
     sky.sync();
   }
 
@@ -653,7 +803,7 @@
       canvas.width = Math.round(w * dpr);
       canvas.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = clamp(Math.round((w * h) / 24000), 28, 84);
+      const count = clamp(Math.round((w * h) / 34000), 20, 60);
       stars = Array.from({ length: count }, () => ({
         x: Math.random() * w, y: Math.random() * h,
         vx: (Math.random() - 0.5) * 0.12, vy: (Math.random() - 0.5) * 0.12,
@@ -673,12 +823,12 @@
         }
         const dc = Math.hypot(s.x - mouse.cx, s.y - mouse.cy);
         const near = dc < 190 ? 1 - dc / 190 : 0;
-        ctx.fillStyle = `rgba(${s.tint},${0.38 + near * 0.6})`;
+        ctx.fillStyle = `rgba(${s.tint},${0.3 + near * 0.6})`;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r + near * 1.2, 0, Math.PI * 2);
         ctx.fill();
         if (near) {
-          ctx.strokeStyle = `rgba(6,182,212,${near * 0.32})`;
+          ctx.strokeStyle = `rgba(6,182,212,${near * 0.3})`;
           ctx.beginPath();
           ctx.moveTo(s.x, s.y);
           ctx.lineTo(mouse.cx, mouse.cy);
@@ -691,7 +841,7 @@
           const a = stars[i], b = stars[j];
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < 118) {
-            ctx.strokeStyle = `rgba(236,230,220,${(1 - d / 118) * 0.09})`;
+            ctx.strokeStyle = `rgba(236,230,220,${(1 - d / 118) * 0.08})`;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -707,7 +857,7 @@
     }
 
     function sync() {
-      const run = !document.hidden && !focusOn() && !reduced.matches;
+      const run = !document.hidden && !still();
       if (run && !raf) raf = requestAnimationFrame(frame);
       if (!run && raf) { cancelAnimationFrame(raf); raf = 0; }
       if (!run && !focusOn()) draw(false);
@@ -731,7 +881,7 @@
         scrollWireTo(state.tops[state.active] - state.lineOffset + 8, true);
       }
       fitHeadline();
-      drawMap(false);
+      sizeCloud();
     });
   };
   new ResizeObserver(onResize).observe(els.chart);

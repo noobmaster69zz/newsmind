@@ -367,76 +367,73 @@ a { color: inherit; }
   min-height: 0;
 }
 
-.map {
+.cloud {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  overflow: visible;
 }
 
-.orbit {
-  fill: none;
-  stroke: rgba(236, 230, 220, 0.16);
-  stroke-width: 1;
+/* Company labels are real buttons laid over the canvas, moved with transforms each frame. */
+.labels {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.orbit-2 { stroke-dasharray: 2 7; stroke: rgba(236, 230, 220, 0.24); }
-.orbit-3 { stroke-dasharray: 1 11; stroke: rgba(236, 230, 220, 0.3); }
-
-.edge { stroke: var(--bone); stroke-width: 1; }
-.edge-1 { stroke-opacity: 0.42; }
-.edge-2 { stroke-opacity: 0.3; }
-.edge-3 { stroke-opacity: 0.14; }
-
-.map text {
-  font-family: var(--ui);
-  fill: var(--bone);
-  paint-order: stroke;
-  stroke: var(--carbon);
-  stroke-width: 5px;
-  stroke-linejoin: round;
+.co {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: auto;
+  padding: 3px 7px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: none;
+  color: var(--ash);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  white-space: nowrap;
+  cursor: pointer;
+  will-change: transform;
 }
 
-.core .halo { fill: var(--tone); opacity: 0.2; filter: blur(7px); }
-.core .dot { fill: var(--tone); }
-.core text { font-size: 12px; fill: var(--ash); }
+.co:hover { color: var(--bone); border-color: var(--hair); }
 
-.sector circle { fill: var(--carbon); stroke: var(--bone); stroke-width: 1.4; }
-.sector text { font-size: 13px; font-weight: 500; }
-
-.ticker { cursor: pointer; }
-.ticker rect {
-  fill: var(--plate);
-  stroke: var(--tone);
-  stroke-width: 1.4;
-  transition: fill 0.15s;
+.co-name {
+  display: none;
+  margin-left: 7px;
+  color: var(--ash);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0;
 }
-.ticker .sym { font-size: 14px; font-weight: 600; letter-spacing: 0.05em; stroke-width: 0; }
-.ticker .name { font-size: 11.5px; fill: var(--ash); }
-.ticker:hover rect, .ticker:focus-visible rect { fill: #171B20; filter: drop-shadow(0 0 7px var(--tone)); }
-.ticker.filtered rect { fill: var(--tone); }
-.ticker.filtered .sym { fill: var(--carbon); }
 
-.rel { cursor: pointer; }
-.rel .hit { fill: transparent; }
-.rel .star { fill: var(--tone); transition: r 0.15s; }
-.rel:hover .star, .rel:focus-visible .star { r: 7px; filter: drop-shadow(0 0 6px var(--tone)); }
+/* A company the charted story names. */
+.co.on {
+  padding: 6px 14px;
+  color: var(--bone);
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: rgba(14, 16, 19, 0.86);
+  border-color: var(--tone);
+  box-shadow: 0 0 16px -4px var(--tone);
+}
 
-.ticker:focus-visible, .rel:focus-visible { outline: none; }
-.ticker:focus-visible rect { stroke: var(--cyan); stroke-width: 2.5; }
-.rel:focus-visible .star { stroke: var(--bone); stroke-width: 2; }
+.co.on .co-name { display: inline; }
 
-/* One drawn-out moment when a new story is charted: lines run outward, ring by ring. */
-.map.draw .edge { stroke-dasharray: 1; stroke-dashoffset: 1; animation: run 0.42s ease-out forwards; }
-.map.draw .edge-2 { animation-delay: 0.12s; }
-.map.draw .edge-3 { animation-delay: 0.26s; }
-.map.draw .sector { animation: arrive 0.3s 0.1s both; }
-.map.draw .ticker { animation: arrive 0.3s 0.24s both; }
-.map.draw .rel { animation: arrive 0.3s 0.42s both; }
+.co.filtered .co-name { color: var(--carbon); }
 
-@keyframes run { to { stroke-dashoffset: 0; } }
-@keyframes arrive { from { opacity: 0; } to { opacity: 1; } }
+.co.filtered,
+.co.filtered:hover {
+  color: var(--carbon);
+  background: var(--tone);
+  border-color: var(--tone);
+}
+
 
 .legend {
   position: absolute;
@@ -488,6 +485,7 @@ a { color: inherit; }
   margin: 0 26px 22px 14px;
   padding: 18px 22px;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   row-gap: 10px;
   border: 1px solid var(--hair);
   border-radius: 18px;
@@ -606,10 +604,9 @@ body[data-focus="on"] { background: var(--carbon); }
 body[data-focus="on"] .sky,
 body[data-focus="on"] .credit,
 body[data-focus="on"] .legend,
-body[data-focus="on"] .orbit,
-body[data-focus="on"] .rel,
-body[data-focus="on"] .edge-3,
+body[data-focus="on"] .co:not(.on):not(.filtered),
 body[data-focus="on"] .card::before { display: none; }
+body[data-focus="on"] .co.on { box-shadow: none; }
 body[data-focus="on"] .what,
 body[data-focus="on"] .stamp { visibility: hidden; }
 body[data-focus="on"] .card {
@@ -654,12 +651,7 @@ body[data-focus="on"] .headline.glitch { animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .headline.glitch,
-  .map.draw .edge,
-  .map.draw .sector,
-  .map.draw .ticker,
-  .map.draw .rel { animation: none; }
-  .map.draw .edge { stroke-dashoffset: 0; }
+  .headline.glitch { animation: none; }
   .row, .meter-mark, .switch-knob, .card::before { transition: none; }
   .card { transform: none; }
 }
