@@ -1,28 +1,31 @@
-"""Entity agent: map a headline to S&P 500 tickers via a company-name/alias table."""
+"""Entity agent: map a headline to tracked tickers via a company-name/alias table."""
 from __future__ import annotations
 
+import json
 import re
+from functools import lru_cache
+from pathlib import Path
 
-# Small seed map; extend with the full S&P 500 list in data/sp500.csv later.
-COMPANY_ALIASES: dict[str, list[str]] = {
-    "AAPL": ["apple", "iphone", "tim cook"],
-    "MSFT": ["microsoft", "azure", "satya nadella"],
-    "NVDA": ["nvidia", "jensen huang"],
-    "TSLA": ["tesla", "elon musk"],
-    "AMZN": ["amazon", "aws"],
-    "GOOGL": ["google", "alphabet", "youtube"],
-    "META": ["meta platforms", "facebook", "instagram"],
-    "JPM": ["jpmorgan", "jp morgan"],
-    "XOM": ["exxon", "exxonmobil"],
-    "TSM": ["tsmc", "taiwan semiconductor"],
-}
+COMPANIES_PATH = Path(__file__).resolve().parents[1] / "data" / "companies.json"
 
 
-def extract_tickers(headline: str) -> list[str]:
-    """Return tickers whose alias appears as a whole word/phrase in the headline."""
-    text = headline.lower()
-    found = []
-    for ticker, aliases in COMPANY_ALIASES.items():
-        if any(re.search(rf"\b{re.escape(a)}\b", text) for a in aliases):
-            found.append(ticker)
-    return found
+@lru_cache(maxsize=1)
+def companies() -> dict[str, dict]:
+    """Tracked companies keyed by ticker: {name, sector, aliases}."""
+    rows = json.loads(COMPANIES_PATH.read_text(encoding="utf-8"))
+    return {r["ticker"]: r for r in rows}
+
+
+@lru_cache(maxsize=1)
+def _patterns() -> list[tuple[str, re.Pattern]]:
+    out = []
+    for ticker, c in companies().items():
+        alt = "|".join(re.escape(a) for a in c["aliases"])
+        out.append((ticker, re.compile(rf"\b(?:{alt})\b")))
+    return out
+
+
+def extract_tickers(text: str) -> list[str]:
+    """Return sorted tickers whose alias appears as a whole word/phrase in the text."""
+    text = text.lower()
+    return sorted(t for t, pat in _patterns() if pat.search(text))

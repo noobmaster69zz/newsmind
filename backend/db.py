@@ -25,6 +25,13 @@ CREATE TABLE IF NOT EXISTS news_ticker (
 );
 CREATE INDEX IF NOT EXISTS idx_news_ticker_ticker ON news_ticker(ticker);
 
+CREATE TABLE IF NOT EXISTS sentiment (
+    news_id TEXT PRIMARY KEY REFERENCES news(id),
+    score   REAL NOT NULL,              -- P(positive) - P(negative), in [-1, 1]
+    label   TEXT NOT NULL,              -- positive | negative | neutral
+    model   TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS pipeline_runs (
     run_id     INTEGER PRIMARY KEY AUTOINCREMENT,
     started_at TEXT NOT NULL,
@@ -52,11 +59,11 @@ def upsert_news(conn: sqlite3.Connection, rows: list[dict]) -> int:
             "VALUES (:id, :source, :headline, :summary, :url, :published_at)",
             r,
         )
-        if cur.rowcount:
-            inserted += 1
-            conn.executemany(
-                "INSERT OR IGNORE INTO news_ticker (news_id, ticker) VALUES (?, ?)",
-                [(r["id"], t) for t in r.get("tickers", [])],
-            )
+        inserted += cur.rowcount
+        # Always link tickers: the same story can arrive again under another company's feed.
+        conn.executemany(
+            "INSERT OR IGNORE INTO news_ticker (news_id, ticker) VALUES (?, ?)",
+            [(r["id"], t) for t in r.get("tickers", [])],
+        )
     conn.commit()
     return inserted

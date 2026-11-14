@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NewsMind: financial news, charted by the companies it names</title>
+  <meta name="description" content="NewsMind pulls the financial news wire, reads the tone of every headline with FinBERT and charts each story against the companies it names.">
+  <meta name="theme-color" content="#08090A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2308090A'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2306B6D4'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23E0527A' stroke-width='1.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Chakra+Petch:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Hold the first paint until the webfonts are in, so nothing reflows when they swap. -->
+  <script>document.documentElement.classList.add('booting');</script>
+</head>
+<body data-focus="off">
+  <canvas id="sky" class="sky" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <h1 class="mark">NewsMind</h1>
+    <p class="what">Financial news, charted by the companies it names.</p>
+    <p class="stamp" id="stamp"></p>
+    <button class="switch" id="focus" type="button" aria-pressed="false">
+      <span>Focus mode</span>
+      <span class="switch-track" aria-hidden="true"><span class="switch-knob"></span></span>
+    </button>
+  </header>
+
+  <main class="split" id="split">
+    <section class="wire-pane" aria-label="News wire">
+      <div class="stage">
+        <p class="dateline" id="dateline">Loading the wire</p>
+        <h2 class="headline" id="headline" data-len="s"></h2>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter the wire">
+        <button class="chip" id="scopeCompany" type="button" aria-pressed="true">Company stories</button>
+        <button class="chip" id="scopeAll" type="button" aria-pressed="false">Whole wire</button>
+        <button class="chip chip-clear" id="tickerClear" type="button" hidden></button>
+      </div>
+
+      <div class="wire" id="wire" role="listbox" aria-label="Stories, newest first"></div>
+
+      <footer class="credit">
+        <p class="credit-line">The market reads the news in milliseconds. I'm building the thing that reads it back.</p>
+        <p class="credit-by">
+          Built by Gandhi Jaitra Nimeshkumar, AI and Data Engineering at NYP.
+          <a href="https://github.com/noobmaster69zz/newsmind">Source on GitHub</a>
+        </p>
+      </footer>
+    </section>
+
+    <div class="seam" id="seam" role="separator" aria-orientation="vertical" tabindex="0"
+         aria-label="Resize the wire and the chart" aria-valuemin="32" aria-valuemax="64" aria-valuenow="46"></div>
+
+    <section class="chart-pane" aria-label="Chart for the selected story">
+      <div class="chart" id="chart">
+        <svg class="map" id="map" role="group" aria-label="Companies named in the selected story"></svg>
+        <p class="legend">Rings from the centre: sectors, the companies this story names, other stories on those companies.</p>
+        <p class="chart-empty" id="chartEmpty" hidden>No tracked company is named in this story.</p>
+        <div class="tip" id="tip" role="tooltip" hidden></div>
+      </div>
+
+      <article class="card" id="card">
+        <div class="card-tone">
+          <p class="tone-text" id="toneText"></p>
+          <p class="tone-score" id="toneScore"></p>
+        </div>
+        <div class="meter" aria-hidden="true">
+          <span class="meter-mark" id="meterMark"></span>
+          <span class="meter-axis"><span>negative</span><span>neutral</span><span>positive</span></span>
+        </div>
+        <p class="summary" id="summary"></p>
+        <div class="card-foot">
+          <a class="read" id="readLink" target="_blank" rel="noopener noreferrer" hidden></a>
+          <p class="forecast">No price forecast yet. The chart shows who is named, not what happens next.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

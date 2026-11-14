@@ -1,4 +1,8 @@
-"""ETL pipeline: Finnhub news -> validate/dedupe -> SQLite.
+"""ETL pipeline: Finnhub news -> validate/dedupe/tag -> SQLite.
+
+Two feeds are pulled each run:
+  * the general market wire (macro, politics, world news)
+  * the per-company feed for every tracked ticker in backend/data/companies.json
 
 Run:  python -m backend.ingest.pipeline
 """
@@ -8,16 +12,19 @@ import hashlib
 import logging
 import os
 import re
-from datetime import datetime, timezone
+import time
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
 
 from backend import db
-from backend.agents.entity import extract_tickers
+from backend.agents.entity import companies, extract_tickers
 
 log = logging.getLogger("newsmind.ingest")
-FINNHUB_URL = "https://finnhub.io/api/v1/news"
+FINNHUB = "https://finnhub.io/api/v1"
+PER_COMPANY_LIMIT = 12  # newest stories kept per ticker, keeps one loud company from flooding the wire
+SOURCE_SUFFIX = re.compile(r"\s+[-|]\s+(Reuters|CNBC|Bloomberg|MarketWatch|Yahoo Finance)\s*$", re.I)
 
 
 def load_env(path: Path | None = None) -> None:
@@ -32,24 +39,41 @@ def load_env(path: Path | None = None) -> None:
 
 
 # ---------- Extract ----------
-def extract(category: str = "general", token: str | None = None) -> list[dict]:
-    token = token or os.environ["FINNHUB_API_KEY"]
-    resp = requests.get(FINNHUB_URL, params={"category": category, "token": token}, timeout=15)
+def _get(path: str, **params) -> list[dict]:
+    params["token"] = os.environ["FINNHUB_API_KEY"]
+    resp = requests.get(f"{FINNHUB}/{path}", params=params, timeout=15)
     resp.raise_for_status()
     return resp.json()
 
 
+def extract_general(category: str = "general") -> list[dict]:
+    return _get("news", category=category)
+
+
+def extract_company(ticker: str, days: int = 3) -> list[dict]:
+    today = date.today()
+    items = _get("company-news", symbol=ticker, **{"from": str(today - timedelta(days=days)), "to": str(today)})
+    items.sort(key=lambda i: i.get("datetime") or 0, reverse=True)
+    return items[:PER_COMPANY_LIMIT]
+
+
 # ---------- Transform ----------
 def normalise(headline: str) -> str:
-    return re.sub(r"\s+", " ", headline).strip()
+    headline = re.sub(r"\s+", " ", headline).strip()
+    return SOURCE_SUFFIX.sub("", headline)
 
 
 def headline_id(headline: str) -> str:
     return hashlib.sha256(normalise(headline).lower().encode()).hexdigest()
 
 
-def transform(raw: list[dict]) -> tuple[list[dict], int]:
-    """Validate, clean, dedupe, tag tickers. Returns (clean_rows, rejected_count)."""
+def transform(raw: list[dict], feed_ticker: str | None = None) -> tuple[list[dict], int]:
+    """Validate, clean, dedupe, tag tickers. Returns (clean_rows, rejected_count).
+
+    feed_ticker: the company feed the batch came from. It is only trusted as a tag
+    when the story text itself names that company, because Finnhub's company feeds
+    include loosely related market round-ups.
+    """
     clean, seen, rejected = [], set(), 0
     for item in raw:
         headline = normalise(item.get("headline") or "")
@@ -62,7 +86,11 @@ def transform(raw: list[dict]) -> tuple[list[dict], int]:
             rejected += 1
             continue
         seen.add(hid)
-        summary = item.get("summary") or ""
+        summary = (item.get("summary") or "").strip()
+        tickers = extract_tickers(f"{headline}. {summary}")
+        if feed_ticker and feed_ticker not in tickers:  # off-topic for this company feed
+            rejected += 1
+            continue
         clean.append({
             "id": hid,
             "source": item.get("source") or "unknown",
@@ -70,25 +98,39 @@ def transform(raw: list[dict]) -> tuple[list[dict], int]:
             "summary": summary,
             "url": item.get("url"),
             "published_at": datetime.fromtimestamp(ts, tz=timezone.utc).isoformat(),
-            "tickers": extract_tickers(f"{headline}. {summary}"),
+            "tickers": tickers,
         })
     return clean, rejected
 
 
 # ---------- Load ----------
-def run(category: str = "general", conn=None) -> dict:
+def run(conn=None, with_companies: bool = True) -> dict:
     load_env()
     conn = conn or db.connect()
     started = datetime.now(timezone.utc).isoformat()
-    raw = extract(category)
-    rows, rejected = transform(raw)
-    inserted = db.upsert_news(conn, rows)
+    fetched = inserted = rejected = 0
+
+    feeds: list[tuple[str | None, list[dict]]] = [(None, extract_general())]
+    if with_companies:
+        for ticker in companies():
+            try:
+                feeds.append((ticker, extract_company(ticker)))
+            except requests.RequestException as exc:  # one bad feed must not sink the run
+                log.warning("company feed %s failed: %s", ticker, exc)
+            time.sleep(0.25)  # stay well under Finnhub's 60 calls/minute
+
+    for ticker, raw in feeds:
+        rows, bad = transform(raw, feed_ticker=ticker)
+        fetched += len(raw)
+        rejected += bad
+        inserted += db.upsert_news(conn, rows)
+
     conn.execute(
         "INSERT INTO pipeline_runs (started_at, fetched, inserted, rejected) VALUES (?,?,?,?)",
-        (started, len(raw), inserted, rejected),
+        (started, fetched, inserted, rejected),
     )
     conn.commit()
-    stats = {"fetched": len(raw), "inserted": inserted, "rejected": rejected}
+    stats = {"fetched": fetched, "inserted": inserted, "rejected": rejected}
     log.info("ingest done: %s", stats)
     return stats
 

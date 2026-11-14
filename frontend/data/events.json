@@ -1,0 +1,3638 @@
+{
+ "generatedAt": "2026-11-14T10:18:41+00:00",
+ "companies": {
+  "AAPL": {
+   "name": "Apple",
+   "sector": "Big Tech"
+  },
+  "MSFT": {
+   "name": "Microsoft",
+   "sector": "Big Tech"
+  },
+  "GOOGL": {
+   "name": "Alphabet",
+   "sector": "Big Tech"
+  },
+  "AMZN": {
+   "name": "Amazon",
+   "sector": "Big Tech"
+  },
+  "META": {
+   "name": "Meta",
+   "sector": "Big Tech"
+  },
+  "NVDA": {
+   "name": "Nvidia",
+   "sector": "Semiconductors"
+  },
+  "AMD": {
+   "name": "AMD",
+   "sector": "Semiconductors"
+  },
+  "INTC": {
+   "name": "Intel",
+   "sector": "Semiconductors"
+  },
+  "TSM": {
+   "name": "TSMC",
+   "sector": "Semiconductors"
+  },
+  "AVGO": {
+   "name": "Broadcom",
+   "sector": "Semiconductors"
+  },
+  "TSLA": {
+   "name": "Tesla",
+   "sector": "Autos"
+  },
+  "GM": {
+   "name": "General Motors",
+   "sector": "Autos"
+  },
+  "F": {
+   "name": "Ford",
+   "sector": "Autos"
+  },
+  "JPM": {
+   "name": "JPMorgan",
+   "sector": "Banks"
+  },
+  "GS": {
+   "name": "Goldman Sachs",
+   "sector": "Banks"
+  },
+  "BAC": {
+   "name": "Bank of America",
+   "sector": "Banks"
+  },
+  "MS": {
+   "name": "Morgan Stanley",
+   "sector": "Banks"
+  },
+  "XOM": {
+   "name": "Exxon Mobil",
+   "sector": "Energy"
+  },
+  "CVX": {
+   "name": "Chevron",
+   "sector": "Energy"
+  },
+  "COP": {
+   "name": "ConocoPhillips",
+   "sector": "Energy"
+  },
+  "WMT": {
+   "name": "Walmart",
+   "sector": "Retail"
+  },
+  "COST": {
+   "name": "Costco",
+   "sector": "Retail"
+  },
+  "PFE": {
+   "name": "Pfizer",
+   "sector": "Healthcare"
+  },
+  "LLY": {
+   "name": "Eli Lilly",
+   "sector": "Healthcare"
+  },
+  "UNH": {
+   "name": "UnitedHealth",
+   "sector": "Healthcare"
+  },
+  "BA": {
+   "name": "Boeing",
+   "sector": "Aerospace and defence"
+  },
+  "LMT": {
+   "name": "Lockheed Martin",
+   "sector": "Aerospace and defence"
+  },
+  "RTX": {
+   "name": "RTX",
+   "sector": "Aerospace and defence"
+  },
+  "DIS": {
+   "name": "Disney",
+   "sector": "Media"
+  },
+  "NFLX": {
+   "name": "Netflix",
+   "sector": "Media"
+  },
+  "UAL": {
+   "name": "United Airlines",
+   "sector": "Airlines"
+  },
+  "MA": {
+   "name": "Mastercard",
+   "sector": "Payments"
+  },
+  "COIN": {
+   "name": "Coinbase",
+   "sector": "Crypto"
+  }
+ },
+ "stories": [
+  {
+   "id": "e452859de2a7",
+   "source": "Reuters",
+   "headline": "Latin Grammy Awards: The fashion, moments, winners and performances",
+   "summary": "Latin Grammy Awards: The fashion, moments, winners and performances  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQLUdWNjJsc1BWTC1ycV83cEN2S3d0Z3hoaW9Cc3FmTVN6dkJpUXpZNDdOSVI1MUh2ZjB6WVdmQ0pFN1I5anRJaXhXeUQ3a3dRT1Y0Qm9GU0ladWhHdmxsQjNpZXNZMTc4YmM3YjBRYXJiV25teHBCSG1IdC1hTTV4SlNjampqR0NfZlVSZ3Zja1h5ZE5fMkZZLVdjQlZkc3dKY0RR?oc=5",
+   "publishedAt": "2026-11-14T09:45:45+00:00",
+   "tone": 0.001,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "cbb27f7c032c",
+   "source": "Yahoo",
+   "headline": "Should You Really Buy Nvidia Stock After CEO Jensen Huang's Exit? Wall Street Has a Clear Answer for Investors.",
+   "summary": "Jensen Huang’s resignation creates considerable uncertainty, but most analysts think Nvidia stock is deeply undervalued.",
+   "url": "https://finnhub.io/api/news?id=b5769411dcc8ab1030bef006cb51521e3943225ebbe84a5961599648c07f9335",
+   "publishedAt": "2026-11-14T09:41:02+00:00",
+   "tone": 0.017,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "08aa86639d27",
+   "source": "Yahoo",
+   "headline": "A $2.4 Billion Fund Dumps These 3 Stocks",
+   "summary": "Key TakeawaysForest Avenue, a $2. 41 billion firm, sold all its Astera Labs, NVIDIA and Bruker shares last quarter.",
+   "url": "https://finnhub.io/api/news?id=d5d1c6bf54040374e8bb5cc748965d4cf97da66f9fecfa0af8b3a733b08d4424",
+   "publishedAt": "2026-11-14T09:34:34+00:00",
+   "tone": -0.818,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "15605f3cf5ae",
+   "source": "Yahoo",
+   "headline": "Jensen Huang Misled Nvidia Leadership, Lawyer On Affair With Alleged Chinese Spy: Report",
+   "summary": "According to a Reuters report, Huang repeatedly characterized his interactions with Alice Huang as routine business dealings.",
+   "url": "https://finnhub.io/api/news?id=ffa55216906a078747cbd1523e7bead48b069a3ad08519f099542bb339de78a0",
+   "publishedAt": "2026-11-14T09:25:58+00:00",
+   "tone": -0.508,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "da2389cea8db",
+   "source": "ChartMill",
+   "headline": "Mastercard (NYSE:MA): Strong Growth and a High-Quality Technical Setup",
+   "summary": "Mastercard clears a strong growth and quality stock screen, pairing elite margins with a bull flag chart and a defined-risk breakout setup.",
+   "url": "https://finnhub.io/api/news?id=3066fa8c3c4e261dabd242509845820101461bacf5ffd879956ed6450377d1e6",
+   "publishedAt": "2026-11-14T09:20:34+00:00",
+   "tone": 0.916,
+   "toneLabel": "positive",
+   "tickers": [
+    "MA"
+   ]
+  },
+  {
+   "id": "ef389e5c98ff",
+   "source": "Yahoo",
+   "headline": "Cadence Stock And 2 AI Software Names With Stronger Governance Profiles",
+   "summary": "Jensen Huang’s abrupt exit from Nvidia throws a harsh spotlight on how much faith investors place in a single leader, and it ripples across every stock tied to the AI story. Leadership risk suddenly feels very real, which creates room for both overreactions and mispricing. This article walks through 3 stocks from our Governance-Resilient Large-Cap AI and Tech Leaders screener that appear better positioned in this moment, and explains why their governance profile might matter more than...",
+   "url": "https://finnhub.io/api/news?id=d45072aa0cf40883943d0b73068b0b077e69b83c4cba69be39c55228a24fa791",
+   "publishedAt": "2026-11-14T09:12:04+00:00",
+   "tone": 0.849,
+   "toneLabel": "positive",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "295b9d54ad6f",
+   "source": "Yahoo",
+   "headline": "‘They’re Getting Insider Information From Costco Employees’: Inside the Pokemon Card Line Where Resellers Buy Executive Memberships",
+   "summary": "Resellers are queuing at Costco returns desks, swapping outfits to rejoin the line and paying for Discord tips on the next Pokemon drop. Before you copy them, check whether the Executive upgrade they all buy actually pays off.",
+   "url": "https://finnhub.io/api/news?id=daee0feb8d538ecaeb77f4e020df54cdb1e5321f8c5e8cc48f3052432e1b0681",
+   "publishedAt": "2026-11-14T09:07:29+00:00",
+   "tone": -0.016,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "72664278839d",
+   "source": "Yahoo",
+   "headline": "Jim Cramer: Amazon Has What “May Soon Be a $50 Billion Semiconductor Business”",
+   "summary": "Key TakeawaysA day after Jensen Huang resigned as Nvidia’s CEO, Jim Cramer said Amazon has what “may soon be a $50 billion semiconductor business. ”Andy Jassy gave that number in April: chips running above $20 billion a year would bring in about $50 billion priced like a standalone chipmaker.",
+   "url": "https://finnhub.io/api/news?id=f654e3c4ed294309e58bffbeeb09f5b2a74e6418d9fbfab7232df5c1eb019c61",
+   "publishedAt": "2026-11-14T08:49:57+00:00",
+   "tone": 0.061,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMZN",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "5dd092840941",
+   "source": "Yahoo",
+   "headline": "Tesla Cybercab Now Available For Purchase For Select Customers — But There’s A Catch",
+   "summary": "Owning the Tesla Cybercab comes with some significant limitations, including a mandatory monthly software subscription and restrictions on where it can operate.",
+   "url": "https://finnhub.io/api/news?id=72c7920c276a459b5425da3e26305a6b4e638e7182a411d1fc28eda70a3b62ea",
+   "publishedAt": "2026-11-14T06:09:37+00:00",
+   "tone": 0.08,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "e055af4df778",
+   "source": "Yahoo",
+   "headline": "Coinbase CEO Brian Armstrong Credits SEC, CFTC Chiefs For Ending ‘Turf Wars’ Over Stock Perps",
+   "summary": "Coinbase joined Kalshi, Payward, and Paradigm in asking the court to accept a brief supporting the CFTC.",
+   "url": "https://finnhub.io/api/news?id=3a3252a4bbaeed7e35c063b7209264f7c435d19932eea001161444a531a079a4",
+   "publishedAt": "2026-11-14T05:11:49+00:00",
+   "tone": 0.733,
+   "toneLabel": "positive",
+   "tickers": [
+    "COIN"
+   ]
+  },
+  {
+   "id": "0ff718211918",
+   "source": "Yahoo",
+   "headline": "Fermi (FRMI) is Regaining Its Power Thanks to This Tech Giant",
+   "summary": "Fermi Inc. (NASDAQ:FRMI) is one of the 10 Stocks Defying Tech Market Turmoil. Fermi extended its winning streak to a third consecutive day on Friday, soaring 26.7 percent to close at $2.61 apiece, as investor sentiment was bolstered by reports that it revived talks with Amazon for an earlier botched power capacity supply. A report […]",
+   "url": "https://finnhub.io/api/news?id=18967645cc127570f65580ffeda1350516f7a8abd4a3322660f0866a2ac8e0be",
+   "publishedAt": "2026-11-14T05:01:34+00:00",
+   "tone": 0.87,
+   "toneLabel": "positive",
+   "tickers": [
+    "AMZN"
+   ]
+  },
+  {
+   "id": "1aae5c516544",
+   "source": "Yahoo",
+   "headline": "JPMorgan Chase (JPM) Sees 40% Jump In Asia Pacific Alternative Asset Allocations",
+   "summary": "JPMorgan Chase (NYSE:JPM) reports a sharp rise in ultra-wealthy client demand for alternative investments tied to infrastructure themes. The bank highlights a tilt toward assets linked to AI data centers, power grid upgrades, electrification and energy security projects. Within its Asia-Pacific wealth franchise, allocations to alternative assets are reported to be 40% higher, focused on these long-term themes. This surge in ultra-rich interest in AI and infrastructure related alternatives at...",
+   "url": "https://finnhub.io/api/news?id=cd6d5a61aabe65e1b168d92987f73684bf95f879a684208202aedeba89cac161",
+   "publishedAt": "2026-11-14T04:26:37+00:00",
+   "tone": 0.928,
+   "toneLabel": "positive",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "88875da189ce",
+   "source": "Yahoo",
+   "headline": "Elon Musk, Tom Lee, Shopify CEO Sign ‘Stand With Jensen’ Petition To Reinstate Him As Nvidia CEO",
+   "summary": "The petition, “Stand with Jensen,” had about 36,000 signatures at the time of writing.",
+   "url": "https://finnhub.io/api/news?id=fea9cca8ff41ae353312becc04b330e42816c358d41766ee6cd844da0906b438",
+   "publishedAt": "2026-11-14T04:24:53+00:00",
+   "tone": 0.065,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA",
+    "TSLA"
+   ]
+  },
+  {
+   "id": "a724420bc58e",
+   "source": "Yahoo",
+   "headline": "Jim Cramer tells investors to buy a stock his Trust is glad it owns",
+   "summary": "Cramer once questioned Costco’s valuation, but his Charitable Trust held on.",
+   "url": "https://finnhub.io/api/news?id=4bdedf6621400618e327b85a25c5cb211c9c45ed8c1b8d8f9416147dd5a21e94",
+   "publishedAt": "2026-11-14T02:17:00+00:00",
+   "tone": 0.051,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "f4f51738744e",
+   "source": "Yahoo",
+   "headline": "/U P D A T E - Unifor/",
+   "summary": "800 workers at Amazon's YVR2 fulfilment centre are now covered by a binding collective agreement after an independent arbitrator set its terms on Nov. 13, 2026. The agreement is the first for Amazon workers anywhere in North America and includes wage increases bringing hourly rates to $29 by the end of the agreement, enhanced severance protections of up to 18 weeks, and an additional week of vacation for workers with 10 years of service.",
+   "url": "https://finnhub.io/api/news?id=a4fc23ee8c21cf0be7afdfb6c04c75c21f1e5904cbd4e71bca766b50e9512ea9",
+   "publishedAt": "2026-11-14T02:14:00+00:00",
+   "tone": 0.011,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMZN"
+   ]
+  },
+  {
+   "id": "1d1cfeb8c894",
+   "source": "Yahoo",
+   "headline": "US Fintech Weekly: Coinbase Secures Federal Trust Charter, While Hot CPI Pressures Rate-Sensitive Lenders",
+   "summary": "Hotter-than-expected October inflation data weighed on consumer lending equities during the week ending November 13, 2026.",
+   "url": "https://finnhub.io/api/news?id=29f6512362b8d1a84ffc9adb41cd9ce11c44436aba293920164922677ea463ea",
+   "publishedAt": "2026-11-14T01:33:35+00:00",
+   "tone": 0.102,
+   "toneLabel": "positive",
+   "tickers": [
+    "COIN"
+   ]
+  },
+  {
+   "id": "a5dc6fbe1008",
+   "source": "Yahoo",
+   "headline": "Is ExxonMobil Holdings (XOM) Undervalued After Its $12.5b Guyana Longtail Approval?",
+   "summary": "ExxonMobil Holdings (XOM) just approved a US$12.5b Longtail development offshore Guyana, targeting non associated gas and condensate. This gives investors a fresh long term project to factor into the stock’s risk profile. The Longtail decision comes at a time when ExxonMobil Holdings’ share price has been strong, with a year to date share price return of 39.09% and a 1 year total shareholder return of 45.87% backed by dividends. Short term momentum has cooled a little, with the 30 day share...",
+   "url": "https://finnhub.io/api/news?id=35d9185c577192ff99a7e10ff1b604947dc86ff8bda4d0113702d8adbd32834a",
+   "publishedAt": "2026-11-14T01:13:12+00:00",
+   "tone": 0.756,
+   "toneLabel": "positive",
+   "tickers": [
+    "XOM"
+   ]
+  },
+  {
+   "id": "a989f58e58a2",
+   "source": "Yahoo",
+   "headline": "What Eli Lilly Doubters Overlooked",
+   "summary": "If you only glanced at Eli Lilly’s headlines this year, the drumbeat of new GLP-1 data, obesity trial wins, and fresh acquisitions might feel almost routine. Investors who held Eli Lilly over the past year are up 41.6%, including dividends. If you had been weighing up those bullish and bearish analyst cases in November 2025, what exactly in the record back then could justify accepting that kind of risk for this outcome? A Narrative on Simply Wall St is one investor's written case for a...",
+   "url": "https://finnhub.io/api/news?id=53509fbe19c5c07c62e5aa7eb908ec84ca67ffadf7a1e7eb184b06d477535590",
+   "publishedAt": "2026-11-14T01:11:12+00:00",
+   "tone": -0.086,
+   "toneLabel": "neutral",
+   "tickers": [
+    "LLY"
+   ]
+  },
+  {
+   "id": "3a09c7d64122",
+   "source": "Yahoo",
+   "headline": "Zero To Sixty: Tesla Winds Down Cybertruck, Pulls Model Y Variant While Rivian, Lucid Chase Volumes",
+   "summary": "Tesla is winding down Cybertruck production by summer 2027 to free capacity for Cybercab while Rivian and Lucid chase volume with cheaper offerings.",
+   "url": "https://finnhub.io/api/news?id=8ff38a6f03a4034e93d3e98c543640cdba5257cbb39bd024a21d33c6f546c921",
+   "publishedAt": "2026-11-14T00:45:56+00:00",
+   "tone": 0.06,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "6cfabc926fe2",
+   "source": "Yahoo",
+   "headline": "What Is The Market Seeing In Eli Lilly Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "url": "https://finnhub.io/api/news?id=161ffa515e4b9631668d921851801b971be9f4158a836c4958b602a74de5d96a",
+   "publishedAt": "2026-11-14T00:33:08+00:00",
+   "tone": -0.112,
+   "toneLabel": "neutral",
+   "tickers": [
+    "LLY"
+   ]
+  },
+  {
+   "id": "5ed3da2ed582",
+   "source": "Yahoo",
+   "headline": "Is Apple Stock a Buy Right Now?",
+   "summary": "Apple is hitting new highs, but it could go even higher.",
+   "url": "https://finnhub.io/api/news?id=dfe57235edfa47fb0beef5354ad4b602a9fb15cd6480b3c482da46ab14e6d7f2",
+   "publishedAt": "2026-11-14T00:27:00+00:00",
+   "tone": 0.026,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL"
+   ]
+  },
+  {
+   "id": "38f652597554",
+   "source": "Reuters",
+   "headline": "Trump to raise nuclear-arms cuts with Putin, Xi on Thursday, White House says",
+   "summary": "Trump to raise nuclear-arms cuts with Putin, Xi on Thursday, White House says  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPX1dzUndCOE42aUFUazd4SFcxMFVWUTl6VmRVOE5QR0ZjNWRXY19qWTVuRUthUXhDS3UybmZnQmFHSHVRV20wdXJwTUlKUTlGVU42N1B4bkVwSjI4bkdJeG94aFpxX01NUTdyWUJOUVZHSHlXZkxGZXlsTWhjSmUwRXoyRklMekIycXlEUk1pM1NpNjJp?oc=5",
+   "publishedAt": "2026-11-14T00:22:00+00:00",
+   "tone": 0.035,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "e542c245475e",
+   "source": "Yahoo",
+   "headline": "Will ETF Buying Change Meta Stock Narrative",
+   "summary": "Large ETFs including SPY, XLC and SPYM recently added to Meta Platforms positions over several days, alongside fresh fixed income offerings and expanded sustainability agreements tied to green steel, clean cement and zero emission trucking. The combination of strong ETF buying and growing use of AI to sharpen Meta Platforms advertising engine reinforces how central data driven ad performance remains to the business story, even as it layers on heavy capex and new financing to fund AI and...",
+   "url": "https://finnhub.io/api/news?id=2ad91e4b59268a7d1eec9a4b6bb21694544d99edad6ab2a59d24cac7f01ea320",
+   "publishedAt": "2026-11-14T00:20:17+00:00",
+   "tone": 0.007,
+   "toneLabel": "neutral",
+   "tickers": [
+    "META"
+   ]
+  },
+  {
+   "id": "500021303245",
+   "source": "Yahoo",
+   "headline": "Pfizer (PFE) Secures $1.5 Billion For Berobenatide Development",
+   "summary": "Pfizer (NYSE:PFE) announced a partnership with Blackstone Life Sciences to co-fund late stage development of berobenatide, its GLP-1 obesity drug candidate. The arrangement provides up to $1.5b in development funding for berobenatide, focused on chronic weight management and obesity related conditions. Pfizer keeps full operational control of berobenatide, while Blackstone Life Sciences receives milestone based economics linked to the program's progress. This berobenatide funding deal with...",
+   "url": "https://finnhub.io/api/news?id=6e6efdb257d6100529c45cea6694fa06ed185687ffaca43ca427d9910e5043a6",
+   "publishedAt": "2026-11-14T00:19:37+00:00",
+   "tone": 0.802,
+   "toneLabel": "positive",
+   "tickers": [
+    "PFE"
+   ]
+  },
+  {
+   "id": "d432111a0198",
+   "source": "Yahoo",
+   "headline": "Costco: An AI Shelter?",
+   "summary": "The big-box retailer could be a good defensive play for investors looking for steady returns in these uncertain times.",
+   "url": "https://finnhub.io/api/news?id=dd3dbd241ab3a0c7083bec863ed767f07797723a5c9f751f424f1d5f2eece798",
+   "publishedAt": "2026-11-13T23:54:00+00:00",
+   "tone": -0.13,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "355e1606308d",
+   "source": "Yahoo",
+   "headline": "JPMorgan’s Top Credit Cards Executive Is Leaving the Bank",
+   "summary": "Allison Beer, the CEO of card and connected commerce, “has informed me of her decision to leave the firm for an external opportunity,” JPMorgan Co-President Troy Rohrbaugh said in a memo on Friday.",
+   "url": "https://finnhub.io/api/news?id=0f18d431c7060982aa3fe41e096965f5a9b9c47f4f3dfd478db5991f305590e0",
+   "publishedAt": "2026-11-13T23:46:00+00:00",
+   "tone": -0.567,
+   "toneLabel": "negative",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "2dfdc2257b7d",
+   "source": "Yahoo",
+   "headline": "How Digital Expansion At Walmart (WMT) Has Changed Its Investment Story",
+   "summary": "Walmart recently agreed to a record US$7.8 million settlement with Pennsylvania authorities over Child Labor Act violations and is rolling out new energy, AI shopping, and drone delivery initiatives while preparing to report third quarter earnings on 19 November 2026. A stronger focus on omnichannel services, advertising, membership programs, and partnerships such as Base Power is reshaping how Walmart earns beyond traditional in-store retailing. This article examines how Walmart’s expanding...",
+   "url": "https://finnhub.io/api/news?id=b379336dbd7c6ee1d11551c27551f994cf868aea49077174bcd3d9bd3fc0911e",
+   "publishedAt": "2026-11-13T23:19:51+00:00",
+   "tone": 0.095,
+   "toneLabel": "neutral",
+   "tickers": [
+    "WMT"
+   ]
+  },
+  {
+   "id": "95e47495eafa",
+   "source": "Yahoo",
+   "headline": "Boeing (BA) Is A Leading Player In The Global UAV Market",
+   "summary": "Boeing (NYSE:BA) has been highlighted as a leading player in the expanding global unmanned aerial vehicles market. The company features among key defense and logistics drone contractors as militaries and commercial operators increase UAV deployment worldwide. Industry researchers cite rising defense budgets and wider commercial drone use as core drivers of long term UAV demand. Boeing's push into UAV defense and drone logistics is only one part of a broader story for this aerospace group...",
+   "url": "https://finnhub.io/api/news?id=78ad2109d9b938a73538fc2a7772c9bb1c9f821c7b06dd1fd53c5f0fca97ea44",
+   "publishedAt": "2026-11-13T23:12:34+00:00",
+   "tone": 0.813,
+   "toneLabel": "positive",
+   "tickers": [
+    "BA"
+   ]
+  },
+  {
+   "id": "e600946384d1",
+   "source": "Yahoo",
+   "headline": "Why Intel Stock Slumped Today",
+   "summary": "It wasn't a good day for tech stocks generally.",
+   "url": "https://finnhub.io/api/news?id=cf73b339f6ee94bd531fa99dd101e301e6ccca89981288579b5569a5353b7e22",
+   "publishedAt": "2026-11-13T23:09:51+00:00",
+   "tone": -0.915,
+   "toneLabel": "negative",
+   "tickers": [
+    "INTC"
+   ]
+  },
+  {
+   "id": "ba1d2e65cd14",
+   "source": "Yahoo",
+   "headline": "DAS Technology Gives Retailers a Competitive Advantage During Microsoft Outage",
+   "summary": "SCOTTSDALE, Ariz., November 13, 2026--DAS Technology's platforms, including CDXP™, AI Engage, Power Text and Smart Quote, remained operational during the global Microsoft outage.",
+   "url": "https://finnhub.io/api/news?id=2fe5b0d9392dc93f02d539ed7b79469cd8a56cbaa8f9930deb6da138c2dfa58f",
+   "publishedAt": "2026-11-13T23:07:00+00:00",
+   "tone": 0.853,
+   "toneLabel": "positive",
+   "tickers": [
+    "MSFT"
+   ]
+  },
+  {
+   "id": "6c58f2467bbd",
+   "source": "Yahoo",
+   "headline": "Walmart, Target, and Nvidia Headline a Pivotal Week for Q3 Earnings",
+   "summary": "Nvidia, Target, and Walmart reflect three notable upcoming releases in the Q3 earnings season, with Nvidia's release wrapping up the reporting cycle for the Magnificent 7 group. Total Q3 earnings for the S&P 500 members that have reported are up +24.9% year-over-year on +13.7% higher revenues.",
+   "url": "https://finnhub.io/api/news?id=d524aa851304b2cfc14d971f72abb41c19862eaa54a4fb0dd20690d99712288f",
+   "publishedAt": "2026-11-13T23:00:00+00:00",
+   "tone": 0.038,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA",
+    "WMT"
+   ]
+  },
+  {
+   "id": "b62c0fa30f97",
+   "source": "Reuters",
+   "headline": "US Air Force responds to suspected drone activity over UK airbase",
+   "summary": "US Air Force responds to suspected drone activity over UK airbase  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTkFnODI2ZmFiRTJzS3N4eXI5TzJqbXpFV3lUM29neFFnSFJJOVlQcDNZR3B3MmczQWlTNDA4ZE13bXpQcm9yQXdROXIzWjBCRnZHNzhwQkxldWtuREJ2Q1BvOFEzcTZRN2tpQkxwb3dCLUtvdzZiUEsxbGNvXzVmWTUzMTVvdHl5cjZBX2Y1VTJzZlFjUnZrMjFrVWZXTWltM1hoSkxDMThmdDdEckQ1NVJMbTE0dXFQYXJMM3NEVQ?oc=5",
+   "publishedAt": "2026-11-13T22:34:42+00:00",
+   "tone": -0.127,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "1397a7945a03",
+   "source": "Yahoo",
+   "headline": "FRMI Stock Clocks Best Day Ever After Report Names Amazon As Project Matador Customer",
+   "summary": "The Financial Times on Friday reported that people familiar with the matter identified the previously unnamed customer as Amazon, marking a reversal of earlier investment talks that collapsed last December.",
+   "url": "https://finnhub.io/api/news?id=e9c3d7a9a57bdbc8925ca3c545cb5df329024d2b30ac2bfbb041e819042df3bb",
+   "publishedAt": "2026-11-13T22:23:59+00:00",
+   "tone": 0.39,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMZN"
+   ]
+  },
+  {
+   "id": "f4c55fdc84dc",
+   "source": "Yahoo",
+   "headline": "Nvidia's competitors pounce, and what GPU rental prices say about the AI race",
+   "summary": "Deirdre Bosa discusses hyperscalers stock rising in the wake of Nvidia's (NVDA) scandal, Tim Cook remaining loyal to Apple (AAPL) after Trump's post, and breaking down the AI trade. Deirdre Bosa then sits down with Silicon Data CEO Carmen Li to talk about turning AI computing into a commodity, 'Deirdre Bosa Live' airs every day at 4 p.m. Tune in daily to hear how the latest developments in AI and technology are reshaping companies, industries, and the global economy",
+   "url": "https://finnhub.io/api/news?id=1fc1d13f73bcf983a5eb38cc36c23709e38240955653931730eeff6a5cf85c19",
+   "publishedAt": "2026-11-13T22:15:51+00:00",
+   "tone": -0.319,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "e10fe9c8bab2",
+   "source": "Yahoo",
+   "headline": "Stock Market Today, Nov. 13: AMD Sinks 8.75% on Sector AI-Chip Sell-Off After Early Gains Reverse",
+   "summary": "On Nov. 13, 2026, the chipmaker's shares gave back early AI-driven gains as profit-taking swept through the sector and volume ran far above normal.",
+   "url": "https://finnhub.io/api/news?id=62ffc936d5523c28dae5f77b405391066807bd91136134dbfceac7467f9d2423",
+   "publishedAt": "2026-11-13T22:13:55+00:00",
+   "tone": -0.602,
+   "toneLabel": "negative",
+   "tickers": [
+    "AMD"
+   ]
+  },
+  {
+   "id": "1be600dfd1bf",
+   "source": "CNBC",
+   "headline": "Hackers stole $6.3 billion from Binance—2 habits that take 'a few seconds' can help you avoid similar traps",
+   "summary": "Researchers from the Digital Inquiry Group say that two habits that take just \"a few seconds up front\" can help keep you from being \"duped\" online.",
+   "url": "https://www.cnbc.com/make-it/2026/11/13/binance-hack-2-online-habits-that-can-help-you-avoid-scams-.html",
+   "publishedAt": "2026-11-13T22:06:55+00:00",
+   "tone": -0.018,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "03ee1badaa4a",
+   "source": "Yahoo",
+   "headline": "AMD Sinks 9%, Marvell Down 5% as Chip Rally Reverses and Treasury Yields Hit 5%",
+   "summary": "Key TakeawaysAMD fell 9% today, giving back part of this week’s roughly 30% gain after Nvidia CEO Jensen Huang resigned. That gain came from Nvidia’s turmoil, and fast money leaves fast.",
+   "url": "https://finnhub.io/api/news?id=d4354eca2ebffdf29738e9256947b9e7bc1ca1bdda86f64b4f139d24e42918cd",
+   "publishedAt": "2026-11-13T22:05:40+00:00",
+   "tone": -0.945,
+   "toneLabel": "negative",
+   "tickers": [
+    "AMD",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "f2c148b509dd",
+   "source": "Yahoo",
+   "headline": "Amodei Highlights Computing Power, Capex Dilemma Ahead Of Anthropic IPO",
+   "summary": "Dario Amodei warns that managing massive computing power and infrastructure spending is the company's deepest business challenge, in a fireside chat with JPMorgan chief Jamie Dimon.",
+   "url": "https://finnhub.io/api/news?id=cd37881c425e29b447f02d3b15664ad0e56e02239b38d38eaf0514e9cfc9e1b2",
+   "publishedAt": "2026-11-13T22:02:04+00:00",
+   "tone": 0.161,
+   "toneLabel": "neutral",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "bc542570cc64",
+   "source": "Reuters",
+   "headline": "US extends shipping law waiver 90 days, to allow freer movement of oil, commodities",
+   "summary": "US extends shipping law waiver 90 days, to allow freer movement of oil, commodities  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQ2lneWN6TzV1ZXctMUFVUlJSbVVDUG1vOWNYM1d2Z25QV1ZlSHdjSFVmblhtX1UzNEQySEYwdjZNZGw3VnZPc00yOTEtSWFsY25CRTRhaGZJM2tFamQ3cDl6YTEwbmJLQ1VmdHo2Y2hjVThnNjdiQTNfai1xTDhFcmFITF9WblV6Rlk1M0FnbDRFWXJjdXA5R19ERUZ2WjdyZmg4bUxPQ2RZcmhaUzZxRjIwQk5jTWw1cUwxVw?oc=5",
+   "publishedAt": "2026-11-13T21:46:42+00:00",
+   "tone": 0.582,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "ea8a3dab2b7e",
+   "source": "Yahoo",
+   "headline": "Walmart (WMT) Gains As Market Dips: What You Should Know",
+   "summary": "Walmart (WMT) concluded the recent trading session at $128.09, signifying a +1.51% move from its prior day's close.",
+   "url": "https://finnhub.io/api/news?id=9e1838e7cde73d917a34b9df07070b5c446addd0b59b94f3fb014be4f172d770",
+   "publishedAt": "2026-11-13T21:45:02+00:00",
+   "tone": 0.103,
+   "toneLabel": "neutral",
+   "tickers": [
+    "WMT"
+   ]
+  },
+  {
+   "id": "83f986640a83",
+   "source": "Yahoo",
+   "headline": "Broadcom Inc. (AVGO) Suffers a Larger Drop Than the General Market: Key Insights",
+   "summary": "In the closing of the recent trading day, Broadcom Inc. (AVGO) stood at $347.01, denoting a -4.76% move from the preceding trading day.",
+   "url": "https://finnhub.io/api/news?id=fdf58c40cc5bf31c5748690a57a240e39eb9512a7c5314e564d538b8805eb277",
+   "publishedAt": "2026-11-13T21:45:01+00:00",
+   "tone": -0.922,
+   "toneLabel": "negative",
+   "tickers": [
+    "AVGO"
+   ]
+  },
+  {
+   "id": "285eb2e2cc48",
+   "source": "Yahoo",
+   "headline": "SpaceX, Tesla Merger Puts Musk At Forefront Of 'Revolutionary' Tech, Analyst Says",
+   "summary": "Analyst touts the potential benefits of combining SpaceX's AI offerings, Tesla robotics as merger expectations grow.",
+   "url": "https://finnhub.io/api/news?id=56e3c15cb5e0203c0bbe1e5d64a25274af9b9b485628ed108288782343acd482",
+   "publishedAt": "2026-11-13T21:43:23+00:00",
+   "tone": 0.54,
+   "toneLabel": "positive",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "d54eb03e11f6",
+   "source": "Yahoo",
+   "headline": "Better Chip Stock: Nvidia vs. AMD",
+   "summary": "The things affecting Nvidia's stock price are not entirely related to the state of its business.",
+   "url": "https://finnhub.io/api/news?id=c7df6072aa83cfb4715db111f11ab2feb5da698bc1c378b8a57395d8144bbf87",
+   "publishedAt": "2026-11-13T21:43:02+00:00",
+   "tone": 0.909,
+   "toneLabel": "positive",
+   "tickers": [
+    "AMD",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "f999a338c242",
+   "source": "Reuters",
+   "headline": "US to resume flights after air traffic network failure sparks chaos",
+   "summary": "US to resume flights after air traffic network failure sparks chaos  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTTdvYllmb0pHUXVJVGNLUmFZb2I0WXpjZENubU52NW1nQlFJa1E4c3ZNTGhseUdiUzl0ZXJWa0pOSnR1ZDlRQk9FTHZlaWkyT0hLM1J3OW5tVUhIb0o4OWN5bDVVakF5T3lIanR1SVVMSkctSDlpb2loMWI2MENuWEIxTmhTcy1kZXdqSlRrdi1NMHlFSGtPRWEzdUFrMWR1c2wwNk9rRUUwOGpzajM0N1h2MndWVU9MYngyMVdudw?oc=5",
+   "publishedAt": "2026-11-13T21:38:00+00:00",
+   "tone": -0.9,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "2bb37d906f69",
+   "source": "Reuters",
+   "headline": "US Congress Democrats plot 'must-have' victories in 2027",
+   "summary": "US Congress Democrats plot 'must-have' victories in 2027  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbGhnekxYN2VBbGp2T1R2em5qV2ZVQ0FHa0tYWGRGNWZqUkoySzVhdU9yRUN0TzRWSXBsaHVla0dPT0U5RTAxMUlIcUloZzhFUnJ3MTNMQWMwWGt5QVNOTWxhTloweWpOb2JXcnd6cy1oblAxenl4WmtNNXJTaHc5QU1uUDE3cU1PbUJPUGUyLVpnaUxJRUxMeTE1SGRCWjNJeUU3NFM3WQ?oc=5",
+   "publishedAt": "2026-11-13T21:35:55+00:00",
+   "tone": 0.521,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "2718b56daf66",
+   "source": "Yahoo",
+   "headline": "SpaceX Could Announce a Deal for Tesla as Soon as December. Here's What It Would Do to SpaceX Stock.",
+   "summary": "Tesla would add around two-thirds of the combined sales. What would that do to the rocket maker's growth?",
+   "url": "https://finnhub.io/api/news?id=882d12c8e6596107fe416d9105b141280cd2c613f78b549cdc8c3972aa2571e8",
+   "publishedAt": "2026-11-13T21:32:02+00:00",
+   "tone": -0.093,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "d2f1825d8908",
+   "source": "Yahoo",
+   "headline": "Cerebras stock surges on Microsoft deal: What it means for Nvidia",
+   "summary": "Deirdre Bosa outlines how various AI companies are storming the AI castle and searching for Nvidia (NVDA) alternatives, such as Cerebras' (CBRS) deal with Microsoft (MSFT).",
+   "url": "https://finnhub.io/api/news?id=b749c047c398794b579255970d097d582b48edc9bbfde7b80ffe7cacfa983674",
+   "publishedAt": "2026-11-13T21:31:23+00:00",
+   "tone": 0.157,
+   "toneLabel": "neutral",
+   "tickers": [
+    "MSFT",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "d4f395698fcf",
+   "source": "Yahoo",
+   "headline": "Morgan Stanley Declares Dividends on Its Preferred Stock",
+   "summary": "NEW YORK, November 13, 2026--Morgan Stanley today declared a regular dividend on the outstanding shares of each of the following preferred stock issues:",
+   "url": "https://finnhub.io/api/news?id=8e13c789165bf3ab0da7d8ef9ca1fb609b2f06a3c730a91ce864f1b44b7a7a39",
+   "publishedAt": "2026-11-13T21:30:00+00:00",
+   "tone": -0.13,
+   "toneLabel": "neutral",
+   "tickers": [
+    "MS"
+   ]
+  },
+  {
+   "id": "db2cec2cbd7f",
+   "source": "Yahoo",
+   "headline": "JPMorganChase Declares Preferred Stock Dividends",
+   "summary": "NEW YORK, November 13, 2026--JPMorgan Chase & Co. (NYSE: JPM) (\"JPMorganChase\" or the \"Firm\") has declared dividends on the outstanding shares of the Firm’s Series II, OO and PP preferred stock. Information can be found on the Firm’s Investor Relations website at https://www.jpmorganchase.com/ir/news.",
+   "url": "https://finnhub.io/api/news?id=d3bb399a9d2d6eb8734e840c388ae79a51d0b1a4c91e8dc1139c8479069679fb",
+   "publishedAt": "2026-11-13T21:20:00+00:00",
+   "tone": -0.015,
+   "toneLabel": "neutral",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "aafe3896628e",
+   "source": "Yahoo",
+   "headline": "AMD Stock Looks Poised to Revisit Its All-Time Highs",
+   "summary": "Advanced Micro Devices’ (AMD) stock looks poised to revisit its all-time highs. The market has already bought into its growth story. Now, the next opportunity may lie in how much of that growth turns into profits. After a triple-digit gain in 2026, the stock has pulled back from its October record highs, but the fundamentals help explain much of that rally. In its third-quarter earnings report, released on November 3, the Santa Clara, California-based chipmaker reported that its Data Center reve",
+   "url": "https://finnhub.io/api/news?id=98e125de089b200da0bf67210ca3f9734d84ef2bf83e9127721ea03b430e4eed",
+   "publishedAt": "2026-11-13T21:16:00+00:00",
+   "tone": 0.684,
+   "toneLabel": "positive",
+   "tickers": [
+    "AMD"
+   ]
+  },
+  {
+   "id": "2bc57030a04d",
+   "source": "Reuters",
+   "headline": "Iran's IRGC says two tankers hit sea mines in Hormuz",
+   "summary": "Iran's IRGC says two tankers hit sea mines in Hormuz  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWVUydG1mRVVtRzVScWR6N19NejF5VXVuUDlqaGxSSHdJN1hmYlBtZHRJMDNWbUJVSUMyRTBRM252dzFjSmtZOHlLYmg4Y2pqLXVrSndiS3dVLWVBa0tESWJtZW05MUprVkpXTE5sQXV0aXJRR1dQQ3FmWHk0SHpoSmQzRUZmRFZCaXdjLURicWxtRk1tSnZ1dEM2UTI1b1RmTzdwRw?oc=5",
+   "publishedAt": "2026-11-13T21:14:55+00:00",
+   "tone": -0.864,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "a9f66ade0440",
+   "source": "Yahoo",
+   "headline": "A $1,999 Sellout. What China Renaissance Sees in Apple (AAPL)",
+   "summary": "We just published a list of the Buy Alert: 10 Stocks Analysts Upgraded on Wednesday and Apple (NASDAQ:AAPL) ranked 10th on this list. October consumer prices rose 0.4%, the third straight monthly gain of at least 0.4%, according to data reported by Reuters. Economists polled by the outlet had expected 0.3%. Core inflation, which excludes […]",
+   "url": "https://finnhub.io/api/news?id=983dcf7597b733fd15c5c76fa71ee7fc2ac93d041eaa8ae602c66611345117d7",
+   "publishedAt": "2026-11-13T21:13:10+00:00",
+   "tone": 0.039,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL"
+   ]
+  },
+  {
+   "id": "5ba199a6d4db",
+   "source": "Yahoo",
+   "headline": "Alphabet (GOOGL) Faces Uber Deal Talk, Space Chip Test And €1.66 Billion Fine",
+   "summary": "Alphabet (NasdaqGS:GOOGL) is reportedly exploring a potential tie-up with Uber that could combine the rideshare network with Waymo's autonomous technology. Google has unveiled \"Project Suncatcher\", an orbital experiment designed to test its AI accelerator chips in space-based data centers. The group faces renewed legal attention around a €1.66b EU advertising fine while Tesla's robotaxis now operate ahead of Waymo in Texas. Alphabet has launched its first dual-currency bond issuance in Asia,...",
+   "url": "https://finnhub.io/api/news?id=de8892ffbae6467e690f5b019f88cf81ff687af9eef424277c82c14142a477c8",
+   "publishedAt": "2026-11-13T21:10:21+00:00",
+   "tone": 0.154,
+   "toneLabel": "neutral",
+   "tickers": [
+    "GOOGL",
+    "TSLA"
+   ]
+  },
+  {
+   "id": "574d04120d0a",
+   "source": "Yahoo",
+   "headline": "Intel CEO’s warning offers a 2027 signal for Micron investors",
+   "summary": "The bigger problem isn’t on the price tag.",
+   "url": "https://finnhub.io/api/news?id=705cc8eb8abfeed335724b851d3594a42049d7d72a417303c38b2e3716f4b2ea",
+   "publishedAt": "2026-11-13T21:06:46+00:00",
+   "tone": 0.772,
+   "toneLabel": "positive",
+   "tickers": [
+    "INTC"
+   ]
+  },
+  {
+   "id": "b438c648470d",
+   "source": "CNBC",
+   "headline": "They train people to avoid 'honeypot' scams—here are the common red flags they spot: 'It feels so good to be wanted'",
+   "summary": "Corporate security firms train companies and their employees on strategies for being vigilant against honeypots, and other social engineering attacks.",
+   "url": "https://www.cnbc.com/make-it/2026/11/13/honeypot-scam-red-flags.html",
+   "publishedAt": "2026-11-13T21:06:25+00:00",
+   "tone": 0.006,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "ec3522d528b4",
+   "source": "Reuters",
+   "headline": "Yemen's Houthis say they fired missiles at Saudi forces in Jazan",
+   "summary": "Yemen's Houthis say they fired missiles at Saudi forces in Jazan  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPM1hhZ2pySkp3SHdfNllHQ2VsLUFteHIxRlFGVVR3QXFIbXJZX01HQkZ5Ml96SjBMSkJkOHh6TjNIakZkR3k5ME1WY0RyYTNBQkxvaF9qYTVtNm5GVEFqckVEalRReVdXUFJKZVhlSXEzcnotRFMyVVBMZllhdmJxUFBwRjByVExHbGhnR3luTDVqTlRxOG5TTjFVbmdBRmM?oc=5",
+   "publishedAt": "2026-11-13T20:54:19+00:00",
+   "tone": -0.756,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "316e478f96b6",
+   "source": "Yahoo",
+   "headline": "JPMorgan’s latest filing reveals a bigger Bitcoin footprint",
+   "summary": "JPMorgan’s latest SEC filing shows growing positions in Bitcoin-linked stocks and funds, including a big jump in one company.",
+   "url": "https://finnhub.io/api/news?id=bf5b135c3e89544fd570e4a4d42e8fff5551a6d0239f228112e792cf16ec9c02",
+   "publishedAt": "2026-11-13T20:45:00+00:00",
+   "tone": 0.093,
+   "toneLabel": "neutral",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "0f7ec5b27d80",
+   "source": "Yahoo",
+   "headline": "Boeing Booked 165 Jet Orders. How Much It Matters for Jim Cramer’s Trust Holding?",
+   "summary": "We just published the list of Inside Jim Cramer’s Charitable Trust: 10 Stocks He Actually Owns, and The Boeing Company (NYSE:BA) ranked 8th on this list. Jim Cramer started his Charitable Trust in 2005 with $3 million of his own money. According to CNBC, Cramer’s own investment is at risk, and the trust distributes its […]",
+   "url": "https://finnhub.io/api/news?id=d145798bfd10a60db5b441074fae04912cac074b3cb136354b1d940885ce9998",
+   "publishedAt": "2026-11-13T20:40:42+00:00",
+   "tone": -0.001,
+   "toneLabel": "neutral",
+   "tickers": [
+    "BA"
+   ]
+  },
+  {
+   "id": "242ea4dc1027",
+   "source": "Yahoo",
+   "headline": "Microsoft vs. Salesforce: One Software Stock Remains a Top Pick, the Other Has Something to Prove, Says RBC",
+   "summary": "Microsoft (NASDAQ:MSFT) and Salesforce (NYSE:CRM) sell to many of the same corporate customers, and both are betting that AI agents, software that can carry out tasks on its own, will become a major source of revenue. Today, Microsoft got an uncomfortable reminder of how much those customers rely on it. A global outage that started Thursday afternoon knocked Outlook and parts of Teams, Copilot and other Microsoft 365 services offline for millions of users, and it dragged into Friday after the fi",
+   "url": "https://finnhub.io/api/news?id=4f9d14ad1573c1459cf96492bbc0e7d22a10d8bd537248bf5265663a56edc4df",
+   "publishedAt": "2026-11-13T20:39:40+00:00",
+   "tone": 0.886,
+   "toneLabel": "positive",
+   "tickers": [
+    "MSFT"
+   ]
+  },
+  {
+   "id": "14b56d99d6c3",
+   "source": "Yahoo",
+   "headline": "America's Greatest Opportunities: The Earnings Gap That Put Tesla Stock At Ludicrous Speed",
+   "summary": "An earnings gap changed the fundamental story of Tesla. The chart allowed investors to capitalize on the historic move.",
+   "url": "https://finnhub.io/api/news?id=bd3264469fb7cc9daeea502268f00b7dce690455fba35d547142f9d56e08e299",
+   "publishedAt": "2026-11-13T20:36:16+00:00",
+   "tone": -0.893,
+   "toneLabel": "negative",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "c0b06de40bab",
+   "source": "Yahoo",
+   "headline": "Meta tests prediction-market app for employees, WSJ reports",
+   "summary": "Investing.com -- Meta Platforms is testing an internal prediction-market app called Takes, allowing employees to predict the outcomes of events using virtual points rather than real money, The Wall Street Journal reported Friday.",
+   "url": "https://finnhub.io/api/news?id=8b1c1f045cdbbffaad8f9c103ff75da573581d8bc2016334dd3b10f02de62a5f",
+   "publishedAt": "2026-11-13T20:30:17+00:00",
+   "tone": 0.041,
+   "toneLabel": "neutral",
+   "tickers": [
+    "META"
+   ]
+  },
+  {
+   "id": "b929d7f21c8f",
+   "source": "Yahoo",
+   "headline": "SpaceX Tesla Merger Talks Advance Toward a $3.5 Trillion Deal",
+   "summary": "SpaceX and Tesla merger talks are moving forward, with an announcement possible as soon as December or early 2027, according to Bloomberg. If SpaceX purchases Tesla, the combined company would…",
+   "url": "https://finnhub.io/api/news?id=12a8f320a57cf8e78070d092aba8039c0a4be7bf075c8476479d303990f7b3bc",
+   "publishedAt": "2026-11-13T20:29:33+00:00",
+   "tone": 0.834,
+   "toneLabel": "positive",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "9dc18fb8ed0c",
+   "source": "Yahoo",
+   "headline": "4 Takeaways From Dario Amodei’s Anthropic IPO Chat With Jamie Dimon",
+   "summary": "Anthropic CEO Dario Amodei makes the case for taking part in the company’s initial public offering in a chat with JPMorgan Chase CEO Jamie Dimon.",
+   "url": "https://finnhub.io/api/news?id=517dafcd471cec910b047b1576f17c8de5da06a5f8a0921a5e5b21ec99c02ca4",
+   "publishedAt": "2026-11-13T20:28:00+00:00",
+   "tone": 0.027,
+   "toneLabel": "neutral",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "8bda49c90925",
+   "source": "Yahoo",
+   "headline": "Top Stock Reports for Visa, ExxonMobil & Pfizer",
+   "summary": "Today's Research Daily features new research reports on 16 major stocks, including Visa Inc. (V), ExxonMobil Holdings Corporation (XOM) and Pfizer Inc. (PFE).",
+   "url": "https://finnhub.io/api/news?id=2429bec5c635e0eb3058d4e3d7d36eb30bb1127c0db5d6a77cd1b0cda284e7ce",
+   "publishedAt": "2026-11-13T20:19:00+00:00",
+   "tone": -0.001,
+   "toneLabel": "neutral",
+   "tickers": [
+    "PFE",
+    "XOM"
+   ]
+  },
+  {
+   "id": "3e99c8facc83",
+   "source": "Yahoo",
+   "headline": "JPMorgan’s Bitcoin and Crypto-Linked Holdings Approach $1 Billion",
+   "summary": "The bank’s Q3 13F shows roughly $981 million across Bitcoin ETFs, Strategy and Coinbase—likely over $1 billion counting Robinhood and miners.",
+   "url": "https://finnhub.io/api/news?id=87ee340a6f29761f4a7b15916c4a8103ce24dd945af53c5534f5bb69d9e76229",
+   "publishedAt": "2026-11-13T20:16:03+00:00",
+   "tone": 0.079,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COIN",
+    "JPM"
+   ]
+  },
+  {
+   "id": "e3153907701b",
+   "source": "Yahoo",
+   "headline": "Bank of America resets AMD stock price target as Nvidia CEO exits",
+   "summary": "The biggest clue wasn’t in the price target.",
+   "url": "https://finnhub.io/api/news?id=30d5e56e39b9b3085abfc759068a687fe117f3797294f390c560712d7fb19379",
+   "publishedAt": "2026-11-13T20:13:00+00:00",
+   "tone": -0.191,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMD",
+    "BAC",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "65056e7eee64",
+   "source": "Yahoo",
+   "headline": "Goldman Sachs (GS) Backs $270 Million Stablecoin Push With Project Faro",
+   "summary": "Goldman Sachs Group (NYSE:GS), Citigroup, and several large banks are committing $270m to launch a new stablecoin project called Project Faro. Project Faro is designed as a U.S. dollar pegged stablecoin targeting both institutional clients and retail users across global markets. The consortium aims to compete directly with established crypto native stablecoins within a digital asset sector estimated at about $290b. This Project Faro push into a U.S. dollar stablecoin is a key development to...",
+   "url": "https://finnhub.io/api/news?id=290a831b893a911e772360df387c3c062fa085a99274986b7a07c110495fd49f",
+   "publishedAt": "2026-11-13T20:07:43+00:00",
+   "tone": 0.595,
+   "toneLabel": "positive",
+   "tickers": [
+    "GS"
+   ]
+  },
+  {
+   "id": "9f8e0eb81c67",
+   "source": "CNBC",
+   "headline": "Hassett denies report he's leaving White House: 'Not true'",
+   "summary": "National Economic Council Director Kevin Hassett poured cold water on a report that he's expected to leave the White House in the coming weeks.",
+   "url": "https://www.cnbc.com/2026/11/13/kevin-hassett-white-house-nec.html",
+   "publishedAt": "2026-11-13T19:59:17+00:00",
+   "tone": -0.189,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "a21ab132554f",
+   "source": "Yahoo",
+   "headline": "Walt Disney vs. Netflix: Which Is the Better Entertainment Stock to Buy Going Into 2027?",
+   "summary": "Netflix commands a premium forward P/E, while Disney's parks, streaming, and licensing empire trades at a far lower sales multiple. Which valuation holds up better for the years ahead?",
+   "url": "https://finnhub.io/api/news?id=d87600c7cbc1400454804ce257d6990d96cc8bf17639bd8c2798be9eb633e9ae",
+   "publishedAt": "2026-11-13T19:54:40+00:00",
+   "tone": 0.022,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS",
+    "NFLX"
+   ]
+  },
+  {
+   "id": "fb327e134618",
+   "source": "CNBC",
+   "headline": "Many people ignore these ‘early red flags’ in romance scams, says Harvard-trained psychologist",
+   "summary": "Psychologist and relationship expert Dr. Sabrina Romanoff shares her best advice for how to spot a romance scammer.",
+   "url": "https://www.cnbc.com/make-it/2026/11/13/psychologist-many-people-ignore-5-early-red-flags-in-romance-scams.html",
+   "publishedAt": "2026-11-13T19:48:12+00:00",
+   "tone": -0.11,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "6439ae31ffa9",
+   "source": "Yahoo",
+   "headline": "Elon Musk's SpaceX–Tesla Merger 'Almost Inconceivable' to Avoid, Biographer Says",
+   "summary": "Elon Musk’s biographer believes Tesla and SpaceX are destined to merge, arguing their increasingly intertwined technology ambitions make keeping them separate almost impossible. “It’s almost inconceivable that you would not merge these companies now,” Walter Isaacson, a Tulane professor and...",
+   "url": "https://finnhub.io/api/news?id=e4f61a0f21d946c7c70be5b67c86c47ab73b015e44629fa000d0d7e5976807fb",
+   "publishedAt": "2026-11-13T19:45:06+00:00",
+   "tone": -0.511,
+   "toneLabel": "negative",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "4034e9bb9caa",
+   "source": "Yahoo",
+   "headline": "SpaceX’s Big Day: A Historic Starship Launch, a Tesla Merger Under Scrutiny, and a $74 Billion AI Bet",
+   "summary": "SpaceX is preparing to try catching both Starship stages with its launch tower, right after announcing more than $74 billion in new AI campuses, but a possible Tesla merger now has a skeptic in Texas’ incoming attorney general.",
+   "url": "https://finnhub.io/api/news?id=d101675df9355612ed36c32744d8ae048277bdaa71234cfcbe33ab3f90f0e800",
+   "publishedAt": "2026-11-13T19:45:02+00:00",
+   "tone": 0.259,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSLA"
+   ]
+  },
+  {
+   "id": "9b949ae48a2a",
+   "source": "CNBC",
+   "headline": "Nvidia hasn’t selected search firm for permanent Huang replacement, board tells CNBC",
+   "summary": "Speculation has swirled around who Nvidia's board will select to permanently succeed Huang.",
+   "url": "https://www.cnbc.com/2026/11/13/nvidia-huang-ceo-replacement-search.html",
+   "publishedAt": "2026-11-13T19:42:52+00:00",
+   "tone": -0.062,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "bb4cb9bf5438",
+   "source": "Yahoo",
+   "headline": "A 67-Year-Old With $750,000 in Pfizer, Altria and Realty Income Collects $3,575 a Month in Dividends. How Safe Is Each Check?",
+   "summary": "Key TakeawaysA $750,000 portfolio split evenly across Pfizer, Altria and Realty Income pays $42,905 a year in dividends at current prices, or $3,594 a month. Altria and Realty Income cover their dividends with room to spare, at 78% of free cash flow and 75% of AFFO.",
+   "url": "https://finnhub.io/api/news?id=03d08e0b82a3f4f4fd1ef3e155b4ab5bd3f795dd0a5092f54f09525476fd900c",
+   "publishedAt": "2026-11-13T19:35:31+00:00",
+   "tone": -0.001,
+   "toneLabel": "neutral",
+   "tickers": [
+    "PFE"
+   ]
+  },
+  {
+   "id": "a4bd5ec51161",
+   "source": "Yahoo",
+   "headline": "Pfizer Just Raised Its 2026 Revenue Forecast by $1.5 Billion. Is the High-Yield Stock a Buy Right Now?",
+   "summary": "Pfizer isn't out of the woods yet, but it is proving it remains a well-run drugmaker.",
+   "url": "https://finnhub.io/api/news?id=f8fb9bdadef8c522f59d826e6e2f1e204803937159c5bfe30f8da0f98fe56868",
+   "publishedAt": "2026-11-13T19:35:00+00:00",
+   "tone": 0.181,
+   "toneLabel": "neutral",
+   "tickers": [
+    "PFE"
+   ]
+  },
+  {
+   "id": "b4e168acab66",
+   "source": "Yahoo",
+   "headline": "JardogsHealth Forms Strategic Advisory Council with Leaders from Discover Card, MTV, DoorDash and Apple",
+   "summary": "JardogsHealth, the AI operating layer for healthcare, today announced the formation of the JardogsHealth Strategic Advisory Council, four executives who reached the top of financial services, media, startups and technology. The council will advise JardogsHealth leadership on long-term strategy, growth, product direction and brand as the company brings the JardogsHealth Care Platform to more healthcare organizations. Its members bring candid, independent perspective from building and leading comp",
+   "url": "https://finnhub.io/api/news?id=c99e731e60cdb317644485ff1663b58a20953d1d9f778163fce7d13394ec8432",
+   "publishedAt": "2026-11-13T19:29:00+00:00",
+   "tone": 0.058,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL"
+   ]
+  },
+  {
+   "id": "e7dde9536c39",
+   "source": "Yahoo",
+   "headline": "How United Airlines' AI bot booking ban could backfire",
+   "summary": "Kelly Intelligence Founder, CEO, and CCO Kevin Kelly and his panel of experts weigh in on Today's panel consists of Yahoo Finance Julie Hyman, Wall Street Veteran and \"The Buy Side\" Author Turney Duff, Argent Capital Management Portfolio Manager Jed Ellerbroek, and Cleo Capital Managing Director Sarah Kunst,",
+   "url": "https://finnhub.io/api/news?id=d53bede4f79f36899e04df8aff865bf05193d61231c94022a94ebb59469e74f4",
+   "publishedAt": "2026-11-13T19:21:00+00:00",
+   "tone": -0.314,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UAL"
+   ]
+  },
+  {
+   "id": "50705fd5ba8c",
+   "source": "Yahoo",
+   "headline": "Mastercard (MA) Opens Singapore Innovation Centre With 250 New Specialist Roles",
+   "summary": "Mastercard (NYSE:MA) has opened its largest Asia Pacific Innovation Centre in Singapore to support regional digital commerce and AI work. The Singapore facility is set to create more than 250 specialist roles across AI, cybersecurity, and data-focused functions. The hub is designed to drive collaboration between Mastercard and partners across finance, retail, technology, and the public sector in Asia Pacific. Mastercard’s new Singapore Innovation Centre is a major step in its Asia Pacific AI...",
+   "url": "https://finnhub.io/api/news?id=8ddd9caac7fc33c3ecb41c0e2bb2ec532e306d648853595faedec537e1f4f04b",
+   "publishedAt": "2026-11-13T19:09:34+00:00",
+   "tone": 0.773,
+   "toneLabel": "positive",
+   "tickers": [
+    "MA"
+   ]
+  },
+  {
+   "id": "eb93fe8fb583",
+   "source": "Yahoo",
+   "headline": "If You'd Invested $1,000 in ExxonMobil 1 Year Ago, Here's How Much You'd Have Today",
+   "summary": "Oil prices helped lift ExxonMobil's earnings, but there's more to its growth story than expensive crude.",
+   "url": "https://finnhub.io/api/news?id=9553b703cf3b7ffc5f8f105bc8bcc7302d3ec4d926bf98dffdc54169cf56d7ba",
+   "publishedAt": "2026-11-13T19:02:02+00:00",
+   "tone": 0.029,
+   "toneLabel": "neutral",
+   "tickers": [
+    "XOM"
+   ]
+  },
+  {
+   "id": "f440b39a10d6",
+   "source": "Reuters",
+   "headline": "Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack",
+   "summary": "Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTGE3d2YwNy1ONlliXzNCVDNiZU01WlB3YUdPMEZwOHJpNS1UWEtvZ3hhM1hWOGN2REsxbEw1SzNERlk3eTVfUTdlOEFJYVAwNXVjT25jczJDRE9iTE5DYjlxNnQ3UlJRVDlRdU1UeHhNZ1NUWnBVU2w2TjZLWTg5emhUZ2RVVXowVWZuMnBiTlhtWlhxUDkxODkzNVlfeGlGbVlYV0todlRQc1JZSXIyVXpsVU1WRDFFU2QxTA?oc=5",
+   "publishedAt": "2026-11-13T18:58:37+00:00",
+   "tone": 0.751,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "1e5aa56693a9",
+   "source": "Yahoo",
+   "headline": "Goldman Sachs sees upside for S&P 500 in 2027 — even as earnings growth slows",
+   "summary": "Here's what to know about Oppenheimer's the equity bull market predicitions.",
+   "url": "https://finnhub.io/api/news?id=85298ab6317f61408b464f986c013aee6543d1693c727cd9ead35f6d09b95037",
+   "publishedAt": "2026-11-13T18:56:27+00:00",
+   "tone": -0.827,
+   "toneLabel": "negative",
+   "tickers": [
+    "GS"
+   ]
+  },
+  {
+   "id": "2660a2a7d853",
+   "source": "Yahoo",
+   "headline": "Dear Disney Stock Fans, Mark Your Calendars for November 17",
+   "summary": "Disney's Q4 earnings are around the corner, and there's more than a few storylines worth watching beyond the numbers.",
+   "url": "https://finnhub.io/api/news?id=36739316c9da5f60a3b0aa767758e99892950fd3fba681e8f4f4f687c55cf8a0",
+   "publishedAt": "2026-11-13T18:50:37+00:00",
+   "tone": -0.022,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS"
+   ]
+  },
+  {
+   "id": "f7901623247b",
+   "source": "Yahoo",
+   "headline": "AMD or Intel: 1 Chip Stock Is the Clear Winner",
+   "summary": "It's really not close.",
+   "url": "https://finnhub.io/api/news?id=05f652161992a70de4824bc57bd5becfea734e89113ca033fe35c6b3110a74c6",
+   "publishedAt": "2026-11-13T18:50:00+00:00",
+   "tone": 0.009,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMD",
+    "INTC"
+   ]
+  },
+  {
+   "id": "cf3df7050bac",
+   "source": "CNBC",
+   "headline": "Goldman Sachs looks to cash in on Anthropic's IPO, twice. Here's how and who else wants to",
+   "summary": "While co-leading the offering, Goldman also wants a shot at managing the billions of dollars in new wealth that the deal creates. It's not the only one.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/13/goldman-sachs-looks-to-cash-in-on-anthropics-ipo-twice-heres-how-and-who-else-wants-to.html",
+   "publishedAt": "2026-11-13T18:44:05+00:00",
+   "tone": 0.015,
+   "toneLabel": "neutral",
+   "tickers": [
+    "GS"
+   ]
+  },
+  {
+   "id": "82b667aa356a",
+   "source": "Yahoo",
+   "headline": "Jensen Huang fallout at Nvidia, Anthropic ready for IPO, United bans AI agents",
+   "summary": "Host and Kelly Intelligence Founder, CEO & CCO, Kevin Kelly, and his panel of experts weigh in on what comes next for Jensen Huang and Nvidia (NVDA), and United Airlines (UAL) banning AI agents, citing data concerns and federal regulations. Plus, what questions remain for Anthropic (ANTH.PVT) as it prepares for an IPO?Today's panel includes Yahoo Finance's Julie Hyman,Wall Street Veteran and \"The Buy Side\" Author Turney Duff,Argent Capital Management Portfolio Manager Jed Ellerbroek, and Cleo Capital Managing Director Sarah Kunst.",
+   "url": "https://finnhub.io/api/news?id=27812cb7dd12f487d092de8097e4eed1f102e53168b09cb988f043e06a56048a",
+   "publishedAt": "2026-11-13T18:43:27+00:00",
+   "tone": -0.005,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA",
+    "UAL"
+   ]
+  },
+  {
+   "id": "e46875d25e8e",
+   "source": "Yahoo",
+   "headline": "General Motors vs. Tesla: Which Is the Better Automotive Stock to Buy Going Into 2027?",
+   "summary": "GM trades at 6.4x forward earnings while Tesla commands 236.8x, yet only one carries a debt-to-equity ratio near 2.1x. The gap raises a question about which risk investors are really paying for.",
+   "url": "https://finnhub.io/api/news?id=9d3b1472fece2117d4ede6f788d836efe28caf70ba6b18e04881f23b97499d2d",
+   "publishedAt": "2026-11-13T18:37:50+00:00",
+   "tone": 0.046,
+   "toneLabel": "neutral",
+   "tickers": [
+    "GM",
+    "TSLA"
+   ]
+  },
+  {
+   "id": "5086f00b6d44",
+   "source": "Yahoo",
+   "headline": "Nvidia CEO out — 10 stocks to buy before S&P 500 hits 8,000",
+   "summary": "Nvidia (NVDA) is down over 30% from the highs with CEO Jensen Huang stepping down, yet Blanke Schein Wealth Management CIO Robert Schein says the stock is still a buy. He also names Broadcom (AVGO), Apple (AAPL), and Eli Lilly (LLY) among his top picks before the S&P 500 reaches 8,000.",
+   "url": "https://finnhub.io/api/news?id=952f5dd8de3aa9259eed434e1a7dc3c3c3cb47ae77f73d12fff24d99c7a8597e",
+   "publishedAt": "2026-11-13T18:29:38+00:00",
+   "tone": 0.02,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL",
+    "AVGO",
+    "LLY",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "0091b7fea747",
+   "source": "Yahoo",
+   "headline": "JPMorgan Stock Slid After Reports That Senate Democrats Plan a New Investigation Into Jamie Dimon's Bank Over Its Jeffrey Epstein Relationship. Here's Why That Political Risk Could Weigh on JPM Shares.",
+   "summary": "JPMorgan Chase and CEO Jamie Dimon have been scrutinized over their relationship with disgraced sex offender Jeffrey Epstein, who died in 2019.",
+   "url": "https://finnhub.io/api/news?id=24adf1130402a2e35d7e0c8ed55b27ee9c02b2bffa6ac0d18e085f0650325280",
+   "publishedAt": "2026-11-13T18:20:02+00:00",
+   "tone": -0.943,
+   "toneLabel": "negative",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "20e3b411f35e",
+   "source": "Yahoo",
+   "headline": "Anthropic CEO Dario Amodei aims to 'underpromise and overdeliver' as IPO valuation drops below $2T hopes",
+   "summary": "Anthropic CEO Dario Amodei spoke with JPMorgan Chase CEO Jamie Dimon Friday as the artificial intelligence startup prepares for one of the largest initial public offerings in history.",
+   "url": "https://finnhub.io/api/news?id=1f09ad6d9f0435cfb54c95c89db60a255c5a24774df51de42ff0a071fe67ae5e",
+   "publishedAt": "2026-11-13T18:12:34+00:00",
+   "tone": -0.903,
+   "toneLabel": "negative",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "a9f2557b8126",
+   "source": "CNBC",
+   "headline": "The common theme driving stocks lower — plus, 3 trades and another we want to make",
+   "summary": "The Investing Club holds its \"Morning Meeting\" every weekday at 10:20 a.m. ET.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/13/the-common-theme-driving-stocks-lower-plus-3-trades-and-another-we-want-to-make.html",
+   "publishedAt": "2026-11-13T17:57:03+00:00",
+   "tone": -0.291,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "3ca0bc58440a",
+   "source": "Yahoo",
+   "headline": "S&P Global Ratings upgrades RTX to A- on strong demand and debt reduction",
+   "summary": "Investing.com -- S&P Global Ratings upgraded Rtx Corp's (NYSE:RTX) issuer and unsecured issue-level credit ratings to ‘A-’ from ‘BBB+’ on Friday, citing robust aerospace and defense demand alongside steady balance-sheet repair. The agency assigned a stable outlook and affirmed RTX’s ‘A-2’ short-term rating, projecting that the company will keep adjusted debt to EBITDA below 2.5x and funds from operations to debt above 30%.",
+   "url": "https://finnhub.io/api/news?id=2091f084f94d3ce6f7099bd23c04119eceffbf9e31dbef0df263f450516bed75",
+   "publishedAt": "2026-11-13T17:55:21+00:00",
+   "tone": 0.925,
+   "toneLabel": "positive",
+   "tickers": [
+    "RTX"
+   ]
+  },
+  {
+   "id": "8b8830700f27",
+   "source": "Yahoo",
+   "headline": "Intel Stocks Fall 4.55% as Nvidia Shake-Up Clouds Its $5 Billion Partner Bet",
+   "summary": "Nvidia's stake, bought at $23.28 a share, is now worth about $12.5 billion, but the next round of joint deals looks less certain.",
+   "url": "https://finnhub.io/api/news?id=f7b77f0865e6470dfcb42aa1dfc38148c52b4f6d393495385dfa78598540785c",
+   "publishedAt": "2026-11-13T17:53:51+00:00",
+   "tone": -0.955,
+   "toneLabel": "negative",
+   "tickers": [
+    "INTC",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "8c6950fa9d86",
+   "source": "Yahoo",
+   "headline": "Amodei: Anthropic ‘not super fussed’ with timing of IPO",
+   "summary": "Anthropic (ANTH.PVT) CEO Dario Amodei sits down with JPMorgan Chase (JPM) CEO Jamie Dimon to discuss the timing of the company’s IPO and its guiding “underpromise and overdeliver” philosophy.",
+   "url": "https://finnhub.io/api/news?id=9a55b7dabda0ae84e06ed347218c369663a29cb6dd7e216d9ad69967cd841f88",
+   "publishedAt": "2026-11-13T17:50:42+00:00",
+   "tone": 0.045,
+   "toneLabel": "neutral",
+   "tickers": [
+    "JPM"
+   ]
+  },
+  {
+   "id": "9f18bf639d92",
+   "source": "Yahoo",
+   "headline": "Chevron Bets $7B on Venezuela While Exxon Mobil Plays It Safe: One Has a Distinct Edge Now",
+   "summary": "Oil near $97 made both supermajors look brilliant this quarter, yet one is pouring billions into a country that has seized foreign assets before while the other says it is in no rush. Which bet fits an income investor?",
+   "url": "https://finnhub.io/api/news?id=f479152764a0dfc82c2ba48c8be4ed4af425689215ce2774c1b066927a73b40e",
+   "publishedAt": "2026-11-13T17:45:15+00:00",
+   "tone": 0.133,
+   "toneLabel": "neutral",
+   "tickers": [
+    "CVX",
+    "XOM"
+   ]
+  },
+  {
+   "id": "b35eda1c500c",
+   "source": "Yahoo",
+   "headline": "Goldman Sachs Names Top Picks in Business & Information Services Sector",
+   "summary": "Investing.com -- Goldman Sachs has identified five leading stocks in the Americas business and information services sector, highlighting companies with strong growth momentum and expanding profit margins. The selections span uniform services, data storage, credit ratings, and professional information providers, with analysts pointing to artificial intelligence adoption and infrastructure buildout as key growth drivers across multiple names.",
+   "url": "https://finnhub.io/api/news?id=cae30fac56ba098c527e99b826e17886723e0be4443314848b46792333a023c8",
+   "publishedAt": "2026-11-13T17:26:18+00:00",
+   "tone": 0.475,
+   "toneLabel": "neutral",
+   "tickers": [
+    "GS"
+   ]
+  },
+  {
+   "id": "1c318a1cc835",
+   "source": "Yahoo",
+   "headline": "Coinbase Strengthens Crypto Custody With National Trust Launch",
+   "summary": "Coinbase strengthens institutional crypto custody with its National Trust Company launch, aiming to bridge digital assets and traditional finance.",
+   "url": "https://finnhub.io/api/news?id=05fd01308bd1445800912f2e0d7c3fdbf97d91bf00ea27ff2fb0890a3ccfd53b",
+   "publishedAt": "2026-11-13T17:20:00+00:00",
+   "tone": 0.779,
+   "toneLabel": "positive",
+   "tickers": [
+    "COIN"
+   ]
+  },
+  {
+   "id": "19172ffb2121",
+   "source": "Yahoo",
+   "headline": "Bank of America Flags New Risk in Asian Stocks",
+   "summary": "Government intervention can turn a selloff around in hours.",
+   "url": "https://finnhub.io/api/news?id=1818e8e8b1b1311f25f843be2df4491f0a6522ad4677576ef398e61023122a36",
+   "publishedAt": "2026-11-13T17:19:00+00:00",
+   "tone": -0.157,
+   "toneLabel": "negative",
+   "tickers": [
+    "BAC"
+   ]
+  },
+  {
+   "id": "f0d39709da2b",
+   "source": "Yahoo",
+   "headline": "Walmart US Adds SGS to 3PL Apparel Testing List",
+   "summary": "The listing increases the SGS’ ability to support Walmart suppliers across several fashion apparel categories",
+   "url": "https://finnhub.io/api/news?id=d9856ce5b59ce1ce28f44c5d40d7ded08323897baee74a72329834efa312a892",
+   "publishedAt": "2026-11-13T17:18:28+00:00",
+   "tone": 0.148,
+   "toneLabel": "neutral",
+   "tickers": [
+    "WMT"
+   ]
+  },
+  {
+   "id": "14c2e2cbb823",
+   "source": "Yahoo",
+   "headline": "Intel attracts $79 million in ETF buying despite warning",
+   "summary": "Semiconductor ETFs lead institutional buying, although Intel's valuation remains well above its estimated GF Value.",
+   "url": "https://finnhub.io/api/news?id=0880f4582b31362b45ef2387c2a8708155eaad2b0d7751799f52c1355db2854b",
+   "publishedAt": "2026-11-13T17:18:01+00:00",
+   "tone": 0.877,
+   "toneLabel": "positive",
+   "tickers": [
+    "INTC"
+   ]
+  },
+  {
+   "id": "8cd3f4611dbb",
+   "source": "Yahoo",
+   "headline": "Goldman Sachs sees a new problem emerging for the Federal Reserve",
+   "summary": "The outlook for the U.S. economy is becoming harder for Wall Street to read.",
+   "url": "https://finnhub.io/api/news?id=57fb77aba1284eccf65f61c8273327a1fd084acd8a7eb0799cc9e365df0a49d8",
+   "publishedAt": "2026-11-13T17:17:00+00:00",
+   "tone": -0.847,
+   "toneLabel": "negative",
+   "tickers": [
+    "GS"
+   ]
+  },
+  {
+   "id": "7ece9c10c217",
+   "source": "Yahoo",
+   "headline": "Can UNH's Optum Rx Sustain Profit Growth as Prescription Volumes Fall?",
+   "summary": "UnitedHealth's Optum Rx posts 10.9% operating earnings growth despite falling prescriptions in Q3 2026. Can specialty pharmacy and efficiency gains sustain momentum?",
+   "url": "https://finnhub.io/api/news?id=3fca3894f4ad3993e7ba2ce90ddabb831c2b4cec99e170ad35fda0527095ac4b",
+   "publishedAt": "2026-11-13T17:15:00+00:00",
+   "tone": -0.713,
+   "toneLabel": "negative",
+   "tickers": [
+    "UNH"
+   ]
+  },
+  {
+   "id": "92aa913ebccc",
+   "source": "Yahoo",
+   "headline": "ConocoPhillips' Lower 48 and Willow Assets: Key to Long-Term Growth?",
+   "summary": "COP's deep Lower 48 inventory, Willow project and LNG expansion underpin its long-term growth strategy and $7 billion cash flow inflection target by 2029.",
+   "url": "https://finnhub.io/api/news?id=c517775e6e59724d441dd5cf02a8d96808c5aa60f8201b2599d2a9d2282b680f",
+   "publishedAt": "2026-11-13T17:11:00+00:00",
+   "tone": 0.141,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COP"
+   ]
+  },
+  {
+   "id": "572551065ccf",
+   "source": "Yahoo",
+   "headline": "Robinhood Has Slumped for a Year: Why Goldman Sachs Sees 41% Upside After Two Target Cuts",
+   "summary": "Key TakeawaysGoldman Sachs cut its Robinhood price target to $115 from $128 on Nov. 13 and kept its Buy rating.",
+   "url": "https://finnhub.io/api/news?id=05cd9e5620dd57e4bc176daf418d0869bfb820945cde012637a2bcbd7afe4aa2",
+   "publishedAt": "2026-11-13T16:59:36+00:00",
+   "tone": -0.936,
+   "toneLabel": "negative",
+   "tickers": [
+    "GS"
+   ]
+  },
+  {
+   "id": "2fa8eb8e9a33",
+   "source": "Yahoo",
+   "headline": "AMD Tumbles 11%, Broadcom and Intel Slide 6% as Chip Rally Reverses",
+   "summary": "One day after NVIDIA's CEO shake-up handed its rivals a windfall, the winners are giving it back fast. Analysts and a famed skeptic disagree on what comes next, and the answer may hinge on who sold first.",
+   "url": "https://finnhub.io/api/news?id=e78b089c2d61b818f016bdb7276483db4101241b0d273217c8aa6cfbd9b6f9e5",
+   "publishedAt": "2026-11-13T16:56:11+00:00",
+   "tone": -0.952,
+   "toneLabel": "negative",
+   "tickers": [
+    "AMD",
+    "AVGO",
+    "INTC",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "1bd9354183ca",
+   "source": "Yahoo",
+   "headline": "What Is Going On With Intel Stock After Its Earnings Call?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "url": "https://finnhub.io/api/news?id=d96ae63c9fbd18e1bf24799a672c4103de289cf79daa2a77b103dbeaab7c6fb0",
+   "publishedAt": "2026-11-13T16:53:15+00:00",
+   "tone": -0.727,
+   "toneLabel": "negative",
+   "tickers": [
+    "INTC"
+   ]
+  },
+  {
+   "id": "935dffd8cf72",
+   "source": "Yahoo",
+   "headline": "Boeing Cuts 2,500 Jobs Because It Can’t Build Planes Fast Enough",
+   "summary": "Boeing has a record $745 billion backlog and is still cutting about 2,500 airliner jobs, because its 737 factory can't reach 47 planes a month until 2027.",
+   "url": "https://finnhub.io/api/news?id=6366333535726f7687498baa1c60a158d912c17f761a83af95e1c7084f12e393",
+   "publishedAt": "2026-11-13T16:37:00+00:00",
+   "tone": -0.965,
+   "toneLabel": "negative",
+   "tickers": [
+    "BA"
+   ]
+  },
+  {
+   "id": "4feba766ffad",
+   "source": "Yahoo",
+   "headline": "Netflix Said To Eye 'Channel Store,' May Bundle With Fox One",
+   "summary": "Co-branded streaming bundles such as Disney+, Hulu, and HBO Max and other combinations have resulted in steadier subscriber retention with lower 'churn.'",
+   "url": "https://finnhub.io/api/news?id=99f3bc4dd5491aae26432c9f3f156cf07ba51d254e7a0aae10f6947f6e35be16",
+   "publishedAt": "2026-11-13T16:35:52+00:00",
+   "tone": 0.199,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS",
+    "NFLX"
+   ]
+  },
+  {
+   "id": "13d6738a0668",
+   "source": "Yahoo",
+   "headline": "Is Walmart (WMT) Stock Too Expensive to Buy Now?",
+   "summary": "Walmart's stock has been surging -- and shares are now richly valued.",
+   "url": "https://finnhub.io/api/news?id=3ed7a8e630e820720233dc42f2ac55ac238c86351a84465d4dc506ed791e375c",
+   "publishedAt": "2026-11-13T16:20:00+00:00",
+   "tone": -0.411,
+   "toneLabel": "neutral",
+   "tickers": [
+    "WMT"
+   ]
+  },
+  {
+   "id": "314b4175e979",
+   "source": "Yahoo",
+   "headline": "Advanced Micro Devices Well Positioned as Agentic AI Drives Server CPU Market Growth, BofA Says",
+   "summary": "The global server central processing unit market could expand to more than $240 billion by 2030 as d",
+   "url": "https://finnhub.io/api/news?id=f61092be4ff8fe903653361060a96a8a451f583e9f2c6128c6a511f6a4ad9b42",
+   "publishedAt": "2026-11-13T16:16:07+00:00",
+   "tone": 0.838,
+   "toneLabel": "positive",
+   "tickers": [
+    "AMD",
+    "BAC"
+   ]
+  },
+  {
+   "id": "f2ff31e3f8d2",
+   "source": "Yahoo",
+   "headline": "Can Mastercard's Singapore Innovation Hub Accelerate AI-Led Growth?",
+   "summary": "MA's Singapore innovation hub aims to accelerate AI-driven payments, cybersecurity and agentic commerce, unlocking growth opportunities across Asia-Pacific.",
+   "url": "https://finnhub.io/api/news?id=9ba214799f50b8b4f3fd090aba328a7366f8adf87faa9602255bd3273f959224",
+   "publishedAt": "2026-11-13T16:08:00+00:00",
+   "tone": 0.826,
+   "toneLabel": "positive",
+   "tickers": [
+    "MA"
+   ]
+  },
+  {
+   "id": "fd12ae731808",
+   "source": "Yahoo",
+   "headline": "Nebius Sinks 13% as Baird and BofA Slash Price Targets Over Data Center Delays; CoreWeave Tumbles 11%, NVIDIA Falls 4%",
+   "summary": "Wall Street is losing patience with the data center expansion timeline at Nebius Group (NASDAQ:NBIS). Nebius stock is at $111.34 in morning trading, down 13%. That drop compounds a steep stretch, leaving Nebius stock down 46% over the past month. Two Wall Street firms cut their price targets on Nebius on November 13, citing delays […]",
+   "url": "https://finnhub.io/api/news?id=2ed89f64827dba1a718dbf7aff5e10661eb9b36b81ba2311d42bddde58cca0b4",
+   "publishedAt": "2026-11-13T16:04:53+00:00",
+   "tone": -0.955,
+   "toneLabel": "negative",
+   "tickers": [
+    "BAC",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "d82f8a0c0ebb",
+   "source": "Yahoo",
+   "headline": "Intel vs AMD: which chip stock wins the AI rotation trade",
+   "summary": "Investing.com -- If the NVDA selloff reflects doubts about AI spending quality, customer financing, or GPU concentration, Intel Corporation (INTC) has the better relative setup.",
+   "url": "https://finnhub.io/api/news?id=3dc763adbeccae169e9fb70749b54274ce60b1ae63f3277f613b4d03dd7d2046",
+   "publishedAt": "2026-11-13T16:03:45+00:00",
+   "tone": 0.086,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMD",
+    "INTC"
+   ]
+  },
+  {
+   "id": "4fa777eee79d",
+   "source": "CNBC",
+   "headline": "Women are taking pay cuts and 'white-knuckling it' to manage menopause and work: 'I feel like I'm sitting on the sidelines'",
+   "summary": "Women, and some trans and non-binary people, often experience career setbacks stemming from menopause that can hurt them financially and professionally.",
+   "url": "https://www.cnbc.com/make-it/2026/11/13/menopause-career-setbacks.html",
+   "publishedAt": "2026-11-13T16:00:01+00:00",
+   "tone": -0.914,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "c707f6dacd9e",
+   "source": "Yahoo",
+   "headline": "CrowdStrike Likely to Top Annual Recurring Revenue Estimates Amid Rising AI Cybersecurity Demand, Morgan Stanley Says",
+   "summary": "CrowdStrike (CRWD) is likely to exceed consensus estimates for net new annual recurring revenue in i",
+   "url": "https://finnhub.io/api/news?id=77f0f15cbc1af013c0edbf2d930c42d7c76eff8c8113b647fbab90dc6cc6d967",
+   "publishedAt": "2026-11-13T15:51:04+00:00",
+   "tone": 0.891,
+   "toneLabel": "positive",
+   "tickers": [
+    "MS"
+   ]
+  },
+  {
+   "id": "8270a70abb10",
+   "source": "Yahoo",
+   "headline": "Costco Hits All-Time High Amid $4 Billion Buyback, Special Dividend",
+   "summary": "Costco reports quarterly results after the close on December 10th, which means investors receive the capital return first and the operating evidence second.",
+   "url": "https://finnhub.io/api/news?id=3e14d8d80a0cea2562fcc326ca22419f79afe52e2812457126b52e5d5fff1d56",
+   "publishedAt": "2026-11-13T15:50:00+00:00",
+   "tone": 0.783,
+   "toneLabel": "positive",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "f781a15aa131",
+   "source": "Yahoo",
+   "headline": "High fuel costs, Starlink, and the beauty of AI alerts: United Airlines CEO",
+   "summary": "United Airlines (UAL) CEO Scott Kirby joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to discuss the impact of rising fuel costs, changes he expects to see in the airline industry over the next few years, and more.",
+   "url": "https://finnhub.io/api/news?id=a7c16836564b8443b87ac121a7a40eccdb39f2a56389d408466163f7cb3f76e6",
+   "publishedAt": "2026-11-13T15:47:33+00:00",
+   "tone": 0.122,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UAL"
+   ]
+  },
+  {
+   "id": "dfa61aec7970",
+   "source": "Yahoo",
+   "headline": "Bank of America Just Changed Its Fed Call to Three Straight Hikes. The Hit to a Widow’s $400,000 Bond Fund Already Happened, and Her Cash Is About to Get a Raise",
+   "summary": "Bank of America now expects the Fed to raise rates in December, January and March, to a peak of 4.50% to 4.75%. Here is what that does to a 72-year-old widow's $700,000 of safe money: a $1,500 raise on her money market fund, a CD renewal worth more than any hike, a bond fund that already took its $19,363 hit, and an annuity rate the Fed does not set.",
+   "url": "https://finnhub.io/api/news?id=4a0d26a357dcce35d51b11867223842dff828bb40670531e4b49148563d70646",
+   "publishedAt": "2026-11-13T15:43:00+00:00",
+   "tone": 0.253,
+   "toneLabel": "neutral",
+   "tickers": [
+    "BAC"
+   ]
+  },
+  {
+   "id": "cc99c73cc26a",
+   "source": "Yahoo",
+   "headline": "Amazon Joins Goldman Sachs’ Conviction List Alongside 4 Other Stock Picks",
+   "summary": "Goldman Sachs just overhauled its Conviction List with five new additions, and the upside targets on some of these picks will raise eyebrows. One hyperscaler alone carries a 51% potential gain, but it is far from the biggest number on the list.",
+   "url": "https://finnhub.io/api/news?id=6f34f7046b877328cf8f8b673b1d40083633cd6adc843d710bb997fd557c0eb9",
+   "publishedAt": "2026-11-13T15:42:19+00:00",
+   "tone": 0.033,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMZN",
+    "GS"
+   ]
+  },
+  {
+   "id": "6ea27226227c",
+   "source": "Reuters",
+   "headline": "Bessent, Fed's Goolsbee divided on role of energy shock in inflation",
+   "summary": "Bessent, Fed's Goolsbee divided on role of energy shock in inflation  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWGl4M3I4cEx4Q1pteUwtd3I3OFBYWWFUU096V1Y3X2oxdl9KOFprODJXTEoxallGdk8tXzNuMzlWSXdjTTBFNjUxUHFwWmdVZTFHeTh0TEVYcWtNSXI2aUJkRFdKVFgtNmpWS01zTlhMS21ndThYQjY2bDhXSFpnV2c0Sl8wSzdBWnJzNmZVR05iUGdxU3BCUnBIYlcteEQtRkNMbDBQRF82QXVESmZSRGNvZG9yaGtfbm5QNHBTUE1jNjA?oc=5",
+   "publishedAt": "2026-11-13T15:40:04+00:00",
+   "tone": -0.085,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "83fa752eed70",
+   "source": "Yahoo",
+   "headline": "Should You Pick Disney Stock Over Its Media Rivals?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "url": "https://finnhub.io/api/news?id=aa4f99664b45bfa7940df72b77d641b443971aa8ec3ae5185764dd067b342c96",
+   "publishedAt": "2026-11-13T15:36:17+00:00",
+   "tone": 0.028,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS"
+   ]
+  },
+  {
+   "id": "c204097be0f7",
+   "source": "Yahoo",
+   "headline": "Why Is Morgan Stanley (MS) Up 3.9% Since Last Earnings Report?",
+   "summary": "Morgan Stanley (MS) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
+   "url": "https://finnhub.io/api/news?id=985601afa1f705ea8b3eb9b8abe1ebf75df2c4df33f58f45edb3c73833d17dc2",
+   "publishedAt": "2026-11-13T15:30:03+00:00",
+   "tone": 0.484,
+   "toneLabel": "positive",
+   "tickers": [
+    "MS"
+   ]
+  },
+  {
+   "id": "c920c2c1fc78",
+   "source": "Yahoo",
+   "headline": "What Would Cheaper Fuel Mean For Exxon Mobil Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "url": "https://finnhub.io/api/news?id=9673e588ae87151994ab86f51299bcb0210e5e1dd01aa6d529d8590c8b1bc366",
+   "publishedAt": "2026-11-13T15:20:16+00:00",
+   "tone": 0.005,
+   "toneLabel": "neutral",
+   "tickers": [
+    "XOM"
+   ]
+  },
+  {
+   "id": "ed7c052b0c9c",
+   "source": "Yahoo",
+   "headline": "Peter Schiff Warns Banks Hold “$2 Trillion in Mortgage Losses” as the 10-Year Nears 5%",
+   "summary": "Key TakeawaysPeter Schiff says banks hold $2 trillion of unrealized mortgage losses as the 10-year yield nears 5%. Bank of America’s paper losses topped $109 billion, and its capital is the pressure point.",
+   "url": "https://finnhub.io/api/news?id=b72d458b3f47f74d6b54a5d52f08e893a286118180302f59a6c427d1ca0fc9b3",
+   "publishedAt": "2026-11-13T15:20:03+00:00",
+   "tone": -0.903,
+   "toneLabel": "negative",
+   "tickers": [
+    "BAC"
+   ]
+  },
+  {
+   "id": "508047937177",
+   "source": "Yahoo",
+   "headline": "Chevron Eyes Biodiesel Growth With Iowa Facility Restart",
+   "summary": "CVX is moving to restart its Iowa biodiesel facility after a 2024 shutdown, as improving market conditions and a Landus deal support its U.S. fuel strategy.",
+   "url": "https://finnhub.io/api/news?id=c2c0649d8b4a1dc2e2cb0eecb2b2170e34de16eae705039f689d5cecedbf90b0",
+   "publishedAt": "2026-11-13T15:19:00+00:00",
+   "tone": 0.817,
+   "toneLabel": "positive",
+   "tickers": [
+    "CVX"
+   ]
+  },
+  {
+   "id": "7d8fc4d463a6",
+   "source": "Yahoo",
+   "headline": "HIMS Partners With Lilly to Offer FDA-Approved Weight-Loss Drugs",
+   "summary": "Hims & Hers unites with Lilly to offer FDA-approved weight-loss drugs, Zepbound and Foundayo, expanding patient access and strengthening its obesity care platform.",
+   "url": "https://finnhub.io/api/news?id=9f643af6463a04378fdf7d9ce4ff773fd827a39e078b201b36aa37d585eced63",
+   "publishedAt": "2026-11-13T15:12:00+00:00",
+   "tone": 0.857,
+   "toneLabel": "positive",
+   "tickers": [
+    "LLY"
+   ]
+  },
+  {
+   "id": "679a4526a6ab",
+   "source": "Yahoo",
+   "headline": "Ken Fisher Is Buying ExxonMobil",
+   "summary": "Key TakeawaysFisher Investments’ latest 13F shows a new $5. 20 billion ExxonMobil stake, the biggest new or added position of its third quarter, ahead of its adds to GE Vernova and Cisco.",
+   "url": "https://finnhub.io/api/news?id=38fb665366abb72d3a704ab60d548a914c81115a1c3d8bea171b015aceee5cd7",
+   "publishedAt": "2026-11-13T15:00:13+00:00",
+   "tone": 0.014,
+   "toneLabel": "neutral",
+   "tickers": [
+    "XOM"
+   ]
+  },
+  {
+   "id": "d2c4b0f877db",
+   "source": "CNBC",
+   "headline": "We're making 3 trades to adjust our consumer exposure after an analyst downgrade",
+   "summary": "We want to take protect gains heading into earnings results next week.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/13/were-making-3-trades-to-adjust-our-consumer-exposure-after-downgrade.html",
+   "publishedAt": "2026-11-13T14:59:57+00:00",
+   "tone": -0.484,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "bef0585175b0",
+   "source": "Yahoo",
+   "headline": "Disney to Report Q4 Earnings: What's in Store for the Stock?",
+   "summary": "DIS heads into Q4 earnings with strong streaming margins and a robust content pipeline, but Sports costs and consumer uncertainty warrant a cautious approach.",
+   "url": "https://finnhub.io/api/news?id=0d16cee94bc7ea01b3f7ce41af215e383b725ee46b44585d91f47dfb0b7bbd2f",
+   "publishedAt": "2026-11-13T14:44:00+00:00",
+   "tone": 0.006,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS"
+   ]
+  },
+  {
+   "id": "d37b43da83d1",
+   "source": "Yahoo",
+   "headline": "Global Cyber Warfare Market Set to Reach $80.09 Billion by 2030 as Geopolitical Tensions Accelerate Investment | Microsoft, Lockheed Martin, RTX, and CrowdStrike Vie for Share",
+   "summary": "Dublin, Nov. 13, 2026 (GLOBE NEWSWIRE) -- \"Cyber Warfare Market Global Report 2026\" has been added to ResearchAndMarkets.com's offering. The global cyber warfare market is experiencing rapid growth as governments, defense agencies, and critical infrastructure operators strengthen their ability to counter sophisticated digital threats. The market is projected to increase from $44.39 billion in 2025 to $49.87 billion in 2026, representing a compound annual growth rate (CAGR) of 12.3%. Historical m",
+   "url": "https://finnhub.io/api/news?id=6573c577e1ffe5cb361dd297b8045cff062e0a34e98dad2f4f97bdf41419aa06",
+   "publishedAt": "2026-11-13T14:41:00+00:00",
+   "tone": 0.809,
+   "toneLabel": "positive",
+   "tickers": [
+    "LMT",
+    "MSFT"
+   ]
+  },
+  {
+   "id": "c9d62d6fcbb9",
+   "source": "Yahoo",
+   "headline": "Global SEWIP Block 4 Roadmap Market Report 2026-2030 | Capitalize on 8.3% CAGR, Featuring Profiles of Lockheed Martin, Northrop Grumman, and BAE Systems",
+   "summary": "Dublin, Nov. 13, 2026 (GLOBE NEWSWIRE) -- \"Surface Electronic Warfare Improvement Program (SEWIP) Block 4 Roadmap Market Global Report 2026\" has been added to ResearchAndMarkets.com's offering. The global Surface Electronic Warfare Improvement Program (SEWIP) Block 4 roadmap market is experiencing strong growth as governments prioritize naval electronic warfare modernization, electromagnetic spectrum dominance and fleet survivability. The market is projected to increase from $1.25 billion in 202",
+   "url": "https://finnhub.io/api/news?id=13232cd95b1d331d58467ad24b3f2380a8e420d4c7332f40dbae5ed65367a87c",
+   "publishedAt": "2026-11-13T14:37:00+00:00",
+   "tone": 0.595,
+   "toneLabel": "positive",
+   "tickers": [
+    "LMT"
+   ]
+  },
+  {
+   "id": "6db2eec3bda5",
+   "source": "Yahoo",
+   "headline": "Global Military Edge Computing Market Report 2026: Size, Trends and Forecast to 2030 | Capitalize on 16% CAGR with Microsoft, AWS, RTX, Lockheed Martin, and NVIDIA",
+   "summary": "Dublin, Nov. 13, 2026 (GLOBE NEWSWIRE) -- \"Military Edge Computing Market Global Report 2026\" has been added to ResearchAndMarkets.com's offering. The global military edge computing market is experiencing rapid growth as defense organizations prioritize real-time battlefield intelligence, resilient communications and mission-critical data processing. The market is projected to increase from $2.55 billion in 2025 to $2.95 billion in 2026, representing a compound annual growth rate (CAGR) of 15.7%",
+   "url": "https://finnhub.io/api/news?id=a855e721fc09666e553c37801c863e30ac043ad20bd7c412d9db7d5dff9e85c3",
+   "publishedAt": "2026-11-13T14:36:00+00:00",
+   "tone": 0.775,
+   "toneLabel": "positive",
+   "tickers": [
+    "AMZN",
+    "LMT",
+    "MSFT",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "12685f50de9c",
+   "source": "Yahoo",
+   "headline": "Netflix Stock Outlook: Is Wall Street Bullish or Bearish?",
+   "summary": "Netflix has lagged behind the broader market over the past year, yet analysts remain cautiously optimistic about the stock’s prospects.",
+   "url": "https://finnhub.io/api/news?id=a2aa415670e2c2f1f7e48363b84c5764a34369771c8d1ebd2798f3291dbebba4",
+   "publishedAt": "2026-11-13T14:22:59+00:00",
+   "tone": -0.256,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NFLX"
+   ]
+  },
+  {
+   "id": "8ba869171bca",
+   "source": "Yahoo",
+   "headline": "Visa or Mastercard: I Can Only Pick One Dividend Stock for the Next 20 Years. Here’s Mine",
+   "summary": "Key TakeawaysVisa (V:NYSE) raised its quarterly dividend 16% to $0. 78 a share on Oct.",
+   "url": "https://finnhub.io/api/news?id=892cc2b480ff4d2aec20e403509df6652dd58a527ab709c47218267757bbc3ac",
+   "publishedAt": "2026-11-13T14:20:48+00:00",
+   "tone": 0.002,
+   "toneLabel": "neutral",
+   "tickers": [
+    "MA"
+   ]
+  },
+  {
+   "id": "f382c91dbebb",
+   "source": "Yahoo",
+   "headline": "A Record-High Dividend Yield Can Be a Warning Sign. Just Ask Pfizer",
+   "summary": "A huge yield looks like a bargain until the payout gets cut. Six dividend stocks just hit record yields against their own history, and only some of them can afford what they pay shareholders.",
+   "url": "https://finnhub.io/api/news?id=ac292dafa6dc461565f1af48b525a24f3b2f2c665ff9398e636f45fa3e43616c",
+   "publishedAt": "2026-11-13T14:17:23+00:00",
+   "tone": -0.385,
+   "toneLabel": "neutral",
+   "tickers": [
+    "PFE"
+   ]
+  },
+  {
+   "id": "a502727b8119",
+   "source": "Yahoo",
+   "headline": "TC Energy or Chevron: Only One Gets My Dividend Dollars for the Next 10 Years",
+   "summary": "Key TakeawaysChevron’s third-quarter 2026 earnings nearly tripled to $9. 9 billion, and TC Energy raised its 2026 outlook for comparable EBITDA.",
+   "url": "https://finnhub.io/api/news?id=659d8fc6f3d8fc770079c11d6c65001360b7d8825dd4d620aa7abf67e41586e6",
+   "publishedAt": "2026-11-13T14:17:00+00:00",
+   "tone": 0.004,
+   "toneLabel": "neutral",
+   "tickers": [
+    "CVX"
+   ]
+  },
+  {
+   "id": "c4508b36ae99",
+   "source": "CNBC",
+   "headline": "Jim Cramer's top 10 things to watch in the stock market Friday",
+   "summary": "Stock futures picked up some steam this morning.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/13/jim-cramers-top-10-things-to-watch-in-the-stock-market-friday.html",
+   "publishedAt": "2026-11-13T14:12:16+00:00",
+   "tone": -0.001,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "f43555d501a6",
+   "source": "Yahoo",
+   "headline": "Coinbase Global vs. Mastercard: Which Financial Stock Is a Better Buy for 2027?",
+   "summary": "Coinbase trades at a steeper earnings multiple despite lower profitability, while Mastercard's 45.6% net margin reflects its unmatched network scale.",
+   "url": "https://finnhub.io/api/news?id=d3b5d921fb8433a24e7d50d4f1846a224f5d036621f1add58e740c260432df9f",
+   "publishedAt": "2026-11-13T14:12:01+00:00",
+   "tone": 0.052,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COIN",
+    "MA"
+   ]
+  },
+  {
+   "id": "a0f568efcbf5",
+   "source": "Yahoo",
+   "headline": "Patmos Announces Plans to Transform Former Fairfield Walmart Into New Technology Campus",
+   "summary": "FAIRFIELD, Ala., November 13, 2026--Patmos, an independent provider of data center and technology infrastructure, today announced the acquisition of the former Walmart property, a 205,000-square-foot building on Aaron Aronov Drive in Fairfield, Alabama. The company plans to redevelop the property into a Technology Campus designed to support growing infrastructure demands for artificial intelligence, high-performance computing, colocation, and other web services.",
+   "url": "https://finnhub.io/api/news?id=8204b4f1f268b4ae73a50b5036b88011e12c9f79b4ecd827749458399efe0b83",
+   "publishedAt": "2026-11-13T14:00:00+00:00",
+   "tone": 0.195,
+   "toneLabel": "neutral",
+   "tickers": [
+    "WMT"
+   ]
+  },
+  {
+   "id": "21f919a01f58",
+   "source": "Yahoo",
+   "headline": "Wall Street Divided on S&P 500: Which ETFs Could Benefit in 2027?",
+   "summary": "UBS expects the S&P 500 to reach 8,900 by 2027, while BofA warns of market risks. Explore ETFs to navigate either outcome.",
+   "url": "https://finnhub.io/api/news?id=472db408dbec423e87202814a5e386c490d0f157e9f7b91e16d5930291cec739",
+   "publishedAt": "2026-11-13T13:57:00+00:00",
+   "tone": 0.099,
+   "toneLabel": "neutral",
+   "tickers": [
+    "BAC"
+   ]
+  },
+  {
+   "id": "8626c8ed676b",
+   "source": "Yahoo",
+   "headline": "Does Costco's Special Dividend Offer Enough Reason to Buy the Stock?",
+   "summary": "COST's $30 special dividend and $4B buyback plan reward shareholders, but its premium valuation raises questions about whether the stock is worth buying now.",
+   "url": "https://finnhub.io/api/news?id=73e18fbbee90973ed9969e484d99fe75a84fd0195a631b7b2fcaf80544cb0b63",
+   "publishedAt": "2026-11-13T13:51:00+00:00",
+   "tone": 0.062,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "61bff2225f2e",
+   "source": "Reuters",
+   "headline": "US Treasury's Bessent says he won't be cowed by death threats",
+   "summary": "US Treasury's Bessent says he won't be cowed by death threats  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZ1dvSXJCYVVWa3A3ZlZZQ0hKWHB3bm1remdBSFFqd3VXUnpGQS1yMExEY3pGOUxDWWZaSGFad20tNEhfdVZabEdLbzVfSnJ4bm5QSVdQeFRCUzA0a2R4ZEY3dW54WjFVUVpWSHplbno5b184azJQZ2NYMTV2bjJKV3lONlJMWU9saEVWc1laT0lWQTByN1J3T2s2ZUlySFBmYXVZ?oc=5",
+   "publishedAt": "2026-11-13T13:45:34+00:00",
+   "tone": -0.096,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "b6525c349895",
+   "source": "Yahoo",
+   "headline": "Store Recalls Report Finds Walmart Named in 81 Official U.S. Recalls in 2026, More Than Any Other Physical Retailer",
+   "summary": "Store Recalls, a free website that sorts official U.S. recalls by the store named in each notice, found that Walmart was named in 81 recalls between January 1 and November 10, 2026, more than any other physical retailer. Target followed with 25 notices and Costco with 19, according to the Store Recalls retailer recall report.",
+   "url": "https://finnhub.io/api/news?id=f2d061103d5484997605e5f219b087aeb445674cda2cc2d95fe8db8489236d03",
+   "publishedAt": "2026-11-13T13:42:00+00:00",
+   "tone": -0.246,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST",
+    "WMT"
+   ]
+  },
+  {
+   "id": "9be0bf69211e",
+   "source": "Yahoo",
+   "headline": "Brokers Suggest Investing in Boeing (BA): Read This Before Placing a Bet",
+   "summary": "Based on the average brokerage recommendation (ABR), Boeing (BA) should be added to one's portfolio. Wall Street analysts' overly optimistic recommendations cast doubt on the effectiveness of this highly sought-after metric. So, is the stock worth buying?",
+   "url": "https://finnhub.io/api/news?id=15228d7be266bb432d0ebd076e060532b5b54f02926d2d90815b48809dbe2cfa",
+   "publishedAt": "2026-11-13T13:30:04+00:00",
+   "tone": 0.027,
+   "toneLabel": "neutral",
+   "tickers": [
+    "BA"
+   ]
+  },
+  {
+   "id": "0fcbc93e4655",
+   "source": "Yahoo",
+   "headline": "Pfizer Stock Down 6% Post Q3 Earnings: Time to Buy, Hold or Exit?",
+   "summary": "PFE shares fell despite the company beating Q3 estimates and raising guidance. Explore its growth drivers, pipeline potential, patent risks & attractive valuation.",
+   "url": "https://finnhub.io/api/news?id=53caf7bb2cd668bb924c789ec120fe423fb4d89593a64a067c9ea720d6f5590b",
+   "publishedAt": "2026-11-13T13:30:00+00:00",
+   "tone": -0.874,
+   "toneLabel": "negative",
+   "tickers": [
+    "PFE"
+   ]
+  },
+  {
+   "id": "64131c13d39e",
+   "source": "Reuters",
+   "headline": "EXCLUSIVE: Iraq turns to trucks to export oil in overland Syrian route revival",
+   "summary": "EXCLUSIVE: Iraq turns to trucks to export oil in overland Syrian route revival  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQclRIYjhBLWw5LV85dEh1eWFKUXJ2ZU1xTlpwbmpPSmIzYUZKTzlvNEZvTldxQnE2V1V2WVFNTHJNNVg4SWhFeHM0a0pGSGtic3d0Zk1TVUhXQWwtaFJlZHlkNXFZUnZraUJhUUN3Y2hFMVRzY2ppLUN1SmlYRW9hU2ptaFZiWkRIR3MtdE1FemE0b3M5eXJ6bDBtY2wxc0dwMXJyN0VxLTNGMDlLUUZZ?oc=5",
+   "publishedAt": "2026-11-13T13:27:43+00:00",
+   "tone": 0.093,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "4c155d896006",
+   "source": "CNBC",
+   "headline": "CFTC Chair Selig tells CNBC crypto industry is embracing agency rules as legislation hopes fade",
+   "summary": "The top U.S. commodities regulator in October announced proposed crypto rules to assert its jurisdiction over the asset class.",
+   "url": "https://www.cnbc.com/2026/11/13/cftc-chair-selig-crypto-industry-opting-into-agencys-crypto-rules-.html",
+   "publishedAt": "2026-11-13T13:15:35+00:00",
+   "tone": 0.257,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "7c1c6133ab20",
+   "source": "Yahoo",
+   "headline": "Can GM's Solar Projects Strengthen Manufacturing Cost Efficiency?",
+   "summary": "General Motors is investing $550 million in two Michigan solar projects to secure predictable energy costs and advance its emissions reduction goals.",
+   "url": "https://finnhub.io/api/news?id=3e7825eb133e8eab39006e8b137b33dce854e5c3d8d73b88affba4e291ad821f",
+   "publishedAt": "2026-11-13T13:07:00+00:00",
+   "tone": 0.883,
+   "toneLabel": "positive",
+   "tickers": [
+    "GM"
+   ]
+  },
+  {
+   "id": "622f226c41ab",
+   "source": "Yahoo",
+   "headline": "United Airlines Blocks AI Agents From Booking Flights as Analyst Says Carrier Wants to Avoid Another Google-Like Intermediary",
+   "summary": "United Airlines Holdings Inc. is barring unauthorized AI agents from booking flights, citing risks involving customer data, loyalty accounts, and compliance with federal aviation requirements. United announced on Wednesday that third-party AI assistants will not be permitted to reserve flights...",
+   "url": "https://finnhub.io/api/news?id=c377f4a75633c76ef0d6e71c0a1ae3732ac4a5b0d822dcde00d604f169fcc30c",
+   "publishedAt": "2026-11-13T13:00:10+00:00",
+   "tone": -0.92,
+   "toneLabel": "negative",
+   "tickers": [
+    "GOOGL",
+    "UAL"
+   ]
+  },
+  {
+   "id": "118ce269343d",
+   "source": "Yahoo",
+   "headline": "Investors Heavily Search Costco Wholesale Corporation (COST): Here is What You Need to Know",
+   "summary": "Costco (COST) has been one of the stocks most watched by Zacks.com users lately. So, it is worth exploring what lies ahead for the stock.",
+   "url": "https://finnhub.io/api/news?id=e2993fb8c2fda552db82697aa1235330a8f195a16c0eedbef0fe823008f7adb6",
+   "publishedAt": "2026-11-13T13:00:06+00:00",
+   "tone": 0.001,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "0b461b4f6342",
+   "source": "Yahoo",
+   "headline": "Investors Heavily Search Ford Motor Company (F): Here is What You Need to Know",
+   "summary": "Zacks.com users have recently been watching Ford Motor (F) quite a bit. Thus, it is worth knowing the facts that could determine the stock's prospects.",
+   "url": "https://finnhub.io/api/news?id=db218cdf9b41884e4c341ffc17bfc888398761b37bfe2fa1670dd5664920f024",
+   "publishedAt": "2026-11-13T13:00:04+00:00",
+   "tone": 0.009,
+   "toneLabel": "neutral",
+   "tickers": [
+    "F"
+   ]
+  },
+  {
+   "id": "6fefb4eb473b",
+   "source": "Reuters",
+   "headline": "IAEA increasingly concerned about Iranian enrichment plant, its report says",
+   "summary": "IAEA increasingly concerned about Iranian enrichment plant, its report says  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcEw4cVpnMkIxMTVtZEJlQmN3OHlsLUxxZnQxMWlfV3VfWTBYeHA2VEpBVWxpZk9TejdSaDgzazdlQUlMZy00aEhmZS1GYnhpVmU1bzdQTWM2VUJqd2dOWWowa1VQSWppQVdYSi1PVm0zX2J1b1hFU1QwaGs5N3lDZkJ3bEY5OG9Tai15M3VoRXVycFVBWjYwWjQ5dUhDcEJ4SWFHSXZxNDg5b2k2OG1DUVBoTHBDWE84dmVfZXc4WQ?oc=5",
+   "publishedAt": "2026-11-13T12:47:28+00:00",
+   "tone": -0.888,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "d7fe46940297",
+   "source": "Yahoo",
+   "headline": "Novo Nordisk (CPSE:NOVO B) Taps DJ Khaled As Oral Weight Loss Race Heats Up",
+   "summary": "Novo Nordisk (CPSE:NOVO B) has partnered with DJ Khaled to promote his Wegovy weight loss journey to a wider US audience. Eli Lilly has received the first Chinese regulatory approval for an oral GLP-1 weight loss pill, ahead of Novo Nordisk's own oral product. Novo Nordisk's obesity portfolio now faces a fresh test as Wegovy promotion coincides with Eli Lilly's oral GLP-1 approval in China. Check out 3 other big wins that Novo Nordisk investors should know about. For a broader view on how...",
+   "url": "https://finnhub.io/api/news?id=cfcbd8fd285d913a9b9854e26c012bd4c4f49e68b8b71137132d22506b246fbb",
+   "publishedAt": "2026-11-13T12:16:01+00:00",
+   "tone": 0.064,
+   "toneLabel": "neutral",
+   "tickers": [
+    "LLY"
+   ]
+  },
+  {
+   "id": "413f5c84835d",
+   "source": "Yahoo",
+   "headline": "One Reason United Airlines Stock Looks Better Than Its Price",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "url": "https://finnhub.io/api/news?id=41827d16aaa24d246d611c9d578d387f66ec222de51e8c5b537ef5695df12af2",
+   "publishedAt": "2026-11-13T12:12:51+00:00",
+   "tone": 0.748,
+   "toneLabel": "positive",
+   "tickers": [
+    "UAL"
+   ]
+  },
+  {
+   "id": "09ac918fbd88",
+   "source": "Yahoo",
+   "headline": "What Could Surprise Netflix Stock Investors On The Upside?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "url": "https://finnhub.io/api/news?id=2abd786253a13dca0358a0f8bd173d6cb6ccdebd4396c05bd8a59ba04d276e02",
+   "publishedAt": "2026-11-13T12:12:51+00:00",
+   "tone": -0.3,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NFLX"
+   ]
+  },
+  {
+   "id": "cb21b4443a31",
+   "source": "Yahoo",
+   "headline": "How Has Chevron's Story Changed For Shareholders?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "url": "https://finnhub.io/api/news?id=926f5ff26c6fe17c765fc1ac208697ab7b914486e7c780ad6f28958d4c303943",
+   "publishedAt": "2026-11-13T12:12:51+00:00",
+   "tone": -0.017,
+   "toneLabel": "neutral",
+   "tickers": [
+    "CVX"
+   ]
+  },
+  {
+   "id": "3d278c9ba38b",
+   "source": "Reuters",
+   "headline": "Belgian ministers at odds over Iran's alleged role in refrigerator cyberattacks",
+   "summary": "Belgian ministers at odds over Iran's alleged role in refrigerator cyberattacks  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOV2J0OUwydHNQMndLSWtGQ2Z2OUVzMWYwRGtLTDZ0MGhIVU1Xa2RvNVEtY2IzcXpyTk14Z0ROdnNyZTJ3V2V3Qmw4STZ1SWJhZnZKLS1lTkZ1LTM5Yk1pVGdaQnZiTFRVd2t1U0loNDBXVWZhRERjZUxVVTVGcUhldlJkbDcybURaWGhFbldrUkNydkdQTkNjY1VVbFZSaXN3dHdOcFczSk1ERVRtMXVZNXpLSm8?oc=5",
+   "publishedAt": "2026-11-13T12:08:14+00:00",
+   "tone": -0.908,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "bb98900a18c5",
+   "source": "Yahoo",
+   "headline": "Costco's new offering is flying off shelves",
+   "summary": "Members are clamoring for good reason.",
+   "url": "https://finnhub.io/api/news?id=6c453b579a498874767d6d2bde755b6d6cf2c17a8efdd463bf47f85a35699a9e",
+   "publishedAt": "2026-11-13T12:03:00+00:00",
+   "tone": -0.914,
+   "toneLabel": "negative",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "5c50e00317e4",
+   "source": "Yahoo",
+   "headline": "BofA now sees Fed hiking in January, lifts terminal rate forecast",
+   "summary": "Investing.com -- Bank of America now expects the Federal Reserve to raise interest rates at each of its next three meetings, adding a 25-basis-point hike in January 2027 to its forecast after another hot inflation reading.",
+   "url": "https://finnhub.io/api/news?id=025bdf828bdad41671fad77eae6836d39cbc1a2d73ffde134c08ba7d0b66a3f6",
+   "publishedAt": "2026-11-13T12:01:56+00:00",
+   "tone": -0.153,
+   "toneLabel": "neutral",
+   "tickers": [
+    "BAC"
+   ]
+  },
+  {
+   "id": "920524d8d2ac",
+   "source": "Yahoo",
+   "headline": "Lockheed Martin vs. General Dynamics: Which Dividend Stock Pays You More in 10 Years?",
+   "summary": "Key TakeawaysLockheed Martin (LMT:NYSE) raised its quarterly dividend to $3. 60 a share on Oct.",
+   "url": "https://finnhub.io/api/news?id=28b9d1bedfe48d6537640cde2820d67eb9ef05861242bb1218ae2a59e93ea817",
+   "publishedAt": "2026-11-13T11:58:02+00:00",
+   "tone": 0.023,
+   "toneLabel": "neutral",
+   "tickers": [
+    "LMT"
+   ]
+  },
+  {
+   "id": "2943eb300eaa",
+   "source": "ChartMill",
+   "headline": "Netflix (NASDAQ:NFLX): An Affordable Growth Case at a Reasonable Valuation",
+   "summary": "Netflix fits an affordable-growth screen with solid double-digit growth, reasonable valuation, and strong profitability and financial health.",
+   "url": "https://finnhub.io/api/news?id=b8435f4375e06f2ea66f69f34c5cb99ab5cefa987c145df5879caed91405e2e0",
+   "publishedAt": "2026-11-13T11:50:57+00:00",
+   "tone": 0.734,
+   "toneLabel": "positive",
+   "tickers": [
+    "NFLX"
+   ]
+  },
+  {
+   "id": "a72d539ff1f5",
+   "source": "Reuters",
+   "headline": "PODCAST: Microsoft outage, Nvidia fallout and Ukraine drone evacuations",
+   "summary": "PODCAST: Microsoft outage, Nvidia fallout and Ukraine drone evacuations  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRWJ3V2hTUXNWcFdGRV9VLUt5WjFuYjV2T1g4QVJKbmVmNXYxSXZnV0tDWWh6RWdpVnJVa0tjMGJ3UHJOaXg3T2diS1J1RTBMQTVhV2lENG40WDZPRzA4S3B2YWxBTW92Y3VqQ28tZTJsTUpLcW5mbVNWZ1JmQW9oNHE3bDFRaFVlOElVRVNjb3hDQk5fSEU4SFhDem9SSnVmcElxSQ?oc=5",
+   "publishedAt": "2026-11-13T11:48:05+00:00",
+   "tone": -0.571,
+   "toneLabel": "negative",
+   "tickers": [
+    "MSFT",
+    "NVDA"
+   ]
+  },
+  {
+   "id": "295c00202915",
+   "source": "Yahoo",
+   "headline": "Major streaming services have raised prices by 207% since 2019. Is it still worth it, or is ‘streamflation’ too much?",
+   "summary": "Disney+, Apple TV and Peacock each raised prices again in 2026, and two now cost triple their launch price",
+   "url": "https://finnhub.io/api/news?id=2976353128f5d2ff7932add070aba1d7f956e142257088ab013068c4ec91747e",
+   "publishedAt": "2026-11-13T11:45:00+00:00",
+   "tone": -0.075,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL",
+    "DIS"
+   ]
+  },
+  {
+   "id": "609bca319c1b",
+   "source": "Reuters",
+   "headline": "World oil market is returning to surplus as Gulf exports recover, IEA says",
+   "summary": "World oil market is returning to surplus as Gulf exports recover, IEA says  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOcWtzQXhRVUlUbWQ0VVloOTVjekFCcC1XQlNXNWNRcERHNDFEbnBNTTFhZjV3Qjk5bGxCaDhoRFE1Yi1mdGNoR3JCVXY5MmQ0ODVnUWRabHowUDhYSUNKOXV5X0lLQzRBbWNabUFMTzVlMzBNOUUyWTgyeUg1cW5sRjJtUHo3TldPOEY4S19xOGwwYjlkemFibktTVTltVF94WUg5ekdJczcyUlBHOHZ0V3EtdWdjU0JOVkY4?oc=5",
+   "publishedAt": "2026-11-13T11:34:59+00:00",
+   "tone": 0.865,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "837f8f4a64ed",
+   "source": "CNBC",
+   "headline": "NHL’s next media deal will test the league’s strength",
+   "summary": "How do the world's biggest media companies judge the value of non-NFL rights? The NHL is giving us our first window into a new era in media values.",
+   "url": "https://www.cnbc.com/2026/11/13/nhls-next-media-deal-will-test-the-leagues-strength.html",
+   "publishedAt": "2026-11-13T11:34:44+00:00",
+   "tone": 0.335,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "fa9e53d57058",
+   "source": "Yahoo",
+   "headline": "Did Record Special Dividend Just Shift Costco Wholesale's (COST) Investment Narrative?",
+   "summary": "Costco Wholesale declared a special cash dividend of $30 per share, totaling about $13.3b, payable on December 4, 2026, and paired it with a new $4b share repurchase authorization running through November 2030. The one time payout and refreshed buyback highlight the extent of the excess cash Costco Wholesale is generating in addition to its regular reinvestment needs and ongoing membership focused warehouse model. We will examine how Costco Wholesale's investment narrative develops when a...",
+   "url": "https://finnhub.io/api/news?id=55607782bd665ae0eac02bb72f3008c4acbb4a5698e79e7f8755b52fb0d55301",
+   "publishedAt": "2026-11-13T11:10:39+00:00",
+   "tone": 0.019,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "6dac51f09d85",
+   "source": "CNBC",
+   "headline": "CNBC's Official NHL Team Valuations 2026: How the 32 franchises stack up",
+   "summary": "The average NHL team is worth $2.71 billion, 23% more than a year ago.",
+   "url": "https://www.cnbc.com/2026/11/13/cnbcs-official-nhl-team-valuations-2026-how-the-32-clubs-stack-up.html",
+   "publishedAt": "2026-11-13T11:07:04+00:00",
+   "tone": -0.01,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "568ca6c4f80f",
+   "source": "Yahoo",
+   "headline": "ETFs Are Net Sellers of Boeing (BA) on Nov. 11",
+   "summary": "ETFs sold a net $25.2 million of Boeing stock on Nov. 11.",
+   "url": "https://finnhub.io/api/news?id=25c4681fef3e818823dc3875ac9af857168b803a96a6a54372340a6481ca2246",
+   "publishedAt": "2026-11-13T11:02:15+00:00",
+   "tone": 0.015,
+   "toneLabel": "neutral",
+   "tickers": [
+    "BA"
+   ]
+  },
+  {
+   "id": "75c81a63d8c4",
+   "source": "Yahoo",
+   "headline": "UnitedHealth (UNH) Sees $86.8 Million in Net ETF Buying on Nov. 11",
+   "summary": "Fifty-one ETFs bought UnitedHealth stock while nine sold on Wednesday, Nov. 11.",
+   "url": "https://finnhub.io/api/news?id=daf92136f4b3f93fff9e6a14955103cb5f22d9dfbae58cfd6e0e240573ccf480",
+   "publishedAt": "2026-11-13T11:01:54+00:00",
+   "tone": 0.341,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UNH"
+   ]
+  },
+  {
+   "id": "b551b214381f",
+   "source": "CNBC",
+   "headline": "Nvidia scandal draws in Commerce Secretary Lutnick, who reportedly agrees to testify about China chip sales",
+   "summary": "Commerce Secretary Lutnick will testify before the Senate Banking Committee following revelations about Jensen Huang's affair with an alleged Chinese spy.",
+   "url": "https://www.cnbc.com/2026/11/13/nvidia-scandal-lutnick-chip-sales.html",
+   "publishedAt": "2026-11-13T10:54:40+00:00",
+   "tone": -0.865,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "97af49505834",
+   "source": "Yahoo",
+   "headline": "What’s Behind United Airlines Holdings (UAL) Latest Move?",
+   "summary": "United Airlines Holdings (UAL) is previewing its new Concourse E at Washington Dulles International Airport, a 435,000-square-foot expansion with 14 additional gates and one of its largest United Club lounges. Recent trading has been choppy for United Airlines Holdings, with the 1 day share price return down 6.02% even as the 30 day share price return is up 7.77%. A 1 year total shareholder return of 14.49%, alongside a very large 3 year total shareholder return, hints that long term holders...",
+   "url": "https://finnhub.io/api/news?id=ab962b1c1d24f5dd9f5daaf8b460b579d0c08953372c90e41aecd759f1cc594b",
+   "publishedAt": "2026-11-13T09:10:08+00:00",
+   "tone": -0.076,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UAL"
+   ]
+  },
+  {
+   "id": "118f1dbcd320",
+   "source": "Yahoo",
+   "headline": "Should Netflix (NFLX) Investors Rethink Its Outlook After Bill Ackman’s Fresh Backing?",
+   "summary": "Bill Ackman reiterated his confidence in Netflix (NasdaqGS:NFLX) and its long-term outlook in fresh comments to investors. He pointed to higher expected cash generation as a key support for his positive view on the streaming platform’s future. Ackman also highlighted new content approaches and internal reorganization moves that he believes can improve Netflix’s operating performance. Bill Ackman’s renewed backing of Netflix’s long-term prospects and operational shifts is important to weigh...",
+   "url": "https://finnhub.io/api/news?id=e42a18bb14f218bc6205ba3f0ba12e12a012b59d4cb58b0af64ab3a48a5b0853",
+   "publishedAt": "2026-11-13T08:08:54+00:00",
+   "tone": 0.053,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NFLX"
+   ]
+  },
+  {
+   "id": "5be67549abf2",
+   "source": "Benzinga",
+   "headline": "TSMC Confirms Employee Data Leak Through Cloud Provider, Hackers Reportedly Demand 3 Bitcoins to Withhold 46,000 Records",
+   "summary": "TSMC confirms employee data exposure through a cloud provider as hackers reportedly demand 3 Bitcoin for 46,000 records.",
+   "url": "https://finnhub.io/api/news?id=5f9d5b09bac11ab8b620850577d34082f5b1ad104ce2721c9e77ff1355a142ef",
+   "publishedAt": "2026-11-13T07:35:55+00:00",
+   "tone": -0.891,
+   "toneLabel": "negative",
+   "tickers": [
+    "TSM"
+   ]
+  },
+  {
+   "id": "f612005475e5",
+   "source": "Reuters",
+   "headline": "Iran says tanker carrying LNG hit mine, suffered explosion in Hormuz",
+   "summary": "Iran says tanker carrying LNG hit mine, suffered explosion in Hormuz  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbWY4UFhVeWZBSkUteDV4dHd0b3cyU3czTkdkU3ZLbU9zZzlhOGhTcDlDcTlmSVlKVUZFZDhwTWdmdG9zQkJHZ05jaXVad0ZpVGdsTHJvZ0VRT3Q4cXRMZFZ5cFpkR0Y5dmo4b3dlQ0F4RUVxZFFGanB4M1cxZmJlSERVQ0dQVDNWbVFVV2pJZ09XNG5DWlV2Zk4xdi1xRm9jUjhzVFl1akd1QQ?oc=5",
+   "publishedAt": "2026-11-13T07:00:00+00:00",
+   "tone": -0.913,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "81e23a79ad37",
+   "source": "Fintel",
+   "headline": "Taiwan Semiconductor Manufacturing Company Limited Reports Unauthorized Access of Employee Personal Data",
+   "summary": "",
+   "url": "https://finnhub.io/api/news?id=2f2fdc771240720152c4ae32d8ce53a44702b6a6ed6be69a5d214debd143c2ea",
+   "publishedAt": "2026-11-13T06:41:01+00:00",
+   "tone": -0.94,
+   "toneLabel": "negative",
+   "tickers": [
+    "TSM"
+   ]
+  },
+  {
+   "id": "9601071c1a52",
+   "source": "Yahoo",
+   "headline": "The Zacks Analyst Blog Highlights GE Aerospace, Howmet Aerospace, RTX and Lockheed Martin",
+   "summary": "GE, HWM, RTX and LMT stand to benefit from rising defense spending, strong aerospace demand and record backlogs, with higher 2026 guidance strengthening their growth outlook.",
+   "url": "https://finnhub.io/api/news?id=cad3c45fe0378ae4c52e7593d512b3307d282f40ef09fed06b5d955c84e67ceb",
+   "publishedAt": "2026-11-13T06:38:00+00:00",
+   "tone": 0.015,
+   "toneLabel": "neutral",
+   "tickers": [
+    "LMT"
+   ]
+  },
+  {
+   "id": "96a81785a870",
+   "source": "Yahoo",
+   "headline": "Chevron And 2 Other Dividend Stocks To Own",
+   "summary": "Bond yields are climbing again as inflation worries resurface, which can put pressure on high-growth stories and push investors back toward reliable cash payouts. That backdrop makes companies with dividend yields above 3% that look well covered and steady feel a lot more appealing. This article walks through three dividend heavyweights from our income screen and explains why each could deserve a closer look for long term portfolio income. The three stocks highlighted here offer a compelling...",
+   "url": "https://finnhub.io/api/news?id=450f155126a5c24c4506f28070089ae50451fc3b26bbb9defc1a47f965d0a738",
+   "publishedAt": "2026-11-13T04:38:32+00:00",
+   "tone": 0.048,
+   "toneLabel": "neutral",
+   "tickers": [
+    "CVX"
+   ]
+  },
+  {
+   "id": "ebbe5f6f29f0",
+   "source": "Yahoo",
+   "headline": "Hailee Steinfeld, Rashida Jones, Jodie Foster and More Celebrate the Magic of \"Disney’s Hexed\" at the World Premiere in Los Angeles",
+   "summary": "LOS ANGELES, November 13, 2026--The voice cast and filmmakers behind Walt Disney Animation Studios’ all-new magical adventure \"Disney’s Hexed,\" including Hailee Steinfeld, Rashida Jones, Jodie Foster, directors Jason Hand and Fawn Veerasunthorn, co-director Josie Trinidad, producers Roy Conli and Yvett Merino, Walt Disney Animation Studios Chief Creative Officer and screenwriter Jared Bush, screenwriter Dana Ledoux Miller and composer Kris Bowers, celebrated the film’s spellbinding world premier",
+   "url": "https://finnhub.io/api/news?id=6de84f9ccfddfe7fbb666fe228d339a777a8a7c1dd7755a895821ac11b718d08",
+   "publishedAt": "2026-11-13T04:28:00+00:00",
+   "tone": 0.119,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS"
+   ]
+  },
+  {
+   "id": "e9f9c7a2a6cf",
+   "source": "Reuters",
+   "headline": "Rupee slips as higher oil prices and US yields knock stocks, bonds",
+   "summary": "Rupee slips as higher oil prices and US yields knock stocks, bonds  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ2lRcFhDeEM4YTZPLVVWRHNYTnU2XzJhTFJMTUpjT2lyY0JwZ25WaGxCR01JTVpRZTJBVE5SZ0Y1LXdqSzJFRDBWVW15TnEwRE9idm9zeGVGZlpPVndfdGhoQlhmaHlkSFdDZmdXOGQ2N00xMVlKX3JFbkMtYzN5Y2VULUkzNkZmV1VtMnBCSU81eFRkRGFxUG9XRlVqcGNfelRrSHZQNXZQSExsbDhBaVdlcWlfWDhu?oc=5",
+   "publishedAt": "2026-11-13T03:12:00+00:00",
+   "tone": -0.907,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "bdd4270b84a2",
+   "source": "Reuters",
+   "headline": "Australia's friendly against Jordan moved to Qatar over security concerns",
+   "summary": "Australia's friendly against Jordan moved to Qatar over security concerns  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNYzhQNlFqaHlBVkM2RGFCcXFUUW9LZlF2YVliU0pRVDhmTkN2bEoySkphaU1NU25aTnUyUlpsbHU1LTZ2M1FqTWNkWUVoZVRwejVVRHJuSXFKOGd3dmE3RXdubGpqWXpMUzlWUG5aNjhRMlBWOF9HUzVzNUxKXzFRcHpPSGNLYXc5UzBrT1dyR3VnVHZIbVBxTkdPYUJYZDdWeWVUT0FneVBQZkowdkV0LVZGUnl5UVFOc0FTTldVR0g?oc=5",
+   "publishedAt": "2026-11-13T03:11:00+00:00",
+   "tone": -0.799,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "3d8c71952272",
+   "source": "Reuters",
+   "headline": "Oil prices set for second straight weekly drop on signs of growing supply surplus",
+   "summary": "Oil prices set for second straight weekly drop on signs of growing supply surplus  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOa0ZTUUtQbXVySmRXLWtEc2xtZDk5RWkwa29OWlEyQjN3UXVzMkZTYzF3ajVoNkVXZnBnODVRTkN0b1ZwaVk4VE5KOXFqZktYbG1PN1RwdEtwS1ZEb3BBUEkxM2JtUl91NkxCMWpjbmxWV3RScndxMjJUcjh4dEpZM256Nl8tY19iWmp4OExndnRRaXQwdFRpMGRYRDFnNGQ1eEFhNEVrZjZwaW0tamJkLXFYa1I3V1EzbVE?oc=5",
+   "publishedAt": "2026-11-13T03:01:00+00:00",
+   "tone": -0.941,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "f09c5bc93bbd",
+   "source": "Reuters",
+   "headline": "US denies Iran's claim that it attacked early-warning radar in Bahrain",
+   "summary": "US denies Iran's claim that it attacked early-warning radar in Bahrain  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcjhnZVFHWnV4RHpscnFyUjFWOEl5VndNZ0Y4MFdEVlpueUNaeHRPMVdCbjA4Mmktc0tYWnFsZWdZSkd4dFNvTmszUHFWdC15S0pja2ozaTg0R0dOdEY3aDJtenZwREh5dmRvTGVTUkxVUDNjN3huQU1TRTU1bEVBampuYzdsTjJJZ2tBUXQwal85QnRsWDU4OWNvbDVzN0VUR1R0clNkZmpkaXZMaWh5dExSNHRCUQ?oc=5",
+   "publishedAt": "2026-11-13T02:51:00+00:00",
+   "tone": -0.518,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "233ea24ff9a2",
+   "source": "Reuters",
+   "headline": "Dollar near 19-month high on Fed hike bets, yen tests 160",
+   "summary": "Dollar near 19-month high on Fed hike bets, yen tests 160  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNdXI2eWRwY1h1QWkxeldEbWhGUmdSYzRrQjZveW9TTm5LekpTdEthSzRRZHI1NlhoQjAwXzdjdVFSU0ItZjA3NFFxTUUxQlNWUzBoRHdtVkhtZ09hVUt2SmNyaFVvRkhOa0VERndHN1EweWdGajFEa050UDNqN1dCTllZamxKS0J1R0FHWXJOU0lweWJDMnV2clZBRVI4YVU4MTFBeg?oc=5",
+   "publishedAt": "2026-11-13T01:58:00+00:00",
+   "tone": -0.369,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "3f77136a7c54",
+   "source": "Yahoo",
+   "headline": "XOM, CVX, COP: This Analyst Trims Price Targets, Warns Oil Stocks May 'Struggle To Appreciate'",
+   "summary": "Bernstein cut the price targets on ExxonMobil, Chevron and Conoco Phillips following the midterm elections.",
+   "url": "https://finnhub.io/api/news?id=ea56ea14faedd43d7e22970df85d8ac52de0646d91adae6703f3a47c2bdda6d4",
+   "publishedAt": "2026-11-13T01:49:36+00:00",
+   "tone": -0.757,
+   "toneLabel": "negative",
+   "tickers": [
+    "COP",
+    "CVX",
+    "XOM"
+   ]
+  },
+  {
+   "id": "1c5734ed1481",
+   "source": "Fintel",
+   "headline": "Bernstein Downgrades ConocoPhillips to Market Perform from Outperform",
+   "summary": "",
+   "url": "https://finnhub.io/api/news?id=742652ea2fa7f635d00bf0ef6bd8f846b3b68673c26aa0e34ee8479f58ad6cf2",
+   "publishedAt": "2026-11-13T00:38:41+00:00",
+   "tone": -0.653,
+   "toneLabel": "negative",
+   "tickers": [
+    "COP"
+   ]
+  },
+  {
+   "id": "773124c0ae6d",
+   "source": "Reuters",
+   "headline": "Wall Street ends lower as Nvidia CEO resigns; US yields up",
+   "summary": "Wall Street ends lower as Nvidia CEO resigns; US yields up  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA1ODl5LXpyQ0RZanVjSnZGS1NjS1ljMjZvdW9xY3ZSSUxvNkY2Z3dCMThiSjdKNHI1TFRCZnBIRHdYY0UxTGh0QjRZX3Y2S25sY0k4M0dKN3VZdGNMSGk5N0tPUmVJa3ozWXRCcmluOWxVVjVfblRLdmttMA?oc=5",
+   "publishedAt": "2026-11-12T23:52:10+00:00",
+   "tone": -0.936,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "ca3176b383aa",
+   "source": "Yahoo",
+   "headline": "Bernstein’s Mark Li Raised His Taiwan Semiconductor Manufacturing (TSM) Target to $600. Here’s What Changed",
+   "summary": "We just published a list of the 10 Best Growth Stocks for the Next 5 Years and Taiwan Semiconductor Manufacturing (NYSE:TSM) ranked 6th on this list. Technology stocks went from celebration to rout within two sessions this month. On Wednesday, November 4, equities rallied after Democrats swept Congress in the midterm elections. By Thursday, the […]",
+   "url": "https://finnhub.io/api/news?id=e38f9afa48842b1c40c1ad755a4a1377a049a8afffc7c756a96acc42e60d68a8",
+   "publishedAt": "2026-11-12T23:11:39+00:00",
+   "tone": 0.105,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSM"
+   ]
+  },
+  {
+   "id": "16dad9feec1f",
+   "source": "Yahoo",
+   "headline": "Here’s Why Bernstein’s Mark Li Is Raising His Price Target on TSMC (TSM) to $600",
+   "summary": "We just published a list of the 10 Unrivaled Stocks to Buy for the Next Decade and Taiwan Semiconductor Manufacturing (NYSE:TSM) ranked 6th on this list. Wall Street had its worst day since April 2025 last Thursday. The Nasdaq Composite fell 5.5%, the S&P 500 dropped 4.4%, and the Philadelphia Semiconductor Index plunged 12.2%. Two […]",
+   "url": "https://finnhub.io/api/news?id=c5b37f68b3045434a849ac223d6f1aa6cbd5e003957964e48bd89634db9bfcb6",
+   "publishedAt": "2026-11-12T22:34:54+00:00",
+   "tone": 0.715,
+   "toneLabel": "positive",
+   "tickers": [
+    "TSM"
+   ]
+  },
+  {
+   "id": "4293f4bf9024",
+   "source": "Yahoo",
+   "headline": "Prediction: $500 a Month Invested in Taiwan Semiconductor Manufacturing Will Be Worth This Much by 2030",
+   "summary": "What are the chances your stake is worth close to double what you personally invested?",
+   "url": "https://finnhub.io/api/news?id=f2d5f0e258bf8c2dc82a171f29c20def113bcf4c76fac7d341197106a285c82f",
+   "publishedAt": "2026-11-12T22:20:00+00:00",
+   "tone": 0.503,
+   "toneLabel": "positive",
+   "tickers": [
+    "TSM"
+   ]
+  },
+  {
+   "id": "2234646da787",
+   "source": "Bloomberg",
+   "headline": "Nvidia turns to CFO Colette Kress to steady ship after Huang exits",
+   "summary": "Her appointment comes less than three months before Nvidia's fiscal year ends.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-12/nvidia-turns-to-cfo-kress-to-steady-ship-after-jensen-huang-exit",
+   "publishedAt": "2026-11-12T22:15:35+00:00",
+   "tone": 0.279,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "80c93f502c8b",
+   "source": "CNBC",
+   "headline": "Without Jensen Huang, Nvidia's organizational structure isn't 'built to last,' management expert says",
+   "summary": "Nvidia's flat management structure could pose challenges for Huang's successor, according to experts.",
+   "url": "https://www.cnbc.com/make-it/2026/11/12/nvidia-jensen-huang-management-structure.html",
+   "publishedAt": "2026-11-12T22:06:08+00:00",
+   "tone": 0.073,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "6859a1e23876",
+   "source": "Yahoo",
+   "headline": "Billionaire investor Bill Ackman on why he's staying bullish on Netflix",
+   "summary": "An impassioned defense of Netflix from one of its highest profile investors.",
+   "url": "https://finnhub.io/api/news?id=494d53ce91bfa517de80779ecf12199e5fd5bcbbd9d8ae3626526155046f25ff",
+   "publishedAt": "2026-11-12T21:34:55+00:00",
+   "tone": 0.023,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NFLX"
+   ]
+  },
+  {
+   "id": "4dfec164725f",
+   "source": "CNBC",
+   "headline": "Cerebras surges 13% after beating on quarterly revenue and announcing Microsoft deal",
+   "summary": "Cerebras announced a new deal with Microsoft after partnering with major cloud providers Amazon and Oracle.",
+   "url": "https://www.cnbc.com/2026/11/12/cerebras-systems-cbrs-q3-earnings-report-2026.html",
+   "publishedAt": "2026-11-12T21:23:33+00:00",
+   "tone": 0.894,
+   "toneLabel": "positive",
+   "tickers": [
+    "AMZN",
+    "MSFT"
+   ]
+  },
+  {
+   "id": "02b4f01f6b47",
+   "source": "CNBC",
+   "headline": "Cisco beats on earnings, says AI infrastructure revenue will double this fiscal year",
+   "summary": "Cisco is trying to become a bigger player in AI after missing out on the early years of the boom.",
+   "url": "https://www.cnbc.com/2026/11/12/cisco-csco-q1-2027-earnings.html",
+   "publishedAt": "2026-11-12T21:20:35+00:00",
+   "tone": 0.936,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "7b7d05757ce6",
+   "source": "Yahoo",
+   "headline": "Why Bill Ackman thinks Netflix stock is undervalued",
+   "summary": "Pershing Square Capital Management CEO Bill Ackman joins Yahoo Finance Executive Editor at Yahoo Finance's 2026 Invest conference to share his viewpoint on embattled streaming giant Netflix (NFLX).",
+   "url": "https://finnhub.io/api/news?id=8927c7a83d49f5302dee6f8a22fcc2f4f5b3a99318210b30fca5c08786103d85",
+   "publishedAt": "2026-11-12T21:12:38+00:00",
+   "tone": -0.046,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NFLX"
+   ]
+  },
+  {
+   "id": "4f5ae285b301",
+   "source": "CNBC",
+   "headline": "Microsoft outage hits Outlook. AWS and Google users also report issues",
+   "summary": "Amazon Web Services and Google users also reported outages on Thursday",
+   "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
+   "publishedAt": "2026-11-12T20:57:54+00:00",
+   "tone": -0.812,
+   "toneLabel": "negative",
+   "tickers": [
+    "AMZN",
+    "GOOGL",
+    "MSFT"
+   ]
+  },
+  {
+   "id": "27023e8c6b1f",
+   "source": "SeekingAlpha",
+   "headline": "TSMC: Investors Are Well Insulated From Potential Shocks",
+   "summary": "TSMC stock is rated a Buy at 23x forward earnings: Q4 guidance implies 58% revenue growth, and a 0.54 forward PEG offers a margin of safety. See more.",
+   "url": "https://finnhub.io/api/news?id=e22ad50ca05133893449341dacd5badd9810db00279ca63f5bf9bf38cbf8964b",
+   "publishedAt": "2026-11-12T20:44:49+00:00",
+   "tone": 0.525,
+   "toneLabel": "positive",
+   "tickers": [
+    "TSM"
+   ]
+  },
+  {
+   "id": "f966f1e46938",
+   "source": "CNBC",
+   "headline": "United Airlines won’t let AI agents book your flight. Expert says you shouldn't let a bot do that for you, anyway",
+   "summary": "AI agents can save you time, but an expert says decisions involving your health, wealth and privacy still need human input.",
+   "url": "https://www.cnbc.com/make-it/2026/11/12/ai-agents-human-in-loop.html",
+   "publishedAt": "2026-11-12T20:24:59+00:00",
+   "tone": -0.077,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UAL"
+   ]
+  },
+  {
+   "id": "47445506e32f",
+   "source": "Reuters",
+   "headline": "Yemen's Houthis say they attacked pumping station on Saudi Arabia's East-West oil pipeline",
+   "summary": "Yemen's Houthis say they attacked pumping station on Saudi Arabia's East-West oil pipeline  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOHNyWUhKaHR2QmJXUjJ6S0xNdDZnZmpKRzJQak9SWVc3cmttUGVfbk13NzBZclpqNnp5N1JFc0JYakw2Wl9hV3BYdm1mMnJQR3BKRFI2Zzh3cVRhTFFxejBSVWtTMkt2WTRGRUxFSkVocF83aFlIOU10Vk11d29TRERPcnFVWHRJYktFOUlGU0x4c0Q0UWVtT3JkUE91ZVNPQ09NTnhaMGxJajZxQnkwWTFvTzN4WnNpMTBYalNZOHFZdnUtX1VHeUVR?oc=5",
+   "publishedAt": "2026-11-12T20:18:21+00:00",
+   "tone": -0.803,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "8f4acf5aadae",
+   "source": "CNBC",
+   "headline": "Alice Huang tied to Nvidia’s biggest Chinese competitor",
+   "summary": "The woman with whom Jensen Huang reportedly had a relationship also owned stakes in companies that provided computing power to Huawei, a key Nvidia competitor.",
+   "url": "https://www.cnbc.com/2026/11/12/alice-huang-jensen-huang-nvidia-huawei.html",
+   "publishedAt": "2026-11-12T20:10:49+00:00",
+   "tone": 0.058,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "bd8f1a582ec5",
+   "source": "Reuters",
+   "headline": "Oil settles $3 higher on attacks on Saudi energy sites, Strait of Hormuz disruptions",
+   "summary": "Oil settles $3 higher on attacks on Saudi energy sites, Strait of Hormuz disruptions  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSVNfOWE4dnhlMzA3cExiOE1nR0FNQXFJejNsQTExRExKTlVKNjNjcFRGMWQxMGNmYnNOWFdLaUp0OUo2SHFlNVoxMUo0Y21WazFhVmhZU1VxYlRuWVRfZEtiQ0NGWENEejFpMFRzaUtNbVV3TEhKUHp2aUc0SHJ2VkNzM1BHNU5VeGNNbnRldWZaZUFkTWdDNm9ibk5kQXlOQlRRWHRhdGk5ZEtPZjVjMjE1Q1BJaTZ1NmplRWJVSDlvRFBUQnc?oc=5",
+   "publishedAt": "2026-11-12T20:09:58+00:00",
+   "tone": 0.407,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "5961c5efaa63",
+   "source": "CNBC",
+   "headline": "Jensen Huang is out and Nvidia stock is down—what market pros say about buying dips",
+   "summary": "Nvidia stock fell 5% on Thursday following the departure of CEO Jensen Huang. Some see it as a signal to sell, others an opportunity to buy.",
+   "url": "https://www.cnbc.com/make-it/2026/11/12/nvidia-what-market-pros-say-about-buying-dips.html",
+   "publishedAt": "2026-11-12T20:01:29+00:00",
+   "tone": -0.888,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "3f0bf037d61c",
+   "source": "CNBC",
+   "headline": "Who will replace Jensen Huang? Here's our early thoughts on the search for Nvidia's next CEO",
+   "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/12/jensen-huang-ceo-replacement-jim-cramer.html",
+   "publishedAt": "2026-11-12T20:00:42+00:00",
+   "tone": 0.021,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "c55801c8f58b",
+   "source": "Yahoo",
+   "headline": "MP Materials Stock Rises After Insiders Buy $3.35 Million",
+   "summary": "The purchases came after MP began saleable magnet shipments to General Motors",
+   "url": "https://finnhub.io/api/news?id=1907d34da0f9345e215148530acbe782f6d99d44426d8107c45f5d9898b49baa",
+   "publishedAt": "2026-11-12T19:44:36+00:00",
+   "tone": -0.089,
+   "toneLabel": "negative",
+   "tickers": [
+    "GM"
+   ]
+  },
+  {
+   "id": "bcf5674ef15c",
+   "source": "Bloomberg",
+   "headline": "Huang may prove that the ‘irreplaceable CEO’ is a myth",
+   "summary": "Jensen Huang had 60 direct reports, Bloomberg News reported.",
+   "url": "https://www.bloomberg.com/opinion/articles/2026-11-12/jensen-huang-resigns-he-failed-nvidia-long-before-his-affair",
+   "publishedAt": "2026-11-12T19:31:00+00:00",
+   "tone": 0.222,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "d182a0827ba4",
+   "source": "Yahoo",
+   "headline": "Ranking NVIDIA, Taiwan Semiconductor And Other AI Compute Stocks",
+   "summary": "Determining which stocks in the AI compute world can be difficult, but fortunately, the hosts of The AI Investor Podcast are here to help. From NVIDIA to Taiwan Semiconductor, Eric Bleeker and Austin Smith are breaking down some of the strengths and weaknesses of the industry's top players. This guide to Broadcom, Intel and more will give you conservative plays for investors to consider, as well as AI investments for those who want to swing for the fences.",
+   "url": "https://finnhub.io/api/news?id=4a020257dca4269f941ae62708f7f6b4302b057918cc2ba5a9d09a072453f7af",
+   "publishedAt": "2026-11-12T19:26:43+00:00",
+   "tone": 0.007,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AVGO",
+    "INTC",
+    "NVDA",
+    "TSM"
+   ]
+  },
+  {
+   "id": "4aafc58241ab",
+   "source": "Yahoo",
+   "headline": "A Massive Employee Data Leak Is Dragging Down TSM Stock",
+   "summary": "TSMC stock sinks as hackers gain access to employee data through a cloud service provider. Here’s what it means for TSM shares.",
+   "url": "https://finnhub.io/api/news?id=070f04b765be3678102a39b2830ad9facb40a73ef53b2a76de20c74edd788178",
+   "publishedAt": "2026-11-12T19:21:17+00:00",
+   "tone": -0.956,
+   "toneLabel": "negative",
+   "tickers": [
+    "TSM"
+   ]
+  },
+  {
+   "id": "3da093c6c19f",
+   "source": "CNBC",
+   "headline": "Donald Trump Jr. exits advisory role at Kalshi prediction market",
+   "summary": "The president's son will no longer serve as an advisor at Kalshi.",
+   "url": "https://www.cnbc.com/2026/11/12/donald-trump-jr-exits-kalshi-advisory-role.html",
+   "publishedAt": "2026-11-12T19:19:38+00:00",
+   "tone": 0.007,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "9333b5da7f47",
+   "source": "Reuters",
+   "headline": "Microsoft outage drags on for hours, disrupting Outlook, Teams for thousands",
+   "summary": "Microsoft outage drags on for hours, disrupting Outlook, Teams for thousands  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQWpWeUZnbllhcFk4WktZS0s3T1N6T3k3Vnhhd3pfSE9SWF9iRmRIQUljdHZXN0UtWS1uZS1rbUNZSlVPd1NXLXRtVUVtc3NQNTgxMVFMWjVnT3pPb09EX1g1YUx3WkF2VHk0bUMwWlhkRHdpT0JFRE5SQ3pQRkdmSnpUOHNXLUo1dXNSY3lFdkpSdU5laDdwSlhWRDVnNjBFcUh2Y0FwMXNldE8tSFpPaw?oc=5",
+   "publishedAt": "2026-11-12T18:32:00+00:00",
+   "tone": -0.895,
+   "toneLabel": "negative",
+   "tickers": [
+    "MSFT"
+   ]
+  },
+  {
+   "id": "bd9faefc43b1",
+   "source": "Reuters",
+   "headline": "US House Democratic Leader Jeffries wants 'dramatic change' in Middle East",
+   "summary": "US House Democratic Leader Jeffries wants 'dramatic change' in Middle East  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQMV9nQXduWS1BMTRTSzRtc19UMm5sa1JxU3lpbTFiU2sxMDk1cFdzWHVtemNPX2NncUJEYTRBdkREUnBnYXJXWnB3MDZoTURRVzV5MDdOZndzQWJkanJpVUw5SURtRGp1OHUzbmVrbE5yNjFKYVI5ZnhOajlXLTdQa1lvRHhyMjlxb1J3OTdzSS1Gd3laMUFTWWZtNmktYTNRYjY1SHBsdmppS1pybXJ6VjBLWUs?oc=5",
+   "publishedAt": "2026-11-12T18:27:09+00:00",
+   "tone": 0.59,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "64d7aba6186b",
+   "source": "Reuters",
+   "headline": "Two Iranian men found guilty in UK of assisting Iranian intelligence",
+   "summary": "Two Iranian men found guilty in UK of assisting Iranian intelligence  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOaWdPVmJKU0hSSFFKaHZqSjhkbmswNjdjN0V5ak1BZHdna1AzWk1YeXlsdHd0WEFxSEppRlpadHY4UTBQTWV1MVliRTVtN005WTdHNTdOWndramJPbXFCYnZQNmJTcldoM3FMbTFmU0RTcGt4TTBETnVqTGFiNDkxNnhYaUlZU2QyeTJPZ2QtR2FPaXFqR3MwamRKRkpON0VFR1NUN0dOaUFYRUxidWJ4M2F3?oc=5",
+   "publishedAt": "2026-11-12T18:22:50+00:00",
+   "tone": -0.484,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "0802685a2695",
+   "source": "CNBC",
+   "headline": "In a policy switch, the Fed says its October 2027 meeting will not see a vote on interest rates",
+   "summary": "Fed Chair Kevin Warsh announced the move at his October news conference, though he did not set a date.",
+   "url": "https://www.cnbc.com/2026/11/12/in-policy-switch-fed-says-its-october-2027-meeting-will-not-see-a-vote-on-interest-rates.html",
+   "publishedAt": "2026-11-12T18:11:32+00:00",
+   "tone": -0.361,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "88d864a68207",
+   "source": "Yahoo",
+   "headline": "TSMC Stocks Fall 2.21% as NVIDIA Shake-Up Overshadows Record October Revenue",
+   "summary": "TSMC's October sales jumped 59.7% to NT$586.89 billion, but NVIDIA's leadership change dragged chip supply-chain shares lower.",
+   "url": "https://finnhub.io/api/news?id=0cabcfccc5541bc88afa7a0570adaac4d9256a55ad137b41d5ca3445dcd699be",
+   "publishedAt": "2026-11-12T18:02:51+00:00",
+   "tone": -0.964,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA",
+    "TSM"
+   ]
+  },
+  {
+   "id": "d569ae61355a",
+   "source": "Reuters",
+   "headline": "White House set to extend Jones Act shipping waiver, sources say",
+   "summary": "White House set to extend Jones Act shipping waiver, sources say  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPN3NCSlNCcXAta1ktOGttR0tIdTdwcmVDbWN4ZXFUSnJLYjdDUFYxTGJkM2NvMERGQzVuNEEtZFg3ejI0aXBEZS1Sa2NwbkpLQnJBMkpEVVFIbThhdTd0cUtvSFBRWFRyMFJsVjIweEk5SlpqWnozdHZDTkF0dDRGaGxNa3hKb1ppSGwyRnNHNUhfNDgtSVM0cEVDVEc4TGotaGVGNFZZNmdHeTQ?oc=5",
+   "publishedAt": "2026-11-12T17:58:40+00:00",
+   "tone": -0.044,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "2b4d6dc7d276",
+   "source": "Benzinga",
+   "headline": "If You Invested $1000 In UnitedHealth Group Stock 20 Years Ago, You Would Have This Much Today",
+   "summary": "UnitedHealth Group (NYSE:UNH) has outperformed the market over the past 20 years by 2.67% on an annualized basis producing an average annual return of 11.45%. Currently, UnitedHealth Group has a market capitalization of",
+   "url": "https://finnhub.io/api/news?id=57ed14cfa8d0ca6b7d46c1bc7ec622fc5b36636c35ef07af2570a5fade6c0a0e",
+   "publishedAt": "2026-11-12T17:45:15+00:00",
+   "tone": 0.077,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UNH"
+   ]
+  },
+  {
+   "id": "ccaa9385b2ae",
+   "source": "Yahoo",
+   "headline": "Boeing layoffs raise new fears about its financial future",
+   "summary": "Investors are losing patience as the planemaker faces another setback.",
+   "url": "https://finnhub.io/api/news?id=abf146dc9f6d8b75dbd4c6fd6f63329ce7d60a31b705e14e02d38a9914baa52c",
+   "publishedAt": "2026-11-12T17:33:00+00:00",
+   "tone": -0.954,
+   "toneLabel": "negative",
+   "tickers": [
+    "BA"
+   ]
+  },
+  {
+   "id": "1609cd957851",
+   "source": "Yahoo",
+   "headline": "UnitedHealth Group (UNH) Stock Still Looks Below Fair Value After Board Appointment",
+   "summary": "UnitedHealth Group has delivered a 1 year gain that may catch your eye, even after a tougher multi year stretch. The live question is whether that share price now asks too much or too little of its earnings power. The stock is up 22.0% over the past year, which puts fresh pressure on the numbers to show that this move is supported by what the business earns. Recent board changes and a sharpened focus on medical cost management and pricing can influence how much profit each dollar of premium...",
+   "url": "https://finnhub.io/api/news?id=762d0ca36119e558ccce919bb368afde4002cf14265f7b5a5f0cd180fab8d113",
+   "publishedAt": "2026-11-12T17:10:28+00:00",
+   "tone": -0.954,
+   "toneLabel": "negative",
+   "tickers": [
+    "UNH"
+   ]
+  },
+  {
+   "id": "d821cc4cab16",
+   "source": "CNBC",
+   "headline": "Here's what Colette Kress and Harvey Jones wrote to Nvidia employees",
+   "summary": "Interim CEO Colette Kress and board chair Harvey Jones emailed Nvidia employees, expressing gratitude for \"resilience, professionalism and continued dedication",
+   "url": "https://www.cnbc.com/2026/11/12/nvidia-kress-jones-employee-emails.html",
+   "publishedAt": "2026-11-12T17:07:31+00:00",
+   "tone": 0.006,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "c725ead5e190",
+   "source": "CNBC",
+   "headline": "Sitting on big gains in Nvidia? Jim Cramer's advice on what to do next",
+   "summary": "Cramer has been an Nvidia bull long before the generative AI boom.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/12/sitting-on-big-gains-in-nvidia-jim-cramers-advice-on-what-to-do-next.html",
+   "publishedAt": "2026-11-12T16:59:52+00:00",
+   "tone": 0.032,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "19b233a7bfea",
+   "source": "Reuters",
+   "headline": "Four died in military helicopter crash in eastern Turkey, defence ministry says",
+   "summary": "Four died in military helicopter crash in eastern Turkey, defence ministry says  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZFRDcndTTjFHZDZsUWgwMnZZWXhNdmtEMjFaQTVVMWk4dTVqMEQwXzE0SXZZLXZXQ3d3dThPQjUyVkxiVmJIZjRMOEFSbC1BNmoyWDJjSERIYjIybEZjazVOTzcxYXNSV2VFTWVlTG5IQmgxMnBkeW9WQTFPTUVZVHRYQm13aDNLelVRalVMX3R5NU1GcFRfVFVma1JNMFpSZHViaW5LOTNsbUlrekpndFFNblVSNTFGd0E?oc=5",
+   "publishedAt": "2026-11-12T16:54:29+00:00",
+   "tone": -0.885,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "0587bdf0f889",
+   "source": "Yahoo",
+   "headline": "A $776 Car Payment Is a Warning for Ford and General Motors",
+   "summary": "As the U.S. drives towards higher new car prices, it faces an affordability crisis leaving some consumers out of the market. This could be a problem for Ford and GM.",
+   "url": "https://finnhub.io/api/news?id=1f1bd47b26663994c13618ceaaa53b98e5b8ea0c01ca32898a320a5e9fff232f",
+   "publishedAt": "2026-11-12T16:53:02+00:00",
+   "tone": -0.811,
+   "toneLabel": "negative",
+   "tickers": [
+    "GM"
+   ]
+  },
+  {
+   "id": "f1582af6d25e",
+   "source": "Yahoo",
+   "headline": "Archer Aviation Slides 6% Despite Cathie Wood’s Second Straight Day of Buying; Joby Aviation Falls 4%, EHang Declines 2% Despite Sri Lanka Milestone",
+   "summary": "Cathie Wood keeps buying, Boeing's deal is nearly done, and Joby just raised its outlook, yet air taxi stocks still slump together. What does the sector's shared slide say about who gets hurt when risk appetite fades?",
+   "url": "https://finnhub.io/api/news?id=6ce92efde698614d8331b0f51a043752faad27eab1ce027de9fdfb09871dc1b3",
+   "publishedAt": "2026-11-12T16:52:16+00:00",
+   "tone": -0.938,
+   "toneLabel": "negative",
+   "tickers": [
+    "BA"
+   ]
+  },
+  {
+   "id": "6b1d62c3a009",
+   "source": "Reuters",
+   "headline": "Oil tanker struck off UAE's Ras Al-Khaimah, all crew reported safe",
+   "summary": "Oil tanker struck off UAE's Ras Al-Khaimah, all crew reported safe  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOeDlHRUduYXpITEh6ZXlxdm9Zc3hiVXlhZXhzbzUySkFvNkMyQ1pFYWlxbnZKUmR4T0tieF9rZHhWYnFzUXI2a0J4M2VOLUZPcGt3ckxrUzNrSFFfeXpXNDJjRzVIS2p6OWI5d1BhMHVzVVY4TktOaWJQYTJpenFZOXpISzBiUDZ5ZG5vVGE2U0U5RnFjQmlaRmNnUDk0YV9DRnl6UVRkOEtGR1RJdUF2VmxNRmVpN1lDeXRINVdYQ0xabGJkMTMwazNR?oc=5",
+   "publishedAt": "2026-11-12T16:45:39+00:00",
+   "tone": -0.884,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "cb0b1cd47cb7",
+   "source": "Yahoo",
+   "headline": "Morgan Stanley cuts TeraWulf target to $47 on higher discount rates, keeps Overweight",
+   "summary": "The bank raised discount rates on TeraWulf's unstabilized sites and pipeline, cutting the value of undeveloped sites to $8.19 per watt from $11.53. The new target still implies roughly 280%…",
+   "url": "https://finnhub.io/api/news?id=ba9cb440bdcd57f09d52c7ec5455efbb96306131e0b03a851dafb5165f525d26",
+   "publishedAt": "2026-11-12T16:32:37+00:00",
+   "tone": -0.109,
+   "toneLabel": "negative",
+   "tickers": [
+    "MS"
+   ]
+  },
+  {
+   "id": "d348494897c6",
+   "source": "Reuters",
+   "headline": "Four tankers struck by explosions in Strait of Hormuz, Iran says",
+   "summary": "Four tankers struck by explosions in Strait of Hormuz, Iran says  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQcDQ2cWxyeTFpazFaX1ZNM2RoS0t2ZVpEa0JpMElTZVFMUElROEF5c20tMlU0dEszWFlEdkhfR2VOb3hEQmo3MjRtdVlSaEhkZnpKXzExbE5QcXItQ3Z6REoyY1Fpak9IUUplYWp6NTQ2UjBiNVk1WDN0MmJjaFRkOHNLdDYxMU9xOWhuMnVaTlNiVXJNTlhLYV9EZEpnd1oxYmF0cG82b2VkMURkYnkzZkZBX0hhWHM?oc=5",
+   "publishedAt": "2026-11-12T16:27:35+00:00",
+   "tone": -0.919,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "307a8816659d",
+   "source": "Reuters",
+   "headline": "RAF hopes Dvalishvili competes after hotel brawl",
+   "summary": "RAF hopes Dvalishvili competes after hotel brawl  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUGxVNnZOVWtLWUlBU0hJa3dVQTNpV2w5TDRxemFQd2xLNmM4Z2hRcnZNcmlkTG1LODhrRG82bk8tZDBHXzlscWhoc1VUQVpaMkdaLUppN1N5NlJfTmNGRFR5eGtSX1ptNWJERFBxX1VqSzJuVXkyaFdpcmVTbTFTaGhmY242bWMxaTlrdnAtM3hJYlhvSjdxVXlwVXExTEt3dDhQTlkwUnphUlQ4ZFdCX2ZZNVNvOUs1UFBqV1d2TmI?oc=5",
+   "publishedAt": "2026-11-12T16:22:15+00:00",
+   "tone": 0.151,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "c912f463b718",
+   "source": "Yahoo",
+   "headline": "Why Is Morgan Stanley (MS) Bringing Transfer Agency In House?",
+   "summary": "Morgan Stanley (NYSE:MS) has agreed to acquire Vinyl Equity, a digital first SEC registered transfer agent, to deepen its wealth management infrastructure. The Vinyl Equity platform brings in house digital share transfer, recordkeeping, and cap table management for Morgan Stanley's private and public company clients. By internalizing these transfer agency functions, Morgan Stanley aims to rely less on external providers and tighten integration across its client services stack. Morgan...",
+   "url": "https://finnhub.io/api/news?id=a8c7dcbee7efbae1589ac60b658e666c00c46961a24cedbe4223a35eef3ccd59",
+   "publishedAt": "2026-11-12T16:10:14+00:00",
+   "tone": 0.001,
+   "toneLabel": "neutral",
+   "tickers": [
+    "MS"
+   ]
+  },
+  {
+   "id": "d8a128bf37c6",
+   "source": "Reuters",
+   "headline": "Saudi Arabia puts pressure on EU to label Yemen's Houthis a terrorist group",
+   "summary": "Saudi Arabia puts pressure on EU to label Yemen's Houthis a terrorist group  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSnl4RjlVd0VYeWFKTUM1eDh4Y1J4V2RsZXlIYTRDUjZGdzJoeHBJQnZXd0NCYTBXcVhUQjFYZ1JNUnk3SDhVWXBHZWJrbm1EQTREYWJzN2MxU1lkQUg1Y3JyWDV1bU1mN3Fha2VfejBDN3o5ZG5aZWdGMVdZT1NvbDBXM045V01GUHpvWEI5TmFTMTlyTkN6cDZhWmxsTVZxNE5mOW1Wb1lLMG04a0F3RXdRT1o1d0hld1h2Tg?oc=5",
+   "publishedAt": "2026-11-12T16:04:51+00:00",
+   "tone": -0.857,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "59403a7a4356",
+   "source": "Reuters",
+   "headline": "UAE says 14 killed, 30 injured in Fujairah traffic accident",
+   "summary": "UAE says 14 killed, 30 injured in Fujairah traffic accident  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQR2R6ZmJGZHpIRGdEbWw3aDBtU0VaemhmSlljY0UzSmtKNjdaVlhHTHRGU2VYUWI5eWUtYmFUakgyX28taFlOR3RIRUFMNnNodHI1VU9NUjlNV09IM3ZPUXhxcUlNS0p6dFg5MnBJMEdEUnQxNXNHS1Yxa2pnVjdkbmhYM1MwS0NTbkp6S1B1bzRaeDMtaHU1TTVyYm9ZOU13WWRDYVdXLW14c1BocXc?oc=5",
+   "publishedAt": "2026-11-12T16:01:46+00:00",
+   "tone": -0.914,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "0b1144aa7d1f",
+   "source": "Yahoo",
+   "headline": "Disney’s New CEO Is Helping the Stock Recapture Its Magic",
+   "summary": "Is it time for investors to buy in?",
+   "url": "https://finnhub.io/api/news?id=759dbdd2a7a7f33186f6a2d5f30444c3f086a6a710a540ce9ee12abfebd3aec8",
+   "publishedAt": "2026-11-12T15:53:00+00:00",
+   "tone": 0.782,
+   "toneLabel": "positive",
+   "tickers": [
+    "DIS"
+   ]
+  },
+  {
+   "id": "81233caab0df",
+   "source": "CNBC",
+   "headline": "Yankees President Randy Levine pushes college sports bill, discusses MLB labor negotiations",
+   "summary": "Yankees President Randy Levine discusses the Protect College Sports Act, and the state of MLB's labor negotiations.",
+   "url": "https://www.cnbc.com/2026/11/12/yankees-randy-levine-discusses-college-sports-bill-mlb-labor-deal.html",
+   "publishedAt": "2026-11-12T15:34:31+00:00",
+   "tone": 0.006,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "d5cf13841ced",
+   "source": "Yahoo",
+   "headline": "Why Is UnitedHealth (UNH) Up 1.9% Since Last Earnings Report?",
+   "summary": "UnitedHealth (UNH) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
+   "url": "https://finnhub.io/api/news?id=996c45a3089744aa48fd0d80ff2bc7a08b23d5922863c85309fa8ac8a9bd9a2c",
+   "publishedAt": "2026-11-12T15:30:03+00:00",
+   "tone": 0.738,
+   "toneLabel": "positive",
+   "tickers": [
+    "UNH"
+   ]
+  },
+  {
+   "id": "fe5e657f3577",
+   "source": "Yahoo",
+   "headline": "RTX (RTX) DeepStrike Test And DARPA Win Put Fresh Focus On Defense Tech",
+   "summary": "RTX (NYSE:RTX) unit Raytheon completed a third flight test of its DeepStrike JR3 rocket for the U.S. Army's Joint Reduced Range Rocket program. The latest DeepStrike JR3 trial used a configuration intended to replace legacy training rockets in support of Army long range fires training. RTX secured a contract from DARPA under the PICASSO program to develop an all optical processing system for defense applications. The combination of the DeepStrike JR3 training rocket progress and the DARPA...",
+   "url": "https://finnhub.io/api/news?id=c745e57c180817c652eff90630190166873a5e6cb82250b3eefe5f75750b74d6",
+   "publishedAt": "2026-11-12T15:17:07+00:00",
+   "tone": 0.28,
+   "toneLabel": "neutral",
+   "tickers": [
+    "RTX"
+   ]
+  },
+  {
+   "id": "ed1a2cade603",
+   "source": "Yahoo",
+   "headline": "67% Upside for GE Vernova? Morgan Stanley Thinks So, and Here’s How",
+   "summary": "Key TakeawaysMorgan Stanley kept its Buy rating and $1,350 price target on GE Vernova on Nov. 12.",
+   "url": "https://finnhub.io/api/news?id=239ff75b0a5f9f09e5bd80f093e769107c258435de4a646d4997dc089268b7ba",
+   "publishedAt": "2026-11-12T15:12:39+00:00",
+   "tone": 0.05,
+   "toneLabel": "neutral",
+   "tickers": [
+    "MS"
+   ]
+  },
+  {
+   "id": "c53a5f31ce4e",
+   "source": "Yahoo",
+   "headline": "Can Morgan Stanley (MS) Justify Its Price After New Digital Moves?",
+   "summary": "Morgan Stanley has delivered a very strong 3 year share price run, yet at around US$190 a share the real issue for investors is whether that outcome lines up with the returns the bank is earning on its capital today. Recent moves into digital transfer agency, tokenization of securities and real estate assets add new angles to the story and put fresh focus on what those projects might do for long term profitability. Morgan Stanley shares are up about 160.7% over 3 years, which places...",
+   "url": "https://finnhub.io/api/news?id=9de1d40ed0eb56c2dfd117d1e256e4cef94d1c477207d56892e8a6e8cce5fbc8",
+   "publishedAt": "2026-11-12T15:12:10+00:00",
+   "tone": 0.1,
+   "toneLabel": "neutral",
+   "tickers": [
+    "MS"
+   ]
+  },
+  {
+   "id": "f6d362867e96",
+   "source": "Yahoo",
+   "headline": "Walt Disney (DIS) Just Gave Investors Something To Think About",
+   "summary": "Walt Disney (DIS) just deepened its ties with Adobe through a multi year AI partnership that reaches from theme parks to ESPN. For investors, the agreement highlights how Disney is organizing its content operations for efficiency. The Walt Disney share price has climbed 10.3% over the past month and 14.2% across 90 days. However, the 1 year total shareholder return of 4.1% and the 5 year total shareholder return, which is down 21.6%, show that longer term investors are still waiting for a...",
+   "url": "https://finnhub.io/api/news?id=a0fac9ebf955d345fc6ca32661c2330109784c2b478cd65f53cd251fe8711f97",
+   "publishedAt": "2026-11-12T15:09:45+00:00",
+   "tone": 0.086,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS"
+   ]
+  },
+  {
+   "id": "f49764bc4502",
+   "source": "CNBC",
+   "headline": "Mortgage rates were 7% in 1997, too—here’s why buying a home feels more expensive today",
+   "summary": "Even at the same mortgage rate, buying a typical home today eats up a much bigger share of household income than it did 30 years ago.",
+   "url": "https://www.cnbc.com/make-it/2026/11/12/mortgage-rates-home-affordability-1997.html",
+   "publishedAt": "2026-11-12T15:00:01+00:00",
+   "tone": -0.051,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "3e9f86026ae3",
+   "source": "CNBC",
+   "headline": "Jensen and Lori Huang's Nvidia fortune is jointly controlled. How that makes things complicated now that he's resigned",
+   "summary": "Jensen Huang’s $140 billion stake in Nvidia is largely held by trusts co-owned with his wife, Lori, creating added uncertainty for his financial future.",
+   "url": "https://www.cnbc.com/2026/11/12/inside-jensen-and-lori-huangs-jointly-controlled-nvidia-fortune.html",
+   "publishedAt": "2026-11-12T14:13:15+00:00",
+   "tone": -0.049,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "389d38a475d6",
+   "source": "CNBC",
+   "headline": "Jim Cramer's top 10 things to watch in the stock market Thursday",
+   "summary": "Nvidia CEO Jensen Huang's future at the chipmaker hangs in the balance.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/12/jim-cramers-top-10-things-to-watch-in-the-stock-market-thursday.html",
+   "publishedAt": "2026-11-12T14:00:19+00:00",
+   "tone": -0.002,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "33ef6a7bc9db",
+   "source": "CNBC",
+   "headline": "Disney's 'Star Wars' is coming to Cosm domes ahead of 50th anniversary as part of multiyear film deal",
+   "summary": "Cosm has secured a new studio partnership with Disney that will bring \"Star Wars: A New Hope\" to its domes as part of a multiyear, multifilm collaboration.",
+   "url": "https://www.cnbc.com/2026/11/12/star-wars-cosm-dome-screenings.html",
+   "publishedAt": "2026-11-12T14:00:01+00:00",
+   "tone": 0.121,
+   "toneLabel": "neutral",
+   "tickers": [
+    "DIS"
+   ]
+  },
+  {
+   "id": "ab2739f81c22",
+   "source": "Reuters",
+   "headline": "Trump says US does not need Iran deal, directs Vance to focus on domestic corruption",
+   "summary": "Trump says US does not need Iran deal, directs Vance to focus on domestic corruption  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTkdBWnZVWXZqcEFwdWFkTmw5XzVHVndjNzBhdW1GZVFfT2d2OFBzVDlLbC1pdmNvZTY5X01iRE01eGktRlh0b0s2bXJSTm9ZS19CZkdnVzR6bmEzOFJlQjNET2NvTl9yVGZjeHg5SkxVcmZ5UHFkLXcxQ1M3N1dRU3R5R05raV9VOVRsUDRFZE9sT1B6NmZ0ZTA4SFB0TlNYTUNhUHdMWVNKV0tDSmd4d19IRERyblE2QkgxSlpzSQ?oc=5",
+   "publishedAt": "2026-11-12T13:39:00+00:00",
+   "tone": 0.076,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "6be652d803ec",
+   "source": "Reuters",
+   "headline": "UAE's Ras Al Khaimah, Sharjah reopen several beaches after tanker oil spill",
+   "summary": "UAE's Ras Al Khaimah, Sharjah reopen several beaches after tanker oil spill  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNN1VjNG1TSnF3bDRTUXp1cHJ2TDA3WkJNY2J3dVkxWWJMOGxhczN6WlVncFEwTlNQT29sR1FMdjBSV2FFMkowS3ZhNEZ5SXlJeXNLcGg5MlA5eW5JY0VWYzlPazJDdlcxczFkQlBDVVl2MjhsNFdDRmFTbS1CT0s2QkxwQmpkLUh5ZmpRODRNZlhWU1YxWDRJZUFKOTd4LVFRUFZaLVY5RkRNZ0pHY3hqRldQMk5VYXVOazd1cmREY25KanNNdnc?oc=5",
+   "publishedAt": "2026-11-12T13:24:17+00:00",
+   "tone": 0.565,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "85c76b5bad1c",
+   "source": "Yahoo",
+   "headline": "Do Wall Street Analysts Like UnitedHealth Group Stock?",
+   "summary": "UnitedHealth Group has outpaced the broader market over the past year, and analysts remain highly optimistic about the stock's prospects.",
+   "url": "https://finnhub.io/api/news?id=a81cbfba7577cd1444317979f4c4e0e87ebeba1e7b5e492f73b1ba5aebad742f",
+   "publishedAt": "2026-11-12T13:23:41+00:00",
+   "tone": 0.005,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UNH"
+   ]
+  },
+  {
+   "id": "1168eea5e638",
+   "source": "Reuters",
+   "headline": "Abu Dhabi boosts Gulf markets as FAB shares advance",
+   "summary": "Abu Dhabi boosts Gulf markets as FAB shares advance  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObGNWY3AteW02UnJ1U3diVGdQLTFOUlJCU1M0UWZhQUdCbzhicnpLWXNpeWhHT1J0NkZWYzRzVm1nMUcxV2Q5MXJGOXNMTm4tT3FHM3F4d0s5VWU3UzZ0ZW1nb1YtTzh4SEIwQXExSU5DX0V3dHNvbWlvMGZKVlppZ0tib2xkOWpoWHljSXVVRnh1b2VneEd0NHhnbVNvQy1QV1pwOEVTTG9OempFYmc?oc=5",
+   "publishedAt": "2026-11-12T13:17:46+00:00",
+   "tone": 0.877,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "91f34050fb80",
+   "source": "CNBC",
+   "headline": "Unions helped Democrats win big in 2026. Now they want action",
+   "summary": "Unions spent millions of dollars and mobilized thousands of members to get out the vote for Democrats in the midterm election. Now they want to see action.",
+   "url": "https://www.cnbc.com/2026/11/12/democrats-unions-midterms-2026.html",
+   "publishedAt": "2026-11-12T13:09:33+00:00",
+   "tone": 0.025,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "4ade3eb2242d",
+   "source": "Reuters",
+   "headline": "Oman monitors handling of oil tanker run aground off its coast",
+   "summary": "Oman monitors handling of oil tanker run aground off its coast  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOajlqak9wTzJCY2RvLTg2YTV6MFZDX3hSMUMxVUVEM3BDQXBVWG10dDM3SDJ0S2pzWmd5NU1BNTZYbTFPVHluME43UTZ0QTVTcllRcDhUdTJienpEcFZ4MmZucnlYRHFCWlMtVG5EUGU1N2pwZl9DTWl1M2lDZFBwRFNwWUtBbVJyWWc3LWZsYlNuYWk3WFRnR1M4cDVVTWZXRnZhMjVrT2h3TXl2d2FPNlR0UQ?oc=5",
+   "publishedAt": "2026-11-12T13:00:09+00:00",
+   "tone": -0.647,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "74bf1934de5c",
+   "source": "Reuters",
+   "headline": "Saudi Arabia to hold delayed FII in October 2027",
+   "summary": "Saudi Arabia to hold delayed FII in October 2027  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORDQ4VExjSGx0REdrNkk0ZERSMlBVNUhqWHpXbEJGd1JFeDgzYWxYaXllVVN6bTRXVk5uSllFT0Uwam9UWE0wYmxCV0lDUzFDRnRxY2UxQzJXYTFsQTJNTWtPUHVkeWhJUnVjYVpuZGJGRnVkY05ScW44aHN6dGpLTkItM1hka3BXYlk5OXRyQzRIN1Y5bklaWjMzcDg?oc=5",
+   "publishedAt": "2026-11-12T12:33:53+00:00",
+   "tone": -0.028,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "c1c1ee37e1cc",
+   "source": "Reuters",
+   "headline": "Can a new US Congress mean an end to the Iran war?",
+   "summary": "Can a new US Congress mean an end to the Iran war?  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNdmRaejBnMHp1QkhibDEzU1hQLVhZZWlaeXV2d1dGcHF5OU1CbGUzTWtVYXpLT1hFcUh5SzVJbWg2eHZpRy1oU1IxZzByY2hhQmpyTDNHTUh4U1NVVE1DWktWMlU1ZUMtNy1xZk1TN3dXVzBXY1dXVDV2aFhuNURkTWpteWpUblljY3p0QjN3?oc=5",
+   "publishedAt": "2026-11-12T11:42:53+00:00",
+   "tone": 0.044,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "92ae9765d18d",
+   "source": "CNBC",
+   "headline": "Scout Motors has 212,000 vehicle reservations as $2 billion South Carolina plant nears completion",
+   "summary": "Scout Motors has roughly 212,000 reservations for its Terra pickup and Traveler SUV, CEO Scott Keogh told CNBC.",
+   "url": "https://www.cnbc.com/2026/11/12/scout-motors-reservations-south-carolina-plant.html",
+   "publishedAt": "2026-11-12T11:30:01+00:00",
+   "tone": -0.234,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "4adf10aab38c",
+   "source": "Reuters",
+   "headline": "South Africa's citrus exports fall on Iran war disruption, bad weather",
+   "summary": "South Africa's citrus exports fall on Iran war disruption, bad weather  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQSEdMeVJPU1FqTUdleG5McVVJdTBkTXpIbng3bnEzRi1ZWUlSNWFfUExHbnZsc1h4Tm5Nb2k5b1JoWllINEhReExZbndMbTFXZ0JhcUNQWHZrYjlzcGFoRWNuc1FELUk0ekRTVmJub1dYUkNYdzIyZWowRWpITERUWXVScnhBVjlQU2ozWmdmNkhOUUY2U3dQQ1R2OVN5WHNLaFc0NWdVUndrZVRjanpEbVo1Z3o?oc=5",
+   "publishedAt": "2026-11-12T08:54:10+00:00",
+   "tone": -0.959,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "8104f9a3c6ab",
+   "source": "Reuters",
+   "headline": "COMMENTARY: Just like the US, Iran has squandered its good options to end the war",
+   "summary": "COMMENTARY: Just like the US, Iran has squandered its good options to end the war  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNbjNkU1dtRi1ZR0lyQmplWGZON1QwakF5Wk82UzhRSzR6ZlJfVFlpTkJLWEVBdGFsc21GbEVNMURkRDhaWm9tRHhwZGhUclFxXzdzUlZUU0VUYi10U1MtVzF5djhHNFVCSEhUa1dMN0pvWjktV2JQVGJTa01lSl9lM1RkY1RGdmJmOWVGUkd6MUw2WjBDZ0NPQ3pfYzh2ZXkwNDF3YXppNlBIcEhIUWlQcVhoZXpEOUZpNXYzZHVrdlVybVYz?oc=5",
+   "publishedAt": "2026-11-12T05:50:00+00:00",
+   "tone": 0.527,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "9ebef40de6ee",
+   "source": "Reuters",
+   "headline": "ASEAN to launch joint oil product stockpiling scheme as early as 2027, Nikkei reports",
+   "summary": "ASEAN to launch joint oil product stockpiling scheme as early as 2027, Nikkei reports  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNN2Z2VmxvMGRvUzBjNGNadDZRSmZQdHZlNk5LeUdOZC1jTDZ5eHp0VXNQa0RjclhvcVFFZEtEc1pVRGJTa2F0YkYtVlNQSHJ0NUhiOFpoYzhVSHB6M0NvWkphRDloUjZ1cXR4elRWeFZSaEpJRW44b3lVcF9XRkJlM0VjLWtmS3p0Q2tXZFRJcVhKUi1HU3hhR0JpMkQtaGFkNlhRUEFtczJybDd0YUxuVVBxS0d5YjdkcmlQX2VJNExoc0ZNNFE?oc=5",
+   "publishedAt": "2026-11-12T04:46:00+00:00",
+   "tone": 0.158,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "0bdfe33ae0aa",
+   "source": "Reuters",
+   "headline": "Gold drops 3% to over one-year low as fading Middle East peace hopes fan inflation fears",
+   "summary": "Gold drops 3% to over one-year low as fading Middle East peace hopes fan inflation fears  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPc09mRGRCVmlxTnVTdDR2Y0ktNjVkZE1xUHhyTnZWUGZvbFZFS2hsTFk1SkVfNE82SVZlMTFXbUFtckZMaDIwbzA5RlgxWUxKbE5ZMGhrRkl1UWFrVG9ibW9mdWlGM0NYRTVlQnZramhHSTVadmtEaFhWMDRFY1dYVWRPX1RzNm9YNURTVUVzeGo2aEo4UzZReXRCVlQ0amhjVGFWTU1BVFVQR1k?oc=5",
+   "publishedAt": "2026-11-12T03:40:00+00:00",
+   "tone": -0.914,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "9db520019f0f",
+   "source": "Reuters",
+   "headline": "Scenes from Veterans Day across America",
+   "summary": "Scenes from Veterans Day across America  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOcEE1amMyYjVhNFBoUUllZGU3U3plUGFCWGttZVBhaFBPZkFMRXdaS1RGbnhJUnYxYWNGYnJjVXlmcDkzUW5SN2tkai02VXVuLURFdHNJZmc3aHZJWnZHeEJtUVRYdERwM2hNamhHbHAyaURscm1XY3FsUzE2dUl1WEswVFlLZw?oc=5",
+   "publishedAt": "2026-11-12T01:32:00+00:00",
+   "tone": -0.035,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "176cb7502afb",
+   "source": "CNBC",
+   "headline": "Cramer's stance on Nvidia's stock amid reports that CEO Jensen Huang may be ousted",
+   "summary": "Jim Cramer said Wednesday night that he was saddened by a news report that indicated Nvidia's board of directors is preparing to fire Huang.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/11/jim-cramer-jensen-huang-nvidia-stock-advice.html",
+   "publishedAt": "2026-11-12T01:14:21+00:00",
+   "tone": -0.773,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA"
+   ]
+  },
+  {
+   "id": "d5870fba7979",
+   "source": "Reuters",
+   "headline": "Saudi Arabia says debris from intercepted missiles falls in Mecca region",
+   "summary": "Saudi Arabia says debris from intercepted missiles falls in Mecca region  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSEdmMVduSHJxWEd1UWVkOUtrcF91S3VfSnI0MzlnTjh6NFdHOFNpSTBXU1JpdFk3NHdORlNsck91bFEyNUNLMHdoT1hFZmlqTGdaUDU2c2ZkeXE0Zl82cURaQXZxTS1IMmxqS3FNUEVNU1FRU1NQU01EQkxzNkN0YUhWek1qRm9ZYkNUS1FrWUIyTmFaUFFkTERqZER3UUx6cEN3VVdWNG56R19zSFkzRWphVUl1Z3I1eHc?oc=5",
+   "publishedAt": "2026-11-12T00:21:00+00:00",
+   "tone": -0.922,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "deb063a2a143",
+   "source": "Reuters",
+   "headline": "Tankers burn in the Middle East despite hopes for de-escalation",
+   "summary": "Tankers burn in the Middle East despite hopes for de-escalation  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObk1HVHlrMXF2OXBza19vMDdFUENMek40em9sQmVNLXdWOFduMEJlVU4ycmVzeE1MYWt0YV9FRDR1OTVSc05jWFQ5QnJ1bjlZSGk4bXhwUEk2cGhBeTBlMkI5VEkzbHF4YlNKdkpYdFYzWUtua1RqWEh2VFR2TkppS3hsQlBrb1hHLTJBSzh6ZngyNXc5bk9XTWNJbWlaSWlxZDlwcGl1WTdEWFhOZ2RZSVRxMA?oc=5",
+   "publishedAt": "2026-11-11T23:39:28+00:00",
+   "tone": -0.418,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "24e2aa19a823",
+   "source": "Reuters",
+   "headline": "Israeli strike on Gaza hospital kills six, including surgeon, medics say",
+   "summary": "Israeli strike on Gaza hospital kills six, including surgeon, medics say  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOekJqQTlDSnpyUHhBeEEwb0V2X2s4NzdhSzR3a0NvbDZoR0FWXzR0X2k5YV9zaHlhU0M3YlVMWk9RTDltZXZiajZGdlVMSmxrMnJkWEI4QXU4bUFGSWppTDJFcVh4amhHR1lkYkdKT3VvT1BicUZnWTRBb3JuU3lHYVBScHhIdkc2bC1DZWpOVWNlbkJiTTRIQXdxYlE2a1hndlV5R3pwOVY4WVhvVXYwNVJ0UXU3WGJuTFAxZlhNU3YyeVhB?oc=5",
+   "publishedAt": "2026-11-11T23:26:00+00:00",
+   "tone": -0.89,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "f1922f09051b",
+   "source": "Reuters",
+   "headline": "Iran tells COP31 it wants compensation for environmental damage from US-Israeli strikes",
+   "summary": "Iran tells COP31 it wants compensation for environmental damage from US-Israeli strikes  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQS2FSc2RtZWhvZFUxWkp2MGlPTGxDbkM0aTEydVBoMkdUd2VkVVRWV01fblhPSmlKMGo0Q3M5cFZ5MlhlUHRWVlNDRlVGcFdPdS1VYk9KUE16OVFUVDR0bVFWakRpRzctbzRLMDdxUmE1M3lPdzlmWEZLYUxxUlNjdTZyNEV1WndJdk04N050Q21TeEdCbzRxT2gxaWFWRlQzSERXS1RiLTNCaTdMLWZZb3hmRjQxM0NaTXVlWE1aNTVLdUxrTjdDejdWZVBSdw?oc=5",
+   "publishedAt": "2026-11-11T22:13:11+00:00",
+   "tone": 0.04,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "65eb3b2de201",
+   "source": "Yahoo",
+   "headline": "Ford Motor (F) Earnings Drew Focus, Is The Stock Trading At A Discount?",
+   "summary": "Ford Motor (F) has the market’s attention after its third quarter earnings update showed lower revenue and profit than a year earlier, along with affirmed dividends and fresh data on recent share price moves. Ford Motor’s latest figures are landing against a backdrop where the 1 day share price return declined 1.92%, capping a 90 day share price return that fell 11.21%. Even so, the 3 year total shareholder return of 42.11% signals that longer term holders have still seen meaningful...",
+   "url": "https://finnhub.io/api/news?id=89d9dc1cbd834fffa7a16c98cd21f924054db3cd6252032cfb8d3eb48b3d573e",
+   "publishedAt": "2026-11-11T22:10:12+00:00",
+   "tone": 0.013,
+   "toneLabel": "neutral",
+   "tickers": [
+    "F"
+   ]
+  },
+  {
+   "id": "0f11297c1423",
+   "source": "CNBC",
+   "headline": "Feds arrest top official of healthcare company, alleging illegal drug importation",
+   "summary": "U.S. officials are accusing two top officials of a Canadian company of operating a scheme to illegally import prescription drugs, court records show.",
+   "url": "https://www.cnbc.com/2026/11/11/canarx-official-arrested-drug-importation.html",
+   "publishedAt": "2026-11-11T21:33:17+00:00",
+   "tone": -0.86,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "f4b4ca0d6de5",
+   "source": "Yahoo",
+   "headline": "Ford (F) Stock Still Looks Undervalued On Its 42% Three Year Run",
+   "summary": "Ford Motor has delivered a 42.1% gain over the past three years, even as shorter term returns have been mixed. This puts fresh focus on whether the current share price lines up with the cash the business can generate. With new electric pickups on the way and shifting fuel-efficiency rules in the background, the key issue for Ford stock today is how the market price compares with the value suggested by its future cash flows. The stock's 42.1% rise over three years raises the question of how...",
+   "url": "https://finnhub.io/api/news?id=ef12885581fd8b87b2fc7791203e530027491506a993f81c1c2278f3788a0e5f",
+   "publishedAt": "2026-11-11T21:10:56+00:00",
+   "tone": -0.421,
+   "toneLabel": "negative",
+   "tickers": [
+    "F"
+   ]
+  },
+  {
+   "id": "213c5696168d",
+   "source": "CNBC",
+   "headline": "Costco is giving shareholders a big, early holiday gift. How to make sure you get it",
+   "summary": "Costco announced a special dividend, and it's not too late to get in on the action.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/11/costco-is-giving-shareholders-a-big-early-holiday-gift-how-to-make-sure-you-get-it.html",
+   "publishedAt": "2026-11-11T20:59:32+00:00",
+   "tone": 0.039,
+   "toneLabel": "neutral",
+   "tickers": [
+    "COST"
+   ]
+  },
+  {
+   "id": "1212a1741f99",
+   "source": "Reuters",
+   "headline": "Saudi Arabia intercepts Houthi missiles, drones; group denies targeting Mecca",
+   "summary": "Saudi Arabia intercepts Houthi missiles, drones; group denies targeting Mecca  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNa0VablB0SWViZWpCRFg4bC0yX2ZTM19HNmFFVUdqVVlwbWRuRjdpSnNXZ3liU04zeTYyZWJPSlhLeEVRTUlMS0N2SnlPdEpINzVHUTJjRXJjd3RKdEZMLS14czdZSlpjcWlJWm95bFpTNHgxblNSVlFyLWhsQ0JncVFZRGRmQ0p6cDZQRGRtNlh6LWxnVXlLRkJyelFzdTFoM285d2tQZTJvS1BkYkRzLVZwUERKc2pHbVBqOUZDSmFRbGJ4TmpmQVExbnEzOTQ?oc=5",
+   "publishedAt": "2026-11-11T20:57:51+00:00",
+   "tone": -0.215,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "97a6b470ee68",
+   "source": "Reuters",
+   "headline": "Hoax bomb alerts sent to schools in Italy, UK and Ireland in latest disruption",
+   "summary": "Hoax bomb alerts sent to schools in Italy, UK and Ireland in latest disruption  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOLUZHS1hQdFNsS21tSW0zXzRnRDNsVEN2T1hITTBwX1l3d3VCWmw5MXVMaEYwM2ROMXpYNnR6cTNwMlVuSUNsekp2YmZtX1h2VE9wNnc2RThjc05OV2tBc0VNNzNicWNGcGtKVG9VTGo2Yzl5eUFxeE9IQ3JlZWpHb25vcWk5VmlWZkRwbmQzRmhzbDF2cmhWM1F0RmNlTGhtM0Zv?oc=5",
+   "publishedAt": "2026-11-11T20:47:43+00:00",
+   "tone": -0.527,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "adc97e904a8e",
+   "source": "Yahoo",
+   "headline": "Ford Motor (F) Brings In Marissa West To Lead Its 2029 Vehicle Refresh",
+   "summary": "Ford Motor (NYSE:F) hired former General Motors executive Marissa West as Vice President of Vehicle Programs. West will oversee Ford's vehicle development and lead a broad product portfolio refresh that runs through 2029. Her remit includes new electric models and midsize pickup trucks across both commercial and consumer product lines. Ford's decision to appoint Marissa West to oversee the 2029 product overhaul is noteworthy, but investors may want to take a broader perspective. Take a look...",
+   "url": "https://finnhub.io/api/news?id=c569eca7a8b0a3f35e6d3a6d9748ab840d4f6247975a409396c7b82b10f4635f",
+   "publishedAt": "2026-11-11T20:09:38+00:00",
+   "tone": 0.186,
+   "toneLabel": "neutral",
+   "tickers": [
+    "F",
+    "GM"
+   ]
+  },
+  {
+   "id": "e4228a109f7a",
+   "source": "CNBC",
+   "headline": "We're adding a chipmaker to our Bullpen watchlist and downgrading another name",
+   "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.",
+   "url": "https://www.cnbc.com/investingclub/2026/11/11/were-adding-a-chipmaker-to-our-bullpen-watchlist-and-downgrading-another-name.html",
+   "publishedAt": "2026-11-11T20:04:42+00:00",
+   "tone": -0.161,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "bde054b2d92a",
+   "source": "Reuters",
+   "headline": "Oil up 1% as Iran official says country will keep enriched nuclear material",
+   "summary": "Oil up 1% as Iran official says country will keep enriched nuclear material  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUDdYdlFvTWpsUDJOZkVpN1RNYmM1RlIwZUxzSGhrazVnMTJ1el9lT2lpc08yc2VrUjdyR0tSWjJIRVRMdXh2cmJDam5yY2d1QURuUFdvQkh1ZWJDdHFXbmZCejViSHhTYnl6YU1uMmEtS1NIcFU1dmhPQVZpN2R5Ykc1OVBrUXVhemRVa01TblQ5THN6eDBlOXl3Nm5qTEtKRjNDeVVraW1hRjUwZjQyclBwd1hCTlZvNkdaVVdlUDc?oc=5",
+   "publishedAt": "2026-11-11T20:01:58+00:00",
+   "tone": 0.599,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "f1de27b5488c",
+   "source": "Yahoo",
+   "headline": "MP Materials (MP) Q3 Beat Raises The Question Of Whether Its Story Is Already Priced In",
+   "summary": "MP Materials (MP) just put a busy third quarter on the table, with revenue and production updates, narrowed losses, and fresh contract progress that together give investors more concrete numbers to work with. Despite the Q3 beat and contract wins with General Motors, Apple and U.S. defense customers, momentum in MP Materials’ shares has cooled. The share price is down 21% over the past month and 34% year to date, while the three year total shareholder return of around 126% still reflects a...",
+   "url": "https://finnhub.io/api/news?id=cf7791e820548949235c8944c880655815e3a92496273b21759334f16263a623",
+   "publishedAt": "2026-11-11T19:13:34+00:00",
+   "tone": 0.017,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL",
+    "GM"
+   ]
+  },
+  {
+   "id": "0b03141e6693",
+   "source": "CNBC",
+   "headline": "Apple's record run ignites options flurry — Watch Options Action live",
+   "summary": "Apple's resilience continues to catch the attention of options traders looking for a safe harbor in tech.",
+   "url": "https://www.cnbc.com/2026/11/11/apples-record-run-ignites-options-flurry-watch-options-action-live.html",
+   "publishedAt": "2026-11-11T18:53:03+00:00",
+   "tone": -0.021,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL"
+   ]
+  },
+  {
+   "id": "ce3df13524b7",
+   "source": "CNBC",
+   "headline": "Bouncing Wynn Shares might be primed for the 'wheel strategy'",
+   "summary": "From a valuation standpoint, WYNN is trading very close to its five-year historical averages across key metrics. So how should traders play this setup?",
+   "url": "https://www.cnbc.com/2026/11/11/bouncing-wynn-shares-might-be-primed-for-the-wheel-strategy.html",
+   "publishedAt": "2026-11-11T18:24:53+00:00",
+   "tone": 0.409,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "ed71c2cf5382",
+   "source": "Reuters",
+   "headline": "US says China agreed importance of leader-level talks to advance denuclearization",
+   "summary": "US says China agreed importance of leader-level talks to advance denuclearization  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbXJHM3IyZ2pKbGQxZnlweUxZeFZwZFppUWxpdjJ2TmpyLWFkM1NjVDBwV01Icno3SV9QSG0xVlQwU1dGQ2lYWmR4SUpuU0FPNTFXSWtwYllacWNzSmJ2azlqQjhSTW5EUzhuWVNqRUltSnlWRi1mOVJpRjlYcHpHWjNDdFJZR1Yzd0J0b0JtQXZrSExTazBDVnBxMDNwRDVua2ljN2xwNFVuS2pKbkhEaG9Zc2tRMUNvS0E?oc=5",
+   "publishedAt": "2026-11-11T18:12:00+00:00",
+   "tone": 0.866,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "a90294f0356f",
+   "source": "CNBC",
+   "headline": "Meta head of infrastructure will leave and be succeeded by former AWS cloud exec",
+   "summary": "Meta's head of infrastructure and co-head of engineering Santosh Janardhan will leave in 2027, with former AWS senior vice president David Brown taking over.",
+   "url": "https://www.cnbc.com/2026/11/11/meta-infrastructure-departure-aws-cloud.html",
+   "publishedAt": "2026-11-11T18:10:52+00:00",
+   "tone": -0.207,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMZN"
+   ]
+  },
+  {
+   "id": "94461bc95709",
+   "source": "Reuters",
+   "headline": "Iran attacks shipping navigation systems on Oman's Didamar island, sources say",
+   "summary": "Iran attacks shipping navigation systems on Oman's Didamar island, sources say  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMFB3XzM5cVFXcFdvTWhfdVJSY21DLVNHRE81YXh1Ykt3MlY0M29GY05FbFEwd2hMT3lTR1duaVV6UGdac003SWM2cTJpb1FqX2UzdnZqNW5YSEpEOGd2dmZ2VW5XOTZzcGlSNGl5dENGNFQ4c2JGYU9yaXV2RU84QXVRQVVtR3EtYmpaNXRKM3d2ZHJVdzlzOWxrMktEVVZYZzJVeVVzcmtMM0JLYmxsZVQ5YlRWN2tRd0UyM2dUXy04eW5PWlE?oc=5",
+   "publishedAt": "2026-11-11T17:59:02+00:00",
+   "tone": -0.879,
+   "toneLabel": "negative",
+   "tickers": []
+  },
+  {
+   "id": "1e6e9e514251",
+   "source": "CNBC",
+   "headline": "American Airlines brings fresh food back to NY-Chicago first class for first time since 2019",
+   "summary": "American Airlines' first class food options include sandwiches, fruit and chia bowls",
+   "url": "https://www.cnbc.com/2026/11/11/american-airlines-first-class-chicago-new-york.html",
+   "publishedAt": "2026-11-11T17:34:18+00:00",
+   "tone": 0.66,
+   "toneLabel": "positive",
+   "tickers": []
+  },
+  {
+   "id": "534fed79e3fb",
+   "source": "Reuters",
+   "headline": "Conflict must not distract from climate action, leaders warn COP31",
+   "summary": "Conflict must not distract from climate action, leaders warn COP31  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcy1FRWhTbVJwQjAtOUVzaXJGczgtR0hGWV9UeXlXZkwtT3Z5TXBKUV8yU3lEajg0NFlmdmMteW50ZlNYWnpaX3Jud2o5SWF1dE1mWkhBbXhNY05GWW1HLUdaM1ZnX2pEUEZfbUg4NGZLWlMxYl9uRVBiNHNWekFGM1lqWGJrRUxKZHZKMF9RZE1HcUo0VDI4aWdlUERkd2EyeUs4bTFTb2N5UFNsWDJDVDc2RQ?oc=5",
+   "publishedAt": "2026-11-11T17:31:57+00:00",
+   "tone": 0.045,
+   "toneLabel": "neutral",
+   "tickers": []
+  },
+  {
+   "id": "7aa4625a1ac9",
+   "source": "Yahoo",
+   "headline": "MP Materials Clears GM Magnet Milestone, Targets Apple as Next Customer",
+   "summary": "MP Materials (NYSE:MP) has qualified rare earth magnets for General Motors and is ramping production, CEO and Chairman Jim Litinsky said at an investor conference, marking a milestone in the company’s expansion beyond mining and refining. Litinsky said the company plans to bring Apple online as a c",
+   "url": "https://finnhub.io/api/news?id=e56da536b8b6ef5c4f0cb62d80c145b5fa47ba5f366c42cc89d30303c28adc54",
+   "publishedAt": "2026-11-11T17:15:48+00:00",
+   "tone": 0.481,
+   "toneLabel": "positive",
+   "tickers": [
+    "AAPL",
+    "GM"
+   ]
+  },
+  {
+   "id": "988b2668471d",
+   "source": "Reuters",
+   "headline": "Russia and Ukraine say some progress made at talks, US cites a lack of trust",
+   "summary": "Russia and Ukraine say some progress made at talks, US cites a lack of trust  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdEZkalllTkswSW1lWVlXanFsVFBfVnBSUmE0U1VNWTJ4c3BrS3dzTDZWQUhwM3NfOTFMdjVuaHBqZVRTVFBYU2JEOWtpX2VoR1ZtUzZVcDlTN0tKVzVtczFhYThSSHpDTjJXSHV4U1Rqc0doRElpcW1WTGQwdmF6bE1VN3BpU2J4U3V1Rld3S25XNXZxWkVVNVlRZDAzLWpIVGFHWG9Bd2M?oc=5",
+   "publishedAt": "2026-11-11T17:11:11+00:00",
+   "tone": 0.849,
+   "toneLabel": "positive",
+   "tickers": []
+  }
+ ]
+}
