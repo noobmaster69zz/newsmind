@@ -1,63 +1,120 @@
 # NewsMind
 
-Financial news, charted by the companies it names.
+Financial news, charted by the companies it moves.
 
-NewsMind pulls the financial news wire, scores the tone of every headline with FinBERT, links each story to the companies it mentions, and draws the whole wire as a 3D point cloud: every point is a story coloured by tone, every cluster is a company, and neighbouring clusters share a sector. Choosing a story turns the cloud to face it and fires links out to the companies it names.
+**Live site:** https://noobmaster69zz.github.io/newsmind/
 
-Inspired by [BettaFish](https://github.com/666ghj/BettaFish) (multi-agent sentiment analysis) and [Stock-Prediction](https://github.com/alisonmitchell/Stock-Prediction) (ML price prediction).
+[![Tests](https://github.com/noobmaster69zz/newsmind/actions/workflows/tests.yml/badge.svg)](https://github.com/noobmaster69zz/newsmind/actions/workflows/tests.yml)
 
-> Not financial advice. The site shows who a story names and how its headline reads. It does not yet predict prices.
+I'm a student in AI and Data Engineering at Nanyang Polytechnic, and this is my personal project. I wanted to know one thing: when a headline comes out, which companies does it actually touch, including the ones it never mentions? A story about tankers hitting mines in the Strait of Hormuz doesn't name Exxon or Delta, but it matters to both.
+
+NewsMind pulls the news wire, scores how each headline reads, asks Claude which companies a story is likely to affect and why, and draws the whole wire as a 3D point cloud you can explore.
+
+> Not financial advice. Claude's reads are judgements from the text of a headline. They are not forecasts and I have not yet tested them against real price moves.
+
+## What you can do on the site
+
+- **Scroll the wire** on the left. The story on the reading line is charted on the right.
+- **Read the cloud.** Every point is a story, coloured by tone (cyan positive, maroon negative, grey neutral). Each cluster is a company, and companies in the same sector sit together.
+- **Follow the links.** Solid lines go to companies a story names. Dashed lines go to companies Claude expects it to affect without being named.
+- **Ask Blip.** The small pixel character walking along the bottom opens a panel. Ask what is moving the market, or ask about one of the tracked companies.
+- **Drag the seam** between the two halves to resize them, or switch on **Focus mode** to strip the page down.
 
 ## How it works
 
 ```
-Finnhub API ──> ingest pipeline ──> SQLite ──> FinBERT tone ──> export ──> static site
- (general wire    (validate, dedupe,   (news, news_ticker,   (sentiment     (events.json)   (frontend/)
-  + 35 company     strip source tags,   sentiment,            table)
-  feeds)           tag tickers)         pipeline_runs)
+Finnhub ──> ingest ──> SQLite ──> FinBERT ──> Claude ──> export ──> static site
+             │           │          tone       impact     events.json   (GitHub Pages)
+             │           │                     + briefs        │
+             └── validate, dedupe, tag ────────────────────────┘
+                                       seed: the snapshot is loaded back
+                                       at the start of the next run
 ```
 
-| Step | Code | What it does |
+| Stage | File | What it does |
 |---|---|---|
-| Extract | `backend/ingest/pipeline.py` | Pulls the general wire and one feed per tracked company from Finnhub |
-| Transform | `backend/ingest/pipeline.py`, `backend/agents/entity.py` | Rejects short or undated items, dedupes by headline hash, drops off-topic items from company feeds, tags tickers by alias |
-| Load | `backend/db.py` | Idempotent upserts into SQLite; every run is logged in `pipeline_runs` |
-| Score | `backend/agents/sentiment.py` | FinBERT tone per headline, from -1 (negative) to +1 (positive) |
+| Extract | `backend/ingest/pipeline.py` | Pulls the general wire plus one feed per tracked company from Finnhub |
+| Transform | `backend/ingest/pipeline.py`, `backend/agents/entity.py` | Rejects short or undated items, strips source suffixes, dedupes by a hash of the headline, drops off-topic items from company feeds, tags tickers by alias |
+| Load | `backend/db.py` | Idempotent upserts into SQLite. Every run is logged in `pipeline_runs` |
+| Tone | `backend/agents/sentiment.py` | FinBERT scores each headline from -1 (negative) to +1 (positive) |
+| Impact | `backend/agents/impact.py` | Claude returns up to four affected companies per story with a direction, a confidence and a one-line reason, plus a brief per company and a digest of the wire |
 | Export | `backend/export_site_data.py` | Writes the snapshot the site reads |
-| Site | `frontend/` | Plain HTML, CSS and JavaScript. No build step |
+| Seed | `backend/seed.py` | Loads the last snapshot into an empty database so nothing is processed twice |
+| Site | `frontend/` | Plain HTML, CSS and JavaScript with no build step |
 
-## Run it
+### The database
+
+SQLite, seven tables:
+
+| Table | Holds |
+|---|---|
+| `news` | One row per story. The primary key is a SHA-256 of the cleaned headline, which is what makes dedupe and re-runs safe |
+| `news_ticker` | Which companies a story names (many-to-many) |
+| `sentiment` | FinBERT score and label per story |
+| `impact` | Claude's one-line summary per story |
+| `impact_effect` | One row per company Claude expects a story to move, with `CHECK` constraints on direction and confidence |
+| `brief` | Claude's saved write-ups, with a hash of the stories each was written from |
+| `pipeline_runs` | Fetched, inserted and rejected counts for every ingest |
+
+### Where the Claude API key lives
+
+The key never reaches the website. Anything in `frontend/` is public, so the page only reads Claude's saved answers from `events.json`.
+
+- Locally the key sits in `.env`, which is gitignored.
+- On GitHub it is a repository secret, read only by the scheduled workflow.
+- Blip looks live, but it is reading saved briefs. That is a deliberate trade: no visitor can spend my credit, and the cost is capped by `NEWSMIND_MAX_CALLS`.
+
+A brief is only rewritten when the set of stories behind it changes, and a story is only read once, so a normal run pays for new headlines only.
+
+## Current snapshot
+
+At the time of writing the site holds 277 stories from Reuters, CNBC, Yahoo and others. 201 of them name at least one of the 35 tracked companies. FinBERT reads 145 as neutral, 75 as negative and 57 as positive. Claude (Haiku 5.5) has read all 277 and written 33 company briefs and one market digest.
+
+## Run it yourself
 
 ```bash
-pip install requests transformers torch pytest
-cp .env.example .env            # add your FINNHUB_API_KEY
+pip install -r requirements.txt
+cp .env.example .env            # add FINNHUB_API_KEY and ANTHROPIC_API_KEY
+python -m backend.seed          # optional: start from the committed snapshot
 python -m backend.ingest.pipeline
 python -m backend.agents.sentiment
+python -m backend.agents.impact
 python -m backend.export_site_data
 python -m http.server 5178 --directory frontend
 ```
 
-Then open http://localhost:5178.
+Then open http://localhost:5178. Without an Anthropic key the impact step skips itself and the rest still works.
 
-Tests: `python -m pytest tests`
+Tests: `python -m pytest tests` (12 tests, no network, no API key needed).
 
-## Using the site
+## Automation
 
-- Scroll the wire on the left. The story on the reading line is the one charted on the right.
-- Move the mouse to tilt the cloud. Hover a point to see its headline, and select it to read that story. Select a company label to filter the wire to it.
-- Drag the seam between the two halves to resize them.
-- Focus mode strips the page down to the headline, the companies and the tone.
+| Workflow | When | What |
+|---|---|---|
+| `tests.yml` | Every push and pull request | Runs the unit tests |
+| `pages.yml` | Push to `main` that touches `frontend/` | Publishes the site to GitHub Pages |
+| `refresh.yml` | Every six hours, or by hand | Seeds, ingests, scores, runs Claude, commits the new snapshot and redeploys |
 
-## Live site
+`refresh.yml` needs two repository secrets: `FINNHUB_API_KEY` and `ANTHROPIC_API_KEY`.
 
-https://noobmaster69zz.github.io/newsmind/ (published by `.github/workflows/pages.yml` on every push to `main` that touches `frontend/`).
+## What I learned
 
-The point-cloud chart takes its cue from the particle brain on [mindcorpus.org](https://mindcorpus.org/).
+- **Idempotency is a design choice, not a clean-up job.** Hashing the cleaned headline as the primary key meant the pipeline could be re-run safely from day one.
+- **Feeds lie about relevance.** Finnhub's company feeds include general market round-ups, so a story from the Boeing feed is only tagged Boeing if its text actually names Boeing.
+- **A model's output is data, so validate it.** Claude's reply is constrained by a JSON schema, and then filtered again in code: unknown tickers, repeats and invalid values are dropped before anything is stored.
+- **Secrets shape the architecture.** Wanting a clickable assistant on a public page, without exposing a key, is what pushed the design towards saved analysis and a scheduled job.
+- **State between runs has to live somewhere.** The scheduled job starts with an empty database, so the exported snapshot doubles as its memory.
+- **Animation should run on time, not frames.** Tying movement to elapsed time keeps it the same speed on 60 Hz and 120 Hz screens.
 
-## Status
+## Limits and what comes next
 
-Done: ingest pipeline, SQLite schema, ticker tagging, FinBERT tone, static site.
+- Claude's reads are not validated. The next step is an event study: compare each read with the stock's 1-day and 5-day return against the S&P 500, and report the hit rate honestly.
+- Ticker tagging is alias matching over 35 companies. It misses companies outside the list and can be fooled by ambiguous names.
+- FinBERT scores the headline only, not the article.
+- The site shows a snapshot, refreshed every six hours, not a live feed.
 
-Next: a Claude impact agent for second-order effects (suppliers, competitors, sectors a story affects without naming), an event-study model that predicts the 1-day and 5-day reaction, a FastAPI layer, and a scheduled ingest.
+## Credits
 
-Built by Gandhi Jaitra Nimeshkumar, AI and Data Engineering at NYP.
+Inspired by [BettaFish](https://github.com/666ghj/BettaFish) for the multi-agent idea and [Stock-Prediction](https://github.com/alisonmitchell/Stock-Prediction) for the modelling direction. The point-cloud chart takes its cue from the particle brain on [mindcorpus.org](https://mindcorpus.org/). News data from [Finnhub](https://finnhub.io/), tone from [FinBERT](https://huggingface.co/ProsusAI/finbert), impact reads from Claude.
+
+Built by Gandhi Jaitra Nimeshkumar.

@@ -1,0 +1,61 @@
+name: Refresh the wire
+
+# Pulls fresh news, scores it, has Claude read the new stories, and republishes the site.
+# Needs two repository secrets: FINNHUB_API_KEY and ANTHROPIC_API_KEY.
+on:
+  schedule:
+    - cron: "17 */6 * * *" # every six hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      NEWSMIND_MAX_CALLS: "150" # ceiling on Claude calls per run
+      HF_HOME: ${{ github.workspace }}/.hf
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/cache@v4
+        with:
+          path: .hf
+          key: finbert-v1
+      - name: Install
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install requests anthropic transformers
+      - name: Restore what earlier runs already worked out
+        run: python -m backend.seed
+      - name: Pull news
+        run: python -m backend.ingest.pipeline
+      - name: Score tone with FinBERT
+        run: python -m backend.agents.sentiment
+      - name: Claude reads the new stories
+        run: python -m backend.agents.impact
+      - name: Export the site snapshot
+        run: python -m backend.export_site_data
+      - name: Commit the snapshot
+        run: |
+          git config user.name "newsmind-bot"
+          git config user.email "newsmind-bot@users.noreply.github.com"
+          git add frontend/data/events.json
+          git diff --cached --quiet || git commit -m "Refresh the wire snapshot"
+          git push
+
+  deploy:
+    needs: refresh
+    uses: ./.github/workflows/pages.yml

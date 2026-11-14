@@ -18,7 +18,7 @@
   };
 
   const state = {
-    all: [], companies: {}, byTicker: new Map(), mood: new Map(),
+    all: [], companies: {}, market: null, briefs: {}, cardText: '', byTicker: new Map(), mood: new Map(),
     list: [], rows: [], tops: [], lineOffset: 0,
     active: -1, shown: null, scope: 'company', ticker: null,
   };
@@ -35,6 +35,8 @@
   const signed = (n) => (n > 0 ? '+' : n < 0 ? '−' : '') + Math.abs(n).toFixed(2);
   const toneClass = (label) => 'tone-' + (label || 'unscored');
   const moodLabel = (avg) => (avg == null ? 'unscored' : avg > 0.15 ? 'positive' : avg < -0.15 ? 'negative' : 'neutral');
+  const ARROW = { up: '\u25B2', down: '\u25BC', mixed: '\u25C6' };
+  const DIR_RGB = { up: '6,182,212', down: '224,82,122', mixed: '170,174,182' };
   const TONE_RGB = { positive: '6,182,212', negative: '224,82,122', neutral: '170,174,182', unscored: '170,174,182' };
 
   function setTone(el, label) {
@@ -62,6 +64,8 @@
       root.classList.remove('booting');
       state.all = data.stories;
       state.companies = data.companies;
+      state.market = data.market || null;
+      state.briefs = data.briefs || {};
       for (const s of state.all) {
         for (const t of s.tickers) {
           if (!state.byTicker.has(t)) state.byTicker.set(t, []);
@@ -77,6 +81,7 @@
       els.scopeCompany.textContent = `Company stories (${state.all.filter((s) => s.tickers.length).length})`;
       els.scopeAll.textContent = `Whole wire (${state.all.length})`;
       buildCloud();
+      blip.ready();
       applyFilters(null);
     } catch (err) {
       root.classList.remove('booting');
@@ -334,16 +339,44 @@
       els.toneScore.textContent = signed(story.tone);
       els.meterMark.style.setProperty('--pos', ((story.tone + 1) / 2).toFixed(3));
     }
-    const summary = (story.summary || '').trim();
-    els.summary.textContent = summary && summary !== story.headline
-      ? summary
-      : 'The wire carried no summary for this story.';
+    // Claude's one-line read replaces the wire's own summary when there is one.
+    const wire = (story.summary || '').trim();
+    state.cardText = story.impact ? story.impact.summary
+      : wire && wire !== story.headline ? wire : 'The wire carried no summary for this story.';
+    els.summary.textContent = state.cardText;
+    showReads(story);
     if (story.url) {
       els.readLink.href = story.url;
       els.readLink.textContent = `Read the story at ${story.source}`;
       els.readLink.hidden = false;
     } else {
       els.readLink.hidden = true;
+    }
+  }
+
+  // One chip per company Claude expects the story to move. Pointing at a chip shows its reason.
+  function showReads(story) {
+    const list = $('#readsList');
+    list.replaceChildren();
+    if (!story.impact) { list.textContent = "Claude hasn't read this story yet."; return; }
+    if (!story.impact.effects.length) { list.textContent = 'No clear effect on a tracked company.'; return; }
+    for (const e of story.impact.effects) {
+      const company = state.companies[e.ticker];
+      if (!company) continue;
+      const reason = `${company.name}, likely ${e.direction}, ${e.confidence} confidence. ${e.reason}`;
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = `read-chip dir-${e.direction}`;
+      chip.textContent = `${e.ticker} ${ARROW[e.direction]}`;
+      chip.setAttribute('aria-label', `${reason} Select to ask Blip about ${company.name}.`);
+      const show = () => { els.summary.textContent = reason; };
+      const hide = () => { els.summary.textContent = state.cardText; };
+      chip.addEventListener('pointerenter', show);
+      chip.addEventListener('focus', show);
+      chip.addEventListener('pointerleave', hide);
+      chip.addEventListener('blur', hide);
+      chip.addEventListener('click', () => blip.company(e.ticker));
+      list.append(chip);
     }
   }
 
@@ -356,7 +389,7 @@
     ctx: els.cloud.getContext('2d'),
     W: 0, H: 0, dpr: 1,
     pts: [], dust: [], centers: new Map(), byId: new Map(),
-    sel: null, selTickers: new Set(), hover: null,
+    sel: null, selTickers: new Set(), selEffects: new Map(), hover: null,
     yaw: 0.5, pitch: -0.15, tyaw: 0.5, tpitch: -0.15,
     grow: 0, fire: 1, raf: 0, last: 0,
   };
@@ -418,12 +451,15 @@
         el.append(sym);
         if (company.name.toUpperCase() !== t) el.append(name);
         els.labels.append(el);
-        cloud.centers.set(t, { t, x: pos[0], y: pos[1], z: pos[2], el, sx: 0, sy: 0 });
+        const dir = document.createElement('span');
+        dir.className = 'co-dir';
+        el.append(dir);
+        cloud.centers.set(t, { t, x: pos[0], y: pos[1], z: pos[2], el, dir, sx: 0, sy: 0 });
 
         // Haze marks where a company sits; busier companies get a denser haze.
         // It takes the colour of the company's average tone, so the cloud doubles as a mood map.
         const rnd = seeded('dust' + t);
-        const count = Math.min(460, 110 + state.byTicker.get(t).length * 10);
+        const count = Math.min(460, 110 + (state.byTicker.get(t) || []).length * 10);
         const rgb = TONE_RGB[moodLabel(state.mood.get(t))];
         for (let d = 0; d < count; d++) {
           cloud.dust.push({ rgb, x: pos[0] + gauss(rnd) * 0.13, y: pos[1] + gauss(rnd) * 0.13, z: pos[2] + gauss(rnd) * 0.13 });
@@ -475,11 +511,19 @@
     cloud.tyaw = Math.atan2(pt.x, -pt.z);
     cloud.tpitch = clamp(Math.atan2(-pt.y, Math.hypot(pt.x, pt.z)) * 0.8, -0.7, 0.7);
     if (animate) cloud.fire = 0;
-    els.chartEmpty.hidden = pt.named.length > 0;
+    // Companies Claude expects the story to move, including ones it never names.
+    const effects = (story.impact && story.impact.effects) || [];
+    cloud.selEffects = new Map(effects.filter((e) => cloud.centers.has(e.ticker)).map((e) => [e.ticker, e]));
+    els.chartEmpty.hidden = pt.named.length > 0 || cloud.selEffects.size > 0;
     for (const [t, c] of cloud.centers) {
       c.el.classList.toggle('on', cloud.selTickers.has(t));
       c.el.classList.toggle('filtered', state.ticker === t);
       c.el.setAttribute('aria-pressed', String(state.ticker === t));
+      const effect = cloud.selEffects.get(t);
+      c.el.classList.toggle('hit', Boolean(effect) && !cloud.selTickers.has(t));
+      c.el.classList.remove('dir-up', 'dir-down', 'dir-mixed');
+      if (effect) c.el.classList.add(`dir-${effect.direction}`);
+      c.dir.textContent = effect ? ARROW[effect.direction] : '';
     }
     kick();
   }
@@ -589,6 +633,24 @@
       }
     }
 
+    // Dashed links: companies Claude expects to be affected that the story does not name.
+    if (sel && cloud.selEffects.size) {
+      const a = clamp(cloud.fire * 2, 0, 1);
+      ctx.setLineDash([5, 4]);
+      ctx.lineWidth = 1.5;
+      ctx.globalAlpha = 1;
+      for (const [t, effect] of cloud.selEffects) {
+        if (cloud.selTickers.has(t)) continue;
+        const c = cloud.centers.get(t);
+        ctx.strokeStyle = `rgb(${DIR_RGB[effect.direction]})`;
+        ctx.beginPath();
+        ctx.moveTo(sel.sx, sel.sy);
+        ctx.lineTo(sel.sx + (c.sx - sel.sx) * a, sel.sy + (c.sy - sel.sy) * a);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+    }
+
     for (const pt of cloud.pts) {
       if (!pt.shown) continue;
       const hot = pt === sel || (linked && pt.named.some((t) => cloud.selTickers.has(t)));
@@ -635,7 +697,7 @@
     // Company labels ride on their cluster. Nearer clusters read stronger.
     const seen = clamp(cloud.grow * 2 - 0.6, 0, 1);
     for (const [t, c] of cloud.centers) {
-      const on = cloud.selTickers.has(t) || state.ticker === t;
+      const on = cloud.selTickers.has(t) || cloud.selEffects.has(t) || state.ticker === t;
       // A named company's pill sits just above its cluster so it never covers the story point.
       c.el.style.transform = `translate(${c.sx.toFixed(1)}px, ${(c.sy - (on ? 30 : 0)).toFixed(1)}px) translate(-50%, -50%)`;
       c.el.style.opacity = (seen * (on ? 1 : clamp(0.2 + (c.k - 0.76) * 1.25, 0.16, 0.9))).toFixed(2);
@@ -662,7 +724,7 @@
 
   function companyTip(t) {
     const company = state.companies[t], c = cloud.centers.get(t);
-    const count = state.byTicker.get(t).length, avg = state.mood.get(t);
+    const count = (state.byTicker.get(t) || []).length, avg = state.mood.get(t);
     showTip(`${company.name}, ${company.sector}`,
       `${count} ${count === 1 ? 'story' : 'stories'} on the wire` +
       (avg == null ? '' : `, average tone ${signed(avg)}`) +
@@ -867,6 +929,230 @@
     document.addEventListener('visibilitychange', sync);
     reduced.addEventListener('change', sync);
     return { resize, sync };
+  })();
+
+  /* ---------- Blip: the assistant that reads Claude's saved analysis back ----------
+     Blip never calls Claude from the browser. It shows the briefs the pipeline
+     saved into events.json, so no API key is ever shipped to the page. */
+  const blip = (() => {
+    const btn = $('#blip'), cv = $('#blipSprite'), g = cv.getContext('2d'), floor = $('#floor');
+    const ask = $('#ask'), out = $('#askOut'), foot = $('#askFoot'), input = $('#askInput');
+    const BODY = [
+      '......c......', '......c......', '.....hcc.....', '.....ccc.....', '....ccccc....',
+      '..ccccccccc..', 'ccccccccccccc', '..ccccccccc..', '....ccccc....',
+    ];
+    const LEGS = {
+      idle: ['....c...c....', '....f...f....'],
+      a: ['....c...f....', '....f........'],
+      b: ['....f...c....', '........f....'],
+    };
+    const INK = { c: '#06B6D4', h: '#B8F1FA', f: '#E0527A', e: '#08090A' };
+    const s = { x: 40, target: 40, mode: 'pause', until: 1500, frame: 'idle', stepAt: 0, blinkAt: 2500, blinkUntil: 0, look: 0, last: 0 };
+
+    function draw(now) {
+      g.clearRect(0, 0, 13, 11);
+      BODY.concat(LEGS[s.frame]).forEach((row, y) => {
+        for (let x = 0; x < 13; x++) {
+          if (row[x] === '.') continue;
+          g.fillStyle = INK[row[x]];
+          g.fillRect(x, y, 1, 1);
+        }
+      });
+      g.fillStyle = INK.e;
+      for (const ex of [5 + s.look, 8 + s.look]) {
+        if (now > s.blinkUntil) g.fillRect(ex, 5, 1, 1);
+        g.fillRect(ex, 6, 1, 1);
+      }
+    }
+
+    // Wander the lane, follow the pointer when it comes near, stand by the panel while it is open.
+    function tick(now) {
+      const dt = clamp(now - s.last, 0, 100);
+      s.last = now;
+      const open = !ask.hidden, calm = still();
+      const maxX = Math.max(8, floor.clientWidth - 60);
+      const follow = !calm && !open && wide.matches && mouse.cx >= 0 && mouse.cy > window.innerHeight - 150;
+      let goal = s.x;
+      if (open) goal = Math.min(24, maxX);
+      else if (follow) goal = clamp(mouse.cx - 26, 8, maxX);
+      else if (!calm) {
+        if (s.mode === 'pause' && now > s.until) { s.mode = 'walk'; s.target = 8 + Math.random() * (maxX - 8); }
+        if (s.mode === 'walk') goal = s.target;
+      }
+      const d = goal - s.x;
+      if (Math.abs(d) > 1.5) {
+        s.x += Math.sign(d) * Math.min(Math.abs(d), (46 * dt) / 1000);
+        s.look = Math.sign(d);
+        if (now > s.stepAt) { s.frame = s.frame === 'a' ? 'b' : 'a'; s.stepAt = now + 170; }
+      } else {
+        if (s.mode === 'walk' && !open && !follow) { s.mode = 'pause'; s.until = now + 1200 + Math.random() * 3400; }
+        s.frame = 'idle';
+        s.look = mouse.cx < 0 ? 0 : clamp(Math.round((mouse.cx - (s.x + 26)) / 120), -1, 1);
+      }
+      if (now > s.blinkAt) { s.blinkUntil = now + 130; s.blinkAt = now + 2200 + Math.random() * 3000; }
+      s.x = clamp(s.x, 8, maxX);
+      btn.style.transform = `translate(${s.x.toFixed(1)}px, ${s.frame === 'b' ? -2 : 0}px)`;
+      draw(now);
+      requestAnimationFrame(tick);
+    }
+
+    const node = (tag, cls, text) => {
+      const el = document.createElement(tag);
+      if (cls) el.className = cls;
+      if (text != null) el.textContent = text;
+      return el;
+    };
+
+    // The full text is in the page at once (so screen readers get it); words fade in one after another.
+    function write(el, text) {
+      el.replaceChildren();
+      text.split(/\s+/).forEach((word, i) => {
+        const span = node('span', 'w', word + ' ');
+        span.style.animationDelay = `${i * 22}ms`;
+        el.append(span);
+      });
+    }
+
+    const credit = (entry, unit) =>
+      `Written by Claude (${entry.model}) on ${fmtDay.format(new Date(entry.writtenAt.replace(' ', 'T') + 'Z'))} ` +
+      `from ${entry.stories} ${unit}. A judgement, not advice.`;
+
+    function showMarket() {
+      const m = state.market;
+      out.replaceChildren();
+      foot.textContent = '';
+      if (!m) {
+        out.append(node('p', 'ask-text', "Claude hasn't written a market digest yet. It appears once the pipeline runs with an API key."));
+        return;
+      }
+      out.append(node('h3', 'ask-h', 'What is moving the market'));
+      const p = node('p', 'ask-text');
+      write(p, m.brief);
+      out.append(p);
+      for (const theme of m.themes) {
+        const box = node('div', 'ask-theme');
+        box.append(node('strong', null, theme.title), node('p', null, theme.detail));
+        const row = node('div', 'ask-chips');
+        for (const t of theme.tickers) {
+          if (!state.companies[t]) continue;
+          const chip = node('button', 'chip', t);
+          chip.type = 'button';
+          chip.dataset.t = t;
+          chip.setAttribute('aria-label', `Ask about ${state.companies[t].name}`);
+          row.append(chip);
+        }
+        if (row.children.length) box.append(row);
+        out.append(box);
+      }
+      foot.textContent = credit(m, 'of the newest headlines');
+    }
+
+    function showCompany(t) {
+      const company = state.companies[t], b = state.briefs[t];
+      out.replaceChildren();
+      foot.textContent = '';
+      out.append(node('h3', 'ask-h', `${company.name} (${t})`));
+      if (!b) {
+        out.append(node('p', 'ask-text', `Claude has no brief for ${company.name} yet. It is written once the company has stories on the wire.`));
+        return;
+      }
+      const stance = node('p', 'ask-stance ' + toneClass(b.stance === 'positive' || b.stance === 'negative' ? b.stance : 'neutral'),
+        b.stance === 'quiet' ? 'Coverage is quiet' : `Coverage reads ${b.stance}`);
+      const p = node('p', 'ask-text');
+      write(p, b.brief);
+      out.append(stance, p);
+      if (b.drivers.length) {
+        const ul = node('ul', 'ask-drivers');
+        b.drivers.forEach((d) => ul.append(node('li', null, d)));
+        out.append(ul);
+      }
+      out.append(node('p', 'ask-watch', `Watch next: ${b.watch}`));
+
+      const own = (state.byTicker.get(t) || []).length;
+      if (own && state.ticker !== t) {
+        const show = node('button', 'chip', `Show its ${own} ${own === 1 ? 'story' : 'stories'} in the wire`);
+        show.type = 'button';
+        show.dataset.filter = t;
+        out.append(show);
+      }
+      const linked = state.all.filter((st) => st.impact && !st.tickers.includes(t) &&
+        st.impact.effects.some((e) => e.ticker === t)).slice(0, 3);
+      if (linked.length) {
+        out.append(node('p', 'ask-label', `Stories that don't name ${company.name} but Claude links to it`));
+        for (const st of linked) {
+          const link = node('button', 'ask-story', st.headline);
+          link.type = 'button';
+          link.dataset.story = st.id;
+          out.append(link);
+        }
+      }
+      foot.textContent = credit(b, b.stories === 1 ? 'headline' : 'headlines');
+    }
+
+    function resolve(text) {
+      let q = text.trim().toLowerCase();
+      if (!q) return null;
+      const tagged = q.match(/\(([a-z.]+)\)\s*$/);
+      if (tagged) q = tagged[1];
+      const all = Object.entries(state.companies);
+      const hit = all.find(([t]) => t.toLowerCase() === q) ||
+        all.find(([, c]) => c.name.toLowerCase() === q) ||
+        all.find(([, c]) => c.name.toLowerCase().includes(q) || q.includes(c.name.toLowerCase()));
+      return hit ? hit[0] : null;
+    }
+
+    function open() {
+      if (!ask.hidden) return;
+      ask.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      if (!out.children.length) showMarket();
+      $('#askMarket').focus({ preventScroll: true });
+    }
+
+    function close() {
+      ask.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.focus({ preventScroll: true });
+    }
+
+    btn.addEventListener('click', () => (ask.hidden ? open() : close()));
+    $('#askClose').addEventListener('click', close);
+    $('#askMarket').addEventListener('click', showMarket);
+    ask.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    $('#askForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const t = resolve(input.value);
+      if (t) { showCompany(t); return; }
+      out.replaceChildren(node('p', 'ask-text',
+        `I don't follow "${input.value.trim()}". I track ${Object.keys(state.companies).length} companies, such as Nvidia, Exxon Mobil and Boeing.`));
+      foot.textContent = '';
+    });
+    out.addEventListener('click', (e) => {
+      const el = e.target.closest('button');
+      if (!el) return;
+      if (el.dataset.t) showCompany(el.dataset.t);
+      else if (el.dataset.story) pickStory(el.dataset.story);
+      else if (el.dataset.filter) {
+        if (state.ticker !== el.dataset.filter) pickCompany(el.dataset.filter);
+        showCompany(el.dataset.filter);
+      }
+    });
+
+    function ready() {
+      const list = $('#askList');
+      for (const [t, c] of Object.entries(state.companies)) {
+        const opt = document.createElement('option');
+        opt.value = `${c.name} (${t})`;
+        list.append(opt);
+      }
+      if (!still()) {
+        btn.classList.add('hello');
+        setTimeout(() => btn.classList.remove('hello'), 5000);
+      }
+    }
+
+    requestAnimationFrame(tick);
+    return { ready, company: (t) => { open(); showCompany(t); } };
   })();
 
   /* ---------- Resize ---------- */

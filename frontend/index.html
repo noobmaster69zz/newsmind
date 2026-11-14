@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NewsMind: financial news, charted by the companies it names</title>
-  <meta name="description" content="NewsMind pulls the financial news wire, reads the tone of every headline with FinBERT and charts each story against the companies it names.">
+  <title>NewsMind: financial news, charted by the companies it moves</title>
+  <meta name="description" content="NewsMind pulls the financial news wire, scores every headline with FinBERT, has Claude work out which companies each story affects, and charts it all as a point cloud.">
   <meta name="theme-color" content="#08090A">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2308090A'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2306B6D4'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23E0527A' stroke-width='1.5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
 
   <header class="top">
     <h1 class="mark">NewsMind</h1>
-    <p class="what">Financial news, charted by the companies it names.</p>
+    <p class="what">Financial news, charted by the companies it moves.</p>
     <p class="stamp" id="stamp"></p>
     <button class="switch" id="focus" type="button" aria-pressed="false">
       <span>Focus mode</span>
@@ -58,7 +58,7 @@
       <div class="chart" id="chart">
         <canvas class="cloud" id="cloud" aria-hidden="true"></canvas>
         <div class="labels" id="labels" role="group" aria-label="Companies on the wire"></div>
-        <p class="legend">Every point is a story, coloured by how its headline reads. Each cluster is a company, and neighbouring clusters share a sector.</p>
+        <p class="legend">Every point is a story, coloured by how its headline reads. Each cluster is a company. Solid lines are companies the story names; dashed lines are companies Claude expects it to affect.</p>
         <p class="chart-empty" id="chartEmpty" hidden>No tracked company is named in this story.</p>
         <div class="tip" id="tip" role="tooltip" hidden></div>
       </div>
@@ -73,13 +73,47 @@
           <span class="meter-axis"><span>negative</span><span>neutral</span><span>positive</span></span>
         </div>
         <p class="summary" id="summary"></p>
+        <div class="reads">
+          <span class="reads-label" id="readsLabel">Claude's read</span>
+          <span class="reads-list" id="readsList"></span>
+        </div>
         <div class="card-foot">
           <a class="read" id="readLink" target="_blank" rel="noopener noreferrer" hidden></a>
-          <p class="forecast">No price forecast yet. The chart shows who is named, not what happens next.</p>
+          <p class="forecast">Claude's read is a judgement from the text, not a forecast or advice.</p>
         </div>
       </article>
     </section>
   </main>
+
+  <!-- Blip's lane: a strip the assistant walks along, so it never covers anything. -->
+  <div class="floor" id="floor">
+    <button class="blip" id="blip" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="ask"
+            aria-label="Ask Blip about the news">
+      <canvas class="blip-sprite" id="blipSprite" width="13" height="11" aria-hidden="true"></canvas>
+      <span class="blip-say" id="blipSay" aria-hidden="true">Ask me about the news</span>
+    </button>
+  </div>
+
+  <section class="ask" id="ask" role="dialog" aria-labelledby="askTitle" hidden>
+    <header class="ask-head">
+      <h2 class="ask-title" id="askTitle">Blip</h2>
+      <p class="ask-sub">Reads the wire with Claude</p>
+      <button class="ask-close" id="askClose" type="button">Close</button>
+    </header>
+    <div class="ask-actions">
+      <button class="chip" id="askMarket" type="button">What is moving the market?</button>
+      <form class="ask-form" id="askForm">
+        <label class="ask-label" for="askInput">Ask about a company</label>
+        <div class="ask-row">
+          <input class="ask-input" id="askInput" list="askList" autocomplete="off" placeholder="Nvidia, XOM, Boeing">
+          <datalist id="askList"></datalist>
+          <button class="chip" type="submit">Ask</button>
+        </div>
+      </form>
+    </div>
+    <div class="ask-out" id="askOut" aria-live="polite"></div>
+    <p class="ask-foot" id="askFoot"></p>
+  </section>
 
   <script src="app.js" defer></script>
 </body>

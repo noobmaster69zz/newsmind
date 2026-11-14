@@ -1,0 +1,7 @@
+# Runtime: ingest, tone scoring, Claude step
+requests>=2.31
+anthropic>=2.0
+transformers>=4.40
+torch>=2.2
+# Tests
+pytest>=8.0
