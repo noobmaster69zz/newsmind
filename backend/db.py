@@ -32,6 +32,35 @@ CREATE TABLE IF NOT EXISTS sentiment (
     model   TEXT NOT NULL
 );
 
+-- Claude's read of one story: a one-line summary plus one row per affected company.
+CREATE TABLE IF NOT EXISTS impact (
+    news_id    TEXT PRIMARY KEY REFERENCES news(id),
+    summary    TEXT NOT NULL,
+    model      TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS impact_effect (
+    news_id    TEXT NOT NULL REFERENCES impact(news_id),
+    ticker     TEXT NOT NULL,
+    direction  TEXT NOT NULL CHECK (direction IN ('up', 'down', 'mixed')),
+    confidence TEXT NOT NULL CHECK (confidence IN ('low', 'medium', 'high')),
+    reason     TEXT NOT NULL,
+    PRIMARY KEY (news_id, ticker)
+);
+CREATE INDEX IF NOT EXISTS idx_impact_effect_ticker ON impact_effect(ticker);
+
+-- Saved write-ups the site's assistant reads back: one per company, plus '_market'.
+-- source_hash records which stories a brief was written from, so it is only
+-- regenerated (and paid for) when that set of stories changes.
+CREATE TABLE IF NOT EXISTS brief (
+    key         TEXT PRIMARY KEY,
+    body        TEXT NOT NULL,          -- JSON
+    source_hash TEXT NOT NULL,
+    model       TEXT NOT NULL,
+    created_at  TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 CREATE TABLE IF NOT EXISTS pipeline_runs (
     run_id     INTEGER PRIMARY KEY AUTOINCREMENT,
     started_at TEXT NOT NULL,
