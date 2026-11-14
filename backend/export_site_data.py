@@ -12,16 +12,20 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from backend import db
+from backend import db, prices
 from backend.agents.entity import companies
 from backend.agents.impact import MARKET_KEY
 
 OUT = Path(__file__).resolve().parents[1] / "frontend" / "data" / "events.json"
 MAX_STORIES = 400  # newest stories kept on the site
+CHART_DAYS = 22    # closes kept per ticker for the price charts
 ID_LEN = 12        # short ids keep the file small; seed.py rebuilds the full id from the headline
 
 
 def build(conn) -> dict:
+    market = prices.series(conn, prices.MARKET)
+    closes = {t: prices.series(conn, t) for t in companies()}
+    tally = {"right": 0, "wrong": 0, "flat": 0, "early": 0, "unscored": 0}
     stories = []
     for r in conn.execute(
         "SELECT n.id, n.source, n.headline, n.summary, n.url, n.published_at, s.score, s.label, "
@@ -36,6 +40,11 @@ def build(conn) -> dict:
             impact = {"summary": r["read"], "model": r["read_model"], "effects": [dict(e) for e in conn.execute(
                 "SELECT ticker, direction, confidence, reason FROM impact_effect WHERE news_id = ? "
                 "ORDER BY CASE confidence WHEN 'high' THEN 0 WHEN 'medium' THEN 1 ELSE 2 END, ticker", (r["id"],))]}
+            # Check each call against what the stock has done since, relative to the market.
+            for effect in impact["effects"]:
+                effect["check"] = prices.judge(effect["direction"], r["published_at"],
+                                               closes.get(effect["ticker"], []), market)
+                tally[effect["check"]["status"]] += 1
         stories.append({
             "id": r["id"][:ID_LEN],
             "source": r["source"],
@@ -49,11 +58,11 @@ def build(conn) -> dict:
             "impact": impact,
         })
 
-    briefs, market = {}, None
+    briefs, digest = {}, None
     for b in conn.execute("SELECT key, body, source_hash, model, created_at FROM brief"):
         entry = {**json.loads(b["body"]), "model": b["model"], "writtenAt": b["created_at"], "hash": b["source_hash"]}
         if b["key"] == MARKET_KEY:
-            market = entry
+            digest = entry
         else:
             briefs[b["key"]] = entry
 
@@ -63,8 +72,11 @@ def build(conn) -> dict:
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "companies": {t: {"name": c["name"], "sector": c["sector"]}
                       for t, c in companies().items() if t in used},
-        "market": market,
+        "market": digest,
         "briefs": briefs,
+        "scorecard": tally,
+        "prices": {t: [[d, round(c, 2)] for d, c in rows[-CHART_DAYS:]]
+                   for t, rows in {**closes, prices.MARKET: market}.items() if rows and (t in used or t == prices.MARKET)},
         "stories": stories,
     }
 
@@ -79,4 +91,5 @@ if __name__ == "__main__":
         "read_by_claude": sum(1 for s in data["stories"] if s["impact"]),
         "briefs": len(data["briefs"]),
         "market_digest": bool(data["market"]),
+        "scorecard": data["scorecard"],
     })

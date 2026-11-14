@@ -3,5 +3,6 @@ requests>=2.31
 anthropic>=2.0
 transformers>=4.40
 torch>=2.2
+yfinance>=0.2.40
 # Tests
 pytest>=8.0

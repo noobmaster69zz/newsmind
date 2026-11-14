@@ -61,6 +61,14 @@ CREATE TABLE IF NOT EXISTS brief (
     created_at  TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Daily closing prices for tracked tickers and the market (SPY).
+CREATE TABLE IF NOT EXISTS price (
+    ticker TEXT NOT NULL,
+    day    TEXT NOT NULL,               -- YYYY-MM-DD
+    close  REAL NOT NULL,
+    PRIMARY KEY (ticker, day)
+);
+
 CREATE TABLE IF NOT EXISTS pipeline_runs (
     run_id     INTEGER PRIMARY KEY AUTOINCREMENT,
     started_at TEXT NOT NULL,

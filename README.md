@@ -10,13 +10,15 @@ I'm a student in AI and Data Engineering at Nanyang Polytechnic, and this is my 
 
 NewsMind pulls the news wire, scores how each headline reads, asks Claude which companies a story is likely to affect and why, and draws the whole wire as a 3D point cloud you can explore.
 
-> Not financial advice. Claude's reads are judgements from the text of a headline. They are not forecasts and I have not yet tested them against real price moves.
+> Not financial advice. Claude's reads are judgements from the text of a headline, not forecasts. The site checks each one against the stock's move since the story, but over a few days of prices that is a sanity check, not proof.
 
 ## What you can do on the site
 
 - **Scroll the wire** on the left. The story on the reading line is charted on the right.
 - **Read the cloud.** Every point is a story, coloured by tone (cyan positive, maroon negative, grey neutral). Each cluster is a company, and companies in the same sector sit together.
 - **Follow the links.** Solid lines go to companies a story names. Dashed lines go to companies Claude expects it to affect without being named.
+- **Search** headlines, tickers or company names.
+- **Check the calls.** Each company chip shows whether Claude's call has held up so far. Select it for a price chart of the stock against the S&P 500 since the story.
 - **Ask Blip.** The small pixel character walking along the bottom opens a panel. Ask what is moving the market, or ask about one of the tracked companies.
 - **Drag the seam** between the two halves to resize them, or switch on **Focus mode** to strip the page down.
 
@@ -38,13 +40,14 @@ Finnhub ──> ingest ──> SQLite ──> FinBERT ──> Claude ──> exp
 | Load | `backend/db.py` | Idempotent upserts into SQLite. Every run is logged in `pipeline_runs` |
 | Tone | `backend/agents/sentiment.py` | FinBERT scores each headline from -1 (negative) to +1 (positive) |
 | Impact | `backend/agents/impact.py` | Claude returns up to four affected companies per story with a direction, a confidence and a one-line reason, plus a brief per company and a digest of the wire |
+| Check | `backend/prices.py` | Pulls daily closes with yfinance and marks each of Claude's calls right, wrong, too close to call or too early, measured against the S&P 500 over the same days |
 | Export | `backend/export_site_data.py` | Writes the snapshot the site reads |
 | Seed | `backend/seed.py` | Loads the last snapshot into an empty database so nothing is processed twice |
 | Site | `frontend/` | Plain HTML, CSS and JavaScript with no build step |
 
 ### The database
 
-SQLite, seven tables:
+SQLite, eight tables:
 
 | Table | Holds |
 |---|---|
@@ -54,6 +57,7 @@ SQLite, seven tables:
 | `impact` | Claude's one-line summary per story |
 | `impact_effect` | One row per company Claude expects a story to move, with `CHECK` constraints on direction and confidence |
 | `brief` | Claude's saved write-ups, with a hash of the stories each was written from |
+| `price` | Daily closes for tracked tickers and SPY |
 | `pipeline_runs` | Fetched, inserted and rejected counts for every ingest |
 
 ### Where the Claude API key lives
@@ -85,7 +89,7 @@ python -m http.server 5178 --directory frontend
 
 Then open http://localhost:5178. Without an Anthropic key the impact step skips itself and the rest still works.
 
-Tests: `python -m pytest tests` (12 tests, no network, no API key needed).
+Tests: `python -m pytest tests` (13 tests, no network, no API key needed).
 
 ## Automation
 
@@ -108,7 +112,7 @@ Tests: `python -m pytest tests` (12 tests, no network, no API key needed).
 
 ## Limits and what comes next
 
-- Claude's reads are not validated. The next step is an event study: compare each read with the stock's 1-day and 5-day return against the S&P 500, and report the hit rate honestly.
+- The right/wrong check is crude. On the first snapshot Claude was right on 122 calls and wrong on 65, with 27 too close to call, but many stories report a move that has already started, which flatters the score, and the window is only a few trading days. The next step is a proper event study with fixed 1-day and 5-day windows and a larger sample.
 - Ticker tagging is alias matching over 35 companies. It misses companies outside the list and can be fooled by ambiguous names.
 - FinBERT scores the headline only, not the article.
 - The site shows a snapshot, refreshed every six hours, not a live feed.

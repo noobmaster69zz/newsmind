@@ -55,3 +55,19 @@ def test_snapshot_round_trip_keeps_claude_results(tmp_path):
     assert again["briefs"]["XOM"]["brief"] == "b" and again["briefs"]["XOM"]["hash"] == "h"
     # CVX is not named in the story, but Claude's read links it, so the site must know the company.
     assert "CVX" in again["companies"]
+
+
+def test_judge_scores_a_call_against_the_market():
+    from backend.prices import judge
+
+    stock = [("2026-11-10", 100.0), ("2026-11-11", 100.0), ("2026-11-12", 104.0)]
+    market = [("2026-11-10", 100.0), ("2026-11-11", 100.0), ("2026-11-12", 101.0)]
+    noon = "2026-11-11T15:00:00+00:00"          # during the session: baseline is the 10 Nov close
+    assert judge("up", noon, stock, market)["status"] == "right"
+    assert judge("down", noon, stock, market)["status"] == "wrong"
+    assert judge("up", noon, stock, market)["excess"] == 3.0
+    assert judge("mixed", noon, stock, market)["status"] == "unscored"
+    # A stock that only rises with the market is flat, not right.
+    assert judge("up", noon, market, market)["status"] == "flat"
+    # Published after the last close we have: too early to say.
+    assert judge("up", "2026-11-12T22:00:00+00:00", stock, market)["status"] == "early"

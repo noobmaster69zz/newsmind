@@ -21,6 +21,7 @@
     <h1 class="mark">NewsMind</h1>
     <p class="what">Financial news, charted by the companies it moves.</p>
     <p class="stamp" id="stamp"></p>
+    <button class="switch" id="help" type="button">How to read this</button>
     <button class="switch" id="focus" type="button" aria-pressed="false">
       <span>Focus mode</span>
       <span class="switch-track" aria-hidden="true"><span class="switch-knob"></span></span>
@@ -38,6 +39,7 @@
         <button class="chip" id="scopeCompany" type="button" aria-pressed="true">Company stories</button>
         <button class="chip" id="scopeAll" type="button" aria-pressed="false">Whole wire</button>
         <button class="chip chip-clear" id="tickerClear" type="button" hidden></button>
+        <input class="search" id="search" type="search" placeholder="Search headlines or tickers" aria-label="Search the wire">
       </div>
 
       <div class="wire" id="wire" role="listbox" aria-label="Stories, newest first"></div>
@@ -74,12 +76,12 @@
         </div>
         <p class="summary" id="summary"></p>
         <div class="reads">
-          <span class="reads-label" id="readsLabel">Claude's read</span>
+          <span class="reads-label" id="readsLabel">Likely to move</span>
           <span class="reads-list" id="readsList"></span>
         </div>
         <div class="card-foot">
           <a class="read" id="readLink" target="_blank" rel="noopener noreferrer" hidden></a>
-          <p class="forecast">Claude's read is a judgement from the text, not a forecast or advice.</p>
+          <p class="forecast" id="score"></p>
         </div>
       </article>
     </section>
@@ -114,6 +116,22 @@
     <div class="ask-out" id="askOut" aria-live="polite"></div>
     <p class="ask-foot" id="askFoot"></p>
   </section>
+
+  <dialog class="intro" id="intro" aria-labelledby="introTitle">
+    <h2 class="intro-title" id="introTitle">What you are looking at</h2>
+    <p class="intro-lead">NewsMind reads the financial news wire and maps each story to the companies it could move. Nothing here is a buy or sell signal.</p>
+    <dl class="intro-list">
+      <dt>Tone, from &minus;1 to +1</dt>
+      <dd>How the wording of a headline reads, scored by a model called FinBERT. &minus;1 reads as bad news, 0 as neutral, +1 as good news. It describes the headline, not what to do with the stock.</dd>
+      <dt>Arrows <span class="intro-up">&#9650;</span> <span class="intro-down">&#9660;</span></dt>
+      <dd>Claude's judgement of which way a story is likely to push a company's share price. A solid outline means the story names the company. A dashed outline means it doesn't, but Claude expects a knock-on effect.</dd>
+      <dt>&#10003; &#10007; &ndash; &hellip;</dt>
+      <dd>Each call is checked against how the stock has moved since the story, compared with the S&amp;P 500 over the same days: right, wrong, too close to call, or too early to check. Select any company chip to see the price chart.</dd>
+    </dl>
+    <p class="intro-score" id="introScore"></p>
+    <p class="intro-note">Treat that score as a sanity check, not proof. Many stories report a price move that has already begun, which flatters it, and a few days of prices is a small sample.</p>
+    <button class="chip intro-go" id="introClose" type="button">Explore the wire</button>
+  </dialog>
 
   <script src="app.js" defer></script>
 </body>

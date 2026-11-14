@@ -18,7 +18,7 @@
   };
 
   const state = {
-    all: [], companies: {}, market: null, briefs: {}, cardText: '', byTicker: new Map(), mood: new Map(),
+    all: [], companies: {}, market: null, briefs: {}, prices: {}, query: '', cardText: '', byTicker: new Map(), mood: new Map(),
     list: [], rows: [], tops: [], lineOffset: 0,
     active: -1, shown: null, scope: 'company', ticker: null,
   };
@@ -37,6 +37,25 @@
   const moodLabel = (avg) => (avg == null ? 'unscored' : avg > 0.15 ? 'positive' : avg < -0.15 ? 'negative' : 'neutral');
   const ARROW = { up: '\u25B2', down: '\u25BC', mixed: '\u25C6' };
   const DIR_RGB = { up: '6,182,212', down: '224,82,122', mixed: '170,174,182' };
+  const MARK = { right: '\u2713', wrong: '\u2717', flat: '\u2013', early: '\u2026', unscored: '' };
+  const VERDICT = { right: 'So far: right.', wrong: 'So far: wrong.', flat: 'So far: too close to call.' };
+
+  // Plain-words account of how one call has held up against the price since the story.
+  function checkText(ticker, check) {
+    if (!check || check.status === 'unscored') return '';
+    if (check.status === 'early') return 'Too early to check: the market has not traded since this story.';
+    const span = check.days === 1 ? '1 trading day' : `${check.days} trading days`;
+    return `Since the story ${ticker} is ${signed(check.stock)}% and the S&P 500 ${signed(check.market)}% over ${span}. ${VERDICT[check.status]}`;
+  }
+
+  function showScore(card) {
+    const el = $('#score');
+    if (!card || !(card.right + card.wrong + card.flat)) { el.textContent = "Claude's calls have not been checked against prices yet."; return; }
+    const text = `Claude's calls so far: ${card.right} right, ${card.wrong} wrong, ${card.flat} too close to call.`;
+    el.textContent = `${text} Not advice.`;
+    $('#introScore').textContent = `${text} Another ${card.early} are too early to check.`;
+  }
+
   const TONE_RGB = { positive: '6,182,212', negative: '224,82,122', neutral: '170,174,182', unscored: '170,174,182' };
 
   function setTone(el, label) {
@@ -66,6 +85,8 @@
       state.companies = data.companies;
       state.market = data.market || null;
       state.briefs = data.briefs || {};
+      state.prices = data.prices || {};
+      showScore(data.scorecard);
       for (const s of state.all) {
         for (const t of s.tickers) {
           if (!state.byTicker.has(t)) state.byTicker.set(t, []);
@@ -82,6 +103,7 @@
       els.scopeAll.textContent = `Whole wire (${state.all.length})`;
       buildCloud();
       blip.ready();
+      greet();
       applyFilters(null);
     } catch (err) {
       root.classList.remove('booting');
@@ -95,8 +117,14 @@
   /* ---------- Wire ---------- */
   function applyFilters(keepId) {
     let list = state.all;
-    if (state.scope === 'company') list = list.filter((s) => s.tickers.length);
+    // A search looks across the whole wire, not just stories that name a company.
+    if (state.scope === 'company' && !state.query) list = list.filter((s) => s.tickers.length);
     if (state.ticker) list = list.filter((s) => s.tickers.includes(state.ticker));
+    if (state.query) {
+      const q = state.query;
+      list = list.filter((s) => s.headline.toLowerCase().includes(q) ||
+        s.tickers.some((t) => t.toLowerCase() === q || state.companies[t].name.toLowerCase().includes(q)));
+    }
     state.list = list;
 
     els.scopeCompany.setAttribute('aria-pressed', String(state.scope === 'company'));
@@ -161,7 +189,8 @@
     if (!state.rows.length) {
       const p = document.createElement('p');
       p.className = 'wire-empty';
-      p.textContent = 'No stories here yet. Run the ingest pipeline, then the export step.';
+      p.textContent = state.query ? `No stories match "${state.query}". Try a company name, a ticker or a word from a headline.`
+        : 'No stories here yet. Run the ingest pipeline, then the export step.';
       els.wire.append(p);
     }
   }
@@ -363,19 +392,20 @@
     for (const e of story.impact.effects) {
       const company = state.companies[e.ticker];
       if (!company) continue;
-      const reason = `${company.name}, likely ${e.direction}, ${e.confidence} confidence. ${e.reason}`;
+      const named = story.tickers.includes(e.ticker);
+      const reason = `${company.name}, likely ${e.direction}, ${e.confidence} confidence. ${e.reason} ${checkText(e.ticker, e.check)}`.trim();
       const chip = document.createElement('button');
       chip.type = 'button';
-      chip.className = `read-chip dir-${e.direction}`;
-      chip.textContent = `${e.ticker} ${ARROW[e.direction]}`;
-      chip.setAttribute('aria-label', `${reason} Select to ask Blip about ${company.name}.`);
+      chip.className = `read-chip dir-${e.direction}${named ? '' : ' unnamed'}`;
+      chip.textContent = `${e.ticker} ${ARROW[e.direction]} ${MARK[(e.check || {}).status || 'unscored']}`.trim();
+      chip.setAttribute('aria-label', `${named ? 'Named in the story' : 'Not named in the story'}. ${reason} Select for the price chart.`);
       const show = () => { els.summary.textContent = reason; };
       const hide = () => { els.summary.textContent = state.cardText; };
       chip.addEventListener('pointerenter', show);
       chip.addEventListener('focus', show);
       chip.addEventListener('pointerleave', hide);
       chip.addEventListener('blur', hide);
-      chip.addEventListener('click', () => blip.company(e.ticker));
+      chip.addEventListener('click', () => blip.company(e.ticker, e));
       list.append(chip);
     }
   }
@@ -789,6 +819,28 @@
     if (pt && pt !== cloud.sel) pickStory(pt.story.id);
   });
 
+  /* ---------- Search and the intro ---------- */
+  let searchTimer = 0;
+  $('#search').addEventListener('input', (e) => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      state.query = e.target.value.trim().toLowerCase();
+      applyFilters(state.shown);
+    }, 160);
+  });
+
+  const intro = $('#intro');
+  $('#help').addEventListener('click', () => intro.showModal());
+  $('#introClose').addEventListener('click', () => intro.close());
+  intro.addEventListener('close', () => {
+    try { localStorage.setItem('newsmind-intro', 'seen'); } catch (_) { /* private mode */ }
+  });
+  function greet() {
+    let seen = null;
+    try { seen = localStorage.getItem('newsmind-intro'); } catch (_) { /* private mode */ }
+    if (!seen) intro.showModal();
+  }
+
   /* ---------- Filters ---------- */
   els.scopeCompany.addEventListener('click', () => { state.scope = 'company'; applyFilters(state.shown); });
   els.scopeAll.addEventListener('click', () => { state.scope = 'all'; applyFilters(state.shown); });
@@ -1047,11 +1099,51 @@
       foot.textContent = credit(m, 'of the newest headlines');
     }
 
-    function showCompany(t) {
+    // Stock and market as % change over the charted days, with a marker at the story.
+    function priceChart(t, check) {
+      const rows = state.prices[t], spy = state.prices.SPY;
+      if (!rows || rows.length < 2 || !spy) return null;
+      const market = new Map(spy), days = rows.map((r) => r[0]);
+      const m0 = market.get(days[0]);
+      const stock = rows.map((r) => (r[1] / rows[0][1] - 1) * 100);
+      const bench = days.map((d) => (market.has(d) && m0 ? (market.get(d) / m0 - 1) * 100 : null));
+      const all = stock.concat(bench.filter((v) => v != null), 0);
+      const lo = Math.min(...all), hi = Math.max(...all), pad = (hi - lo) * 0.14 || 1;
+      const W = 400, H = 132;
+      const x = (i) => 8 + (i * (W - 16)) / (days.length - 1);
+      const y = (v) => H - 20 - ((v - (lo - pad)) / (hi - lo + pad * 2)) * (H - 34);
+      const path = (vals) => vals.map((v, i) => (v == null ? '' : `${i && vals[i - 1] != null ? 'L' : 'M'}${x(i).toFixed(1)} ${y(v).toFixed(1)}`)).join(' ');
+      const at = check && check.from ? days.indexOf(check.from) : -1;
+      const last = stock[stock.length - 1], lastBench = bench[bench.length - 1];
+      const fig = node('figure', 'ask-chart');
+      fig.innerHTML =
+        `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${t} is ${signed(last)}% over the last ${days.length} trading days; the S&P 500 is ${signed(lastBench || 0)}%.">` +
+        (at >= 0 ? `<rect class="since" x="${x(at).toFixed(1)}" y="6" width="${(W - 8 - x(at)).toFixed(1)}" height="${H - 26}"/>` +
+          `<line class="mark" x1="${x(at).toFixed(1)}" x2="${x(at).toFixed(1)}" y1="6" y2="${H - 20}"/>` : '') +
+        `<line class="zero" x1="8" x2="${W - 8}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}"/>` +
+        `<path class="bench" d="${path(bench)}"/><path class="stock" d="${path(stock)}"/>` +
+        `<text x="8" y="${H - 4}">${days[0].slice(5)}</text><text x="${W - 8}" y="${H - 4}" text-anchor="end">${days[days.length - 1].slice(5)}</text>` +
+        (at >= 0 ? `<text x="${Math.min(x(at) + 4, W - 60).toFixed(1)}" y="16">story</text>` : '') + '</svg>';
+      fig.append(node('figcaption', null,
+        `Solid line: ${t}. Dashed: S&P 500. Both as % change over ${days.length} trading days` +
+        (at >= 0 ? '; the shaded part is since the story.' : '.')));
+      return fig;
+    }
+
+    function showCompany(t, effect) {
       const company = state.companies[t], b = state.briefs[t];
       out.replaceChildren();
       foot.textContent = '';
       out.append(node('h3', 'ask-h', `${company.name} (${t})`));
+      if (effect) {
+        const status = (effect.check || {}).status;
+        const call = node('p', `ask-call dir-${effect.direction}`,
+          `For the story on screen, Claude expected ${t} to go ${effect.direction} (${effect.confidence} confidence). ${checkText(t, effect.check)}`.trim());
+        if (status) call.dataset.status = status;
+        out.append(call);
+      }
+      const chart = priceChart(t, effect && effect.check);
+      if (chart) out.append(chart);
       if (!b) {
         out.append(node('p', 'ask-text', `Claude has no brief for ${company.name} yet. It is written once the company has stories on the wire.`));
         return;
@@ -1152,7 +1244,7 @@
     }
 
     requestAnimationFrame(tick);
-    return { ready, company: (t) => { open(); showCompany(t); } };
+    return { ready, company: (t, effect) => { open(); showCompany(t, effect); } };
   })();
 
   /* ---------- Resize ---------- */

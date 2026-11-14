@@ -37,7 +37,7 @@ jobs:
       - name: Install
         run: |
           pip install torch --index-url https://download.pytorch.org/whl/cpu
-          pip install requests anthropic transformers
+          pip install requests anthropic transformers yfinance
       - name: Restore what earlier runs already worked out
         run: python -m backend.seed
       - name: Pull news
@@ -46,6 +46,8 @@ jobs:
         run: python -m backend.agents.sentiment
       - name: Claude reads the new stories
         run: python -m backend.agents.impact
+      - name: Fetch prices to check Claude's calls
+        run: python -m backend.prices
       - name: Export the site snapshot
         run: python -m backend.export_site_data
       - name: Commit the snapshot
