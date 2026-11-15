@@ -913,6 +913,25 @@ a { color: inherit; }
 .ask-chart .bar-up { fill: var(--cyan); }
 .ask-chart .bar-down { fill: var(--maroon-lit); }
 
+.ask-compare {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  background: #101317;
+  color: var(--bone);
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.ask-versus:empty { display: none; }
+.ask-versus > * + * { margin-top: 10px; }
+.ask-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.ask-table th, .ask-table td { padding: 5px 8px 5px 0; border-bottom: 1px solid var(--hair); text-align: left; font-weight: 400; }
+.ask-table tr:first-child th { color: var(--bone); font-weight: 600; }
+.ask-table th:first-child { color: var(--ash); }
+.ask-chart .rival { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linejoin: round; }
+
 /* Guided tour */
 .tour-ring {
   position: fixed;

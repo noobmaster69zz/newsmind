@@ -22,6 +22,7 @@ NewsMind pulls the news wire, scores how each headline reads, asks Claude which 
 - **Turn and zoom the cloud.** Drag to turn it, scroll to zoom, double-click to reset. Switch between stories, companies and sectors (keys 1, 2, 3).
 - **Open a company profile.** Select a company name for its tone over time, its price against the S&P 500, the sectors it shares stories with, and Claude's brief.
 - **Read the reasoning.** Each call shows why Claude made it, the words in the story that support it, whether the link is direct or indirect, how confident it was, and what would contradict it. Confidence is shown separately from whether the call proved right.
+- **Compare two companies.** From a profile, pick a second company to see tone, Claude's record and price side by side, plus the stories that touch both.
 - **Wind time back.** The time machine slider rewinds the wire and the cloud to an earlier moment.
 - **Take the tour.** A five-step walkthrough explains the screen in about 30 seconds (key T).
 - **Ask Blip.** The small pixel character walking along the bottom opens a panel. Ask what is moving the market, or ask about one of the tracked companies.
@@ -45,7 +46,7 @@ Finnhub ──> ingest ──> SQLite ──> FinBERT ──> Claude ──> exp
 | Load | `backend/db.py` | Idempotent upserts into SQLite. Every run is logged in `pipeline_runs` |
 | Tone | `backend/agents/sentiment.py` | FinBERT scores each headline from -1 (negative) to +1 (positive) |
 | Impact | `backend/agents/impact.py` | Claude returns up to four affected companies per story with a direction, a confidence and a one-line reason, plus a brief per company and a digest of the wire |
-| Check | `backend/prices.py` | Pulls daily closes with yfinance and marks each of Claude's calls right, wrong, too close to call or too early, measured against the S&P 500 over the same days |
+| Check | `backend/prices.py` | Pulls daily closes with yfinance and marks each of Claude's calls right, wrong, too close to call or too early, measured against the S&P 500 over the same days, both since the story and at fixed 1-day and 5-day windows |
 | Export | `backend/export_site_data.py` | Writes the snapshot the site reads |
 | Seed | `backend/seed.py` | Loads the last snapshot into an empty database so nothing is processed twice |
 | Site | `frontend/` | Plain HTML, CSS and JavaScript with no build step |
@@ -94,7 +95,7 @@ python -m http.server 5178 --directory frontend
 
 Then open http://localhost:5178. Without an Anthropic key the impact step skips itself and the rest still works.
 
-Tests: `python -m pytest tests` (13 tests, no network, no API key needed).
+Tests: `python -m pytest tests` (14 tests, no network, no API key needed).
 
 ## Automation
 

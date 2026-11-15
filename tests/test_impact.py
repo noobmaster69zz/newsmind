@@ -72,3 +72,16 @@ def test_judge_scores_a_call_against_the_market():
     assert judge("up", noon, market, market)["status"] == "flat"
     # Published after the last close we have: too early to say.
     assert judge("up", "2026-11-12T22:00:00+00:00", stock, market)["status"] == "early"
+
+
+def test_judge_reports_fixed_windows():
+    from backend.prices import judge
+
+    days = ["2026-11-0%d" % d for d in range(2, 9)]                      # 7 trading days
+    stock = list(zip(days, [100, 100, 103, 101, 100, 99, 96]))
+    market = list(zip(days, [100, 100, 100, 100, 100, 100, 100]))
+    check = judge("up", "2026-11-03T15:00:00+00:00", stock, market)     # baseline: the 2 Nov close
+    assert check["d1"] == {"status": "flat", "to": "2026-11-03", "excess": 0.0}
+    assert check["d5"]["status"] == "wrong" and check["d5"]["to"] == "2026-11-07"
+    # Only two trading days after the story: the 5-day window is not due yet.
+    assert judge("up", "2026-11-06T22:00:00+00:00", stock, market)["d5"]["status"] == "early"

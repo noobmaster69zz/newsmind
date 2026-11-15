@@ -14,6 +14,7 @@ from backend.agents.entity import companies
 
 MARKET = "SPY"
 US_CLOSE_UTC_HOUR = 21   # 16:00 New York in winter; close enough for a daily check
+WINDOWS = (1, 5)         # fixed horizons, in trading days
 FLAT_BAND = 0.5          # percentage points: moves inside this band count as "flat", not right or wrong
 
 
@@ -45,6 +46,21 @@ def baseline_day(published_at: str, days: list[str]) -> str | None:
     return known[-1] if known else None
 
 
+def _window(direction: str, stock_by_day: dict, market_by_day: dict, base: str, later: list[str], n: int) -> dict:
+    """The call judged exactly n trading days after the story, or 'early' if that day has not happened yet."""
+    if len(later) < n:
+        return {"status": "early"}
+    day = later[n - 1]
+    excess = ((stock_by_day[day] / stock_by_day[base]) - (market_by_day[day] / market_by_day[base])) * 100
+    if direction == "mixed":
+        status = "unscored"
+    elif abs(excess) < FLAT_BAND:
+        status = "flat"
+    else:
+        status = "right" if (excess > 0) == (direction == "up") else "wrong"
+    return {"status": status, "to": day, "excess": round(excess, 2)}
+
+
 def judge(direction: str, published_at: str, stock: list[tuple[str, float]],
           market: list[tuple[str, float]]) -> dict:
     """Compare one call with the price move since the story.
@@ -57,8 +73,10 @@ def judge(direction: str, published_at: str, stock: list[tuple[str, float]],
     if not base:
         return {"status": "unscored"}
     later = [d for d in days if d > base]
+    # Fixed windows: the same horizon for every call, so results are comparable across stories.
+    windows = {f"d{n}": _window(direction, stock_by_day, market_by_day, base, later, n) for n in WINDOWS}
     if not later:
-        return {"status": "early", "from": base}
+        return {"status": "early", "from": base, **windows}
     last = later[-1]
     stock_move = (stock_by_day[last] / stock_by_day[base] - 1) * 100
     market_move = (market_by_day[last] / market_by_day[base] - 1) * 100
@@ -70,7 +88,7 @@ def judge(direction: str, published_at: str, stock: list[tuple[str, float]],
     else:
         status = "right" if (excess > 0) == (direction == "up") else "wrong"
     return {"status": status, "from": base, "to": last, "days": len(later),
-            "stock": round(stock_move, 2), "market": round(market_move, 2), "excess": round(excess, 2)}
+            "stock": round(stock_move, 2), "market": round(market_move, 2), "excess": round(excess, 2), **windows}
 
 
 if __name__ == "__main__":

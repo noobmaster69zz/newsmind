@@ -48,12 +48,23 @@
     return `Since the story ${ticker} is ${signed(check.stock)}% and the S&P 500 ${signed(check.market)}% over ${span}. ${VERDICT[check.status]}`;
   }
 
+  // The same call judged at fixed horizons, so one story's result can be compared with another's.
+  function windowText(check) {
+    if (!check || !check.d1) return '';
+    const line = (label, w) => (w.status === 'early' ? `${label}: not due yet.`
+      : w.status === 'unscored' ? `${label}: not scored.`
+      : `${label}: ${w.excess >= 0 ? 'beat' : 'trailed'} the S&P 500 by ${Math.abs(w.excess).toFixed(2)} points, ${
+        { right: 'right', wrong: 'wrong', flat: 'too close to call' }[w.status]}.`);
+    return `${line('After 1 trading day', check.d1)} ${line('After 5 trading days', check.d5)}`;
+  }
+
   function showScore(card) {
     const el = $('#score');
     if (!card || !(card.right + card.wrong + card.flat)) { el.textContent = "Claude's calls have not been checked against prices yet."; return; }
     const text = `Claude's calls so far: ${card.right} right, ${card.wrong} wrong, ${card.flat} too close to call.`;
     el.textContent = `${text} Not advice.`;
-    $('#introScore').textContent = `${text} Another ${card.early} are too early to check.`;
+    const d1 = card.d1 ? ` On a fixed 1-day window: ${card.d1.right} right, ${card.d1.wrong} wrong. On 5 days: ${card.d5.right} right, ${card.d5.wrong} wrong, ${card.d5.early} not due yet.` : '';
+    $('#introScore').textContent = `${text} Another ${card.early} are too early to check.${d1}`;
   }
 
   const TONE_RGB = { positive: '6,182,212', negative: '224,82,122', neutral: '170,174,182', unscored: '170,174,182' };
@@ -1318,6 +1329,69 @@
       return fig;
     }
 
+    const record = (t) => {
+      const own = state.byTicker.get(t) || [];
+      const calls = state.all.flatMap((st) => ((st.impact || {}).effects || []).filter((e) => e.ticker === t));
+      const avg = state.mood.get(t);
+      const series = state.prices[t];
+      return {
+        tone: avg == null ? 'Not scored' : `${moodLabel(avg)} (${signed(avg)})`,
+        stories: String(own.length),
+        calls: String(calls.length),
+        right: String(calls.filter((e) => (e.check || {}).status === 'right').length),
+        wrong: String(calls.filter((e) => (e.check || {}).status === 'wrong').length),
+        price: series && series.length > 1 ? `${signed((series[series.length - 1][1] / series[0][1] - 1) * 100)}%` : 'No data',
+      };
+    };
+
+    function compare(a, b, holder) {
+      holder.replaceChildren();
+      if (!b) return;
+      const A = record(a), B = record(b);
+      const touches = (st, t) => st.tickers.includes(t) || ((st.impact || {}).effects || []).some((e) => e.ticker === t);
+      const shared = state.all.filter((st) => touches(st, a) && touches(st, b));
+      const table = node('table', 'ask-table');
+      const row = (cells, tag) => {
+        const tr = document.createElement('tr');
+        cells.forEach((c, i) => tr.append(node(i === 0 || tag === 'th' ? 'th' : 'td', null, c)));
+        table.append(tr);
+      };
+      row(['', a, b], 'th');
+      row(['News tone', A.tone, B.tone]);
+      row(['Stories naming it', A.stories, B.stories]);
+      row(['Claude calls', A.calls, B.calls]);
+      row(['Right so far', A.right, B.right]);
+      row(['Wrong so far', A.wrong, B.wrong]);
+      row([`Price, ${(state.prices[a] || []).length} trading days`, A.price, B.price]);
+      holder.append(table);
+
+      const ra = state.prices[a], rb = state.prices[b];
+      if (ra && rb && ra.length > 1 && rb.length === ra.length) {
+        const pa = ra.map((r) => (r[1] / ra[0][1] - 1) * 100), pb = rb.map((r) => (r[1] / rb[0][1] - 1) * 100);
+        const all = pa.concat(pb, 0), lo = Math.min(...all), hi = Math.max(...all), pad = (hi - lo) * 0.14 || 1;
+        const W = 400, H = 120;
+        const x = (i) => 8 + (i * (W - 16)) / (ra.length - 1);
+        const y = (v) => H - 18 - ((v - (lo - pad)) / (hi - lo + pad * 2)) * (H - 30);
+        const path = (vals) => vals.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
+        const fig = node('figure', 'ask-chart');
+        fig.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${a} is ${A.price} and ${b} is ${B.price} over the same days.">` +
+          `<line class="zero" x1="8" x2="${W - 8}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}"/>` +
+          `<path class="stock" d="${path(pa)}"/><path class="rival" d="${path(pb)}"/>` +
+          `<text x="8" y="${H - 3}">${ra[0][0].slice(5)}</text><text x="${W - 8}" y="${H - 3}" text-anchor="end">${ra[ra.length - 1][0].slice(5)}</text></svg>`;
+        fig.append(node('figcaption', null, `Light line: ${a}. Cyan line: ${b}. Both as % change over the same days.`));
+        holder.append(fig);
+      }
+      holder.append(node('p', 'ask-label', shared.length
+        ? `${shared.length} ${shared.length === 1 ? 'story touches' : 'stories touch'} both companies`
+        : 'No story on the wire touches both companies'));
+      for (const st of shared.slice(0, 4)) {
+        const link = node('button', 'ask-story', st.headline);
+        link.type = 'button';
+        link.dataset.story = st.id;
+        holder.append(link);
+      }
+    }
+
     function showCompany(t, effect) {
       const company = state.companies[t], b = state.briefs[t];
       out.replaceChildren();
@@ -1340,6 +1414,7 @@
         part('What would contradict it', effect.counter);
         part('How it has played out so far', checkText(t, effect.check) ||
           'Not scored: a mixed call has no single direction to check.');
+        part('At fixed horizons', windowText(effect.check));
         box.append(node('p', 'ask-note', 'Confidence is how sure Claude was when it read the story. Whether the call proved right is tracked separately, above.'));
         out.append(box);
       }
@@ -1355,6 +1430,16 @@
       stat('Stories naming it', String(own.length));
       stat('Claude calls on it', `${calls.length}, ${right} right and ${wrong} wrong so far`);
       out.append(stats);
+
+      // Compare mode: put a second company beside this one.
+      const pickOther = node('select', 'ask-compare');
+      pickOther.setAttribute('aria-label', `Compare ${company.name} with another company`);
+      pickOther.append(new Option('Compare with another company', ''));
+      Object.entries(state.companies).filter(([o]) => o !== t).sort((a, b) => a[1].name.localeCompare(b[1].name))
+        .forEach(([o, c]) => pickOther.append(new Option(`${c.name} (${o})`, o)));
+      const versus = node('div', 'ask-versus');
+      pickOther.addEventListener('change', () => compare(t, pickOther.value, versus));
+      out.append(pickOther, versus);
 
       // How the tone of its coverage has moved, day by day.
       const days = new Map();

@@ -25,7 +25,8 @@ ID_LEN = 12        # short ids keep the file small; seed.py rebuilds the full id
 def build(conn) -> dict:
     market = prices.series(conn, prices.MARKET)
     closes = {t: prices.series(conn, t) for t in companies()}
-    tally = {"right": 0, "wrong": 0, "flat": 0, "early": 0, "unscored": 0}
+    blank = {"right": 0, "wrong": 0, "flat": 0, "early": 0, "unscored": 0}
+    tally = {**blank, "d1": dict(blank), "d5": dict(blank)}
     stories = []
     for r in conn.execute(
         "SELECT n.id, n.source, n.headline, n.summary, n.url, n.published_at, s.score, s.label, "
@@ -45,6 +46,8 @@ def build(conn) -> dict:
                 effect["check"] = prices.judge(effect["direction"], r["published_at"],
                                                closes.get(effect["ticker"], []), market)
                 tally[effect["check"]["status"]] += 1
+                for window in ("d1", "d5"):
+                    tally[window][effect["check"].get(window, {"status": "unscored"})["status"]] += 1
         stories.append({
             "id": r["id"][:ID_LEN],
             "source": r["source"],

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-15T08:27:58+00:00",
+ "generatedAt": "2026-11-15T11:34:21+00:00",
  "companies": {
   "AAPL": {
    "name": "Apple",
@@ -654,7 +654,21 @@
   "wrong": 67,
   "flat": 25,
   "early": 94,
-  "unscored": 142
+  "unscored": 142,
+  "d1": {
+   "right": 120,
+   "wrong": 67,
+   "flat": 34,
+   "early": 94,
+   "unscored": 142
+  },
+  "d5": {
+   "right": 0,
+   "wrong": 0,
+   "flat": 0,
+   "early": 457,
+   "unscored": 0
+  }
  },
  "prices": {
   "AAPL": [
@@ -3941,7 +3955,13 @@
       "counter": "The text does not confirm the resignation, so check Nvidia's own announcement or a primary news report before trusting this, and treat the analyst view as opinion rather than evidence.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -3973,7 +3993,13 @@
       "counter": "The sale happened last quarter and is already reported, so the market may have absorbed it; check whether other large holders are also selling.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4005,7 +4031,13 @@
       "counter": "The story is an unconfirmed report about personal conduct, so the share price may ignore it unless it leads to investigations, leadership changes or export-related action.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4037,7 +4069,13 @@
       "counter": "This is a stock screen and chart reading with no new earnings or business data, so the pattern may already be priced in or may fail to break out.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4069,7 +4107,13 @@
       "counter": "The exit claim is unconfirmed and appears only in a promotional wire summary, so check company filings or major news first; if it is false or minor, the effect would not hold.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4082,7 +4126,13 @@
       "counter": "Competitor gains from a rival's leadership problem are speculative and may not show up in the share price at all.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4095,7 +4145,13 @@
       "counter": "Broadcom's business is not run by Nvidia's leadership, so any drop may be small or unrelated to this news.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4127,7 +4183,13 @@
       "counter": "The story is anecdotal and describes a small group of resellers, so it may have little effect on Costco's membership base or results; check whether Costco has commented or changed policy.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4160,7 +4222,13 @@
       "counter": "The $50 billion figure depends on chip sales exceeding $20 billion a year, which Amazon has not shown in the text, so check Amazon's own filings or earnings comments before relying on it.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4173,7 +4241,13 @@
       "counter": "Large cloud providers often buy Nvidia chips alongside their own, so the effect may be small, and the wire summary's report that Jensen Huang resigned as CEO should be verified separately since it could move the stock more than this story does.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4205,7 +4279,13 @@
       "counter": "Check how many units are actually sold and at what price, since a limited select-customer launch may be too small to move revenue expectations much.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4237,7 +4317,13 @@
       "counter": "The story reports a court filing and a CEO's comments, not a final rule, so the regulatory outcome and any product launch timing remain uncertain.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4269,7 +4355,13 @@
       "counter": "The talks are unconfirmed reports, and no terms or outcome have been announced, so a reader should check for an official deal from Amazon or Fermi before reading anything into it.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4301,7 +4393,13 @@
       "counter": "The 40% figure is a regional, self-reported rise from a likely small base, and it does not show total group revenue or profit impact.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4314,7 +4412,13 @@
       "counter": "The story says nothing about Morgan Stanley or its client flows, so any competitive effect is an assumption.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4327,7 +4431,13 @@
       "counter": "The story concerns investment allocations, not actual chip orders or data center spending, so the link to Nvidia's sales is weak.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4360,7 +4470,13 @@
       "counter": "Check whether Huang has actually been removed or is still CEO; if so, this is a symbolic campaign with little business impact.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4373,7 +4489,13 @@
       "counter": "Any Tesla share move tied to Musk's public activity would be driven by unrelated Musk news, not this petition.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4405,7 +4527,13 @@
       "counter": "Stock-pick commentary usually moves large caps very little, and a reader should check whether any price move follows and whether Costco's own results or guidance change.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4437,7 +4565,13 @@
       "counter": "800 workers is small against Amazon's total workforce, so the direct cost may be negligible and the market may treat it as a local story.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4450,7 +4584,13 @@
       "counter": "Walmart's Canadian and US labour markets and pay structures differ from this single Vancouver-area contract, so the link may be weak.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4482,7 +4622,13 @@
       "counter": "The charter's business impact is not quantified in the text, and crypto prices are sensitive to rates, which the hot inflation data may also pressure.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4495,7 +4641,13 @@
       "counter": "Bank of America is not named in the story, and higher rates can support bank net interest income, so the net effect may be mixed.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4508,7 +4660,13 @@
       "counter": "JPMorgan is not named in the story, and banks can gain from higher rates through wider lending margins, so the effect may be neutral or positive.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4540,7 +4698,13 @@
       "counter": "The summary is truncated and gives no approval-cost or production detail, so the size of the benefit cannot be judged from this text alone.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4553,7 +4717,13 @@
       "counter": "Any link to Chevron depends on its own Guyana holdings, which this story does not mention, so the sector read-across may be wrong.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4585,7 +4755,13 @@
       "counter": "Any new trial result, regulatory decision or deal announced after this article could move the stock far more than this recap does, so check for fresh company news.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4617,7 +4793,13 @@
       "counter": "The Cybercab's launch timing and sales are unproven, so the capacity gain may not offset the lost volume; check Tesla's delivery figures and any Cybercab production dates.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4649,7 +4831,13 @@
       "counter": "The full article would need to be read; it may describe a drug trial, earnings or a regulatory event that points clearly up or down.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4681,7 +4869,13 @@
       "counter": "The article is a buy-or-hold opinion with no new facts, so it probably moves the price little and may not change anything at all.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4711,7 +4905,13 @@
       "counter": "Talks often produce no agreement, and nuclear modernisation budgets tend to continue regardless, so the news may not move the stock at all.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4724,7 +4924,13 @@
       "counter": "RTX's revenue depends on many programmes and contract cycles, so one summit announcement is unlikely to be a major driver.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4756,7 +4962,13 @@
       "counter": "ETF buying is often index-driven and passive, so it may say little about investor sentiment; check whether the capex and financing plans are sized as described.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4769,7 +4981,13 @@
       "counter": "Advertising budgets are large and spread across many platforms, so one company's gains may not come out of Alphabet's results.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4782,7 +5000,13 @@
       "counter": "The summary does not say how much of Meta's spending goes to Nvidia hardware versus other vendors or in-house chips.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4814,7 +5038,13 @@
       "counter": "The funding is only up to $1.5 billion and the milestone payments to Blackstone reduce Pfizer's share of any eventual profit, and the drug's clinical results are not yet known.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4827,7 +5057,13 @@
       "counter": "A single candidate still in development is unlikely to change Eli Lilly's sales in the short term, and the market may treat it as a minor development.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4859,7 +5095,13 @@
       "counter": "This is an opinion piece with no new Costco results, guidance or deal, so the price may not move at all, and the story may simply restate what the market already knows.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4891,7 +5133,13 @@
       "counter": "Senior departures at large banks often have little lasting effect, so check whether a successor is named quickly and whether card earnings stay on track.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4923,7 +5171,13 @@
       "counter": "The fine is small relative to Walmart's size, and the third-quarter results will likely matter more to the share price than this strategy piece.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4936,7 +5190,13 @@
       "counter": "The article does not mention Amazon, and Amazon's scale and separate businesses may make any competitive effect small.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4949,7 +5209,13 @@
       "counter": "Target is not named in the story, and any share shift from Walmart's digital push is speculative from this news alone.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -4981,7 +5247,13 @@
       "counter": "The article is general commentary with no contract, revenue figure or new programme, so it may carry little weight; check for actual UAV orders or earnings guidance.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -4994,7 +5266,13 @@
       "counter": "The link is only a shared sector theme; budget growth is a long-run trend and this article does not name Lockheed Martin or any of its programmes.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5007,7 +5285,13 @@
       "counter": "The story does not mention RTX, and any move would depend on broader defence budget decisions rather than this article.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5039,7 +5323,13 @@
       "counter": "The story gives no stated cause, so the drop may be a short-lived market move or company-specific news not covered here.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5052,7 +5342,13 @@
       "counter": "The summary is vague and does not name chipmakers, so AMD may have moved differently or not at all.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5084,7 +5380,13 @@
       "counter": "The release is a vendor's self-promotion and gives no size, duration or cost for the outage, so the impact on Microsoft's share price may be negligible.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5117,7 +5419,13 @@
       "counter": "The story gives no results or guidance, so the outcome of the report, not the calendar, will decide the move.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5130,7 +5438,13 @@
       "counter": "Target and Walmart can diverge widely on the same consumer conditions, so a Walmart result may not carry over to Target.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5143,7 +5457,13 @@
       "counter": "The +24.9% earnings and +13.7% revenue figures cover companies that have already reported and say little about Walmart's own quarter.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5173,7 +5493,13 @@
       "counter": "A single unconfirmed sighting that is quickly resolved is unlikely to change defence budgets, so any share move may be brief or absent.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5186,7 +5512,13 @@
       "counter": "Defence stocks often trade on budget and contract news rather than isolated incidents, so check for any follow-up procurement announcements before trusting this call.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5218,7 +5550,13 @@
       "counter": "The report relies on people familiar with the matter and is not confirmed by Amazon or FRMI, and the deal's size and terms are not given, so check for an official statement before reading anything into it.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5251,7 +5589,13 @@
       "counter": "The summary does not name Amazon, so the link relies on it being a hyperscaler; the move may not apply to it equally.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5264,7 +5608,13 @@
       "counter": "The summary gives no company-level detail, so the rise may reflect a sector move that could reverse, and cloud costs for AI may also squeeze margins.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5277,7 +5627,13 @@
       "counter": "The summary does not say what the scandal is or how serious it is, so the size of any drop is unknown and could be small or short-lived.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5290,7 +5646,13 @@
       "counter": "The story does not name AMD, and competitor gains may go to other firms or stay modest, so check whether AMD is actually winning orders.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5322,7 +5684,13 @@
       "counter": "A single-day drop can reverse quickly, and the story does not say whether the move reflects company-specific news or only sector flows.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5335,7 +5703,13 @@
       "counter": "The sell-off may have been concentrated in AMD, and Nvidia could hold steady or rise if investors are rotating between chip names.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5348,7 +5722,13 @@
       "counter": "Broadcom's business mix differs from AMD's, so it may not move with the same pressure on the day.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5378,7 +5758,13 @@
       "counter": "The $6.3 billion figure and the Binance theft are not confirmed by the wire summary, which covers only consumer advice, so check a primary report before relying on this.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5411,7 +5797,13 @@
       "counter": "Check that the Nvidia CEO resignation is confirmed by a primary source, since this story rests on that claim and a rally can reverse again quickly.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5424,7 +5816,13 @@
       "counter": "A confirmed succession plan or strong results could calm the shares, while further leadership news could push them lower.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5437,7 +5835,13 @@
       "counter": "Intel may not follow the AMD and Nvidia moves if its own news or valuation differs.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5450,7 +5854,13 @@
       "counter": "TSMC's exposure to Nvidia and AMD is indirect and its shares can diverge from US chip stocks on a given day.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5482,7 +5892,13 @@
       "counter": "The article does not name Amazon, and the strength of its link to Anthropic's compute decisions is not stated here.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5495,7 +5911,13 @@
       "counter": "The article does not name Alphabet, so this link relies on general knowledge rather than the story itself.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5508,7 +5930,13 @@
       "counter": "The article does not say JPMorgan is an underwriter, so any fee benefit is speculation until a deal is announced.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5521,7 +5949,13 @@
       "counter": "Nvidia's sales depend on many AI buyers, so one lab's cost worries may not change its outlook.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5551,7 +5985,13 @@
       "counter": "The wire summary is too brief to show whether the waiver changes US oil prices or shipping rates at all, so this link is speculative.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5564,7 +6004,13 @@
       "counter": "If the waiver mainly helps importers or traders rather than domestic producers, the effect on Chevron could be neutral or negative.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5577,7 +6023,13 @@
       "counter": "The summary does not say which vessels or routes the waiver covers, so the size of any cost saving is unknown and may be negligible for a company this large.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5627,7 +6079,13 @@
       "counter": "The article gives no reason for the drop, so it may reflect a one-day sell-off or sector rotation that reverses, and readers should check for company or industry news before relying on it.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5659,7 +6117,13 @@
       "counter": "Check for an official announcement or filing; if no deal follows, or if the terms dilute Tesla shareholders, the expectation-driven move could reverse.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5708,7 +6172,13 @@
       "counter": "Airlines sometimes recover lost bookings later, and investors may see the outage as a one-off, so check cancellation numbers and how long the halt lasted.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5721,7 +6191,13 @@
       "counter": "If flights resume quickly and the halt was short, the lost revenue may be small and the share price effect could fade within a day.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5769,7 +6245,13 @@
       "counter": "The headline says the deal is only possible, and the summary gives no terms, so check the actual announced structure, price and any share issuance before trusting any direction.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5802,7 +6284,13 @@
       "counter": "One deal is a small slice of Nvidia's sales, and the surge may reflect Cerebras-specific hype rather than a shift in demand away from Nvidia.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5815,7 +6303,13 @@
       "counter": "The deal's terms and scale are not given in the text, so its effect on Microsoft's costs or margins could be negligible.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5847,7 +6341,13 @@
       "counter": "The wire summary is cut off before listing amounts or rates, so any change from prior payments or a surprise in the terms cannot be checked from this text alone.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5879,7 +6379,13 @@
       "counter": "The wire text gives no dividend amounts or rates, so a reader should check the Firm's investor relations release for the size of the payout before reading anything into it.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5911,7 +6417,13 @@
       "counter": "The piece is opinion and analysis rather than new results, and it itself notes the stock has already pulled back from its October highs, so the sentiment may already be priced in.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5924,7 +6436,13 @@
       "counter": "The text does not mention Intel or processor competition, and the link depends on general knowledge of the market rather than this article.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5937,7 +6455,13 @@
       "counter": "The article says nothing about Nvidia, and investor interest in AMD may not move Nvidia's share price at all.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -5967,7 +6491,13 @@
       "counter": "Oil prices are set by many factors, so one incident may have only a small or short-lived effect on Chevron's shares.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5980,7 +6510,13 @@
       "counter": "If the incident is contained quickly and shipping resumes, oil prices may not move much and the gain could fade.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -5993,7 +6529,13 @@
       "counter": "Airlines can hedge fuel costs and oil may not rise far, so the pressure could be small.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6006,7 +6548,13 @@
       "counter": "The story does not mention oil prices or airline routes, so the effect depends on whether oil actually rises.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6038,7 +6586,13 @@
       "counter": "Analyst upgrades are opinions that often have little lasting effect, and the text does not say what the sellout refers to or how many units sold.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6071,7 +6625,13 @@
       "counter": "The Uber talks are only reported, not confirmed, and the size of any eventual fine payment and appeal outcome is not given in the text.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6084,7 +6644,13 @@
       "counter": "Project Suncatcher is an experiment, and Google's chips are unlikely to replace Nvidia's sales in the near term.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6097,7 +6663,13 @@
       "counter": "Operating ahead in one state does not show revenue, safety record or scale, so the market may not reward it.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6129,7 +6701,13 @@
       "counter": "The text does not say what the warning covers, so the direction could be wrong; check the full article for the substance of the warning before relying on this.",
       "check": {
        "status": "early",
-       "from": "2026-11-13"
+       "from": "2026-11-13",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6180,7 +6758,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6198,7 +6784,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6216,7 +6810,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6234,7 +6836,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6271,7 +6881,15 @@
        "days": 1,
        "stock": -2.31,
        "market": -0.36,
-       "excess": -1.95
+       "excess": -1.95,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6289,7 +6907,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6326,7 +6952,15 @@
        "days": 1,
        "stock": -0.03,
        "market": -0.36,
-       "excess": 0.33
+       "excess": 0.33,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.33
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6363,7 +6997,15 @@
        "days": 1,
        "stock": 0.17,
        "market": -0.36,
-       "excess": 0.53
+       "excess": 0.53,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.53
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6381,7 +7023,15 @@
        "days": 1,
        "stock": -0.98,
        "market": -0.36,
-       "excess": -0.62
+       "excess": -0.62,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6418,7 +7068,15 @@
        "days": 1,
        "stock": -1.82,
        "market": -0.36,
-       "excess": -1.46
+       "excess": -1.46,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.46
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6455,7 +7113,15 @@
        "days": 1,
        "stock": 2.9,
        "market": -0.36,
-       "excess": 3.26
+       "excess": 3.26,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 3.26
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6492,7 +7158,15 @@
        "days": 1,
        "stock": -1.82,
        "market": -0.36,
-       "excess": -1.46
+       "excess": -1.46,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.46
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6529,7 +7203,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6586,7 +7268,15 @@
        "days": 1,
        "stock": -2.31,
        "market": -0.36,
-       "excess": -1.95
+       "excess": -1.95,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6604,7 +7294,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6643,7 +7341,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6661,7 +7367,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6698,7 +7412,15 @@
        "days": 1,
        "stock": -2.31,
        "market": -0.36,
-       "excess": -1.95
+       "excess": -1.95,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6716,7 +7438,15 @@
        "days": 1,
        "stock": 0.32,
        "market": -0.36,
-       "excess": 0.69
+       "excess": 0.69,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.69
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6734,7 +7464,15 @@
        "days": 1,
        "stock": 1.32,
        "market": -0.36,
-       "excess": 1.68
+       "excess": 1.68,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.68
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6788,7 +7526,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6806,7 +7552,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6859,7 +7613,15 @@
        "days": 1,
        "stock": -1.82,
        "market": -0.36,
-       "excess": -1.46
+       "excess": -1.46,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.46
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6896,7 +7658,15 @@
        "days": 1,
        "stock": -1.82,
        "market": -0.36,
-       "excess": -1.46
+       "excess": -1.46,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.46
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -6914,7 +7684,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -6951,7 +7729,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7006,7 +7792,15 @@
        "days": 1,
        "stock": 0.21,
        "market": -0.36,
-       "excess": 0.57
+       "excess": 0.57,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.57
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7061,7 +7855,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7079,7 +7881,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7116,7 +7926,15 @@
        "days": 1,
        "stock": 1.32,
        "market": -0.36,
-       "excess": 1.68
+       "excess": 1.68,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.68
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7153,7 +7971,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7171,7 +7997,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7189,7 +8023,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7224,7 +8066,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7242,7 +8092,15 @@
        "days": 1,
        "stock": 0.11,
        "market": -0.36,
-       "excess": 0.47
+       "excess": 0.47,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.47
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7279,7 +8137,15 @@
        "days": 1,
        "stock": 0.32,
        "market": -0.36,
-       "excess": 0.69
+       "excess": 0.69,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.69
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7297,7 +8163,15 @@
        "days": 1,
        "stock": 0.78,
        "market": -0.36,
-       "excess": 1.15
+       "excess": 1.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7334,7 +8208,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7372,7 +8254,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7390,7 +8280,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7427,7 +8325,15 @@
        "days": 1,
        "stock": 0.32,
        "market": -0.36,
-       "excess": 0.69
+       "excess": 0.69,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.69
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7445,7 +8351,15 @@
        "days": 1,
        "stock": 0.78,
        "market": -0.36,
-       "excess": 1.15
+       "excess": 1.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7483,7 +8397,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7501,7 +8423,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7539,7 +8469,15 @@
        "days": 1,
        "stock": -0.29,
        "market": -0.36,
-       "excess": 0.07
+       "excess": 0.07,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7557,7 +8495,15 @@
        "days": 1,
        "stock": -1.82,
        "market": -0.36,
-       "excess": -1.46
+       "excess": -1.46,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.46
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7597,7 +8543,15 @@
        "days": 1,
        "stock": 0.39,
        "market": -0.36,
-       "excess": 0.75
+       "excess": 0.75,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.75
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7615,7 +8569,15 @@
        "days": 1,
        "stock": -4.76,
        "market": -0.36,
-       "excess": -4.4
+       "excess": -4.4,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -4.4
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7633,7 +8595,15 @@
        "days": 1,
        "stock": 1.26,
        "market": -0.36,
-       "excess": 1.62
+       "excess": 1.62,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7651,7 +8621,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7688,7 +8666,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7725,7 +8711,15 @@
        "days": 1,
        "stock": -0.29,
        "market": -0.36,
-       "excess": 0.07
+       "excess": 0.07,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7743,7 +8737,15 @@
        "days": 1,
        "stock": -0.98,
        "market": -0.36,
-       "excess": -0.62
+       "excess": -0.62,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7761,7 +8763,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7814,7 +8824,15 @@
        "days": 1,
        "stock": 0.11,
        "market": -0.36,
-       "excess": 0.47
+       "excess": 0.47,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.47
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7832,7 +8850,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7870,7 +8896,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7888,7 +8922,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7906,7 +8948,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -7943,7 +8993,15 @@
        "days": 1,
        "stock": -0.29,
        "market": -0.36,
-       "excess": 0.07
+       "excess": 0.07,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7961,7 +9019,15 @@
        "days": 1,
        "stock": -0.98,
        "market": -0.36,
-       "excess": -0.62
+       "excess": -0.62,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -7979,7 +9045,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8017,7 +9091,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8035,7 +9117,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8053,7 +9143,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8108,7 +9206,15 @@
        "days": 1,
        "stock": -2.31,
        "market": -0.36,
-       "excess": -1.95
+       "excess": -1.95,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8145,7 +9251,15 @@
        "days": 1,
        "stock": 1.01,
        "market": -0.36,
-       "excess": 1.37
+       "excess": 1.37,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.37
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8182,7 +9296,15 @@
        "days": 1,
        "stock": 1.51,
        "market": -0.36,
-       "excess": 1.87
+       "excess": 1.87,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8219,7 +9341,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8256,7 +9386,15 @@
        "days": 1,
        "stock": 0.32,
        "market": -0.36,
-       "excess": 0.69
+       "excess": 0.69,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.69
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8274,7 +9412,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8292,7 +9438,15 @@
        "days": 1,
        "stock": 0.78,
        "market": -0.36,
-       "excess": 1.15
+       "excess": 1.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8329,7 +9483,15 @@
        "days": 1,
        "stock": 0.58,
        "market": -0.36,
-       "excess": 0.94
+       "excess": 0.94,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.94
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8366,7 +9528,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8384,7 +9554,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8442,7 +9620,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8460,7 +9646,15 @@
        "days": 1,
        "stock": -4.76,
        "market": -0.36,
-       "excess": -4.4
+       "excess": -4.4,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -4.4
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8478,7 +9672,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8496,7 +9698,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8533,7 +9743,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8570,7 +9788,15 @@
        "days": 1,
        "stock": -0.03,
        "market": -0.36,
-       "excess": 0.33
+       "excess": 0.33,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.33
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8588,7 +9814,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8606,7 +9840,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8644,7 +9886,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8662,7 +9912,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8699,7 +9957,15 @@
        "days": 1,
        "stock": 1.51,
        "market": -0.36,
-       "excess": 1.87
+       "excess": 1.87,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8737,7 +10003,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8755,7 +10029,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8792,7 +10074,15 @@
        "days": 1,
        "stock": 1.32,
        "market": -0.36,
-       "excess": 1.68
+       "excess": 1.68,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.68
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8830,7 +10120,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8868,7 +10166,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8886,7 +10192,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8904,7 +10218,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -8957,7 +10279,15 @@
        "days": 1,
        "stock": 0.78,
        "market": -0.36,
-       "excess": 1.15
+       "excess": 1.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -8975,7 +10305,15 @@
        "days": 1,
        "stock": 0.17,
        "market": -0.36,
-       "excess": 0.53
+       "excess": 0.53,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.53
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9012,7 +10350,15 @@
        "days": 1,
        "stock": 1.28,
        "market": -0.36,
-       "excess": 1.65
+       "excess": 1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9030,7 +10376,15 @@
        "days": 1,
        "stock": 1.51,
        "market": -0.36,
-       "excess": 1.87
+       "excess": 1.87,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9067,7 +10421,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9085,7 +10447,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9103,7 +10473,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9140,7 +10518,15 @@
        "days": 1,
        "stock": 1.01,
        "market": -0.36,
-       "excess": 1.37
+       "excess": 1.37,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.37
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9158,7 +10544,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9196,7 +10590,15 @@
        "days": 1,
        "stock": -0.29,
        "market": -0.36,
-       "excess": 0.07
+       "excess": 0.07,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9214,7 +10616,15 @@
        "days": 1,
        "stock": 0.32,
        "market": -0.36,
-       "excess": 0.69
+       "excess": 0.69,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.69
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9249,7 +10659,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9267,7 +10685,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9285,7 +10711,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9303,7 +10737,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9358,7 +10800,15 @@
        "days": 1,
        "stock": 0.78,
        "market": -0.36,
-       "excess": 1.15
+       "excess": 1.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9395,7 +10845,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9413,7 +10871,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9431,7 +10897,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9449,7 +10923,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9486,7 +10968,15 @@
        "days": 1,
        "stock": 1.01,
        "market": -0.36,
-       "excess": 1.37
+       "excess": 1.37,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.37
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9504,7 +10994,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9541,7 +11039,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9559,7 +11065,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9596,7 +11110,15 @@
        "days": 1,
        "stock": 1.26,
        "market": -0.36,
-       "excess": 1.62
+       "excess": 1.62,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9633,7 +11155,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9686,7 +11216,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9704,7 +11242,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9742,7 +11288,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9760,7 +11314,15 @@
        "days": 1,
        "stock": 0.17,
        "market": -0.36,
-       "excess": 0.53
+       "excess": 0.53,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.53
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9797,7 +11359,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -9815,7 +11385,15 @@
        "days": 1,
        "stock": 0.11,
        "market": -0.36,
-       "excess": 0.47
+       "excess": 0.47,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.47
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9873,7 +11451,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9910,7 +11496,15 @@
        "days": 1,
        "stock": 1.32,
        "market": -0.36,
-       "excess": 1.68
+       "excess": 1.68,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.68
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9947,7 +11541,15 @@
        "days": 1,
        "stock": 0.21,
        "market": -0.36,
-       "excess": 0.57
+       "excess": 0.57,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.57
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -9984,7 +11586,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10038,7 +11648,15 @@
        "days": 1,
        "stock": -2.31,
        "market": -0.36,
-       "excess": -1.95
+       "excess": -1.95,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10056,7 +11674,15 @@
        "days": 1,
        "stock": 1.32,
        "market": -0.36,
-       "excess": 1.68
+       "excess": 1.68,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.68
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10093,7 +11719,15 @@
        "days": 1,
        "stock": 1.51,
        "market": -0.36,
-       "excess": 1.87
+       "excess": 1.87,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10148,7 +11782,15 @@
        "days": 1,
        "stock": 1.28,
        "market": -0.36,
-       "excess": 1.65
+       "excess": 1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10166,7 +11808,15 @@
        "days": 1,
        "stock": 1.51,
        "market": -0.36,
-       "excess": 1.87
+       "excess": 1.87,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10220,7 +11870,15 @@
        "days": 1,
        "stock": 1.28,
        "market": -0.36,
-       "excess": 1.65
+       "excess": 1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10238,7 +11896,15 @@
        "days": 1,
        "stock": 0.34,
        "market": -0.36,
-       "excess": 0.71
+       "excess": 0.71,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.71
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10256,7 +11922,15 @@
        "days": 1,
        "stock": 1.51,
        "market": -0.36,
-       "excess": 1.87
+       "excess": 1.87,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10293,7 +11967,15 @@
        "days": 1,
        "stock": -0.03,
        "market": -0.36,
-       "excess": 0.33
+       "excess": 0.33,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.33
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10330,7 +12012,15 @@
        "days": 1,
        "stock": 0.21,
        "market": -0.36,
-       "excess": 0.57
+       "excess": 0.57,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.57
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10365,7 +12055,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10383,7 +12081,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10401,7 +12107,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10436,7 +12150,15 @@
        "days": 1,
        "stock": -2.31,
        "market": -0.36,
-       "excess": -1.95
+       "excess": -1.95,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10473,7 +12195,15 @@
        "days": 1,
        "stock": -0.29,
        "market": -0.36,
-       "excess": 0.07
+       "excess": 0.07,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10511,7 +12241,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10529,7 +12267,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10547,7 +12293,15 @@
        "days": 1,
        "stock": -0.98,
        "market": -0.36,
-       "excess": -0.62
+       "excess": -0.62,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10618,7 +12372,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10636,7 +12398,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10654,7 +12424,15 @@
        "days": 1,
        "stock": 0.11,
        "market": -0.36,
-       "excess": 0.47
+       "excess": 0.47,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.47
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10672,7 +12450,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10709,7 +12495,15 @@
        "days": 1,
        "stock": 1.26,
        "market": -0.36,
-       "excess": 1.62
+       "excess": 1.62,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10746,7 +12540,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10835,7 +12637,15 @@
        "days": 1,
        "stock": 1.28,
        "market": -0.36,
-       "excess": 1.65
+       "excess": 1.65,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10872,7 +12682,15 @@
        "days": 1,
        "stock": 1.01,
        "market": -0.36,
-       "excess": 1.37
+       "excess": 1.37,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.37
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10890,7 +12708,15 @@
        "days": 1,
        "stock": -2.31,
        "market": -0.36,
-       "excess": -1.95
+       "excess": -1.95,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -10908,7 +12734,15 @@
        "days": 1,
        "stock": 0.98,
        "market": -0.36,
-       "excess": 1.35
+       "excess": 1.35,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.35
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10945,7 +12779,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -10982,7 +12824,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11020,7 +12870,15 @@
        "days": 1,
        "stock": 0.17,
        "market": -0.36,
-       "excess": 0.53
+       "excess": 0.53,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.53
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11038,7 +12896,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11076,7 +12942,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11094,7 +12968,15 @@
        "days": 1,
        "stock": 0.39,
        "market": -0.36,
-       "excess": 0.75
+       "excess": 0.75,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.75
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11112,7 +12994,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11147,7 +13037,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11165,7 +13063,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11183,7 +13089,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11201,7 +13115,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11236,7 +13158,15 @@
        "days": 1,
        "stock": -0.29,
        "market": -0.36,
-       "excess": 0.07
+       "excess": 0.07,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11254,7 +13184,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11272,7 +13210,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11309,7 +13255,15 @@
        "days": 1,
        "stock": 1.28,
        "market": -0.36,
-       "excess": 1.65
+       "excess": 1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11362,7 +13316,15 @@
        "days": 1,
        "stock": -0.03,
        "market": -0.36,
-       "excess": 0.33
+       "excess": 0.33,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.33
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11399,7 +13361,15 @@
        "days": 1,
        "stock": 0.58,
        "market": -0.36,
-       "excess": 0.94
+       "excess": 0.94,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.94
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11436,7 +13406,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11454,7 +13432,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11491,7 +13477,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11528,7 +13522,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11565,7 +13567,15 @@
        "days": 1,
        "stock": -1.67,
        "market": -0.36,
-       "excess": -1.3
+       "excess": -1.3,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.3
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11600,7 +13610,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11618,7 +13636,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11636,7 +13662,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11654,7 +13688,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11691,7 +13733,15 @@
        "days": 1,
        "stock": -1.67,
        "market": -0.36,
-       "excess": -1.3
+       "excess": -1.3,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.3
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11728,7 +13778,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11746,7 +13804,15 @@
        "days": 1,
        "stock": 0.11,
        "market": -0.36,
-       "excess": 0.47
+       "excess": 0.47,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.47
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11764,7 +13830,15 @@
        "days": 1,
        "stock": -0.03,
        "market": -0.36,
-       "excess": 0.33
+       "excess": 0.33,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.33
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11801,7 +13875,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11838,7 +13920,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11873,7 +13963,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11891,7 +13989,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11909,7 +14015,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11927,7 +14041,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -11978,7 +14100,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -11996,7 +14126,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12014,7 +14152,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12032,7 +14178,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12067,7 +14221,15 @@
        "days": 1,
        "stock": -0.35,
        "market": -0.36,
-       "excess": 0.02
+       "excess": 0.02,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.02
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12085,7 +14247,15 @@
        "days": 1,
        "stock": -1.33,
        "market": -0.36,
-       "excess": -0.97
+       "excess": -0.97,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -0.97
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12103,7 +14273,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12121,7 +14299,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12156,7 +14342,15 @@
        "days": 1,
        "stock": 0.39,
        "market": -0.36,
-       "excess": 0.75
+       "excess": 0.75,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.75
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12174,7 +14368,15 @@
        "days": 1,
        "stock": 1.01,
        "market": -0.36,
-       "excess": 1.37
+       "excess": 1.37,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 1.37
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12192,7 +14394,15 @@
        "days": 1,
        "stock": -1.74,
        "market": -0.36,
-       "excess": -1.38
+       "excess": -1.38,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.38
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12231,7 +14441,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12249,7 +14467,15 @@
        "days": 1,
        "stock": 1.64,
        "market": -0.36,
-       "excess": 2.0
+       "excess": 2.0,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 2.0
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12267,7 +14493,15 @@
        "days": 1,
        "stock": 0.48,
        "market": -0.36,
-       "excess": 0.84
+       "excess": 0.84,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 0.84
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12304,7 +14538,15 @@
        "days": 1,
        "stock": 1.59,
        "market": -0.36,
-       "excess": 1.95
+       "excess": 1.95,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12341,7 +14583,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12378,7 +14628,15 @@
        "days": 1,
        "stock": -1.67,
        "market": -0.36,
-       "excess": -1.3
+       "excess": -1.3,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.3
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12396,7 +14654,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12414,7 +14680,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12451,7 +14725,15 @@
        "days": 1,
        "stock": -1.67,
        "market": -0.36,
-       "excess": -1.3
+       "excess": -1.3,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.3
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12469,7 +14751,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12487,7 +14777,15 @@
        "days": 1,
        "stock": -2.52,
        "market": -0.36,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -2.15
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12505,7 +14803,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12560,7 +14866,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12578,7 +14892,15 @@
        "days": 1,
        "stock": -8.75,
        "market": -0.36,
-       "excess": -8.39
+       "excess": -8.39,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -8.39
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12615,7 +14937,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12652,7 +14982,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12690,7 +15028,15 @@
        "days": 1,
        "stock": -0.29,
        "market": -0.36,
-       "excess": 0.07
+       "excess": 0.07,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": 0.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12708,7 +15054,15 @@
        "days": 1,
        "stock": 0.17,
        "market": -0.36,
-       "excess": 0.53
+       "excess": 0.53,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": 0.53
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12726,7 +15080,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12761,7 +15123,15 @@
        "days": 1,
        "stock": -2.01,
        "market": -0.36,
-       "excess": -1.65
+       "excess": -1.65,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-13",
+        "excess": -1.65
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12779,7 +15149,15 @@
        "days": 1,
        "stock": -4.76,
        "market": -0.36,
-       "excess": -4.4
+       "excess": -4.4,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": -4.4
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12816,7 +15194,15 @@
        "days": 1,
        "stock": -0.86,
        "market": -0.36,
-       "excess": -0.5
+       "excess": -0.5,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-13",
+        "excess": -0.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12834,7 +15220,15 @@
        "days": 1,
        "stock": 0.63,
        "market": -0.36,
-       "excess": 0.99
+       "excess": 0.99,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-13",
+        "excess": 0.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12873,7 +15267,15 @@
        "days": 2,
        "stock": 0.18,
        "market": -0.72,
-       "excess": 0.9
+       "excess": 0.9,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": 0.83
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12891,7 +15293,15 @@
        "days": 2,
        "stock": 0.79,
        "market": -0.72,
-       "excess": 1.51
+       "excess": 1.51,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": 2.14
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12909,7 +15319,15 @@
        "days": 2,
        "stock": 0.53,
        "market": -0.72,
-       "excess": 1.24
+       "excess": 1.24,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": 0.71
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -12946,7 +15364,15 @@
        "days": 2,
        "stock": -3.54,
        "market": -0.72,
-       "excess": -2.82
+       "excess": -2.82,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -1.55
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -12964,7 +15390,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13001,7 +15435,15 @@
        "days": 2,
        "stock": -7.65,
        "market": -0.72,
-       "excess": -6.94
+       "excess": -6.94,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -5.66
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13036,7 +15478,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13054,7 +15504,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13072,7 +15530,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13090,7 +15556,15 @@
        "days": 2,
        "stock": -7.65,
        "market": -0.72,
-       "excess": -6.94
+       "excess": -6.94,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -5.66
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13127,7 +15601,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13162,7 +15644,15 @@
        "days": 2,
        "stock": 3.21,
        "market": -0.72,
-       "excess": 3.92
+       "excess": 3.92,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.95
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13180,7 +15670,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13198,7 +15696,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13216,7 +15722,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13253,7 +15767,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13271,7 +15793,15 @@
        "days": 2,
        "stock": -3.41,
        "market": -0.72,
-       "excess": -2.69
+       "excess": -2.69,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 6.21
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13326,7 +15856,15 @@
        "days": 2,
        "stock": -3.26,
        "market": -0.72,
-       "excess": -2.55
+       "excess": -2.55,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -2.63
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13363,7 +15901,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13421,7 +15967,15 @@
        "days": 2,
        "stock": -3.54,
        "market": -0.72,
-       "excess": -2.82
+       "excess": -2.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -1.55
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13474,7 +16028,15 @@
        "days": 2,
        "stock": 0.53,
        "market": -0.72,
-       "excess": 1.24
+       "excess": 1.24,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": 0.71
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13492,7 +16054,15 @@
        "days": 2,
        "stock": 0.79,
        "market": -0.72,
-       "excess": 1.51
+       "excess": 1.51,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.14
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13559,7 +16129,15 @@
        "days": 2,
        "stock": 0.69,
        "market": -0.72,
-       "excess": 1.41
+       "excess": 1.41,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 0.04
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13577,7 +16155,15 @@
        "days": 2,
        "stock": 0.82,
        "market": -0.72,
-       "excess": 1.53
+       "excess": 1.53,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 0.19
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13615,7 +16201,15 @@
        "days": 2,
        "stock": -3.54,
        "market": -0.72,
-       "excess": -2.82
+       "excess": -2.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -1.55
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13633,7 +16227,15 @@
        "days": 2,
        "stock": -3.41,
        "market": -0.72,
-       "excess": -2.69
+       "excess": -2.69,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": 6.21
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13651,7 +16253,15 @@
        "days": 2,
        "stock": 0.52,
        "market": -0.72,
-       "excess": 1.23
+       "excess": 1.23,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": 5.9
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13669,7 +16279,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13704,7 +16322,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13722,7 +16348,15 @@
        "days": 2,
        "stock": -7.65,
        "market": -0.72,
-       "excess": -6.94
+       "excess": -6.94,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -5.66
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13740,7 +16374,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13795,7 +16437,15 @@
        "days": 2,
        "stock": -1.74,
        "market": -0.72,
-       "excess": -1.03
+       "excess": -1.03,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -1.36
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13813,7 +16463,15 @@
        "days": 2,
        "stock": -1.35,
        "market": -0.72,
-       "excess": -0.63
+       "excess": -0.63,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -1.1
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13850,7 +16508,15 @@
        "days": 2,
        "stock": 1.12,
        "market": -0.72,
-       "excess": 1.84
+       "excess": 1.84,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 0.9
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13887,7 +16553,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -13958,7 +16632,15 @@
        "days": 2,
        "stock": -2.78,
        "market": -0.72,
-       "excess": -2.06
+       "excess": -2.06,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13976,7 +16658,15 @@
        "days": 2,
        "stock": -3.26,
        "market": -0.72,
-       "excess": -2.55
+       "excess": -2.55,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.63
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -13994,7 +16684,15 @@
        "days": 2,
        "stock": -0.16,
        "market": -0.72,
-       "excess": 0.56
+       "excess": 0.56,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 2.05
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14031,7 +16729,15 @@
        "days": 2,
        "stock": -1.74,
        "market": -0.72,
-       "excess": -1.03
+       "excess": -1.03,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -1.36
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14066,7 +16772,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14084,7 +16798,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14102,7 +16824,15 @@
        "days": 2,
        "stock": -7.65,
        "market": -0.72,
-       "excess": -6.94
+       "excess": -6.94,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -5.66
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14120,7 +16850,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14173,7 +16911,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14191,7 +16937,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14209,7 +16963,15 @@
        "days": 2,
        "stock": -7.65,
        "market": -0.72,
-       "excess": -6.94
+       "excess": -6.94,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -5.66
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14227,7 +16989,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14280,7 +17050,15 @@
        "days": 2,
        "stock": 0.02,
        "market": -0.72,
-       "excess": 0.74
+       "excess": 0.74,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -0.4
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14315,7 +17093,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14333,7 +17119,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14351,7 +17145,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14404,7 +17206,15 @@
        "days": 2,
        "stock": -0.57,
        "market": -0.72,
-       "excess": 0.15
+       "excess": 0.15,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -0.83
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14457,7 +17267,15 @@
        "days": 2,
        "stock": 1.12,
        "market": -0.72,
-       "excess": 1.84
+       "excess": 1.84,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 0.9
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14494,7 +17312,15 @@
        "days": 2,
        "stock": -1.35,
        "market": -0.72,
-       "excess": -0.63
+       "excess": -0.63,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -1.1
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14512,7 +17338,15 @@
        "days": 2,
        "stock": -2.3,
        "market": -0.72,
-       "excess": -1.58
+       "excess": -1.58,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14567,7 +17401,15 @@
        "days": 2,
        "stock": 0.02,
        "market": -0.72,
-       "excess": 0.74
+       "excess": 0.74,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -0.4
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14585,7 +17427,15 @@
        "days": 2,
        "stock": -6.33,
        "market": -0.72,
-       "excess": -5.61
+       "excess": -5.61,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -3.76
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14603,7 +17453,15 @@
        "days": 2,
        "stock": -1.11,
        "market": -0.72,
-       "excess": -0.39
+       "excess": -0.39,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -1.07
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14640,7 +17498,15 @@
        "days": 2,
        "stock": -0.57,
        "market": -0.72,
-       "excess": 0.15
+       "excess": 0.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -0.83
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14675,7 +17541,15 @@
        "days": 2,
        "stock": 0.69,
        "market": -0.72,
-       "excess": 1.41
+       "excess": 1.41,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-12",
+        "excess": 0.04
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14693,7 +17567,15 @@
        "days": 2,
        "stock": 0.82,
        "market": -0.72,
-       "excess": 1.53
+       "excess": 1.53,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 0.19
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14730,7 +17612,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14767,7 +17657,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14804,7 +17702,15 @@
        "days": 2,
        "stock": -0.57,
        "market": -0.72,
-       "excess": 0.15
+       "excess": 0.15,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -0.83
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14839,7 +17745,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14857,7 +17771,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14875,7 +17797,15 @@
        "days": 2,
        "stock": -2.3,
        "market": -0.72,
-       "excess": -1.58
+       "excess": -1.58,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -14893,7 +17823,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14946,7 +17884,15 @@
        "days": 2,
        "stock": 1.12,
        "market": -0.72,
-       "excess": 1.84
+       "excess": 1.84,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 0.9
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -14997,7 +17943,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15015,7 +17969,15 @@
        "days": 2,
        "stock": -2.78,
        "market": -0.72,
-       "excess": -2.06
+       "excess": -2.06,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15033,7 +17995,15 @@
        "days": 2,
        "stock": -3.26,
        "market": -0.72,
-       "excess": -2.55
+       "excess": -2.55,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.63
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15068,7 +18038,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15086,7 +18064,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15137,7 +18123,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15155,7 +18149,15 @@
        "days": 2,
        "stock": -2.3,
        "market": -0.72,
-       "excess": -1.58
+       "excess": -1.58,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15173,7 +18175,15 @@
        "days": 2,
        "stock": -1.35,
        "market": -0.72,
-       "excess": -0.63
+       "excess": -0.63,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -1.1
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15191,7 +18201,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15226,7 +18244,15 @@
        "days": 2,
        "stock": -2.78,
        "market": -0.72,
-       "excess": -2.06
+       "excess": -2.06,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15244,7 +18270,15 @@
        "days": 2,
        "stock": -3.26,
        "market": -0.72,
-       "excess": -2.55
+       "excess": -2.55,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.63
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15279,7 +18313,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15297,7 +18339,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15315,7 +18365,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15350,7 +18408,15 @@
        "days": 2,
        "stock": -2.3,
        "market": -0.72,
-       "excess": -1.58
+       "excess": -1.58,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15368,7 +18434,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15403,7 +18477,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15421,7 +18503,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15456,7 +18546,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15474,7 +18572,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15492,7 +18598,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15510,7 +18624,15 @@
        "days": 2,
        "stock": -2.3,
        "market": -0.72,
-       "excess": -1.58
+       "excess": -1.58,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -0.62
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15563,7 +18685,15 @@
        "days": 2,
        "stock": -6.26,
        "market": -0.72,
-       "excess": -5.55
+       "excess": -5.55,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -3.99
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15581,7 +18711,15 @@
        "days": 2,
        "stock": -3.41,
        "market": -0.72,
-       "excess": -2.69
+       "excess": -2.69,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": 6.21
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15616,7 +18754,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15634,7 +18780,15 @@
        "days": 2,
        "stock": -1.35,
        "market": -0.72,
-       "excess": -0.63
+       "excess": -0.63,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-12",
+        "excess": -1.1
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15652,7 +18806,15 @@
        "days": 2,
        "stock": -7.65,
        "market": -0.72,
-       "excess": -6.94
+       "excess": -6.94,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -5.66
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15670,7 +18832,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15705,7 +18875,15 @@
        "days": 2,
        "stock": 3.1,
        "market": -0.72,
-       "excess": 3.82
+       "excess": 3.82,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 1.79
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15723,7 +18901,15 @@
        "days": 2,
        "stock": -5.55,
        "market": -0.72,
-       "excess": -4.84
+       "excess": -4.84,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -4.87
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15741,7 +18927,15 @@
        "days": 2,
        "stock": -7.65,
        "market": -0.72,
-       "excess": -6.94
+       "excess": -6.94,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -5.66
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15759,7 +18953,15 @@
        "days": 2,
        "stock": 2.33,
        "market": -0.72,
-       "excess": 3.04
+       "excess": 3.04,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": 2.2
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15828,7 +19030,15 @@
        "days": 2,
        "stock": -2.78,
        "market": -0.72,
-       "excess": -2.06
+       "excess": -2.06,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15846,7 +19056,15 @@
        "days": 2,
        "stock": -3.26,
        "market": -0.72,
-       "excess": -2.55
+       "excess": -2.55,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-12",
+        "excess": -2.63
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15881,7 +19099,15 @@
        "days": 2,
        "stock": 0.55,
        "market": -0.72,
-       "excess": 1.27
+       "excess": 1.27,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -0.34
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15899,7 +19125,15 @@
        "days": 2,
        "stock": -1.9,
        "market": -0.72,
-       "excess": -1.19
+       "excess": -1.19,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -1.75
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15936,7 +19170,15 @@
        "days": 2,
        "stock": -2.78,
        "market": -0.72,
-       "excess": -2.06
+       "excess": -2.06,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -2.5
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -15954,7 +19196,15 @@
        "days": 2,
        "stock": -3.26,
        "market": -0.72,
-       "excess": -2.55
+       "excess": -2.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-12",
+        "excess": -2.63
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -15991,7 +19241,15 @@
        "days": 3,
        "stock": 3.76,
        "market": 0.59,
-       "excess": 3.17
+       "excess": 3.17,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": 0.69
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16026,7 +19284,15 @@
        "days": 3,
        "stock": 4.1,
        "market": 0.59,
-       "excess": 3.51
+       "excess": 3.51,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": -0.34
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16044,7 +19310,15 @@
        "days": 3,
        "stock": 3.72,
        "market": 0.59,
-       "excess": 3.13
+       "excess": 3.13,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": 0.04
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16062,7 +19336,15 @@
        "days": 3,
        "stock": -0.84,
        "market": 0.59,
-       "excess": -1.44
+       "excess": -1.44,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-11",
+        "excess": -0.81
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16080,7 +19362,15 @@
        "days": 3,
        "stock": -9.33,
        "market": 0.59,
-       "excess": -9.92
+       "excess": -9.92,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-11",
+        "excess": -3.14
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16134,7 +19424,15 @@
        "days": 3,
        "stock": -3.01,
        "market": 0.59,
-       "excess": -3.61
+       "excess": -3.61,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": -1.56
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16152,7 +19450,15 @@
        "days": 3,
        "stock": -3.03,
        "market": 0.59,
-       "excess": -3.63
+       "excess": -3.63,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": -1.08
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16203,7 +19509,15 @@
        "days": 3,
        "stock": 4.93,
        "market": 0.59,
-       "excess": 4.34
+       "excess": 4.34,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": 0.36
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16221,7 +19535,15 @@
        "days": 3,
        "stock": 4.1,
        "market": 0.59,
-       "excess": 3.51
+       "excess": 3.51,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": -0.34
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16239,7 +19561,15 @@
        "days": 3,
        "stock": 3.72,
        "market": 0.59,
-       "excess": 3.13
+       "excess": 3.13,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": 0.04
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16257,7 +19587,15 @@
        "days": 3,
        "stock": -6.45,
        "market": 0.59,
-       "excess": -7.05
+       "excess": -7.05,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-11",
+        "excess": -2.27
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16295,7 +19633,15 @@
        "days": 3,
        "stock": 2.3,
        "market": 0.59,
-       "excess": 1.71
+       "excess": 1.71,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-11",
+        "excess": 0.72
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16313,7 +19659,15 @@
        "days": 3,
        "stock": -3.03,
        "market": 0.59,
-       "excess": -3.63
+       "excess": -3.63,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-11",
+        "excess": -1.08
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16350,7 +19704,15 @@
        "days": 3,
        "stock": 2.3,
        "market": 0.59,
-       "excess": 1.71
+       "excess": 1.71,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-11",
+        "excess": 0.72
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16419,7 +19781,15 @@
        "days": 3,
        "stock": -1.55,
        "market": 0.59,
-       "excess": -2.15
+       "excess": -2.15,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": -3.05
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16437,7 +19807,15 @@
        "days": 3,
        "stock": 0.05,
        "market": 0.59,
-       "excess": -0.55
+       "excess": -0.55,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": -3.29
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16472,7 +19850,15 @@
        "days": 3,
        "stock": -9.33,
        "market": 0.59,
-       "excess": -9.92
+       "excess": -9.92,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-11",
+        "excess": -3.14
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16490,7 +19876,15 @@
        "days": 3,
        "stock": 4.93,
        "market": 0.59,
-       "excess": 4.34
+       "excess": 4.34,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": 0.36
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16508,7 +19902,15 @@
        "days": 3,
        "stock": -1.17,
        "market": 0.59,
-       "excess": -1.77
+       "excess": -1.77,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": -0.17
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16526,7 +19928,15 @@
        "days": 3,
        "stock": 3.72,
        "market": 0.59,
-       "excess": 3.13
+       "excess": 3.13,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": 0.04
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16561,7 +19971,15 @@
        "days": 3,
        "stock": -6.45,
        "market": 0.59,
-       "excess": -7.05
+       "excess": -7.05,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": -2.27
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16579,7 +19997,15 @@
        "days": 3,
        "stock": -9.33,
        "market": 0.59,
-       "excess": -9.92
+       "excess": -9.92,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": -3.14
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16633,7 +20059,15 @@
        "days": 3,
        "stock": -3.03,
        "market": 0.59,
-       "excess": -3.63
+       "excess": -3.63,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-11",
+        "excess": -1.08
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16651,7 +20085,15 @@
        "days": 3,
        "stock": 2.3,
        "market": 0.59,
-       "excess": 1.71
+       "excess": 1.71,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-11",
+        "excess": 0.72
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16669,7 +20111,15 @@
        "days": 3,
        "stock": 2.75,
        "market": 0.59,
-       "excess": 2.16
+       "excess": 2.16,
+       "d1": {
+        "status": "unscored",
+        "to": "2026-11-11",
+        "excess": 1.59
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
@@ -16704,7 +20154,15 @@
        "days": 3,
        "stock": -1.17,
        "market": 0.59,
-       "excess": -1.77
+       "excess": -1.77,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": -0.17
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16722,7 +20180,15 @@
        "days": 3,
        "stock": -0.84,
        "market": 0.59,
-       "excess": -1.44
+       "excess": -1.44,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-11",
+        "excess": -0.81
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16740,7 +20206,15 @@
        "days": 3,
        "stock": -9.33,
        "market": 0.59,
-       "excess": -9.92
+       "excess": -9.92,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-11",
+        "excess": -3.14
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      },
      {
@@ -16758,7 +20232,15 @@
        "days": 3,
        "stock": 3.72,
        "market": 0.59,
-       "excess": 3.13
+       "excess": 3.13,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-11",
+        "excess": 0.04
+       },
+       "d5": {
+        "status": "early"
+       }
       }
      }
     ]
