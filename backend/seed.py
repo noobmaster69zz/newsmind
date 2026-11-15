@@ -38,9 +38,10 @@ def seed(conn, data: dict) -> dict:
             conn.execute("INSERT OR IGNORE INTO impact (news_id, summary, model) VALUES (?,?,?)",
                          (news_id, impact["summary"], impact.get("model", "unknown")))
             conn.executemany(
-                "INSERT OR IGNORE INTO impact_effect (news_id, ticker, direction, confidence, reason) "
-                "VALUES (?,?,?,?,?)",
-                [(news_id, e["ticker"], e["direction"], e["confidence"], e["reason"]) for e in impact["effects"]])
+                "INSERT OR IGNORE INTO impact_effect (news_id, ticker, direction, confidence, reason, link, evidence, "
+                "counter) VALUES (?,?,?,?,?,?,?,?)",
+                [(news_id, e["ticker"], e["direction"], e["confidence"], e["reason"], e.get("link"),
+                  e.get("evidence"), e.get("counter")) for e in impact["effects"]])
             counts["impact"] += 1
 
     saved = dict(data.get("briefs") or {})

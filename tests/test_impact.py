@@ -43,7 +43,8 @@ def test_snapshot_round_trip_keeps_claude_results(tmp_path):
     news_id = rows[0]["id"]
     first.execute("INSERT INTO sentiment VALUES (?,?,?,?)", (news_id, 0.4, "positive", "ProsusAI/finbert"))
     first.execute("INSERT INTO impact (news_id, summary, model) VALUES (?,?,?)", (news_id, "Oil up.", "m"))
-    first.execute("INSERT INTO impact_effect VALUES (?,?,?,?,?)", (news_id, "CVX", "up", "medium", "Same input."))
+    first.execute("INSERT INTO impact_effect VALUES (?,?,?,?,?,?,?,?)",
+                  (news_id, "CVX", "up", "medium", "Same input.", "indirect", "oil climbs", "Oil falls back."))
     first.execute("INSERT INTO brief (key, body, source_hash, model) VALUES ('XOM', '{\"brief\": \"b\"}', 'h', 'm')")
     first.commit()
     snapshot = build(first)

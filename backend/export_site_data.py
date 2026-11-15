@@ -38,7 +38,7 @@ def build(conn) -> dict:
         impact = None
         if r["read"] is not None:
             impact = {"summary": r["read"], "model": r["read_model"], "effects": [dict(e) for e in conn.execute(
-                "SELECT ticker, direction, confidence, reason FROM impact_effect WHERE news_id = ? "
+                "SELECT ticker, direction, confidence, reason, link, evidence, counter FROM impact_effect WHERE news_id = ? "
                 "ORDER BY CASE confidence WHEN 'high' THEN 0 WHEN 'medium' THEN 1 ELSE 2 END, ticker", (r["id"],))]}
             # Check each call against what the stock has done since, relative to the market.
             for effect in impact["effects"]:

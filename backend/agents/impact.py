@@ -64,8 +64,15 @@ STORY_SCHEMA = {
                     "direction": {"type": "string", "enum": ["up", "down", "mixed"]},
                     "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
                     "reason": {"type": "string", "description": "One short sentence naming the channel."},
+                    "link": {"type": "string", "enum": ["direct", "indirect"],
+                             "description": "direct if the story is about this company; indirect if it reaches it "
+                                            "through a supplier, competitor, input cost, regulation or sector."},
+                    "evidence": {"type": "string", "description": "The words in the headline or summary that support "
+                                                                   "this link, quoted or closely paraphrased."},
+                    "counter": {"type": "string", "description": "One short sentence: what would make this call wrong, "
+                                                                  "or what a reader should check before trusting it."},
                 },
-                "required": ["ticker", "direction", "confidence", "reason"],
+                "required": ["ticker", "direction", "confidence", "reason", "link", "evidence", "counter"],
                 "additionalProperties": False,
             },
         },
@@ -125,7 +132,10 @@ def clean_effects(effects: list[dict]) -> list[dict]:
             continue
         seen.add(ticker)
         out.append({"ticker": ticker, "direction": e["direction"], "confidence": e["confidence"],
-                    "reason": str(e.get("reason", "")).strip()})
+                    "reason": str(e.get("reason", "")).strip(),
+                    "link": e.get("link") if e.get("link") in ("direct", "indirect") else None,
+                    "evidence": str(e.get("evidence", "")).strip() or None,
+                    "counter": str(e.get("counter", "")).strip() or None})
     return out[:MAX_EFFECTS]
 
 
@@ -204,9 +214,10 @@ def read_stories(conn, client, budget: int) -> int:
                          (news_id, result["summary"].strip(), MODEL))
             conn.execute("DELETE FROM impact_effect WHERE news_id = ?", (news_id,))
             conn.executemany(
-                "INSERT INTO impact_effect (news_id, ticker, direction, confidence, reason) VALUES (?,?,?,?,?)",
-                [(news_id, e["ticker"], e["direction"], e["confidence"], e["reason"])
-                 for e in clean_effects(result["effects"])])
+                "INSERT INTO impact_effect (news_id, ticker, direction, confidence, reason, link, evidence, counter) "
+                "VALUES (?,?,?,?,?,?,?,?)",
+                [(news_id, e["ticker"], e["direction"], e["confidence"], e["reason"], e["link"], e["evidence"],
+                  e["counter"]) for e in clean_effects(result["effects"])])
             conn.commit()
             done += 1
     return done

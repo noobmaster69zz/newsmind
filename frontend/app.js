@@ -18,7 +18,7 @@
   };
 
   const state = {
-    all: [], companies: {}, market: null, briefs: {}, prices: {}, query: '', cardText: '', byTicker: new Map(), mood: new Map(),
+    all: [], companies: {}, market: null, briefs: {}, prices: {}, query: '', cutoff: Infinity, cardText: '', byTicker: new Map(), mood: new Map(),
     list: [], rows: [], tops: [], lineOffset: 0,
     active: -1, shown: null, scope: 'company', ticker: null,
   };
@@ -88,6 +88,7 @@
       state.prices = data.prices || {};
       showScore(data.scorecard);
       for (const s of state.all) {
+        s.time = Date.parse(s.publishedAt);
         for (const t of s.tickers) {
           if (!state.byTicker.has(t)) state.byTicker.set(t, []);
           state.byTicker.get(t).push(s);
@@ -103,6 +104,7 @@
       els.scopeAll.textContent = `Whole wire (${state.all.length})`;
       buildCloud();
       blip.ready();
+      setUpTime();
       greet();
       applyFilters(null);
     } catch (err) {
@@ -120,6 +122,7 @@
     // A search looks across the whole wire, not just stories that name a company.
     if (state.scope === 'company' && !state.query) list = list.filter((s) => s.tickers.length);
     if (state.ticker) list = list.filter((s) => s.tickers.includes(state.ticker));
+    if (state.cutoff < Infinity) list = list.filter((s) => s.time <= state.cutoff);
     if (state.query) {
       const q = state.query;
       list = list.filter((s) => s.headline.toLowerCase().includes(q) ||
@@ -421,6 +424,7 @@
     pts: [], dust: [], centers: new Map(), byId: new Map(),
     sel: null, selTickers: new Set(), selEffects: new Map(), hover: null,
     yaw: 0.5, pitch: -0.15, tyaw: 0.5, tpitch: -0.15,
+    dyaw: 0, dpitch: 0, zoom: 1, view: 'story', hoverT: null, cutoff: Infinity, sectors: [], pairs: [],
     grow: 0, fire: 1, raf: 0, last: 0,
   };
   const mouse = { x: 0, y: 0, sx: 0, sy: 0, cx: -9999, cy: -9999 };
@@ -497,6 +501,28 @@
       });
     }
 
+    cloud.sectors = sectors.map((name) => {
+      const c = sectorAt.get(name);
+      return { name, x: c[0], y: c[1], z: c[2], sx: 0, sy: 0, k: 1,
+        members: tickers.filter((t) => state.companies[t].sector === name).map((t) => cloud.centers.get(t)) };
+    });
+    // Two companies are related when one story names or is expected to move both.
+    const pairs = new Map();
+    for (const st of state.all) {
+      const set = [...new Set(st.tickers.concat(((st.impact || {}).effects || []).map((e) => e.ticker)))]
+        .filter((t) => cloud.centers.has(t)).sort();
+      for (let i = 0; i < set.length; i++) {
+        for (let j = i + 1; j < set.length; j++) {
+          const key = `${set[i]}|${set[j]}`;
+          pairs.set(key, (pairs.get(key) || 0) + 1);
+        }
+      }
+    }
+    cloud.pairs = [...pairs].map(([key, n]) => {
+      const [a, b] = key.split('|');
+      return { a: cloud.centers.get(a), b: cloud.centers.get(b), n };
+    });
+
     for (const s of state.all) {
       const rnd = seeded(s.id);
       const named = s.tickers.filter((t) => cloud.centers.has(t));
@@ -513,6 +539,7 @@
       }
       const pt = { x, y, z, story: s, named, rgb: TONE_RGB[s.toneLabel || 'unscored'], sx: 0, sy: 0, k: 1, shown: false };
       pt.far = Math.hypot(x, y, z);
+      pt.time = s.time;
       cloud.pts.push(pt);
       cloud.byId.set(s.id, pt);
     }
@@ -540,7 +567,7 @@
     cloud.selTickers = new Set(pt.named);
     cloud.tyaw = Math.atan2(pt.x, -pt.z);
     cloud.tpitch = clamp(Math.atan2(-pt.y, Math.hypot(pt.x, pt.z)) * 0.8, -0.7, 0.7);
-    if (animate) cloud.fire = 0;
+    if (animate) { cloud.fire = 0; cloud.dyaw = 0; cloud.dpitch = 0; }
     // Companies Claude expects the story to move, including ones it never names.
     const effects = (story.impact && story.impact.effects) || [];
     cloud.selEffects = new Map(effects.filter((e) => cloud.centers.has(e.ticker)).map((e) => [e.ticker, e]));
@@ -587,7 +614,8 @@
     root.style.setProperty('--mx', mouse.sx.toFixed(3));
     root.style.setProperty('--my', mouse.sy.toFixed(3));
 
-    const goalYaw = cloud.tyaw + mouse.sx * 0.42, goalPitch = cloud.tpitch + mouse.sy * 0.26;
+    const goalYaw = cloud.tyaw + cloud.dyaw + mouse.sx * 0.42;
+    const goalPitch = clamp(cloud.tpitch + cloud.dpitch, -1.2, 1.2) + mouse.sy * 0.26;
     const dy = angleGap(goalYaw, cloud.yaw), dp = goalPitch - cloud.pitch;
     if (calm || (Math.abs(dy) < 0.0008 && Math.abs(dp) < 0.0008)) {
       cloud.yaw = goalYaw; cloud.pitch = goalPitch;
@@ -608,7 +636,8 @@
 
     const cyaw = Math.cos(cloud.yaw), syaw = Math.sin(cloud.yaw);
     const cpit = Math.cos(cloud.pitch), spit = Math.sin(cloud.pitch);
-    const S = Math.min(W, H - 20) * 0.47, ox = W / 2, oy = H / 2 - 10, D = 3.4;
+    const S = Math.min(W, H - 20) * 0.47 * cloud.zoom, ox = W / 2, oy = H / 2 - 10, D = 3.4;
+    const stories = cloud.view === 'story';
     const project = (p) => {
       const x1 = p.x * cyaw + p.z * syaw, z1 = -p.x * syaw + p.z * cyaw;
       const y2 = p.y * cpit - z1 * spit, z2 = p.y * spit + z1 * cpit;
@@ -619,7 +648,8 @@
 
     // The cloud builds outward from its core on first load.
     const reach = cloud.grow * 1.35;
-    const sel = cloud.sel, linked = cloud.selTickers.size > 0;
+    const sel = stories ? cloud.sel : null, linked = stories && cloud.selTickers.size > 0;
+    const lit = cloud.hoverT;
     ctx.globalCompositeOperation = 'lighter';
 
     if (!focusOn()) {
@@ -635,7 +665,8 @@
     }
 
     for (const c of cloud.centers.values()) project(c);
-    for (const pt of cloud.pts) { project(pt); pt.shown = pt.far <= reach; }
+    for (const sector of cloud.sectors) project(sector);
+    for (const pt of cloud.pts) { project(pt); pt.shown = stories && pt.far <= reach && pt.time <= cloud.cutoff; }
 
     // Links: story -> its companies, then each company -> its other stories.
     if (sel && linked) {
@@ -683,10 +714,11 @@
 
     for (const pt of cloud.pts) {
       if (!pt.shown) continue;
-      const hot = pt === sel || (linked && pt.named.some((t) => cloud.selTickers.has(t)));
+      const hot = lit ? pt.named.includes(lit)
+        : pt === sel || (linked && pt.named.some((t) => cloud.selTickers.has(t)));
       const base = pt.named.length ? 2.3 : 1.4;
       const r = (base + (hot ? 0.7 : 0)) * pt.k;
-      ctx.globalAlpha = hot ? 1 : clamp((linked ? 0.3 : 0.5) + (pt.k - 0.76) * 0.5, 0.16, 0.8);
+      ctx.globalAlpha = hot ? 1 : lit ? 0.12 : clamp((linked ? 0.3 : 0.5) + (pt.k - 0.76) * 0.5, 0.16, 0.8);
       ctx.fillStyle = `rgb(${pt.rgb})`;
       ctx.beginPath();
       ctx.arc(pt.sx, pt.sy, r, 0, Math.PI * 2);
@@ -694,6 +726,51 @@
     }
 
     ctx.globalCompositeOperation = 'source-over';
+
+    // Company and sector views: stories step back and the structure between companies shows.
+    if (!stories) {
+      ctx.lineWidth = 1;
+      if (cloud.view === 'company') {
+        for (const pair of cloud.pairs) {
+          const hotPair = lit && (pair.a.t === lit || pair.b.t === lit);
+          ctx.globalAlpha = lit ? (hotPair ? 0.9 : 0.04) : clamp(0.06 + pair.n * 0.05, 0.06, 0.6);
+          ctx.strokeStyle = hotPair ? 'rgb(6,182,212)' : 'rgb(236,230,220)';
+          ctx.beginPath();
+          ctx.moveTo(pair.a.sx, pair.a.sy);
+          ctx.lineTo(pair.b.sx, pair.b.sy);
+          ctx.stroke();
+        }
+      } else {
+        ctx.font = '600 13px "Chakra Petch", sans-serif';
+        ctx.textAlign = 'center';
+        for (const sector of cloud.sectors) {
+          ctx.strokeStyle = 'rgb(236,230,220)';
+          for (const c of sector.members) {
+            ctx.globalAlpha = 0.34;
+            ctx.beginPath();
+            ctx.moveTo(sector.sx, sector.sy);
+            ctx.lineTo(c.sx, c.sy);
+            ctx.stroke();
+          }
+          ctx.globalAlpha = clamp(0.5 + (sector.k - 0.76) * 1.2, 0.4, 1);
+          ctx.fillStyle = 'rgb(236,230,220)';
+          ctx.beginPath();
+          ctx.arc(sector.sx, sector.sy, 3.5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillText(sector.name, sector.sx, sector.sy - 12);
+        }
+      }
+      for (const c of cloud.centers.values()) {
+        const count = (state.byTicker.get(c.t) || []).length;
+        ctx.globalAlpha = lit && c.t !== lit ? 0.3 : 0.9;
+        ctx.fillStyle = `rgb(${TONE_RGB[moodLabel(state.mood.get(c.t))]})`;
+        ctx.beginPath();
+        ctx.arc(c.sx, c.sy, (2.5 + Math.sqrt(count) * 1.5) * c.k, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
     if (sel) {
       const glow = ctx.createRadialGradient(sel.sx, sel.sy, 0, sel.sx, sel.sy, 26);
       glow.addColorStop(0, `rgba(${sel.rgb},0.5)`);
@@ -727,10 +804,10 @@
     // Company labels ride on their cluster. Nearer clusters read stronger.
     const seen = clamp(cloud.grow * 2 - 0.6, 0, 1);
     for (const [t, c] of cloud.centers) {
-      const on = cloud.selTickers.has(t) || cloud.selEffects.has(t) || state.ticker === t;
+      const on = (stories && (cloud.selTickers.has(t) || cloud.selEffects.has(t))) || state.ticker === t || lit === t;
       // A named company's pill sits just above its cluster so it never covers the story point.
       c.el.style.transform = `translate(${c.sx.toFixed(1)}px, ${(c.sy - (on ? 30 : 0)).toFixed(1)}px) translate(-50%, -50%)`;
-      c.el.style.opacity = (seen * (on ? 1 : clamp(0.2 + (c.k - 0.76) * 1.25, 0.16, 0.9))).toFixed(2);
+      c.el.style.opacity = (seen * (on ? 1 : clamp((stories ? 0.2 : 0.55) + (c.k - 0.76) * 1.25, 0.16, 0.95))).toFixed(2);
       c.el.style.zIndex = String((on ? 1000 : 0) + Math.round(c.k * 100));
     }
   }
@@ -758,7 +835,7 @@
     showTip(`${company.name}, ${company.sector}`,
       `${count} ${count === 1 ? 'story' : 'stories'} on the wire` +
       (avg == null ? '' : `, average tone ${signed(avg)}`) +
-      (state.ticker === t ? '. Select to show every company again.' : '. Select to filter the wire.'),
+      '. Select to open its profile.',
       c.sx, c.sy);
   }
 
@@ -779,9 +856,10 @@
     applyFilters(id);
   }
 
-  els.labels.addEventListener('click', (e) => { const b = e.target.closest('.co'); if (b) pickCompany(b.dataset.t); });
-  els.labels.addEventListener('pointerover', (e) => { const b = e.target.closest('.co'); if (b) companyTip(b.dataset.t); });
-  els.labels.addEventListener('pointerout', (e) => { if (e.target.closest('.co')) hideTip(); });
+  const lightUp = (t) => { cloud.hoverT = t; kick(); };
+  els.labels.addEventListener('click', (e) => { const b = e.target.closest('.co'); if (b) { hideTip(); tour.stop(); blip.company(b.dataset.t); } });
+  els.labels.addEventListener('pointerover', (e) => { const b = e.target.closest('.co'); if (b) { companyTip(b.dataset.t); lightUp(b.dataset.t); } });
+  els.labels.addEventListener('pointerout', (e) => { if (e.target.closest('.co')) { hideTip(); lightUp(null); } });
   els.labels.addEventListener('focusin', (e) => { const b = e.target.closest('.co'); if (b) companyTip(b.dataset.t); });
   els.labels.addEventListener('focusout', hideTip);
 
@@ -797,7 +875,35 @@
     return best;
   }
 
+  // Drag turns the cloud, the wheel zooms it, a double-click puts it back.
+  const turn = { on: false, moved: false, x: 0, y: 0 };
+  els.cloud.addEventListener('pointerdown', (e) => {
+    turn.on = true; turn.moved = false; turn.x = e.clientX; turn.y = e.clientY;
+    els.cloud.setPointerCapture(e.pointerId);
+  });
+  els.cloud.addEventListener('pointerup', () => { turn.on = false; els.cloud.classList.remove('turning'); });
+  els.cloud.addEventListener('pointercancel', () => { turn.on = false; });
+  els.cloud.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    cloud.zoom = clamp(cloud.zoom * Math.exp(-e.deltaY * 0.0012), 0.6, 2.8);
+    kick();
+  }, { passive: false });
+  els.cloud.addEventListener('dblclick', () => { cloud.zoom = 1; cloud.dyaw = 0; cloud.dpitch = 0; kick(); });
+
   els.cloud.addEventListener('pointermove', (e) => {
+    if (turn.on) {
+      const dx = e.clientX - turn.x, dy = e.clientY - turn.y;
+      if (turn.moved || Math.hypot(dx, dy) > 4) {
+        turn.moved = true;
+        els.cloud.classList.add('turning');
+        cloud.dyaw += dx * 0.006;
+        cloud.dpitch += dy * 0.004;
+        turn.x = e.clientX; turn.y = e.clientY;
+        hideTip();
+        kick();
+        return;
+      }
+    }
     const pt = storyUnder(e);
     if (pt === cloud.hover) return;
     cloud.hover = pt;
@@ -815,6 +921,7 @@
   });
   els.cloud.addEventListener('pointerleave', () => { cloud.hover = null; hideTip(); kick(); });
   els.cloud.addEventListener('click', (e) => {
+    if (turn.moved) { turn.moved = false; return; }
     const pt = storyUnder(e);
     if (pt && pt !== cloud.sel) pickStory(pt.story.id);
   });
@@ -829,7 +936,88 @@
     }, 160);
   });
 
+  /* ---------- Views: stories, companies, sectors ---------- */
+  const VIEWS = { story: 'Showing every story', company: 'Showing how companies connect', sector: 'Showing sectors' };
+  function setView(view) {
+    cloud.view = view;
+    document.querySelectorAll('.views button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+    $('#viewNote').textContent = VIEWS[view];
+    els.chartEmpty.hidden = view !== 'story' || !cloud.sel || cloud.sel.named.length > 0 || cloud.selEffects.size > 0;
+    hideTip();
+    kick();
+  }
+  document.querySelectorAll('.views button').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
+
+  /* ---------- Time machine: wind the wire back ---------- */
+  let timeTimer = 0;
+  function setUpTime() {
+    const times = state.all.map((s) => s.time);
+    const first = Math.min(...times), last = Math.max(...times);
+    const scrub = $('#scrub'), outEl = $('#scrubOut');
+    scrub.addEventListener('input', () => {
+      const v = Number(scrub.value);
+      const cutoff = v >= 1000 ? Infinity : first + ((last - first) * v) / 1000;
+      cloud.cutoff = state.cutoff = cutoff;
+      const shown = state.all.filter((s) => s.time <= cutoff).length;
+      outEl.textContent = cutoff === Infinity ? `Now, ${state.all.length} stories`
+        : `${fmtDay.format(new Date(cutoff))}, ${fmtTime.format(new Date(cutoff))}. ${shown} stories so far`;
+      kick();
+      clearTimeout(timeTimer);
+      timeTimer = setTimeout(() => applyFilters(state.shown), 140);
+    });
+    outEl.textContent = `Now, ${state.all.length} stories`;
+  }
+
+  /* ---------- Guided tour ---------- */
+  const tour = (() => {
+    const box = $('#tour'), ring = $('#tourRing'), text = $('#tourText'), count = $('#tourCount');
+    const STEPS = [
+      ['.stage', 'This is a news story. Whichever headline sits on the reading line of the wire is the one being charted.'],
+      ['#chart', 'These points are stories. Cyan reads as good news, maroon as bad news, grey as neutral.'],
+      ['#labels', 'These clusters are companies. Hover a company name to light up every story about it.'],
+      ['.reads', 'These are relationships. Solid means the story names the company; dashed means Claude expects a knock-on effect. The lines in the cloud show the same thing.'],
+      ['#labels', 'Your turn: select any company name in the cloud to open its profile.'],
+    ];
+    let at = -1;
+    function place() {
+      if (at < 0) return;
+      const r = document.querySelector(STEPS[at][0]).getBoundingClientRect();
+      ring.style.left = `${r.left - 4}px`;
+      ring.style.top = `${r.top - 4}px`;
+      ring.style.width = `${r.width + 8}px`;
+      ring.style.height = `${r.height + 8}px`;
+    }
+    function show(i) {
+      at = i;
+      text.textContent = STEPS[i][1];
+      count.textContent = `${i + 1} of ${STEPS.length}`;
+      $('#tourBack').disabled = i === 0;
+      $('#tourNext').textContent = i === STEPS.length - 1 ? 'Finish' : 'Next';
+      box.hidden = ring.hidden = false;
+      place();
+    }
+    function stop() { at = -1; box.hidden = ring.hidden = true; }
+    function start() { if (state.cutoff < Infinity || cloud.view !== 'story') setView('story'); show(0); $('#tourNext').focus(); }
+    $('#tourNext').addEventListener('click', () => (at === STEPS.length - 1 ? stop() : show(at + 1)));
+    $('#tourBack').addEventListener('click', () => show(Math.max(0, at - 1)));
+    $('#tourSkip').addEventListener('click', stop);
+    window.addEventListener('resize', place);
+    return { start, stop };
+  })();
+
+  /* ---------- Keyboard shortcuts ---------- */
+  document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey || (e.target.closest && e.target.closest('input, textarea, dialog'))) return;
+    const view = { 1: 'story', 2: 'company', 3: 'sector' }[e.key];
+    if (view) setView(view);
+    else if (e.key === '/') { e.preventDefault(); $('#search').focus(); }
+    else if (e.key === '?') intro.showModal();
+    else if (e.key === 't') tour.start();
+    else if (e.key === 'Escape') tour.stop();
+  });
+
   const intro = $('#intro');
+  $('#introTour').addEventListener('click', () => { intro.close(); tour.start(); });
   $('#help').addEventListener('click', () => intro.showModal());
   $('#introClose').addEventListener('click', () => intro.close());
   intro.addEventListener('close', () => {
@@ -1134,16 +1322,80 @@
       const company = state.companies[t], b = state.briefs[t];
       out.replaceChildren();
       foot.textContent = '';
-      out.append(node('h3', 'ask-h', `${company.name} (${t})`));
+      const own = state.byTicker.get(t) || [];
+      out.append(node('h3', 'ask-h', company.name), node('p', 'ask-id', `${t}, ${company.sector}`));
+
+      // Reasoning for one call: what Claude claimed, on what basis, and what would undo it.
       if (effect) {
-        const status = (effect.check || {}).status;
-        const call = node('p', `ask-call dir-${effect.direction}`,
-          `For the story on screen, Claude expected ${t} to go ${effect.direction} (${effect.confidence} confidence). ${checkText(t, effect.check)}`.trim());
-        if (status) call.dataset.status = status;
-        out.append(call);
+        const box = node('div', `ask-reason dir-${effect.direction}`);
+        box.append(node('p', 'ask-reason-head',
+          `For the story on screen: likely ${effect.direction} ${ARROW[effect.direction]}`));
+        const tags = node('p', 'ask-tags');
+        tags.append(node('span', null, effect.link ? `${effect.link} link` : 'link type not recorded'),
+          node('span', null, `${effect.confidence} confidence`));
+        box.append(tags);
+        const part = (title, body) => { if (body) box.append(node('p', 'ask-part-title', title), node('p', 'ask-part', body)); };
+        part('Why this connection exists', effect.reason);
+        part('What in the story supports it', effect.evidence);
+        part('What would contradict it', effect.counter);
+        part('How it has played out so far', checkText(t, effect.check) ||
+          'Not scored: a mixed call has no single direction to check.');
+        box.append(node('p', 'ask-note', 'Confidence is how sure Claude was when it read the story. Whether the call proved right is tracked separately, above.'));
+        out.append(box);
       }
+
+      // The numbers at a glance.
+      const avg = state.mood.get(t);
+      const calls = state.all.flatMap((st) => ((st.impact || {}).effects || []).filter((e) => e.ticker === t));
+      const right = calls.filter((e) => (e.check || {}).status === 'right').length;
+      const wrong = calls.filter((e) => (e.check || {}).status === 'wrong').length;
+      const stats = node('dl', 'ask-stats');
+      const stat = (k, v) => stats.append(node('dt', null, k), node('dd', null, v));
+      stat('News tone', avg == null ? 'Not scored' : `${moodLabel(avg)} (${signed(avg)})`);
+      stat('Stories naming it', String(own.length));
+      stat('Claude calls on it', `${calls.length}, ${right} right and ${wrong} wrong so far`);
+      out.append(stats);
+
+      // How the tone of its coverage has moved, day by day.
+      const days = new Map();
+      for (const st of own) {
+        if (st.tone == null) continue;
+        const day = st.publishedAt.slice(0, 10);
+        if (!days.has(day)) days.set(day, []);
+        days.get(day).push(st.tone);
+      }
+      if (days.size > 1) {
+        const rows = [...days].sort().map(([day, tones]) => [day, tones.reduce((a, b) => a + b, 0) / tones.length, tones.length]);
+        const W2 = 400, H2 = 96, mid = 44, bw = Math.min(46, (W2 - 16) / rows.length - 6);
+        const fig = node('figure', 'ask-chart');
+        fig.innerHTML = `<svg viewBox="0 0 ${W2} ${H2}" role="img" aria-label="Average headline tone per day for ${t}">` +
+          `<line class="zero" x1="8" x2="${W2 - 8}" y1="${mid}" y2="${mid}"/>` +
+          rows.map(([day, tone, n], i) => {
+            const x = 12 + i * ((W2 - 24) / rows.length), h = Math.max(2, Math.abs(tone) * 34);
+            return `<rect class="${tone >= 0 ? 'bar-up' : 'bar-down'}" x="${x.toFixed(1)}" y="${(tone >= 0 ? mid - h : mid).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}"/>` +
+              `<text x="${(x + bw / 2).toFixed(1)}" y="${H2 - 4}" text-anchor="middle">${day.slice(5)} (${n})</text>`;
+          }).join('') + '</svg>';
+        fig.append(node('figcaption', null, 'Average headline tone per day. Bars above the line read positive, below negative. Story counts in brackets.'));
+        out.append(node('p', 'ask-label', 'How its coverage has read over time'), fig);
+      }
+
       const chart = priceChart(t, effect && effect.check);
-      if (chart) out.append(chart);
+      if (chart) out.append(node('p', 'ask-label', 'Share price against the S&P 500'), chart);
+
+      // Sectors it keeps appearing alongside in the same stories.
+      const partners = new Map();
+      for (const pair of cloud.pairs) {
+        const other = pair.a.t === t ? pair.b.t : pair.b.t === t ? pair.a.t : null;
+        if (!other) continue;
+        const sector = state.companies[other].sector;
+        if (sector !== company.sector) partners.set(sector, (partners.get(sector) || 0) + pair.n);
+      }
+      if (partners.size) {
+        out.append(node('p', 'ask-label', 'Sectors it shares stories with'));
+        const row = node('p', 'ask-tags');
+        [...partners].sort((a, b) => b[1] - a[1]).slice(0, 5).forEach(([sector, n]) => row.append(node('span', null, `${sector} (${n})`)));
+        out.append(row);
+      }
       if (!b) {
         out.append(node('p', 'ask-text', `Claude has no brief for ${company.name} yet. It is written once the company has stories on the wire.`));
         return;
@@ -1152,17 +1404,17 @@
         b.stance === 'quiet' ? 'Coverage is quiet' : `Coverage reads ${b.stance}`);
       const p = node('p', 'ask-text');
       write(p, b.brief);
-      out.append(stance, p);
+      out.append(node('p', 'ask-label', "Claude's brief"), stance, p);
       if (b.drivers.length) {
+        out.append(node('p', 'ask-label', 'Recent developments'));
         const ul = node('ul', 'ask-drivers');
         b.drivers.forEach((d) => ul.append(node('li', null, d)));
         out.append(ul);
       }
       out.append(node('p', 'ask-watch', `Watch next: ${b.watch}`));
 
-      const own = (state.byTicker.get(t) || []).length;
-      if (own && state.ticker !== t) {
-        const show = node('button', 'chip', `Show its ${own} ${own === 1 ? 'story' : 'stories'} in the wire`);
+      if (own.length && state.ticker !== t) {
+        const show = node('button', 'chip', `Show its ${own.length} ${own.length === 1 ? 'story' : 'stories'} in the wire`);
         show.type = 'button';
         show.dataset.filter = t;
         out.append(show);

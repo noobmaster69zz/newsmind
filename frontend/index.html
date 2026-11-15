@@ -60,7 +60,18 @@
       <div class="chart" id="chart">
         <canvas class="cloud" id="cloud" aria-hidden="true"></canvas>
         <div class="labels" id="labels" role="group" aria-label="Companies on the wire"></div>
-        <p class="legend">Every point is a story, coloured by how its headline reads. Each cluster is a company. Solid lines are companies the story names; dashed lines are companies Claude expects it to affect.</p>
+        <div class="views" role="group" aria-label="What the cloud shows">
+          <button type="button" data-view="story" aria-pressed="true">Stories</button>
+          <button type="button" data-view="company" aria-pressed="false">Companies</button>
+          <button type="button" data-view="sector" aria-pressed="false">Sectors</button>
+          <span class="view-note" id="viewNote">Showing every story</span>
+        </div>
+        <div class="time">
+          <label for="scrub">Time machine</label>
+          <input id="scrub" type="range" min="0" max="1000" value="1000" step="1">
+          <output id="scrubOut" for="scrub"></output>
+        </div>
+        <p class="legend">Every point is a story, coloured by how its headline reads. Each cluster is a company. Solid lines are companies the story names; dashed lines are companies Claude expects it to affect. Drag to turn, scroll to zoom.</p>
         <p class="chart-empty" id="chartEmpty" hidden>No tracked company is named in this story.</p>
         <div class="tip" id="tip" role="tooltip" hidden></div>
       </div>
@@ -130,8 +141,23 @@
     </dl>
     <p class="intro-score" id="introScore"></p>
     <p class="intro-note">Treat that score as a sanity check, not proof. Many stories report a price move that has already begun, which flatters it, and a few days of prices is a small sample.</p>
-    <button class="chip intro-go" id="introClose" type="button">Explore the wire</button>
+    <p class="intro-note">Keys: 1, 2 and 3 switch between stories, companies and sectors. / searches. T starts the tour. ? opens this page.</p>
+    <div class="intro-buttons">
+      <button class="chip intro-go" id="introTour" type="button">Take the 30-second tour</button>
+      <button class="chip" id="introClose" type="button">Explore the wire</button>
+    </div>
   </dialog>
+
+  <div class="tour-ring" id="tourRing" hidden></div>
+  <div class="tour" id="tour" role="dialog" aria-label="Guided tour" hidden>
+    <p id="tourText"></p>
+    <div class="tour-row">
+      <span id="tourCount"></span>
+      <button class="chip" id="tourSkip" type="button">Skip</button>
+      <button class="chip" id="tourBack" type="button">Back</button>
+      <button class="chip tour-next" id="tourNext" type="button">Next</button>
+    </div>
+  </div>
 
   <script src="app.js" defer></script>
 </body>

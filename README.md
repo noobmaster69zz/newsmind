@@ -19,6 +19,11 @@ NewsMind pulls the news wire, scores how each headline reads, asks Claude which 
 - **Follow the links.** Solid lines go to companies a story names. Dashed lines go to companies Claude expects it to affect without being named.
 - **Search** headlines, tickers or company names.
 - **Check the calls.** Each company chip shows whether Claude's call has held up so far. Select it for a price chart of the stock against the S&P 500 since the story.
+- **Turn and zoom the cloud.** Drag to turn it, scroll to zoom, double-click to reset. Switch between stories, companies and sectors (keys 1, 2, 3).
+- **Open a company profile.** Select a company name for its tone over time, its price against the S&P 500, the sectors it shares stories with, and Claude's brief.
+- **Read the reasoning.** Each call shows why Claude made it, the words in the story that support it, whether the link is direct or indirect, how confident it was, and what would contradict it. Confidence is shown separately from whether the call proved right.
+- **Wind time back.** The time machine slider rewinds the wire and the cloud to an earlier moment.
+- **Take the tour.** A five-step walkthrough explains the screen in about 30 seconds (key T).
 - **Ask Blip.** The small pixel character walking along the bottom opens a panel. Ask what is moving the market, or ask about one of the tracked companies.
 - **Drag the seam** between the two halves to resize them, or switch on **Focus mode** to strip the page down.
 

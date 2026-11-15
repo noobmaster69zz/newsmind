@@ -46,6 +46,9 @@ CREATE TABLE IF NOT EXISTS impact_effect (
     direction  TEXT NOT NULL CHECK (direction IN ('up', 'down', 'mixed')),
     confidence TEXT NOT NULL CHECK (confidence IN ('low', 'medium', 'high')),
     reason     TEXT NOT NULL,
+    link       TEXT,                    -- direct | indirect
+    evidence   TEXT,                    -- the words in the story that support the link
+    counter    TEXT,                    -- what would make the call wrong
     PRIMARY KEY (news_id, ticker)
 );
 CREATE INDEX IF NOT EXISTS idx_impact_effect_ticker ON impact_effect(ticker);
@@ -84,6 +87,11 @@ def connect(path: Path | str = DB_PATH) -> sqlite3.Connection:
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
     conn.executescript(SCHEMA)
+    # Migration for databases created before the reasoning columns existed.
+    have = {r["name"] for r in conn.execute("PRAGMA table_info(impact_effect)")}
+    for column in ("link", "evidence", "counter"):
+        if column not in have:
+            conn.execute(f"ALTER TABLE impact_effect ADD COLUMN {column} TEXT")
     return conn
 
 
