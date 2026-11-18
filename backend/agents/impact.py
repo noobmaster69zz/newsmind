@@ -8,6 +8,10 @@ Three jobs, all saved to SQLite so nothing is paid for twice:
 The website never calls Claude. It reads these saved rows from the exported
 snapshot, which is why the API key only ever lives in .env or a CI secret.
 
+The wording sent to Claude is kept out of the repository. It is read, in order, from
+the NEWSMIND_PROMPTS environment variable (a CI secret), backend/agents/prompts.json
+(gitignored), or the generic backend/agents/prompts.example.json.
+
 Run:  python -m backend.agents.impact
 """
 from __future__ import annotations
@@ -17,6 +21,9 @@ import json
 import logging
 import os
 from concurrent.futures import ThreadPoolExecutor
+from copy import deepcopy
+from functools import lru_cache
+from pathlib import Path
 
 from backend.agents.entity import companies
 
@@ -32,45 +39,63 @@ def _company_table() -> str:
     return "\n".join(f"{t}: {c['name']} ({c['sector']})" for t, c in sorted(companies().items()))
 
 
+HERE = Path(__file__).resolve().parent
+
+
+@lru_cache(maxsize=1)
+def prompts() -> dict:
+    """The prompt wording, from the first source that has it."""
+    raw = os.environ.get("NEWSMIND_PROMPTS", "").strip()
+    if raw:
+        log.info("prompts: from NEWSMIND_PROMPTS")
+        return json.loads(raw)
+    for name in ("prompts.json", "prompts.example.json"):
+        path = HERE / name
+        if path.exists():
+            log.info("prompts: from %s", name)
+            return json.loads(path.read_text(encoding="utf-8"))
+    raise FileNotFoundError("No prompts found: add backend/agents/prompts.json or set NEWSMIND_PROMPTS")
+
+
 def _system() -> str:
-    return (
-        "You analyse financial news for a student project that maps stories to the companies "
-        "they affect. You are given one input at a time and reply in the requested JSON shape.\n\n"
-        "Rules:\n"
-        "- Only use these tracked companies, by ticker:\n" + _company_table() + "\n"
-        "- Reason only from the text you are given plus well-known, durable facts about how "
-        "these companies make money (suppliers, competitors, input costs, regulation). Do not "
-        "invent events, numbers or quotes.\n"
-        "- 'direction' is your judgement of the likely short-term pressure on the share price "
-        "from this news alone: up, down, or mixed. It is an opinion, not a forecast.\n"
-        "- Be calibrated. Use 'high' confidence only when the link is direct and obvious. If the "
-        "story has no credible effect on any tracked company, return an empty list.\n"
-        "- Write plainly for a reader who is not a finance specialist. No hype, no advice."
-    )
+    return prompts()["system"].format(companies=_company_table())
 
 
+def _describe(schema: dict, prefix: str) -> dict:
+    """Attach the field descriptions from the prompts file to a bare schema."""
+    notes = prompts().get("fields", {})
+    out = deepcopy(schema)
+
+    def walk(node: dict, path: str) -> None:
+        if path in notes:
+            node["description"] = notes[path].format(max_effects=MAX_EFFECTS)
+        for key, child in node.get("properties", {}).items():
+            walk(child, f"{path}.{key}")
+        if isinstance(node.get("items"), dict):
+            for key, child in node["items"].get("properties", {}).items():
+                walk(child, f"{path}.{key}")
+
+    walk(out, prefix)
+    return out
+
+
+# Shapes only. The words that describe each field live in the prompts file.
 STORY_SCHEMA = {
     "type": "object",
     "properties": {
-        "summary": {"type": "string", "description": "One sentence: what happened and why a market would care."},
+        "summary": {"type": "string"},
         "effects": {
             "type": "array",
-            "description": f"At most {MAX_EFFECTS} tracked companies, most affected first. Include companies "
-                           "the story does not name when there is a clear channel to them.",
             "items": {
                 "type": "object",
                 "properties": {
                     "ticker": {"type": "string"},
                     "direction": {"type": "string", "enum": ["up", "down", "mixed"]},
                     "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
-                    "reason": {"type": "string", "description": "One short sentence naming the channel."},
-                    "link": {"type": "string", "enum": ["direct", "indirect"],
-                             "description": "direct if the story is about this company; indirect if it reaches it "
-                                            "through a supplier, competitor, input cost, regulation or sector."},
-                    "evidence": {"type": "string", "description": "The words in the headline or summary that support "
-                                                                   "this link, quoted or closely paraphrased."},
-                    "counter": {"type": "string", "description": "One short sentence: what would make this call wrong, "
-                                                                  "or what a reader should check before trusting it."},
+                    "reason": {"type": "string"},
+                    "link": {"type": "string", "enum": ["direct", "indirect"]},
+                    "evidence": {"type": "string"},
+                    "counter": {"type": "string"},
                 },
                 "required": ["ticker", "direction", "confidence", "reason", "link", "evidence", "counter"],
                 "additionalProperties": False,
@@ -84,12 +109,10 @@ STORY_SCHEMA = {
 COMPANY_SCHEMA = {
     "type": "object",
     "properties": {
-        "stance": {"type": "string", "enum": ["positive", "negative", "mixed", "quiet"],
-                   "description": "Overall read of the coverage. 'quiet' when little of it matters."},
-        "brief": {"type": "string", "description": "Two or three sentences on what the recent coverage says."},
-        "drivers": {"type": "array", "items": {"type": "string"},
-                    "description": "Up to three short phrases naming what is driving the coverage."},
-        "watch": {"type": "string", "description": "One sentence on what to watch next, grounded in the headlines."},
+        "stance": {"type": "string", "enum": ["positive", "negative", "mixed", "quiet"]},
+        "brief": {"type": "string"},
+        "drivers": {"type": "array", "items": {"type": "string"}},
+        "watch": {"type": "string"},
     },
     "required": ["stance", "brief", "drivers", "watch"],
     "additionalProperties": False,
@@ -98,17 +121,15 @@ COMPANY_SCHEMA = {
 MARKET_SCHEMA = {
     "type": "object",
     "properties": {
-        "brief": {"type": "string", "description": "Three or four sentences on what is moving the wire right now."},
+        "brief": {"type": "string"},
         "themes": {
             "type": "array",
-            "description": "Up to four themes running through the headlines.",
             "items": {
                 "type": "object",
                 "properties": {
-                    "title": {"type": "string", "description": "Three to six words."},
-                    "detail": {"type": "string", "description": "One sentence."},
-                    "tickers": {"type": "array", "items": {"type": "string"},
-                                "description": "Tracked tickers this theme touches, if any."},
+                    "title": {"type": "string"},
+                    "detail": {"type": "string"},
+                    "tickers": {"type": "array", "items": {"type": "string"}},
                 },
                 "required": ["title", "detail", "tickers"],
                 "additionalProperties": False,
@@ -144,12 +165,10 @@ def source_hash(story_ids: list[str]) -> str:
     return hashlib.sha256("|".join(sorted(story_ids)).encode()).hexdigest()[:16]
 
 
-def story_prompt(headline: str, summary: str, tickers: list[str]) -> str:
-    named = ", ".join(tickers) if tickers else "none"
-    return (f"Story headline: {headline}\n"
-            f"Wire summary: {summary or '(none)'}\n"
-            f"Tracked companies the text names: {named}\n\n"
-            "Which tracked companies is this likely to affect, in which direction, and through what channel?")
+def story_prompt(headline: str, summary: str, tickers: list[str], wording: dict | None = None) -> str:
+    template = (wording or prompts())["story"]
+    return template.format(headline=headline, summary=summary or "(none)",
+                           named=", ".join(tickers) if tickers else "none")
 
 
 def _lines(rows) -> str:
@@ -195,12 +214,13 @@ def read_stories(conn, client, budget: int) -> int:
         "WHERE i.news_id IS NULL ORDER BY n.published_at DESC LIMIT ?", (budget,)).fetchall()
     if not rows:
         return 0
+    story_schema = _describe(STORY_SCHEMA, "story")
     jobs = [(r["id"], story_prompt(r["headline"], r["summary"], _tickers_of(conn, r["id"]))) for r in rows]
 
     def run(job):
         news_id, prompt = job
         try:
-            return news_id, ask(client, prompt, STORY_SCHEMA)
+            return news_id, ask(client, prompt, story_schema)
         except Exception as exc:  # one failed story must not sink the run; it is retried next time
             log.warning("story %s failed: %s", news_id[:12], exc)
             return news_id, None
@@ -250,12 +270,10 @@ def write_company_briefs(conn, client, budget: int) -> int:
         digest = source_hash([r["id"] for r in rows])
         if not _stale(conn, ticker, digest):
             continue
-        prompt = (f"Company: {company['name']} ({ticker}), sector: {company['sector']}.\n"
-                  f"Its most recent headlines on the wire, newest first, with a FinBERT tone score "
-                  f"from -1 (negative) to +1 (positive):\n{_lines(rows)}\n\n"
-                  "Write a short brief on what this coverage says about the company.")
+        prompt = prompts()["company"].format(name=company["name"], ticker=ticker,
+                                             sector=company["sector"], lines=_lines(rows))
         try:
-            body = ask(client, prompt, COMPANY_SCHEMA)
+            body = ask(client, prompt, _describe(COMPANY_SCHEMA, "company"))
         except Exception as exc:
             log.warning("brief %s failed: %s", ticker, exc)
             continue
@@ -277,10 +295,8 @@ def write_market_digest(conn, client) -> int:
     digest = source_hash([r["id"] for r in rows])
     if not _stale(conn, MARKET_KEY, digest):
         return 0
-    prompt = ("The newest headlines on the wire, newest first, with a FinBERT tone score from "
-              f"-1 (negative) to +1 (positive):\n{_lines(rows)}\n\n"
-              "Summarise what is moving the market right now and the main themes.")
-    body = ask(client, prompt, MARKET_SCHEMA)
+    prompt = prompts()["market"].format(lines=_lines(rows))
+    body = ask(client, prompt, _describe(MARKET_SCHEMA, "market"))
     if not body:
         return 0
     tracked = companies()

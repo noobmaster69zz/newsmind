@@ -6,3 +6,5 @@ node_modules/
 *.db
 *.db-journal
 .hf/
+# The wording sent to Claude stays private; prompts.example.json is the public stand-in.
+backend/agents/prompts.json

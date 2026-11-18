@@ -85,6 +85,7 @@ At the time of writing the site holds 277 stories from Reuters, CNBC, Yahoo and 
 ```bash
 pip install -r requirements.txt
 cp .env.example .env            # add FINNHUB_API_KEY and ANTHROPIC_API_KEY
+cp backend/agents/prompts.example.json backend/agents/prompts.json   # optional: your own wording for Claude
 python -m backend.seed          # optional: start from the committed snapshot
 python -m backend.ingest.pipeline
 python -m backend.agents.sentiment
@@ -105,7 +106,9 @@ Tests: `python -m pytest tests` (14 tests, no network, no API key needed).
 | `pages.yml` | Push to `main` that touches `frontend/` | Publishes the site to GitHub Pages |
 | `refresh.yml` | Every six hours, or by hand | Seeds, ingests, scores, runs Claude, commits the new snapshot and redeploys |
 
-`refresh.yml` needs two repository secrets: `FINNHUB_API_KEY` and `ANTHROPIC_API_KEY`.
+`refresh.yml` needs repository secrets `FINNHUB_API_KEY` and `ANTHROPIC_API_KEY`, plus `NEWSMIND_PROMPTS` for the prompt wording.
+
+The wording sent to Claude is kept out of this repository. The code ships with a generic stand-in, `backend/agents/prompts.example.json`, so it runs for anyone; the real prompts live in a gitignored `prompts.json` locally and in a secret on GitHub.
 
 ## What I learned
 

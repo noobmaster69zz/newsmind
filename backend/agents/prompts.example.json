@@ -1,0 +1,8 @@
+{
+  "_note": "Placeholder prompts so the pipeline runs. Put your own in prompts.json or the NEWSMIND_PROMPTS secret.",
+  "system": "You link financial news stories to the companies they may affect. Only use these tickers:\n{companies}\nReply in the requested JSON shape.",
+  "story": "Headline: {headline}\nSummary: {summary}\nCompanies named: {named}",
+  "company": "Recent headlines about {name} ({ticker}, {sector}):\n{lines}",
+  "market": "Recent headlines:\n{lines}",
+  "fields": {}
+}

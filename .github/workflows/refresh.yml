@@ -1,7 +1,8 @@
 name: Refresh the wire
 
 # Pulls fresh news, scores it, has Claude read the new stories, and republishes the site.
-# Needs two repository secrets: FINNHUB_API_KEY and ANTHROPIC_API_KEY.
+# Needs repository secrets FINNHUB_API_KEY and ANTHROPIC_API_KEY, and NEWSMIND_PROMPTS for the
+# private prompt wording (without it the generic prompts.example.json is used).
 on:
   schedule:
     - cron: "17 */6 * * *" # every six hours
@@ -22,6 +23,7 @@ jobs:
     env:
       FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      NEWSMIND_PROMPTS: ${{ secrets.NEWSMIND_PROMPTS }}
       NEWSMIND_MAX_CALLS: "150" # ceiling on Claude calls per run
       HF_HOME: ${{ github.workspace }}/.hf
     steps:

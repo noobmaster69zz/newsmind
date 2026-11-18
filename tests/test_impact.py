@@ -31,7 +31,34 @@ def test_source_hash_ignores_order():
 
 
 def test_story_prompt_says_when_no_company_is_named():
-    assert "names: none" in story_prompt("Oil jumps after tankers hit mines", "", [])
+    wording = {"story": "{headline} | {summary} | names: {named}"}
+    assert story_prompt("Oil jumps", "", [], wording) == "Oil jumps | (none) | names: none"
+
+
+def test_published_example_prompts_fill_every_placeholder():
+    """The committed stand-in must work with the code, so the repo runs without the private wording."""
+    import json
+    from pathlib import Path
+
+    example = json.loads((Path(__file__).resolve().parents[1] / "backend/agents/prompts.example.json").read_text())
+    example["system"].format(companies="AAPL: Apple")
+    story_prompt("h", "s", ["AAPL"], example)
+    example["company"].format(name="Apple", ticker="AAPL", sector="Big Tech", lines="- x")
+    example["market"].format(lines="- x")
+
+
+def test_field_descriptions_attach_to_the_schema(monkeypatch):
+    from backend.agents import impact
+
+    monkeypatch.setenv("NEWSMIND_PROMPTS", '{"fields": {"story.effects.reason": "Why.", "story.summary": "What."}}')
+    impact.prompts.cache_clear()
+    try:
+        schema = impact._describe(impact.STORY_SCHEMA, "story")
+        assert schema["properties"]["summary"]["description"] == "What."
+        assert schema["properties"]["effects"]["items"]["properties"]["reason"]["description"] == "Why."
+        assert "description" not in impact.STORY_SCHEMA["properties"]["summary"]  # the bare shape is untouched
+    finally:
+        impact.prompts.cache_clear()
 
 
 def test_snapshot_round_trip_keeps_claude_results(tmp_path):
