@@ -18,18 +18,28 @@ WINDOWS = (1, 5)         # fixed horizons, in trading days
 FLAT_BAND = 0.5          # percentage points: moves inside this band count as "flat", not right or wrong
 
 
-def fetch(conn, period: str = "2mo") -> int:
-    """Pull daily closes for every tracked ticker plus the market and upsert them."""
+def fetch(conn, period: str = "1y") -> int:
+    """Pull a year of daily bars (open, high, low, close) for every tracked ticker plus the market."""
     import yfinance as yf  # imported lazily: only this step needs it
 
     tickers = sorted(companies()) + [MARKET]
-    closes = yf.download(tickers, period=period, interval="1d", auto_adjust=True, progress=False)["Close"]
-    rows = [(ticker, day.strftime("%Y-%m-%d"), float(value))
-            for ticker in closes.columns
-            for day, value in closes[ticker].dropna().items()]
-    conn.executemany("INSERT OR REPLACE INTO price (ticker, day, close) VALUES (?,?,?)", rows)
+    bars = yf.download(tickers, period=period, interval="1d", auto_adjust=True, progress=False)
+    rows = []
+    for ticker in bars["Close"].columns:
+        frame = bars.xs(ticker, axis=1, level=1).dropna(subset=["Close"])
+        for day, bar in frame.iterrows():
+            rows.append((ticker, day.strftime("%Y-%m-%d"), float(bar["Close"]),
+                         float(bar["Open"]), float(bar["High"]), float(bar["Low"])))
+    conn.executemany("INSERT OR REPLACE INTO price (ticker, day, close, open, high, low) VALUES (?,?,?,?,?,?)", rows)
     conn.commit()
     return len(rows)
+
+
+def bars(conn, ticker: str) -> list[list]:
+    """Daily bars as [day, open, high, low, close], oldest first, for the site's price chart."""
+    return [[r["day"], round(r["open"], 2), round(r["high"], 2), round(r["low"], 2), round(r["close"], 2)]
+            for r in conn.execute("SELECT day, open, high, low, close FROM price WHERE ticker = ? AND open IS NOT NULL "
+                                  "ORDER BY day", (ticker,))]
 
 
 def series(conn, ticker: str) -> list[tuple[str, float]]:

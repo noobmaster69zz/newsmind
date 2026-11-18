@@ -17,6 +17,7 @@ from backend.agents.entity import companies
 from backend.agents.impact import MARKET_KEY
 
 OUT = Path(__file__).resolve().parents[1] / "frontend" / "data" / "events.json"
+BARS_OUT = OUT.with_name("bars.json")  # a year of daily bars per company, loaded only when a profile opens
 MAX_STORIES = 400  # newest stories kept on the site
 CHART_DAYS = 22    # closes kept per ticker for the price charts
 ID_LEN = 12        # short ids keep the file small; seed.py rebuilds the full id from the headline
@@ -84,10 +85,18 @@ def build(conn) -> dict:
     }
 
 
+def build_bars(conn, tickers) -> dict:
+    return {"generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "bars": {t: rows for t in sorted(tickers) if (rows := prices.bars(conn, t))}}
+
+
 if __name__ == "__main__":
-    data = build(db.connect())
+    conn = db.connect()
+    data = build(conn)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    bar_data = build_bars(conn, list(data["companies"]) + [prices.MARKET])
+    BARS_OUT.write_text(json.dumps(bar_data, separators=(",", ":")), encoding="utf-8")
     print({
         "stories": len(data["stories"]),
         "tagged": sum(1 for s in data["stories"] if s["tickers"]),

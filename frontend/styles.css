@@ -932,6 +932,63 @@ a { color: inherit; }
 .ask-table th:first-child { color: var(--ash); }
 .ask-chart .rival { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linejoin: round; }
 
+/* Company profile: a wider panel, chart first */
+.ask.wide {
+  width: min(820px, calc(100vw - 40px));
+  max-height: calc(100dvh - var(--floor-h) - var(--top-h) - 24px);
+}
+
+.pv { margin-top: 12px; }
+.pv-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.pv-seg { display: inline-flex; border: 1px solid var(--hair); border-radius: 999px; overflow: hidden; }
+
+.pv-seg button {
+  padding: 5px 12px;
+  border: 0;
+  background: none;
+  color: var(--ash);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.pv-seg button + button { border-left: 1px solid var(--hair); }
+.pv-seg button:hover { color: var(--bone); }
+.pv-seg button[aria-pressed="true"] { background: var(--bone); color: var(--carbon); }
+.pv-from { margin-left: auto; color: var(--ash); font-size: 0.8rem; }
+
+.pv-from input {
+  margin-left: 4px;
+  padding: 4px 8px;
+  border: 1px solid var(--hair);
+  border-radius: 8px;
+  background: #101317;
+  color: var(--bone);
+  font: inherit;
+  color-scheme: dark;
+}
+
+.pv-chart { position: relative; height: 300px; margin-top: 10px; border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; }
+
+.pv-tip {
+  position: absolute;
+  z-index: 3;
+  width: 240px;
+  padding: 8px 10px;
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  background: rgba(12, 14, 17, 0.94);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
+.pv-tip strong { display: block; margin-bottom: 4px; }
+.pv-tip span { display: block; margin-top: 3px; color: rgba(236, 230, 220, 0.86); }
+.pv-tip .pv-more { color: var(--ash); }
+.pv-note { margin-top: 8px !important; color: var(--ash); font-size: 0.78rem; line-height: 1.45; }
+.pv-list .ask-story span { display: block; }
+.pv-list .ask-story small { display: block; margin-top: 2px; color: var(--ash); font-size: 0.76rem; }
+
 /* Guided tour */
 .tour-ring {
   position: fixed;
@@ -1065,7 +1122,9 @@ body[data-focus="on"] .headline.glitch { animation: none; }
     pointer-events: none;
   }
   .blip { pointer-events: auto; }
-  .ask { left: 10px; width: calc(100vw - 20px); }
+  .ask, .ask.wide { left: 10px; width: calc(100vw - 20px); }
+  .pv-chart { height: 240px; }
+  .pv-from { margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

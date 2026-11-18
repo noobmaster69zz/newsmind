@@ -69,6 +69,9 @@ CREATE TABLE IF NOT EXISTS price (
     ticker TEXT NOT NULL,
     day    TEXT NOT NULL,               -- YYYY-MM-DD
     close  REAL NOT NULL,
+    open   REAL,
+    high   REAL,
+    low    REAL,
     PRIMARY KEY (ticker, day)
 );
 
@@ -92,6 +95,11 @@ def connect(path: Path | str = DB_PATH) -> sqlite3.Connection:
     for column in ("link", "evidence", "counter"):
         if column not in have:
             conn.execute(f"ALTER TABLE impact_effect ADD COLUMN {column} TEXT")
+    # ...and for databases created before prices carried the full daily bar.
+    have = {r["name"] for r in conn.execute("PRAGMA table_info(price)")}
+    for column in ("open", "high", "low"):
+        if column not in have:
+            conn.execute(f"ALTER TABLE price ADD COLUMN {column} REAL")
     return conn
 
 

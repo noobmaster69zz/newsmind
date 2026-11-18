@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "newsmind-bot"
           git config user.email "newsmind-bot@users.noreply.github.com"
-          git add frontend/data/events.json
+          git add frontend/data/events.json frontend/data/bars.json
           git diff --cached --quiet || git commit -m "Refresh the wire snapshot"
           git push
 

@@ -110,7 +110,10 @@
         state.mood.set(t, scored.length ? scored.reduce((a, s) => a + s.tone, 0) / scored.length : null);
       }
       const pulled = new Date(data.generatedAt);
-      els.stamp.textContent = `Wire pulled ${fmtDay.format(pulled)}, ${fmtTime.format(pulled)}`;
+      const hours = Math.max(0, Math.round((Date.now() - pulled) / 3600000));
+      const age = hours < 1 ? 'under an hour ago' : hours < 48 ? `${hours} hours ago` : `${Math.round(hours / 24)} days ago`;
+      els.stamp.textContent = `Updated ${age}`;
+      els.stamp.title = `Wire pulled ${fmtDay.format(pulled)}, ${fmtTime.format(pulled)}. Refreshed about every six hours.`;
       els.scopeCompany.textContent = `Company stories (${state.all.filter((s) => s.tickers.length).length})`;
       els.scopeAll.textContent = `Whole wire (${state.all.length})`;
       buildCloud();
@@ -1182,6 +1185,194 @@
     return { resize, sync };
   })();
 
+  /* ---------- Price chart with news markers ----------
+     A year of daily bars, drawn with TradingView's Lightweight Charts. Every day a story
+     landed gets a marker on the bar: an up arrow where Claude expected a rise, a down
+     arrow where it expected a fall, a dot for news with no call. */
+  const priceView = (() => {
+    let chart = null, token = 0, barsPromise = null;
+    const COLORS = { up: '#06B6D4', down: '#E0527A', none: '#9AA0A8' };
+    const RANGES = [['1M', 1], ['3M', 3], ['6M', 6], ['1Y', 12]];
+
+    const loadBars = () => (barsPromise = barsPromise || fetch('data/bars.json', { cache: 'no-cache' })
+      .then((r) => (r.ok ? r.json() : { bars: {} })).then((d) => d.bars || {}).catch(() => ({})));
+
+    const el = (tag, cls, text) => {
+      const n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    };
+
+    // The trading day a story first lands on: the same day if it came out before the US close, else the next one.
+    function landingDay(story, days) {
+      const when = new Date(story.publishedAt);
+      const date = when.toISOString().slice(0, 10);
+      const afterClose = when.getUTCHours() >= 21;
+      return days.find((d) => (afterClose ? d > date : d >= date)) || null;
+    }
+
+    function newsByDay(t, days) {
+      const byDay = new Map();
+      for (const story of state.all) {
+        const effect = ((story.impact || {}).effects || []).find((e) => e.ticker === t);
+        if (!story.tickers.includes(t) && !effect) continue;
+        const day = landingDay(story, days);
+        if (!day) continue;
+        if (!byDay.has(day)) byDay.set(day, []);
+        byDay.get(day).push({ story, effect });
+      }
+      return byDay;
+    }
+
+    function markersFor(byDay) {
+      return [...byDay].sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([day, items]) => {
+        // The marker follows the majority of Claude's calls that day; a tie or no calls gives a dot.
+        const ups = items.filter((i) => i.effect && i.effect.direction === 'up').length;
+        const downs = items.filter((i) => i.effect && i.effect.direction === 'down').length;
+        const dir = ups > downs ? 'up' : downs > ups ? 'down' : 'none';
+        return {
+          time: day, id: day, color: COLORS[dir],
+          position: dir === 'up' ? 'belowBar' : 'aboveBar',
+          shape: dir === 'up' ? 'arrowUp' : dir === 'down' ? 'arrowDown' : 'circle',
+          text: items.length === 1 ? 'N' : `N${items.length}`,
+        };
+      });
+    }
+
+    function build(t, effect) {
+      const my = ++token;
+      const wrap = el('section', 'pv');
+      const bar = el('div', 'pv-bar');
+      const kinds = el('div', 'pv-seg');
+      kinds.setAttribute('role', 'group');
+      kinds.setAttribute('aria-label', 'Chart type');
+      const candleBtn = el('button', null, 'Candles'), lineBtn = el('button', null, 'Line');
+      [candleBtn, lineBtn].forEach((b) => { b.type = 'button'; kinds.append(b); });
+      const ranges = el('div', 'pv-seg');
+      ranges.setAttribute('role', 'group');
+      ranges.setAttribute('aria-label', 'Time range');
+      const rangeBtns = RANGES.map(([label]) => { const b = el('button', null, label); b.type = 'button'; ranges.append(b); return b; });
+      const fromLabel = el('label', 'pv-from', 'From ');
+      const from = el('input');
+      from.type = 'date';
+      fromLabel.append(from);
+      bar.append(kinds, ranges, fromLabel);
+
+      const box = el('div', 'pv-chart');
+      const tip = el('div', 'pv-tip');
+      tip.hidden = true;
+      box.append(tip);
+      const note = el('p', 'pv-note', 'Loading prices');
+      const list = el('div', 'pv-list');
+      wrap.append(bar, box, note, list);
+
+      loadBars().then((all) => {
+        if (my !== token || !wrap.isConnected) return;
+        const rows = all[t];
+        if (!rows || rows.length < 2 || !window.LightweightCharts) {
+          note.textContent = 'No price history is available for this company yet.';
+          box.remove();
+          bar.remove();
+          return;
+        }
+        const days = rows.map((r) => r[0]);
+        const byDay = newsByDay(t, days);
+        const markers = markersFor(byDay);
+
+        chart = LightweightCharts.createChart(box, {
+          autoSize: true,
+          layout: { background: { type: 'solid', color: 'transparent' }, textColor: '#9AA0A8', fontFamily: 'Chakra Petch, sans-serif' },
+          grid: { vertLines: { color: 'rgba(236,230,220,0.05)' }, horzLines: { color: 'rgba(236,230,220,0.05)' } },
+          rightPriceScale: { borderColor: 'rgba(236,230,220,0.15)' },
+          timeScale: { borderColor: 'rgba(236,230,220,0.15)' },
+          crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+        });
+        const candles = chart.addCandlestickSeries({
+          upColor: COLORS.up, downColor: COLORS.down, borderVisible: false,
+          wickUpColor: COLORS.up, wickDownColor: COLORS.down,
+        });
+        candles.setData(rows.map(([time, open, high, low, close]) => ({ time, open, high, low, close })));
+        const line = chart.addLineSeries({ color: '#ECE6DC', lineWidth: 2, visible: false });
+        line.setData(rows.map(([time, , , , close]) => ({ time, value: close })));
+        candles.setMarkers(markers);
+        line.setMarkers(markers);
+
+        function kind(useCandles) {
+          candles.applyOptions({ visible: useCandles });
+          line.applyOptions({ visible: !useCandles });
+          candleBtn.setAttribute('aria-pressed', String(useCandles));
+          lineBtn.setAttribute('aria-pressed', String(!useCandles));
+        }
+        candleBtn.addEventListener('click', () => kind(true));
+        lineBtn.addEventListener('click', () => kind(false));
+        kind(true);
+
+        const last = days[days.length - 1];
+        function showFrom(start, pressed) {
+          const first = days.find((d) => d >= start) || days[0];
+          chart.timeScale().setVisibleRange({ from: first, to: last });
+          from.value = first;
+          rangeBtns.forEach((b) => b.setAttribute('aria-pressed', String(b === pressed)));
+        }
+        RANGES.forEach(([, months], i) => rangeBtns[i].addEventListener('click', () => {
+          const d = new Date(`${last}T00:00:00Z`);
+          d.setUTCMonth(d.getUTCMonth() - months);
+          showFrom(d.toISOString().slice(0, 10), rangeBtns[i]);
+        }));
+        from.min = days[0];
+        from.max = last;
+        from.addEventListener('change', () => { if (from.value) showFrom(from.value, null); });
+        // Open on the month that holds the news, or the story being looked at.
+        rangeBtns[0].click();
+
+        const headlinesFor = (day) => (byDay.get(day) || []);
+        chart.subscribeCrosshairMove((param) => {
+          const items = param.hoveredObjectId ? headlinesFor(param.hoveredObjectId) : [];
+          if (!items.length || !param.point) { tip.hidden = true; return; }
+          tip.replaceChildren(el('strong', null, `${fmtDay.format(new Date(`${param.hoveredObjectId}T12:00:00Z`))}, ${items.length} ${items.length === 1 ? 'story' : 'stories'}`));
+          items.slice(0, 3).forEach(({ story }) => tip.append(el('span', null, story.headline)));
+          if (items.length > 3) tip.append(el('span', 'pv-more', `and ${items.length - 3} more. Select to list them.`));
+          tip.hidden = false;
+          tip.style.left = `${Math.min(param.point.x + 14, box.clientWidth - 250)}px`;
+          tip.style.top = `${Math.max(param.point.y - 30, 4)}px`;
+        });
+
+        function listDay(day) {
+          const items = headlinesFor(day);
+          list.replaceChildren();
+          if (!items.length) return;
+          list.append(el('p', 'ask-label', `News on ${fmtDay.format(new Date(`${day}T12:00:00Z`))}`));
+          for (const { story, effect: e } of items) {
+            const b = el('button', 'ask-story');
+            b.type = 'button';
+            b.dataset.story = story.id;
+            const call = e ? ` ${ARROW[e.direction]} Claude: likely ${e.direction}` : '';
+            b.append(el('span', null, story.headline), el('small', null, `${story.source}${call}`));
+            list.append(b);
+          }
+        }
+        chart.subscribeClick((param) => { if (param.hoveredObjectId) listDay(param.hoveredObjectId); });
+
+        const latest = markers.length ? markers[markers.length - 1].id : null;
+        const focus = effect && byDay.size ? [...byDay].find(([, items]) => items.some((i) => i.effect === effect)) : null;
+        if (focus || latest) listDay(focus ? focus[0] : latest);
+        note.textContent = markers.length
+          ? `Markers show the ${markers.length} trading ${markers.length === 1 ? 'day' : 'days'} with news about ${t}. ` +
+            'Up arrow: most of the calls that day expected a rise. Down arrow: a fall. Dot: no clear lean. Hover a marker to preview, select it to list the stories.'
+          : `No news about ${t} has landed on a trading day in this range yet.`;
+      });
+      return wrap;
+    }
+
+    function clear() {
+      token++;
+      if (chart) { chart.remove(); chart = null; }
+    }
+
+    return { build, clear };
+  })();
+
   /* ---------- Blip: the assistant that reads Claude's saved analysis back ----------
      Blip never calls Claude from the browser. It shows the briefs the pipeline
      saved into events.json, so no API key is ever shipped to the page. */
@@ -1270,6 +1461,8 @@
 
     function showMarket() {
       const m = state.market;
+      priceView.clear();
+      ask.classList.remove('wide');
       out.replaceChildren();
       foot.textContent = '';
       if (!m) {
@@ -1394,10 +1587,15 @@
 
     function showCompany(t, effect) {
       const company = state.companies[t], b = state.briefs[t];
+      priceView.clear();
+      ask.classList.add('wide');
       out.replaceChildren();
       foot.textContent = '';
       const own = state.byTicker.get(t) || [];
       out.append(node('h3', 'ask-h', company.name), node('p', 'ask-id', `${t}, ${company.sector}`));
+
+      // The price chart comes first: what the stock did, with the news pinned to the days it landed.
+      out.append(priceView.build(t, effect));
 
       // Reasoning for one call: what Claude claimed, on what basis, and what would undo it.
       if (effect) {
@@ -1465,7 +1663,7 @@
       }
 
       const chart = priceChart(t, effect && effect.check);
-      if (chart) out.append(node('p', 'ask-label', 'Share price against the S&P 500'), chart);
+      if (chart) out.append(node('p', 'ask-label', 'Last month against the S&P 500'), chart);
 
       // Sectors it keeps appearing alongside in the same stories.
       const partners = new Map();
@@ -1539,6 +1737,7 @@
     }
 
     function close() {
+      priceView.clear();
       ask.hidden = true;
       btn.setAttribute('aria-expanded', 'false');
       btn.focus({ preventScroll: true });

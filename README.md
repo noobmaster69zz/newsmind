@@ -22,6 +22,7 @@ NewsMind pulls the news wire, scores how each headline reads, asks Claude which 
 - **Turn and zoom the cloud.** Drag to turn it, scroll to zoom, double-click to reset. Switch between stories, companies and sectors (keys 1, 2, 3).
 - **Open a company profile.** Select a company name for its tone over time, its price against the S&P 500, the sectors it shares stories with, and Claude's brief.
 - **Read the reasoning.** Each call shows why Claude made it, the words in the story that support it, whether the link is direct or indirect, how confident it was, and what would contradict it. Confidence is shown separately from whether the call proved right.
+- **Read the price chart.** A company profile opens on a year of daily prices, as candles or a line, with a range picker. Every day a story landed carries a marker on the bar, and selecting it lists the stories.
 - **Compare two companies.** From a profile, pick a second company to see tone, Claude's record and price side by side, plus the stories that touch both.
 - **Wind time back.** The time machine slider rewinds the wire and the cloud to an earlier moment.
 - **Take the tour.** A five-step walkthrough explains the screen in about 30 seconds (key T).
@@ -128,6 +129,6 @@ The wording sent to Claude is kept out of this repository. The code ships with a
 
 ## Credits
 
-Inspired by [BettaFish](https://github.com/666ghj/BettaFish) for the multi-agent idea and [Stock-Prediction](https://github.com/alisonmitchell/Stock-Prediction) for the modelling direction. The point-cloud chart takes its cue from the particle brain on [mindcorpus.org](https://mindcorpus.org/). News data from [Finnhub](https://finnhub.io/), tone from [FinBERT](https://huggingface.co/ProsusAI/finbert), impact reads from Claude.
+Price charts use [Lightweight Charts](https://www.tradingview.com/lightweight-charts/) by TradingView (Apache 2.0), vendored in `frontend/vendor/`. Inspired by [BettaFish](https://github.com/666ghj/BettaFish) for the multi-agent idea and [Stock-Prediction](https://github.com/alisonmitchell/Stock-Prediction) for the modelling direction. The point-cloud chart takes its cue from the particle brain on [mindcorpus.org](https://mindcorpus.org/). News data from [Finnhub](https://finnhub.io/), tone from [FinBERT](https://huggingface.co/ProsusAI/finbert), impact reads from Claude.
 
 Built by Gandhi Jaitra Nimeshkumar.
