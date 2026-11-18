@@ -109,16 +109,16 @@
         const scored = list.filter((s) => s.tone != null);
         state.mood.set(t, scored.length ? scored.reduce((a, s) => a + s.tone, 0) / scored.length : null);
       }
-      const pulled = new Date(data.generatedAt);
+      state.pulled = new Date(data.generatedAt);
       const showAge = () => {
-        const mins = Math.max(0, Math.round((Date.now() - pulled) / 60000));
+        const mins = Math.max(0, Math.round((Date.now() - state.pulled) / 60000));
         const age = mins < 60 ? `${Math.max(1, mins)} min ago` : mins < 2880 ? `${Math.round(mins / 60)} hours ago` : `${Math.round(mins / 1440)} days ago`;
         els.stamp.textContent = `Updated ${age}`;
       };
       showAge();
       setInterval(showAge, 60000);
-      els.stamp.title = `Wire pulled ${fmtDay.format(pulled)}, ${fmtTime.format(pulled)}. New stories and checks arrive about every two hours.`;
-      watchForUpdates();
+      els.stamp.title = 'New stories arrive about every two hours. Right and wrong counts move once a trading day, after the US market closes.';
+      watchForUpdates(showAge);
       els.scopeCompany.textContent = `Company stories (${state.all.filter((s) => s.tickers.length).length})`;
       els.scopeAll.textContent = `Whole wire (${state.all.length})`;
       buildCloud();
@@ -138,7 +138,33 @@
   /* ---------- Auto update ----------
      The pipeline publishes a new snapshot about every two hours. The page checks for one
      every five minutes and offers to load it, so a long-open tab never goes stale. */
-  function watchForUpdates() {
+  // A newer snapshot carries re-checked calls. Swap them in where they are shown, without a reload:
+  // the scorecard, the marks on the company chips and the profile reasoning all read from state.
+  async function applyNewChecks(showAge) {
+    let data;
+    try {
+      const r = await fetch('data/events.json', { cache: 'no-cache' });
+      if (!r.ok) return;
+      data = await r.json();
+    } catch (_) { return; }
+    const fresh = new Map(data.stories.map((st) => [st.id, st]));
+    for (const st of state.all) {
+      const next = fresh.get(st.id);
+      if (next && next.impact) st.impact = next.impact;
+    }
+    showScore(data.scorecard);
+    state.pulled = new Date(data.generatedAt);
+    showAge();
+    const story = state.list[state.active];
+    if (story) showReads(story);
+    const added = data.stories.filter((st) => !state.all.some((old) => old.id === st.id)).length;
+    if (added) {
+      $('#freshText').textContent = `${added} new ${added === 1 ? 'story has' : 'stories have'} arrived.`;
+      $('#fresh').hidden = false;
+    }
+  }
+
+  function watchForUpdates(showAge) {
     const url = 'data/events.json';
     let seen = null;
     const stamp = async () => {
@@ -150,8 +176,8 @@
     const check = async () => {
       const now = await stamp();
       if (!now) return;
-      if (seen && now !== seen) $('#fresh').hidden = false;
-      seen = seen || now;
+      if (seen && now !== seen) applyNewChecks(showAge);
+      seen = now;
     };
     check();
     setInterval(() => { if (!document.hidden) check(); }, 5 * 60 * 1000);
