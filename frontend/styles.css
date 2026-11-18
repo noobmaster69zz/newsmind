@@ -1133,3 +1133,55 @@ body[data-focus="on"] .headline.glitch { animation: none; }
   .ask-out .w { animation: none; opacity: 1; }
   .card { transform: none; }
 }
+
+/* ---------- Auto-update notice ---------- */
+.fresh {
+  position: fixed;
+  z-index: 7;
+  top: calc(var(--top-h) + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px 8px 16px;
+  border: 1px solid var(--cyan);
+  border-radius: 999px;
+  background: #0C0E11;
+  font-size: 0.92rem;
+}
+
+.fresh[hidden] { display: none; }
+
+/* ---------- Article list under the price chart ---------- */
+.pv-item { padding: 10px 0; border-top: 1px solid var(--hair); }
+.pv-head { display: block; color: var(--bone); font-weight: 500; text-decoration: none; }
+a.pv-head:hover { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+a.pv-head::after { content: " \2197"; color: var(--ash); }
+.pv-meta { margin-top: 3px !important; color: var(--ash); font-size: 0.86rem; }
+.pv-show { margin-top: 4px; padding: 0; border: 0; background: none; color: var(--cyan); font-size: 0.84rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Tour box moves aside while a profile is open, so it never covers what it describes. */
+@media (min-width: 1100px) {
+  .tour.aside { left: auto; right: 24px; transform: none; width: min(440px, calc(100vw - 880px)); min-width: 300px; }
+}
+
+/* ---------- Readability for a first-time audience ----------
+   Larger small print and stronger contrast for secondary text. */
+:root { --ash: #A6ABB4; }
+.legend, .view-note, .time { font-size: 0.86rem; }
+.row-tags { font-size: 0.84rem; }
+.row-time { font-size: 0.9rem; }
+.stamp, .what { font-size: 0.9rem; }
+.tip { font-size: 0.9rem; }
+.read-chip { font-size: 0.88rem; }
+.reads, .card-foot, .forecast { font-size: 0.88rem; }
+.ask-id, .ask-stats { font-size: 0.94rem; }
+.ask-part-title, .ask-tags span, .ask-label { font-size: 0.86rem; }
+.ask-part, .ask-out { font-size: 0.98rem; }
+.ask-note, .ask-foot, .ask-chart figcaption { font-size: 0.84rem; }
+.pv-note { font-size: 0.9rem; }
+.pv-seg button, .pv-from, .views button { font-size: 0.88rem; }
+.pv-tip { font-size: 0.86rem; }
+.intro-list dd { font-size: 0.98rem; }
+.intro-note { font-size: 0.92rem; }

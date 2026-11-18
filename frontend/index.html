@@ -140,13 +140,18 @@
     </dl>
     <p class="intro-score" id="introScore"></p>
     <p class="intro-note">Treat that score as a sanity check, not proof. Many stories report a price move that has already begun, which flatters it, and a few days of prices is a small sample.</p>
-    <p class="intro-note">Data: news from Finnhub, headline tone from FinBERT, company links from Claude (Haiku 5.5), daily prices from Yahoo Finance. The snapshot refreshes about every six hours.</p>
+    <p class="intro-note">Data: news from Finnhub, headline tone from FinBERT, company links from Claude (Haiku 5.5), daily prices from Yahoo Finance. New stories, Claude's reads and the right-or-wrong checks update about every two hours, and an open page offers to load them when they arrive.</p>
     <p class="intro-note">Keys: 1, 2 and 3 switch between stories, companies and sectors. / searches. T starts the tour. ? opens this page.</p>
     <div class="intro-buttons">
       <button class="chip intro-go" id="introTour" type="button">Take the 30-second tour</button>
       <button class="chip" id="introClose" type="button">Explore the wire</button>
     </div>
   </dialog>
+
+  <div class="fresh" id="fresh" role="status" hidden>
+    <span>New stories and checks are available.</span>
+    <button class="chip" id="freshLoad" type="button">Load them</button>
+  </div>
 
   <div class="tour-ring" id="tourRing" hidden></div>
   <div class="tour" id="tour" role="dialog" aria-label="Guided tour" hidden>

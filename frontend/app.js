@@ -110,10 +110,15 @@
         state.mood.set(t, scored.length ? scored.reduce((a, s) => a + s.tone, 0) / scored.length : null);
       }
       const pulled = new Date(data.generatedAt);
-      const hours = Math.max(0, Math.round((Date.now() - pulled) / 3600000));
-      const age = hours < 1 ? 'under an hour ago' : hours < 48 ? `${hours} hours ago` : `${Math.round(hours / 24)} days ago`;
-      els.stamp.textContent = `Updated ${age}`;
-      els.stamp.title = `Wire pulled ${fmtDay.format(pulled)}, ${fmtTime.format(pulled)}. Refreshed about every six hours.`;
+      const showAge = () => {
+        const mins = Math.max(0, Math.round((Date.now() - pulled) / 60000));
+        const age = mins < 60 ? `${Math.max(1, mins)} min ago` : mins < 2880 ? `${Math.round(mins / 60)} hours ago` : `${Math.round(mins / 1440)} days ago`;
+        els.stamp.textContent = `Updated ${age}`;
+      };
+      showAge();
+      setInterval(showAge, 60000);
+      els.stamp.title = `Wire pulled ${fmtDay.format(pulled)}, ${fmtTime.format(pulled)}. New stories and checks arrive about every two hours.`;
+      watchForUpdates();
       els.scopeCompany.textContent = `Company stories (${state.all.filter((s) => s.tickers.length).length})`;
       els.scopeAll.textContent = `Whole wire (${state.all.length})`;
       buildCloud();
@@ -128,6 +133,30 @@
       els.summary.textContent = 'python -m backend.export_site_data writes frontend/data/events.json.';
       console.error('NewsMind: failed to load data/events.json', err);
     }
+  }
+
+  /* ---------- Auto update ----------
+     The pipeline publishes a new snapshot about every two hours. The page checks for one
+     every five minutes and offers to load it, so a long-open tab never goes stale. */
+  function watchForUpdates() {
+    const url = 'data/events.json';
+    let seen = null;
+    const stamp = async () => {
+      try {
+        const r = await fetch(url, { method: 'HEAD', cache: 'no-cache' });
+        return r.headers.get('etag') || r.headers.get('last-modified');
+      } catch (_) { return null; }
+    };
+    const check = async () => {
+      const now = await stamp();
+      if (!now) return;
+      if (seen && now !== seen) $('#fresh').hidden = false;
+      seen = seen || now;
+    };
+    check();
+    setInterval(() => { if (!document.hidden) check(); }, 5 * 60 * 1000);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); });
+    $('#freshLoad').addEventListener('click', () => location.reload());
   }
 
   /* ---------- Wire ---------- */
@@ -985,17 +1014,33 @@
   /* ---------- Guided tour ---------- */
   const tour = (() => {
     const box = $('#tour'), ring = $('#tourRing'), text = $('#tourText'), count = $('#tourCount');
+    const tidy = () => blip.close();
+    // Open a profile for a company the story on screen is expected to move, so the reasoning step has something to show.
+    const openProfile = () => {
+      const story = state.list[state.active];
+      const effect = story && story.impact && story.impact.effects.find((e) => state.companies[e.ticker]);
+      blip.company(effect ? effect.ticker : Object.keys(state.companies)[0], effect || undefined);
+    };
     const STEPS = [
-      ['.stage', 'This is a news story. Whichever headline sits on the reading line of the wire is the one being charted.'],
-      ['#chart', 'These points are stories. Cyan reads as good news, maroon as bad news, grey as neutral.'],
-      ['#labels', 'These clusters are companies. Hover a company name to light up every story about it.'],
-      ['.reads', 'These are relationships. Solid means the story names the company; dashed means Claude expects a knock-on effect. The lines in the cloud show the same thing.'],
-      ['#labels', 'Your turn: select any company name in the cloud to open its profile.'],
+      ['.stage', 'This is a news story. Whichever headline sits on the reading line of the wire is the one being charted.', tidy],
+      ['#chart', 'These points are stories. Cyan reads as good news, maroon as bad news, grey as neutral.', tidy],
+      ['#labels', 'These clusters are companies. Hover a company name to light up every story about it.', tidy],
+      ['.reads', 'These are relationships. Solid means the story names the company; dashed means Claude expects a knock-on effect. The lines in the cloud show the same thing.', tidy],
+      ['.views', 'Switch what the cloud shows: every story, how companies connect, or sectors (keys 1, 2, 3). Drag the cloud to turn it and scroll to zoom.', tidy],
+      ['.time', 'The time machine winds the wire back to an earlier moment, so you can watch stories arrive.', tidy],
+      ['#search', 'Search headlines, tickers or company names. Press / to jump here.', tidy],
+      ['.pv-chart', 'Selecting a company opens its profile, led by the share price. Switch between candles and a line, or pick a range or start date. Each marker is a day with news: select it to open the article.', openProfile],
+      ['.ask-reason', 'Claude explains every call: why, what in the story supports it, whether the link is direct or indirect, how confident it is, and what would prove it wrong. Whether it proved right is checked against the price separately.', null],
+      ['.ask-compare', 'Compare this company with another: news tone, Claude\'s record and share price side by side.', null],
+      ['#blip', 'Blip, down here, opens this panel any time. Ask what is moving the market, or about any company.', null],
+      ['#labels', 'Your turn: select any company name in the cloud to open its profile.', tidy],
     ];
     let at = -1;
     function place() {
       if (at < 0) return;
-      const r = document.querySelector(STEPS[at][0]).getBoundingClientRect();
+      const target = document.querySelector(STEPS[at][0]);
+      if (!target) return;
+      const r = target.getBoundingClientRect();
       ring.style.left = `${r.left - 4}px`;
       ring.style.top = `${r.top - 4}px`;
       ring.style.width = `${r.width + 8}px`;
@@ -1003,6 +1048,13 @@
     }
     function show(i) {
       at = i;
+      if (STEPS[i][2]) STEPS[i][2]();
+      const target = document.querySelector(STEPS[i][0]);
+      if (target && target.closest('#askOut')) target.scrollIntoView({ block: 'nearest' });
+      box.classList.toggle('aside', !$('#ask').hidden);
+      // The profile chart loads a moment later, so place the ring again once it has.
+      setTimeout(place, 120);
+      setTimeout(place, 700);
       text.textContent = STEPS[i][1];
       count.textContent = `${i + 1} of ${STEPS.length}`;
       $('#tourBack').disabled = i === 0;
@@ -1010,12 +1062,15 @@
       box.hidden = ring.hidden = false;
       place();
     }
-    function stop() { at = -1; box.hidden = ring.hidden = true; }
+    function stop() { at = -1; box.hidden = ring.hidden = true; box.classList.remove('aside'); }
     function start() { if (state.cutoff < Infinity || cloud.view !== 'story') setView('story'); show(0); $('#tourNext').focus(); }
     $('#tourNext').addEventListener('click', () => (at === STEPS.length - 1 ? stop() : show(at + 1)));
     $('#tourBack').addEventListener('click', () => show(Math.max(0, at - 1)));
     $('#tourSkip').addEventListener('click', stop);
     window.addEventListener('resize', place);
+    // Panels scroll and charts load while the tour is open, so keep the ring on its target.
+    $('#askOut').addEventListener('scroll', place, { passive: true });
+    setInterval(() => { if (at >= 0) place(); }, 400);
     return { start, stop };
   })();
 
@@ -1235,7 +1290,7 @@
           time: day, id: day, color: COLORS[dir],
           position: dir === 'up' ? 'belowBar' : 'aboveBar',
           shape: dir === 'up' ? 'arrowUp' : dir === 'down' ? 'arrowDown' : 'circle',
-          text: items.length === 1 ? 'N' : `N${items.length}`,
+          size: items.length >= 10 ? 2 : items.length >= 3 ? 1.5 : 1,
         };
       });
     }
@@ -1332,7 +1387,8 @@
           if (!items.length || !param.point) { tip.hidden = true; return; }
           tip.replaceChildren(el('strong', null, `${fmtDay.format(new Date(`${param.hoveredObjectId}T12:00:00Z`))}, ${items.length} ${items.length === 1 ? 'story' : 'stories'}`));
           items.slice(0, 3).forEach(({ story }) => tip.append(el('span', null, story.headline)));
-          if (items.length > 3) tip.append(el('span', 'pv-more', `and ${items.length - 3} more. Select to list them.`));
+          if (items.length > 3) tip.append(el('span', 'pv-more', `and ${items.length - 3} more.`));
+          tip.append(el('span', 'pv-more', items.length === 1 ? 'Select the marker to open the article.' : 'Select the marker to list the articles.'));
           tip.hidden = false;
           tip.style.left = `${Math.min(param.point.x + 14, box.clientWidth - 250)}px`;
           tip.style.top = `${Math.max(param.point.y - 30, 4)}px`;
@@ -1344,22 +1400,33 @@
           if (!items.length) return;
           list.append(el('p', 'ask-label', `News on ${fmtDay.format(new Date(`${day}T12:00:00Z`))}`));
           for (const { story, effect: e } of items) {
-            const b = el('button', 'ask-story');
-            b.type = 'button';
-            b.dataset.story = story.id;
-            const call = e ? ` ${ARROW[e.direction]} Claude: likely ${e.direction}` : '';
-            b.append(el('span', null, story.headline), el('small', null, `${story.source}${call}`));
-            list.append(b);
+            const row = el('div', 'pv-item');
+            const call = e ? `Claude: likely ${e.direction} ${ARROW[e.direction]}` : 'No call from Claude';
+            const head = story.url ? el('a', 'pv-head', story.headline) : el('span', 'pv-head', story.headline);
+            if (story.url) { head.href = story.url; head.target = '_blank'; head.rel = 'noopener noreferrer'; }
+            const meta = el('p', 'pv-meta', `${story.source}, ${fmtTime.format(new Date(story.publishedAt))}. ${call}`);
+            const show = el('button', 'pv-show', 'Show in the wire');
+            show.type = 'button';
+            show.dataset.story = story.id;
+            row.append(head, meta, show);
+            list.append(row);
           }
         }
-        chart.subscribeClick((param) => { if (param.hoveredObjectId) listDay(param.hoveredObjectId); });
+        // Selecting a marker opens the article itself; a day with several stories lists them as links.
+        chart.subscribeClick((param) => {
+          if (!param.hoveredObjectId) return;
+          const items = headlinesFor(param.hoveredObjectId);
+          listDay(param.hoveredObjectId);
+          if (items.length === 1 && items[0].story.url) window.open(items[0].story.url, '_blank', 'noopener');
+          else list.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        });
 
         const latest = markers.length ? markers[markers.length - 1].id : null;
         const focus = effect && byDay.size ? [...byDay].find(([, items]) => items.some((i) => i.effect === effect)) : null;
         if (focus || latest) listDay(focus ? focus[0] : latest);
         note.textContent = markers.length
-          ? `Markers show the ${markers.length} trading ${markers.length === 1 ? 'day' : 'days'} with news about ${t}. ` +
-            'Up arrow: most of the calls that day expected a rise. Down arrow: a fall. Dot: no clear lean. Hover a marker to preview, select it to list the stories.'
+          ? `Each marker is a trading day with news about ${t} (${markers.length} so far). ` +
+            'Up arrow: Claude mostly expected a rise. Down arrow: a fall. Dot: no clear lean. Bigger markers mean more stories. Select a marker to open its article.'
           : `No news about ${t} has landed on a trading day in this range yet.`;
       });
       return wrap;
@@ -1780,7 +1847,7 @@
     }
 
     requestAnimationFrame(tick);
-    return { ready, company: (t, effect) => { open(); showCompany(t, effect); } };
+    return { ready, company: (t, effect) => { open(); showCompany(t, effect); }, close: () => { if (!ask.hidden) close(); } };
   })();
 
   /* ---------- Resize ---------- */

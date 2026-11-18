@@ -105,7 +105,7 @@ Tests: `python -m pytest tests` (14 tests, no network, no API key needed).
 |---|---|---|
 | `tests.yml` | Every push and pull request | Runs the unit tests |
 | `pages.yml` | Push to `main` that touches `frontend/` | Publishes the site to GitHub Pages |
-| `refresh.yml` | Every six hours, or by hand | Seeds, ingests, scores, runs Claude, commits the new snapshot and redeploys |
+| `refresh.yml` | Every two hours, or by hand | Seeds, ingests, scores, runs Claude, commits the new snapshot and redeploys |
 
 `refresh.yml` needs repository secrets `FINNHUB_API_KEY` and `ANTHROPIC_API_KEY`, plus `NEWSMIND_PROMPTS` for the prompt wording.
 
@@ -125,7 +125,7 @@ The wording sent to Claude is kept out of this repository. The code ships with a
 - The right/wrong check is crude. On the first snapshot Claude was right on 122 calls and wrong on 65, with 27 too close to call, but many stories report a move that has already started, which flatters the score, and the window is only a few trading days. The next step is a proper event study with fixed 1-day and 5-day windows and a larger sample.
 - Ticker tagging is alias matching over 35 companies. It misses companies outside the list and can be fooled by ambiguous names.
 - FinBERT scores the headline only, not the article.
-- The site shows a snapshot, refreshed every six hours, not a live feed.
+- The site shows a snapshot, refreshed about every two hours, not a live feed. An open page offers to load a newer snapshot when one is published.
 
 ## Credits
 
