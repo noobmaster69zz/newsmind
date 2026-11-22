@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-21T20:39:51+00:00",
+ "generatedAt": "2026-11-22T02:25:32+00:00",
  "companies": {
   "AAPL": {
    "name": "Apple",
@@ -143,53 +143,45 @@
   }
  },
  "market": {
-  "brief": "Headlines on 2026-11-21 are dominated by AI-trade volatility (Nvidia, Broadcom, AMD, Anthropic-linked stakes), a broad tech and bank sell-off, the NYC delivery bill fight involving Amazon, Iran-related geopolitical risk, and mixed company-specific news for healthcare, retail, and defence names.",
+  "brief": "Sentiment is mixed to negative across the feed. AI and semiconductor names sold off hard, with Nvidia down about 48% from its peak and the selloff spreading to crypto. Alphabet hit a one-year low, while Tesla, Intel, and Pfizer drew more constructive coverage. Geopolitical tension tied to the Iran conflict weighed on defence and aerospace names, and several stories focus on valuation and fund positioning.",
   "themes": [
    {
-    "title": "AI trade unwind and market sell-off",
-    "detail": "Coverage of a sharp market correction, Wall Street's worst week in over a year, and money managers cutting tech bets sharply. Goldman Sachs flags an 'AI unwind' and Nvidia issues a warning to AMD and Intel investors. Many headlines are generic buy/sell commentary.",
+    "title": "AI selloff hits Nvidia and crypto",
+    "detail": "Nvidia has fallen roughly 48% from its peak and now trades near 15 times earnings, prompting debate over whether it is a buy. The selloff reportedly spread to Bitcoin and crypto, and Cathie Wood kept buying Nvidia while the broader cyclical tech group was marked down. Jensen Huang's exit is a live headline.",
     "tickers": [
      "NVDA",
-     "AMD",
-     "INTC",
-     "AVGO",
-     "GS"
+     "COIN",
+     "AMD"
     ]
    },
    {
-    "title": "Anthropic compute obligations and AI stakes",
-    "detail": "Anthropic faces about $71 billion in compute payments within a year, and Amazon, Google, and AMD are linked to its stake or competitive position. Musk praises Google's Gemini 4 Neon, which is seen as bad timing for Anthropic. Amazon's capex financing is also questioned.",
+    "title": "Alphabet under pressure over AI spending and debt",
+    "detail": "Alphabet stock hit a one-year low as investors question heavy borrowing and AI capex. Analysts trimmed fair value estimates, though Musk praised Gemini 4 and Google is reportedly paying SpaceX $30 billion.",
     "tickers": [
-     "AMZN",
-     "GOOGL",
-     "AMD",
-     "MSFT",
-     "NVDA"
+     "GOOGL"
     ]
    },
    {
-    "title": "Semiconductor and AI infrastructure news",
-    "detail": "Cathie Wood sold Broadcom shares, Broadcom reports on Dec. 9, AMD's data center sales jumped 97%, Supermicro lifted its AI revenue outlook, and Jensen Huang's next move is in focus. Intel has fallen 62% this year.",
+    "title": "Tesla valuation versus robotaxi momentum",
+    "detail": "Tesla shares look richly priced after a strong three-year run, but FSD V15 is rolling out and Musk says the Cybercab covers much of passenger miles. Funds including Cathie Wood's were net buyers last quarter.",
     "tickers": [
-     "AVGO",
-     "AMD",
-     "NVDA",
-     "INTC"
+     "TSLA"
     ]
    },
    {
-    "title": "NYC delivery bill and Amazon/Walmart delivery",
-    "detail": "Amazon warns NYC shoppers that a Mamdani-backed delivery bill could cost up to $664 a year per household. Walmart shares a delivery update, and Bank of America is bullish on Amazon ahead of 2027.",
+    "title": "Iran conflict and defence sentiment",
+    "detail": "Attacks and threats across Bahrain and reports of a disputed F-16 incident keep geopolitical risk elevated. Defence stocks fell after the midterms, with one analyst preferring a defence name other than Lockheed Martin.",
     "tickers": [
-     "AMZN",
-     "WMT"
+     "LMT",
+     "RTX",
+     "BA"
     ]
    }
   ],
   "stories": 60,
   "model": "claude-haiku-5-5",
-  "writtenAt": "2026-11-21 20:39:47",
-  "hash": "3c7f1bb29fb9bdc4"
+  "writtenAt": "2026-11-22 02:25:28",
+  "hash": "afd5ef2b4a4725ac"
  },
  "briefs": {
   "RTX": {
@@ -246,20 +238,6 @@
    "writtenAt": "2026-11-21 12:52:12",
    "hash": "ad0b169107efd1f9"
   },
-  "JPM": {
-   "stance": "negative",
-   "brief": "Recent JPMorgan coverage skews negative, driven by a vendor cyberattack exposing customer data, a bank tax warning from the CEO, and a CFO handover that pressured the stock. Positive items on IPO market outlook and fund-banking expansion are fewer and milder.",
-   "drivers": [
-    "Cyberattack on an outside vendor exposed JPMorgan Reserve cardholder emails and customer data",
-    "JPMorgan CEO warned that Labour's bank tax will have consequences",
-    "CFO handover reshaping the Dimon leadership bench pushed shares lower"
-   ],
-   "watch": "Scope and disclosure of the vendor breach, any regulatory response to the UK bank tax proposal, and whether the new CFO transition causes further share weakness.",
-   "stories": 15,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 12:52:26",
-   "hash": "dd765f4b6d8115d0"
-  },
   "UAL": {
    "stance": "mixed",
    "brief": "Headlines on United Airlines are a mix: one piece flags flight disruptions and travel insurance lessons ahead of the holidays (negative), while an analysis credits cheaper fuel with helping earnings but holds the stock back over fleet spending (positive). The rest are neutral valuation or portfolio pieces with little directional signal.",
@@ -273,76 +251,6 @@
    "model": "claude-haiku-5-5",
    "writtenAt": "2026-11-21 12:52:56",
    "hash": "df5ef9851cc08c3d"
-  },
-  "AAPL": {
-   "stance": "mixed",
-   "brief": "Recent Apple coverage is mixed: AI-agent and on-device AI headlines lean positive, while a downgrade, a lawsuit in India, Samsung DRAM supply pressure, and AI-pace skepticism weigh on sentiment. Average tone is modestly positive, with the strongest negative item being a single lawsuit story.",
-   "drivers": [
-    "Reports that Apple is building its own AI agent to rival OpenAI, Anthropic and Meta's Muse",
-    "On-device AI push cited as a catalyst for Apple and edge AI peers",
-    "Downgrade citing a hidden risk, plus skepticism that Apple is not moving fast enough in AI"
-   ],
-   "watch": "Whether Apple confirms its AI agent plans and timing, any follow-through on the India lawsuit, and DRAM supply costs and availability in upcoming earnings commentary.",
-   "stories": 15,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:38:37",
-   "hash": "ba7b9c341dbd8198"
-  },
-  "AMD": {
-   "stance": "mixed",
-   "brief": "AMD coverage is split: strong data center growth and Anthropic-linked upside are offset by a short-seller report on China firmware ties, a 7.7% single-day drop, and Nvidia competitive warnings. Sentiment is net negative on the week, with a sharp selloff reported and many articles framing the dip as a buying opportunity.",
-   "drivers": [
-    "Short seller report questioning AMD's China firmware ties triggered a 7.72% plunge",
-    "Reported ~31% decline from recent levels and ~26% year-to-date style drawdown cited in headlines",
-    "Nvidia warning to AMD and Intel investors and H200 China chip policy uncertainty"
-   ],
-   "watch": "Any response from AMD to the short seller's China firmware allegations, Anthropic IPO pricing and trading, and further China export or H200 policy developments affecting Nvidia and AMD.",
-   "stories": 15,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:38:40",
-   "hash": "e16f2cc6900b45a9"
-  },
-  "AMZN": {
-   "stance": "mixed",
-   "brief": "Headlines on Amazon are split: a sharp sell-off on Nov 20 tied to AI-spending worries and its Anthropic stake, plus institutional selling (Cathie Wood, Dan Loeb) and skeptical capex analysis. Offsetting this, Bank of America reportedly doubled down on the stock, a Generac supply deal was positive, and re:Invent (Nov 30) is a possible catalyst. Regulatory pushback over an NYC delivery bill adds a negative political overhang.",
-   "drivers": [
-    "Amazon shares fell 3.87% on Nov 20 as its $188B Anthropic stake began trading daily, amid an AI and mega-cap tech sell-off",
-    "Concerns over AI capex returns: skeptics question whether capex can be paid for, with Anthropic owing $71B in compute within a year",
-    "Notable investor selling: Cathie Wood sold about $9M of Amazon and Dan Loeb exited his position"
-   ],
-   "watch": "Whether Anthropic stake volatility and AI capex concerns keep pressuring the stock, the NYC delivery bill's progress, and any product or AI announcements at re:Invent starting Nov. 30.",
-   "stories": 15,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:38:43",
-   "hash": "0b8999d7df07e274"
-  },
-  "AVGO": {
-   "stance": "mixed",
-   "brief": "Broadcom coverage is split. Several sharp negative stories on 2026-11-20 report Google reportedly cutting Broadcom-designed TPU plans and shifting some chip work to MediaTek, driving a roughly 12% share drop and a Goldman target cut. Offsetting this, the 2026-11-21 items are mostly neutral preview pieces ahead of the Dec. 9 earnings report, plus a report that Broadcom backstops up to $29 billion of Anthropic leases.",
-   "drivers": [
-    "Reports Google cut Broadcom-designed TPU plans and eyes MediaTek chips, causing a ~12% stock drop",
-    "Goldman Sachs cut its Broadcom price target to $460",
-    "Anthropic lease backstop of up to $29 billion and Anthropic IPO easing lending risk"
-   ],
-   "watch": "Whether Google's reported TPU shift is confirmed, Anthropic's ability to meet its large compute obligations, and Broadcom's Dec. 9 earnings and AI chip guidance.",
-   "stories": 15,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:38:45",
-   "hash": "7fdf7f4f220852dd"
-  },
-  "BA": {
-   "stance": "negative",
-   "brief": "Boeing headlines are predominantly bearish, centered on a steep share price decline (down roughly 25-37% from highs), execution pressure, and internal overstaffing concerns in its jet unit. A director insider purchase and a sizable Asia aircraft sale offer some offsetting positive notes, but neutral-to-negative tone dominates the coverage.",
-   "drivers": [
-    "Stock down about 25-37% from its high, with multiple articles on the slump",
-    "Execution pressure and valuation questions raised in analysis pieces",
-    "Jet unit described as in an overstaffed position"
-   ],
-   "watch": "Whether the director insider buying and the Asia aircraft deals translate into stabilization, and any updates on jet unit staffing and execution milestones.",
-   "stories": 11,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:38:47",
-   "hash": "3091dc53fe9e2187"
   },
   "BAC": {
    "stance": "mixed",
@@ -371,20 +279,6 @@
    "model": "claude-haiku-5-5",
    "writtenAt": "2026-11-21 20:38:52",
    "hash": "72f9d1817def7f16"
-  },
-  "COST": {
-   "stance": "positive",
-   "brief": "Costco coverage skews positive, led by strong October U.S. comparable sales (up 12.6%), a $30 special dividend, and new all-time highs. Tech-outage stories driving emergency bulk buying are mostly neutral to mildly negative, and one store closure headline is clearly negative.",
-   "drivers": [
-    "U.S. comparable sales up 12.6% in October",
-    "$30 per-share special dividend, twice the prior special payout",
-    "Stock at new all-time high after dividend announcement"
-   ],
-   "watch": "Ex-dividend date around Nov. 24 and the Dec. 10 payment timing, plus whether outage-driven buying persists into November comparable sales.",
-   "stories": 13,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:38:54",
-   "hash": "d4ab4407cae374db"
   },
   "CVX": {
    "stance": "mixed",
@@ -427,20 +321,6 @@
    "writtenAt": "2026-11-21 20:39:00",
    "hash": "07447ed7c8ca4365"
   },
-  "GOOGL": {
-   "stance": "mixed",
-   "brief": "Alphabet headlines are mixed: strong analyst and AI-momentum signals (Morgan Stanley bullish, Gemini praised by Musk, Alphabet a Nasdaq bright spot) are offset by a 3.46% share drop on 2026-11-20 despite the Anthropic stake valuation, a Broadcom report that Google cut AI chip plans, and a reported YouTube settlement. Most stories are generic commentary with near-zero tone.",
-   "drivers": [
-    "Morgan Stanley strong signal on Google stock (tone +0.91)",
-    "Alphabet stock fell 3.46% despite Anthropic stake valued at $172 billion (tone -0.95)",
-    "Report Google cut Broadcom AI chip plans, hitting Broadcom shares (tone -0.96)"
-   ],
-   "watch": "Whether the Anthropic stake gains translate into share support, the confirmation or denial of Google's reported Broadcom AI chip cut, and the finalization of the YouTube settlement amount.",
-   "stories": 15,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:02",
-   "hash": "f535cec7127fa1ff"
-  },
   "GS": {
    "stance": "mixed",
    "brief": "Coverage of Goldman Sachs is split: sharp negative headlines about a 14% weekly drop, an 'AI unwind' warning, and Goldman being a Dow loser, offset by bullish S&P 500 forecasts, a rating upgrade, and a $44 billion SpaceX GPU financing deal with Apollo. Many items are routine conference or ETF mentions with neutral tone.",
@@ -455,235 +335,347 @@
    "writtenAt": "2026-11-21 20:39:04",
    "hash": "b320758b5be58fae"
   },
-  "INTC": {
+  "AAPL": {
    "stance": "mixed",
-   "brief": "Coverage of Intel is split between bullish turnaround and rebound notes (Wedbush on a possible Microsoft AI chip win, improving server demand, lower-cost ownership path) and bearish takes (stock down sharply this year, new layoffs, 'Sell Intel' guidance and downsizing calls, Nvidia warning to AMD and Intel holders). Sentiment is mixed overall, with several high-tone-score headlines that partially contradict the cautious analyst views.",
+   "brief": "Coverage of Apple is mixed: several bullish pieces on its \"capital-light\" AI approach, a $5 trillion valuation, and reports of an in-house AI agent, offset by downgrade concerns, criticism that Apple is slow on AI, a lawsuit in India, and a Micron supply-tightness mention. Sentiment is generally modestly positive on balance, with the AI agent story the most-cited catalyst.",
    "drivers": [
-    "Layoffs and downsizing actions tied to forward guidance concerns",
-    "Stock decline of roughly 42-62% cited across recent articles",
-    "Possible Microsoft AI chip win flagged by Wedbush"
+    "Reports Apple is building its own AI agent to rival OpenAI, Anthropic and Meta's Muse",
+    "Valuation headlines: Apple above $5 trillion, trading near Wall Street targets, 37x earnings",
+    "On-device AI push cited as a positive catalyst for Apple and edge AI suppliers"
    ],
-   "watch": "Whether Microsoft confirms an AI chip deal with Intel and whether server demand improvement shows up in upcoming guidance or layoff follow-through.",
+   "watch": "Whether Apple formally announces its AI agent and how it is priced or distributed, any further analyst downgrades or upgrades, and the outcome of the India lawsuit and DRAM supply terms.",
    "stories": 15,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:07",
-   "hash": "2ebb5f7513d47e82"
+   "writtenAt": "2026-11-22 02:24:23",
+   "hash": "c99c086d6889be28"
   },
-  "LLY": {
-   "stance": "positive",
-   "brief": "Recent coverage on Eli Lilly leans constructive, led by a Bank of America call for roughly 19% further upside and a Jefferies note carrying the Street's highest price target. Several pieces are neutral comparisons or ETF flow notices, and a few are mildly negative on valuation after ObesityWeek.",
+  "AMD": {
+   "stance": "negative",
+   "brief": "AMD coverage is sharply negative over the past two days, driven by a 7.7% plunge on a short-seller report questioning China firmware ties, a reported 31% decline from recent highs, and fears tied to Nvidia's China H200 policy and Anthropic's drop. Some pieces are more balanced, citing a 97% jump in data center sales and AMD's stake in Anthropic's IPO, and the tone is mixed on buy-the-dip arguments.",
    "drivers": [
-    "Bank of America sees another 19% upside (tone +0.87)",
-    "Jefferies holds Wall Street's highest price target on LLY",
-    "Post-ObesityWeek debate over whether the stock is still undervalued (tone -0.18)"
+    "Short-seller report questioning AMD's China firmware ties, triggering a 7.72% stock plunge",
+    "Reported drawdowns of roughly 26-31% from highs, with AMD described as crushed and out of favor",
+    "Nvidia's China H200 chip policy and approvals data weighing on the AI chip sector"
    ],
-   "watch": "Whether the stock holds near its high and whether valuation concerns after ObesityWeek start to outweigh the bullish analyst targets.",
+   "watch": "Whether the short-seller allegations on China firmware ties gain traction or get rebutted, Anthropic IPO timing and valuation, and any update on Nvidia's China H200 export policy.",
+   "stories": 15,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:27",
+   "hash": "9601a90226a7b86c"
+  },
+  "AMZN": {
+   "stance": "mixed",
+   "brief": "Amazon headlines are mixed: a sharp sell-off on Nov 20 tied to AI and mega-cap tech weakness, Bank of America doubling down on the stock, and a supply deal with Generac, offset by Cathie Wood and Dan Loeb trimming or exiting positions, concerns over Anthropic compute obligations, capex sustainability questions, and a NYC delivery bill that Amazon says could cost shoppers up to $664 a year per household.",
+   "drivers": [
+    "Stock slid Nov 20 on AI and mega-cap tech sell-off",
+    "Bank of America doubles down on Amazon ahead of 2027",
+    "Generac supply deal with Amazon after earnings beat"
+   ],
+   "watch": "Amazon's re:Invent conference starting Nov. 30 and whether AI capex returns and Anthropic revenue commitments hold up; also the fate of the NYC delivery bill.",
+   "stories": 15,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:29",
+   "hash": "6ca8d3a9c88057d0"
+  },
+  "AVGO": {
+   "stance": "negative",
+   "brief": "Broadcom faces a cluster of sharply negative headlines after a report that Google is cutting Broadcom-designed TPU AI chip plans, driving a roughly 12% share plunge and a Goldman target cut, partly offset by commentary on Broadcom's Anthropic backstop and upcoming Dec. 9 earnings.",
+   "drivers": [
+    "Report Google cut Broadcom-designed TPU plans and shifts toward MediaTek, hitting AI chip shipment outlook",
+    "Broadcom stock plunged about 12% on Nov. 20 after the Google report",
+    "Goldman Sachs cut its Broadcom price target to $460"
+   ],
+   "watch": "Broadcom's Dec. 9 earnings report and any official comment on Google TPU volumes or Anthropic exposure.",
+   "stories": 15,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:32",
+   "hash": "10e1f002eb1c8cd9"
+  },
+  "BA": {
+   "stance": "negative",
+   "brief": "Boeing headlines skew sharply negative: a 2,500-job cut is framed as raising troubling questions, the stock is reported down roughly 25-37% from its high, and its jet unit is described as overstaffed with execution pressure. A few items are neutral to mildly positive, citing director insider buying and valuation debate, but they do not offset the weight of the negative coverage.",
+   "drivers": [
+    "2,500 job cuts announced with unanswered questions (tone -0.96)",
+    "Stock down about 25% to 37% from its high (tone -0.90 and -0.96)",
+    "Jet unit described as overstaffed; execution pressure flagged (tone -0.69 and -0.96)"
+   ],
+   "watch": "Whether the job cuts are followed by evidence of improved jet production execution and cost control, and whether further insider buying or analyst upgrades emerge.",
    "stories": 10,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:09",
-   "hash": "6b7bddbe301e225a"
+   "writtenAt": "2026-11-22 02:24:34",
+   "hash": "d9afba7d664ca743"
+  },
+  "COST": {
+   "stance": "positive",
+   "brief": "Costco headlines are net positive, led by strong October U.S. comparable sales (+12.6%), a shares rally on sales and warehouse growth, and a $30 special dividend that pushed the stock to an all-time high. Offsetting this, a store closure decision and tech-outage-driven emergency buying coverage carry mild-to-negative tone, though the outage demand spike is largely a sales tailwind.",
+   "drivers": [
+    "U.S. comparable sales up 12.6% in October",
+    "Announced $30-per-share special dividend, twice the prior special payout",
+    "Stock hit an all-time high and rallied on sales and warehouse growth"
+   ],
+   "watch": "Ex-dividend and payment timing around Nov. 24 and Dec. 10, whether outage-driven demand boosts November sales, and any further store closure news.",
+   "stories": 11,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:36",
+   "hash": "037dd047930e2c4c"
+  },
+  "GOOGL": {
+   "stance": "mixed",
+   "brief": "Coverage of Alphabet is split: analysts flag AI spending and borrowing concerns, a 1-year low and a 3.46% drop after Anthropic's debut, and a Broadcom selloff tied to reported cuts to Google's AI chip plans. Offsetting this are a strong Morgan Stanley signal, a Gemini 4 product boost praised by Musk, Alphabet as a Nasdaq bright spot, and its valuable Anthropic stake.",
+   "drivers": [
+    "Concerns over heavy AI spending, debt borrowing, and monetization",
+    "Stock hit a 1-year low and fell 3.46% on Nov 20",
+    "Reported cut to Broadcom AI chip plans weighed on Broadcom and sentiment"
+   ],
+   "watch": "Whether Morgan Stanley's bullish call and Gemini momentum offset AI spending and debt worries, and any official confirmation of changes to Google's Broadcom AI chip plans.",
+   "stories": 15,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:38",
+   "hash": "f8bb086d31949c0b"
+  },
+  "INTC": {
+   "stance": "mixed",
+   "brief": "Coverage of Intel is split between turnaround optimism (buy-the-dip calls, Wedbush's possible Microsoft AI chip win, Intel's bounceback potential) and caution (sell calls on guidance and downsizing, a new round of layoffs, and a stock down sharply this year). Tone scores are mostly neutral to positive, but the negative items are heavier on news impact, with a Nvidia warning to Intel investors and renewed layoffs.",
+   "drivers": [
+    "Wedbush says Microsoft may give Intel a crucial AI chip win",
+    "Fresh Intel layoffs and downsizing actions",
+    "Analyst sell calls citing forward guidance and weak near-term recovery"
+   ],
+   "watch": "Whether Microsoft confirms an Intel AI chip order and whether Intel's next guidance update or further layoffs confirm the turnaround or deepen the sell-side caution.",
+   "stories": 15,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:41",
+   "hash": "10f770b5fad63ae6"
+  },
+  "JPM": {
+   "stance": "negative",
+   "brief": "JPMorgan coverage skews negative on Nov. 20, 2026, led by a cyberattack via an outside vendor that may have exposed customer emails, a CFO handover that pushed shares lower, and the JPMorgan boss warning that Labour's bank tax will have consequences. Offsetting positives include a forecast of about $290B in 2026 US IPO proceeds and a new Dallas fund-banking hub.",
+   "drivers": [
+    "Cyberattack via outside vendor exposing customer emails (JPMorgan, Visa, Mastercard)",
+    "CFO handover reshaping the Dimon leadership bench, with shares moving lower",
+    "Labour's proposed bank tax and the CEO's warning of consequences"
+   ],
+   "watch": "Scope and disclosure of the vendor cyberattack, any regulatory or customer fallout, the CFO succession timeline, and whether the UK bank tax proposal advances.",
+   "stories": 13,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:44",
+   "hash": "30ce4e68935c9772"
+  },
+  "LLY": {
+   "stance": "mixed",
+   "brief": "Coverage of Eli Lilly is largely neutral to modestly positive, led by a bullish Bank of America price target, though it is mostly commentary and fund-flow chatter rather than hard company news. One post notes an FDA warning on its next weight-loss drug that did not hurt the stock, and one piece on ObesityWeek questions whether shares are still undervalued, so sentiment is not uniformly upbeat.",
+   "drivers": [
+    "Bank of America sees roughly 19% further upside after the stock nears its high",
+    "Next weight-loss drug showed patients losing up to 54 pounds, though an FDA warning was issued",
+    "Institutional ETF selling (IYH, XLV) and net ETF outflows on Nov. 18"
+   ],
+   "watch": "Any FDA follow-up on the next-generation obesity drug and whether the Bank of America target gains support from new earnings or pipeline data, versus continued ETF outflows.",
+   "stories": 10,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:46",
+   "hash": "30cd86eeec8b7eb6"
   },
   "LMT": {
    "stance": "mixed",
-   "brief": "Recent LMT coverage is a blend of contract wins and backlog strength alongside generic investor-commentary pieces. Tone scores cluster near neutral, with one notably bullish dividend-yield piece and a slightly negative reaction story on the $292B backlog.",
+   "brief": "Headlines on Lockheed Martin are a mix of contract wins and backlog strength, offset by a sector sell-off after the midterms and an article steering investors toward a different defense name. Overall tone is roughly neutral with no single decisive catalyst.",
    "drivers": [
-    "$740M in missile-related awards this week, with GD and RTX also picking up contracts",
-    "Backlog reported at $292 billion, a sizable order cushion",
-    "Dividend yield of about 6% highlighted as attractive to income investors"
+    "$740M in new awards and missile contract activity across the defense sector",
+    "Backlog reported at $292 billion, viewed by some investors as a positive signal",
+    "Defense stocks fell after the midterms, weighing on sector sentiment"
    ],
-   "watch": "Whether the $292B backlog translates into revenue growth and whether further missile and defence awards keep flowing to LMT rather than peers.",
-   "stories": 5,
-   "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:11",
-   "hash": "afeb7039c1bbeb78"
-  },
-  "MA": {
-   "stance": "mixed",
-   "brief": "Mastercard headlines are mixed: a cyberattack on an outside vendor may have exposed customer emails, which is clearly negative, while a swipe fee ruling delay affecting peer Visa and a joining of an AI transparency initiative add ambiguity. Fund-buying stories are neutral filler.",
-   "drivers": [
-    "Cyberattack on outside vendor possibly exposing Mastercard customer emails (reported alongside JPMorgan and Visa, tone -0.79 and -0.91)",
-    "Swipe fee ruling delay affecting Visa, which may shape the broader card network regulatory outlook (tone -0.38)",
-    "Mastercard joining the AI Transparency Initiative (tone +0.06, modest positive)"
-   ],
-   "watch": "Whether the vendor breach expands to confirmed Mastercard customer data exposure, and any regulatory developments on swipe fees that could affect Mastercard alongside Visa.",
+   "watch": "Whether the $292B backlog translates into sustained contract awards and whether post-midterm defense sector weakness persists or reverses.",
    "stories": 6,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:13",
-   "hash": "c6ff05294e67286f"
+   "writtenAt": "2026-11-22 02:24:48",
+   "hash": "c61af47ed326dce9"
+  },
+  "MA": {
+   "stance": "negative",
+   "brief": "Recent Mastercard headlines are mostly negative, driven by reports that customer emails tied to JPMorgan, Visa and Mastercard may have been exposed in a cyberattack on an outside vendor. The two fund-buying stories are neutral and add little signal.",
+   "drivers": [
+    "Reports that Mastercard customer emails may have been exposed in a vendor-linked cyberattack (tone -0.79)",
+    "JPMorgan and Visa warnings about the same outside-vendor cyberattack (tone -0.91)",
+    "Two fund-holdings headlines with neutral tone (+0.03) that do not clearly concern Mastercard's fundamentals"
+   ],
+   "watch": "Whether Mastercard confirms the scope of the data exposure, any regulatory or customer response, and whether the vendor breach spreads to other card networks.",
+   "stories": 4,
+   "model": "claude-haiku-5-5",
+   "writtenAt": "2026-11-22 02:24:50",
+   "hash": "a27ad19a6c030b55"
   },
   "META": {
    "stance": "mixed",
-   "brief": "Headlines on Meta are a blend of institutional buying signals (Soros, Loeb, ETF accumulation) and ETF flows, offset by a sharp negative on Facebook trading below its IPO-era reference and questions about Meta's climate goals amid AI-driven emissions growth. Overall tone is mildly positive on average, but several items are commentary or fund-holding reports rather than company-specific fundamentals.",
+   "brief": "Headlines on Meta are a blend of institutional buying signals (13F-style fund stakes, ETF accumulation, billionaire investor positions) and a few cautionary items, including a stock-valuation piece calling shares discounted after a 76% five-year run and a note that Meta fell after a Soros stake increase. Tone scores are mostly near neutral, with the strongest negative item being an Anthropic IPO comparison that mentions Facebook trading below its IPO price.",
    "drivers": [
-    "Soros raised Meta stake by 596% but the stock subsequently fell",
-    "Meta reevaluating 2030 net zero goal as AI buildout raises emissions and strains clean energy supply",
-    "Meta AI emissions jump of 45% cited in climate goal rethink"
+    "Multiple fund and billionaire investors reported adding or highlighting Meta stakes, supporting sentiment",
+    "ETF flows are mixed, with JTEK and CGGR reportedly buying Meta while another headline reports ETFs as net sellers on the same day",
+    "Valuation debate: a piece says Meta looks discounted after a 76% five-year run that is cooling"
    ],
-   "watch": "Whether the post-Soros stock weakness persists and if ETF and billionaire buying continues, plus any official update on Meta's 2030 climate target and AI infrastructure energy costs.",
+   "watch": "Upcoming ETF and fund flow data for META, any revision to Meta's 2030 climate targets, and whether the Soros-stake pullback signals further selling by large institutions.",
    "stories": 15,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:16",
-   "hash": "f31a67fb82e0dd2c"
+   "writtenAt": "2026-11-22 02:24:53",
+   "hash": "d0c96b863e8c4034"
   },
   "MS": {
    "stance": "mixed",
-   "brief": "Headlines on Morgan Stanley are a blend of positive analyst signals and investment-banking fee strength (Anthropic IPO fees of about $113 million) alongside negative items such as its ending of Anthropic stock support and an accounting policy change. Much of the coverage is about Morgan Stanley's research calls on other companies rather than its own results, so the net read on MS itself is modest.",
+   "brief": "Headlines about Morgan Stanley are split: a strong Google signal and an upbeat Disney target are offset by an accounting policy change, a reported reversal on Anthropic stock support, and mixed reads on sector peers. Many items mention Morgan Stanley as an analyst rather than a subject, so the direct impact on MS itself is limited.",
    "drivers": [
-    "Anthropic IPO reportedly netted Morgan Stanley about $113 million in fees, a positive for its investment banking business",
-    "Morgan Stanley ending Anthropic stock support after one day is a negative headline",
-    "Accounting policy changes effective October 1, 2026 add some uncertainty about reporting"
+    "Accounting policy changes effective October 1, 2026 disclosed by Morgan Stanley",
+    "Reported ending of Anthropic stock support after one day",
+    "Analyst coverage actions (Google, Disney, Walmart, Coinbase) mostly reflect on those companies rather than MS"
    ],
-   "watch": "Whether the Anthropic IPO fee strength shows up in upcoming investment banking revenue, and any details on the accounting policy change that could affect reported earnings.",
-   "stories": 13,
+   "watch": "Details of the accounting policy change and any follow-up on the Anthropic stock support reversal, plus whether Goldman Sachs weakness spills over into bank peers.",
+   "stories": 7,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:18",
-   "hash": "77e11f57221b728e"
+   "writtenAt": "2026-11-22 02:24:55",
+   "hash": "a3cfa6c931cb55e8"
   },
   "MSFT": {
    "stance": "mixed",
-   "brief": "Headlines on Microsoft are mostly neutral to positive: dividend quality and capital strength are praised, and a fund's $1 billion bet on Microsoft as the safer AI stock is noted. Offsetting concerns include heavy AI capex and debt-paydown questions, plus a skeptical view of OpenAI's relative value that could weigh on Microsoft's AI partnership story.",
+   "brief": "Coverage of Microsoft is largely neutral-to-positive: dividend and capital strength pieces, a Danaher AI lab partnership, and fund buying headlines, offset by concerns about AI capex sustainability, debt paydown limits, and OpenAI-related risk. Sector-wide AI selloff headlines (Nvidia, AMD) add pressure on the AI complex.",
    "drivers": [
-    "Heavy AI capex and questions on how much more Microsoft can spend while paying down debt",
-    "Dividend and capital strength framing (positive tone around payout durability)",
-    "Cohen fund rotating about $1 billion into Microsoft as a safer AI stock"
+    "Microsoft cited as a dividend quality and capital strength play",
+    "Heavy AI capex questions, including how much more Microsoft can spend while paying down debt",
+    "Valuation debate over Microsoft and Amazon at 70x 2028 free cash flow"
    ],
-   "watch": "Any update on Microsoft's AI capex guidance versus free cash flow, and whether OpenAI or Anthropic valuation news shifts sentiment on its AI partnerships.",
+   "watch": "Microsoft capex guidance and free cash flow trajectory versus debt paydown, plus any further developments in OpenAI valuation and partnership terms.",
    "stories": 15,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:21",
-   "hash": "6e3f2b37ccc7381d"
+   "writtenAt": "2026-11-22 02:24:58",
+   "hash": "2168274f6e996f4c"
   },
   "NFLX": {
    "stance": "negative",
-   "brief": "Coverage on Netflix skews bearish: headlines cite a roughly 36-45% stock decline, repeated analyst downgrades, and a forecast that Netflix will blame GTA 6 for falling viewership. The most negative items carry tone scores near -0.9, while a few neutral pieces on volume and the 2030 World Cup offer little offset.",
+   "brief": "Netflix coverage skews negative, with an average tone near -0.40 across nine headlines. The stock is described as down about 36-45%, with Wall Street downgrades and viewership concerns. Some pieces are more constructive, including a Burry comment on valuation and a World Cup angle.",
    "drivers": [
-    "Stock reportedly down 36% with repeated Wall Street downgrades",
-    "Stock described as 45% below prior levels and possibly still above fair value",
-    "Prediction of falling viewership, with GTA 6 cited as a competing draw"
+    "Stock down roughly 36-45% from highs, with fair-value debate",
+    "Wall Street downgrades and contrarian buy case",
+    "Viewership concerns tied to GTA 6 competition (Galloway prediction)"
    ],
-   "watch": "Whether the GTA 6 launch-day competition shows up in Netflix viewing or engagement data, and whether analyst downgrades continue or stabilise.",
-   "stories": 8,
+   "watch": "Whether GTA 6 launch-period engagement data shows Netflix viewership pressure, and any further analyst rating changes or price-target cuts.",
+   "stories": 9,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:24",
-   "hash": "5a9620114b2a7097"
+   "writtenAt": "2026-11-22 02:25:01",
+   "hash": "cfdef4c1594b0a13"
   },
   "NVDA": {
    "stance": "negative",
-   "brief": "Coverage on Nvidia is dominated by CEO-transition uncertainty, a reported ~35% drawdown from its high, and warnings about AI chip commoditization, with TSMC sinking 20% in a week on Nvidia jitters and new US China chip curbs. A few headlines are neutral stock-pick pieces or mildly positive items about Huang's charity giving to CoreWeave.",
+   "brief": "Coverage of Nvidia is predominantly negative. Headlines describe a roughly 48% drawdown from its peak, an AI-linked selloff spreading into crypto, and a valuation near 15 times earnings. Jensen Huang's exit is framed as a loss, and one story warns of risks for AMD and Intel investors. A few pieces are neutral or mildly positive, including Trump's praise of Huang and a charity grant to CoreWeave.",
    "drivers": [
-    "Jensen Huang's exit as CEO and succession uncertainty",
-    "Nvidia stock reportedly down about 35% from its high",
-    "Warnings that AI chips could commoditize, threatening Nvidia's margins"
+    "Stock down about 48% from peak, with headlines citing a crash and a cheap valuation near 15x earnings",
+    "AI selloff spreading to bitcoin and crypto, with growth-stock pullback",
+    "Jensen Huang's departure as CEO, described as a tragedy by Trump and raising leadership-succession questions"
    ],
-   "watch": "Whether Nvidia names a successor and how the stock responds, plus any further US export restrictions on China and read-through to TSMC, AMD, and Intel.",
+   "watch": "Whether the selloff stabilises after the drawdown, how the market reacts to Huang's departure and the succession plan, and any signs of AI chip commoditization or demand changes that could shift sentiment.",
    "stories": 15,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:27",
-   "hash": "5c2d16bdbf87d9cc"
+   "writtenAt": "2026-11-22 02:25:05",
+   "hash": "a9460d039d3a35ed"
   },
   "PFE": {
    "stance": "mixed",
-   "brief": "Headlines on Pfizer are net positive in tone, driven by pipeline and licensing deals, growth in launched and acquired drugs, and a share price rebound as COVID revenue fades. A bearish counterpoint questions whether the dividend can be sustained beyond 2027.",
+   "brief": "Coverage of Pfizer is broadly upbeat, citing a 32% rise in launched and acquired drug sales in Q3, a roughly 20% share gain tied to a shrinking COVID revenue base, and new in vivo CAR T licensing deals. The main negative is a bearish piece questioning whether the dividend can be sustained beyond 2027. Many headlines are generic dividend or ranking articles with little new information.",
    "drivers": [
-    "Launched and acquired drugs reportedly grew 32% in Q3, supporting a turnaround narrative",
-    "Exclusive rights to in vivo CAR T autoimmune programs and a Starna licensing deal expand the pipeline",
-    "Shares reportedly rose about 20% as COVID revenue declined and the new portfolio gained attention"
+    "Launched and acquired drugs grew 32% in Q3, suggesting the product portfolio is offsetting COVID revenue decline",
+    "Exclusive rights to in vivo CAR T autoimmune programs and the Starna licensing deal expand the pipeline",
+    "Bearish analysis questions dividend sustainability beyond 2027"
    ],
-   "watch": "Q4 results and any dividend guidance beyond 2027, plus progress on the in vivo CAR T and oncology pipeline, particularly new licensing or acquisition announcements.",
-   "stories": 10,
+   "watch": "Whether management reaffirms or changes the dividend outlook beyond 2027, and whether launched and acquired product growth holds as COVID revenue keeps falling.",
+   "stories": 11,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:29",
-   "hash": "6c409017f87dc350"
+   "writtenAt": "2026-11-22 02:25:07",
+   "hash": "f746b51f1b05abd9"
   },
   "TSLA": {
    "stance": "mixed",
-   "brief": "Tesla headlines are mixed: positive product and expansion news (Cybercab expanding to Dallas, a $17B plant lifting construction starts, an HSBC upgrade) is offset by a sharp share selloff tied to an AI-sector sell-off and uncertainty over SpaceX merger talks, plus governance questions around Musk's stock awards requiring a shareholder vote.",
+   "brief": "Headline flow on Tesla is busy and mostly upbeat: FSD V15 rollout, Cybercab expansion to Dallas, and Musk's robotaxi claims, plus a strong three-year stock run. Offsetting this are valuation worries, a Cathie Wood warning about cyclical tech being slaughtered in a pullback, and mentions of Thiel's fund selling its entire Tesla stake. Net tone is modestly positive, with several items being general Musk or market commentary rather than hard company news.",
    "drivers": [
-    "Tesla shares fell 4-8% on 2026-11-20 amid an AI sell-off, despite an HSBC upgrade",
-    "SpaceX merger talks and a $359 target tied to them create uncertainty and shareholder-vote questions",
-    "Musk stock awards tied to the SpaceX merger still need Tesla shareholder approval"
+    "FSD V15 rolling out with wide release planned next month",
+    "Cybercab expanded to Dallas and Musk claims it covers about 90% of passenger miles",
+    "Stock up 47% over three years but described as richly priced"
    ],
-   "watch": "Whether the Tesla shareholder vote on the SpaceX merger and Musk stock awards is scheduled, the terms of any merger deal, and whether the AI sell-off continues to pressure Tesla shares.",
+   "watch": "Timing and reception of the FSD V15 wide release, Cybercab regulatory and rollout progress, and whether the broader tech pullback deepens and pressures high-valuation names.",
    "stories": 15,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:32",
-   "hash": "4cead80aa94fd590"
+   "writtenAt": "2026-11-22 02:25:10",
+   "hash": "b4d46580f2d16cb1"
   },
   "TSM": {
    "stance": "negative",
-   "brief": "TSMC faces a heavy news flow of selloffs, a worst-week-since-1990s Taiwan market slide, and new US export curbs on China that have led it to halt or tighten advanced chip shipments to Chinese designers. A few voices see the drop as overdone, and insider buying is noted, but the dominant tone is negative.",
+   "brief": "Headlines on TSMC are predominantly bearish, driven by a sharp drop in its shares over the past week, a worst-week-since-1990s selloff in Taiwan stocks, Nvidia leadership uncertainty, and new US export curbs on China that have prompted TSMC to tighten and pause advanced chip shipments to Chinese customers. A few mixed or positive items exist, including ETF accumulation and insider buying citing robust demand, but they are outweighed by the negative sentiment.",
    "drivers": [
-    "Sharp share price decline (about 20% in a week, 28% below high) tied to Nvidia leadership concerns and AI selloff spreading from Wall Street",
-    "New US export rules on China leading TSMC to halt or tighten advanced chip orders from Chinese designers",
-    "Taiwan and Asian markets posting worst weeks in decades, amplifying pressure on TSMC"
+    "US export controls on China prompting TSMC to restrict advanced chip shipments and Chinese AI chip production",
+    "Sharp share price decline (down roughly 20-28% from highs) and Taiwan's worst week since 1990-1991",
+    "Investor concern over Nvidia's AI leadership following Jensen Huang's exit, a key TSMC customer"
    ],
-   "watch": "Whether the US-China export restrictions broaden or ease, any further TSMC guidance on China-related revenue, and whether Nvidia's AI demand outlook stabilizes after the leadership-change concerns.",
-   "stories": 14,
+   "watch": "Whether US export rule enforcement and TSMC's China shipment restrictions materially dent revenue, and whether Nvidia's leadership transition alters AI chip order demand from TSMC.",
+   "stories": 11,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:34",
-   "hash": "9045dad9227c1bd3"
+   "writtenAt": "2026-11-22 02:25:13",
+   "hash": "39a8fd8e9989232e"
   },
   "UNH": {
    "stance": "mixed",
-   "brief": "UnitedHealth headlines are split: TD Cowen upgraded UNH to Buy and named it a 2027 best idea, with price-target and EPS-growth optimism, while UNH is also suing the government over Medicare Advantage star ratings and faces Washington's audit scrutiny that analysts flag as a drag.",
+   "brief": "UnitedHealth coverage is dominated by TD Cowen's upgrade to Buy and 2027 best-idea pick, citing improved earnings outlook and mid-to-high-teens EPS growth. Offsetting this are negative headlines about a lawsuit against the government over Medicare Advantage star ratings and a Washington audit plan that has pressured the shares.",
    "drivers": [
-    "TD Cowen upgrade to Buy and 2027 best-idea designation",
-    "Price target raise and projected mid-to-high-teens EPS growth",
-    "Lawsuit against government over Medicare Advantage Star Ratings"
+    "TD Cowen upgraded UNH to Buy and named it a 2027 best idea, citing improved earnings outlook and mid-to-high-teens EPS growth",
+    "Analyst price target raise and reports of the stock popping on the upgrade",
+    "UnitedHealth suing the government over Medicare Advantage Star Ratings"
    ],
-   "watch": "Whether the TD Cowen upgrade thesis holds as Medicare Advantage audit and star-rating disputes with CMS develop, and any formal CMS action or court ruling on the star-ratings lawsuit.",
+   "watch": "Whether the TD Cowen upgrade holds as the stock reacts, and any government audit or Medicare Advantage rule developments that could affect UnitedHealth's reimbursement outlook.",
    "stories": 15,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:36",
-   "hash": "b24e463b7a164a59"
+   "writtenAt": "2026-11-22 02:25:15",
+   "hash": "a7a6532306533a5f"
   },
   "WMT": {
    "stance": "mixed",
-   "brief": "Walmart headlines are split: Q3 results drew criticism for cooling profitability and a stock that has not rebounded, while sales growth, a 23% U.S. e-commerce jump, sub-30-minute delivery volume gains, a raised outlook, and a long dividend record offset some of that negativity.",
+   "brief": "Walmart coverage is split: Q3 headlines flag cooling profitability and a stock that has not bounced after weak earnings, while delivery volume growth, a growing dividend, and a CFO outlook for better years offer offsetting positives. Valuation debate is prominent, with several pieces calling the stock fully valued or expensive.",
    "drivers": [
-    "Q3 earnings: sales growth met but profitability cooled",
-    "Stock not rebounding after weak earnings and trading at a premium multiple",
-    "23% U.S. e-commerce jump and surging sub-30-minute delivery volume"
+    "Q3 results: sales growth met but profitability cooled",
+    "Stock not rebounding after weak earnings reaction",
+    "Sub-30-minute delivery volume surged in Q3"
    ],
-   "watch": "Whether margin pressure persists in the next quarter and if the stock re-rates on the raised outlook and e-commerce momentum.",
+   "watch": "Whether margin pressure persists in the next quarterly report and if the stock rebounds or stays weak versus its premium valuation.",
    "stories": 15,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:38",
-   "hash": "ffb9442ed2e5a9f7"
+   "writtenAt": "2026-11-22 02:25:17",
+   "hash": "3ddf55e5a2048155"
   },
   "XOM": {
-   "stance": "mixed",
-   "brief": "Recent XOM coverage is mostly neutral to positive on project approvals and contracts, including government approval of a revised Rovuma LNG plan and TechnipFMC work tied to Guyana's Longtail project. Offsetting that, the stock fell about 11% in a month as oil prices slid, and several items are routine fund-flow or dividend-screen pieces with little signal.",
+   "stance": "positive",
+   "brief": "Recent XOM coverage is mostly neutral market commentary, but the most material items are positive operational news: government approval for a revised Rovuma LNG plan and a TechnipFMC contract tie-up supporting Guyana Longtail development.",
    "drivers": [
     "Government approval for revised Rovuma LNG plan (tone +0.92)",
-    "TechnipFMC awards tied to Guyana Longtail project (tone +0.83)",
-    "Shares down roughly 11% in a month as oil slides (tone +0.70)"
+    "TechnipFMC awards deepening ties on Guyana Longtail project (tone +0.83)",
+    "ETF flow headlines show mixed institutional selling with minimal sentiment impact"
    ],
-   "watch": "Whether oil prices stabilise and whether the Rovuma LNG and Guyana Longtail project milestones translate into new contracts or production timelines.",
-   "stories": 8,
+   "watch": "Progress on Rovuma LNG and Guyana Longtail project milestones, plus any sustained ETF outflows from XOM.",
+   "stories": 6,
    "model": "claude-haiku-5-5",
-   "writtenAt": "2026-11-21 20:39:40",
-   "hash": "2e5949aa900e8b2c"
+   "writtenAt": "2026-11-22 02:25:19",
+   "hash": "7f50355e2e60bd3b"
   }
  },
  "scorecard": {
-  "right": 134,
-  "wrong": 79,
-  "flat": 12,
-  "early": 248,
-  "unscored": 129,
+  "right": 122,
+  "wrong": 62,
+  "flat": 10,
+  "early": 288,
+  "unscored": 118,
   "d1": {
-   "right": 134,
-   "wrong": 79,
-   "flat": 12,
-   "early": 248,
-   "unscored": 129
+   "right": 122,
+   "wrong": 62,
+   "flat": 10,
+   "early": 288,
+   "unscored": 118
   },
   "d5": {
    "right": 0,
    "wrong": 0,
    "flat": 0,
-   "early": 602,
+   "early": 600,
    "unscored": 0
   }
  },
@@ -3931,6 +3923,1169 @@
  },
  "stories": [
   {
+   "id": "76cc3b437903",
+   "source": "Yahoo",
+   "headline": "Should You Forget Nvidia and Buy These 2 AI Memory Stocks Instead?",
+   "summary": "Memory chips may be cyclical, but this cycle has a long way to go before wrapping up.",
+   "url": "https://finnhub.io/api/news?id=7cbf3b63c92f9946c3d9ccb258071e8ae2f13e1300a1a2ea99702e8ce531ded0",
+   "publishedAt": "2026-11-22T01:23:02+00:00",
+   "tone": -0.044,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ],
+   "impact": {
+    "summary": "A Motley Fool-style opinion piece suggests investors consider two AI memory stocks over Nvidia, arguing the memory chip cycle still has room to run. The named company is Nvidia, and the piece is speculative stock commentary rather than news about Nvidia's business. The memory stocks it promotes are not in the approved ticker list.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "NVDA",
+      "direction": "down",
+      "confidence": "low",
+      "reason": "The headline frames Nvidia as a stock to forget in favor of AI memory names, which could weigh on sentiment toward Nvidia if readers act on it, though the effect is likely negligible.",
+      "link": "direct",
+      "evidence": "Headline: 'Should You Forget Nvidia and Buy These 2 AI Memory Stocks Instead?' and the summary's focus on memory chips rather than Nvidia.",
+      "counter": "This is an opinion article with no new Nvidia fundamentals, and Nvidia's AI demand may continue to drive its shares regardless of commentary from memory-focused pieces.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "29b2bbf8ae7f",
+   "source": "Yahoo",
+   "headline": "Walmart (WMT) Stock May Be Fully Valued After Earnings News",
+   "summary": "Walmart has delivered a powerful long run for shareholders, and the latest burst of earnings news keeps attention squarely on whether the current share price is still backed by its profits. With the stock recently closing at US$127.95, the key issue for you is how that tag lines up with what the retailer is actually earning today. Over the past 5 years the share price has gained about 182.0%, which puts a lot of weight on the question of how much of that move is supported by the company’s...",
+   "url": "https://finnhub.io/api/news?id=8eae7f6b87e0e78664a889410a52e9b78e7f0c06a5d00339cf80f265e750e839",
+   "publishedAt": "2026-11-22T01:09:39+00:00",
+   "tone": 0.216,
+   "toneLabel": "neutral",
+   "tickers": [
+    "WMT"
+   ],
+   "impact": {
+    "summary": "The article discusses whether Walmart's share price near $127.95 is still supported by its earnings after a strong five-year run, raising valuation concerns. The story is company-specific to Walmart, with no clear read-through to other listed companies in the ticker list.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "WMT",
+      "direction": "mixed",
+      "confidence": "medium",
+      "reason": "The headline questions whether the share price is fully valued relative to earnings, which could weigh on sentiment, but the article offers no new fundamental data and the valuation debate is common after a strong run.",
+      "link": "direct",
+      "evidence": "Headline says Walmart stock may be fully valued after earnings news; summary notes the stock closed at US$127.95 and gained about 182% over five years.",
+      "counter": "Strong earnings momentum could justify the price, and valuation commentary of this kind often has little lasting effect on a large-cap retailer.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "fb6302ed34b4",
+   "source": "Yahoo",
+   "headline": "Nvidia Stock Has Crashed 48% and Now Trades at 15 Times Earnings, Its Cheapest in More Than a Decade and Cheaper Than Microsoft and Broadcom",
+   "summary": "Nvidia closed 48% below its record on Friday and trades at 15 times its last four quarters of earnings, the lowest since at least 2014 and less than Microsoft or Broadcom. Here is what that price assumes and why the market doubts the earnings.",
+   "url": "https://finnhub.io/api/news?id=c64373810cdf2091b46076551ddb6887e09a0b646da2e486f1e243f6fa52d3c4",
+   "publishedAt": "2026-11-22T00:47:00+00:00",
+   "tone": -0.946,
+   "toneLabel": "negative",
+   "tickers": [
+    "AVGO",
+    "MSFT",
+    "NVDA"
+   ],
+   "impact": {
+    "summary": "An analysis piece reports Nvidia shares closed 48% below their record, trading at about 15 times trailing four-quarter earnings, the cheapest since at least 2014 and below Microsoft and Broadcom. It frames the low multiple as pricing in doubt about the sustainability of earnings.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "NVDA",
+      "direction": "mixed",
+      "confidence": "medium",
+      "reason": "The article centers on Nvidia's steep drawdown and low valuation multiple, which could attract value buyers but also reflects market skepticism that earnings will hold up.",
+      "link": "direct",
+      "evidence": "Nvidia closed 48% below its record on Friday and trades at 15 times its last four quarters of earnings, the lowest since at least 2014.",
+      "counter": "A low multiple can persist or fall further if earnings estimates keep being cut, so the cheapness may be a value trap rather than a buying signal.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "AVGO",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "Broadcom is named as a valuation comparison point. Its relative multiple is higher than Nvidia's, which could affect how investors rank semiconductor peers, but no direct impact is reported.",
+      "link": "indirect",
+      "evidence": "Nvidia trades at 15 times earnings, less than Microsoft or Broadcom.",
+      "counter": "Broadcom's valuation is driven by its own fundamentals, and a peer's discount alone is a weak signal for its stock.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "MSFT",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "Microsoft is cited only as a valuation benchmark. Nvidia trading below it could shift some relative investor attention, but the article does not report any direct change to Microsoft's business or price.",
+      "link": "indirect",
+      "evidence": "Nvidia trades at 15 times earnings, less than Microsoft or Broadcom.",
+      "counter": "The comparison is a snapshot of multiples and does not imply any move in Microsoft's own shares.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "433c006895c6",
+   "source": "Yahoo",
+   "headline": "Trump Recalls Helping Elon Musk When He Was ‘In Big Trouble,’ Defends Nvidia’s Jensen Huang as One of America’s Rare 'Geniuses'",
+   "summary": "President Donald Trump defended former Nvidia Corp. CEO Jensen Huang amid a China chip scandal, invoking Elon Musk’s Space Exploration Technologies Corp. achievements and declaring that America must \"take care of our geniuses.\" Trump Defends Huang Amid China Scrutiny Speaking...",
+   "url": "https://finnhub.io/api/news?id=fcd335e8be8692d878a92ac67c7e80caa19d1ed28a90d291ea1c6a8c7ef5b028",
+   "publishedAt": "2026-11-22T00:30:10+00:00",
+   "tone": 0.083,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA",
+    "TSLA"
+   ],
+   "impact": {
+    "summary": "President Trump publicly defended Jensen Huang amid scrutiny over a China chip scandal, calling him one of America's rare 'geniuses' and referencing his past support for Elon Musk. The commentary is political and mostly reputational, with no concrete policy or financial change reported.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "NVDA",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "Presidential backing of Nvidia's leadership could ease some political pressure, but the China chip scandal scrutiny that prompted the defense remains unresolved.",
+      "link": "direct",
+      "evidence": "Headline says Trump 'defends Nvidia's Jensen Huang as One of America's Rare Geniuses'; summary says he defended Huang 'amid a China chip scandal' and said America must 'take care of our geniuses'.",
+      "counter": "Verbal support from the president has no regulatory or financial effect, and the China scrutiny could intensify regardless of Trump's comments. The summary also calls Huang 'former' CEO, which may be an error and should be verified.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "TSLA",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "The story references Trump's past help for Elon Musk, which is a political tie rather than a business event, so any stock impact is likely minimal and indirect.",
+      "link": "indirect",
+      "evidence": "Headline says Trump recalls 'Helping Elon Musk When He Was In Big Trouble'; summary mentions Musk's Space Exploration Technologies achievements, which concern SpaceX rather than Tesla.",
+      "counter": "The story does not mention Tesla operations, sales, or regulation, and the Musk reference relates to SpaceX, so Tesla is only loosely connected.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "587664c1b182",
+   "source": "Yahoo",
+   "headline": "The Ultimate Growth Stock to Buy With $1,000 Before the End of November",
+   "summary": "Amazon stock hasn't been this cheap in years.",
+   "url": "https://finnhub.io/api/news?id=d5add54b3e57539d14220d88d6871328d60cf4e09ad679b94c196cf389025a60",
+   "publishedAt": "2026-11-22T00:20:03+00:00",
+   "tone": 0.05,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMZN"
+   ],
+   "impact": {
+    "summary": "A promotional-style headline argues Amazon stock looks cheap and is a growth buy. It contains no concrete news event, earnings data, or policy change, so the signal is weak and the claim is opinion-based.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "AMZN",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "The article is an opinion piece claiming valuation is attractive, which could draw some buying interest, but it presents no new fundamental information that would move the stock.",
+      "link": "direct",
+      "evidence": "Summary states Amazon stock hasn't been this cheap in years; headline frames it as an ultimate growth stock to buy before end of November.",
+      "counter": "Valuation alone rarely moves a large-cap stock without a catalyst, and 'cheap' claims are often made after declines that reflect real concerns about growth or margins.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "9c0512fc90b2",
+   "source": "Yahoo",
+   "headline": "Alphabet (GOOGL) Stock Gets Fair Value Trim As Analysts Weigh AI Spending And Monetization",
+   "summary": "The fair value estimate for Alphabet has been trimmed from US$408.09 to US$397.13, signalling a modest reset in how analysts are framing the stock. This shift aligns with fresh research that weighs heavy AI spending in Search, Google Cloud and custom TPUs against questions about near term monetization, margins and capital intensity. As you read on, you will see how this evolving analyst narrative around Alphabet may shape what to watch next. Analyst Price Targets don't always capture the full...",
+   "url": "https://finnhub.io/api/news?id=09a67a217b3e3c3ffefc43440d94caad55d7ad51640fec3af177e472435b6025",
+   "publishedAt": "2026-11-22T00:12:09+00:00",
+   "tone": 0.562,
+   "toneLabel": "positive",
+   "tickers": [
+    "GOOGL"
+   ],
+   "impact": {
+    "summary": "Analysts trimmed Alphabet's fair value estimate from US$408.09 to US$397.13, a modest reset reflecting concerns over heavy AI spending, near-term monetization, margins and capital intensity. The story is a single-company analyst commentary with no broad market or sector catalyst, so the expected impact on GOOGL is limited and mildly negative, with low confidence given the piece is a valuation update rather than new company news.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "GOOGL",
+      "direction": "down",
+      "confidence": "low",
+      "reason": "The fair value trim signals analysts are more cautious on near-term returns from AI investment in Search, Cloud and TPUs, which could weigh on sentiment.",
+      "link": "direct",
+      "evidence": "Fair value estimate trimmed from US$408.09 to US$397.13 citing AI spending, monetization, margins and capital intensity concerns.",
+      "counter": "A roughly 3% trim is modest, the new estimate is still far above typical trading levels in many cases, and fair value revisions often have little lasting price effect.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "329c1dfdf1ca",
+   "source": "Yahoo",
+   "headline": "Nvidia Without Jensen Huang: 3 Things That Could Go Right and 3 That Could Go Wrong",
+   "summary": "Nvidia shares have sunk after longtime CEO Jensen Huang stepped down, but not all is lost.",
+   "url": "https://finnhub.io/api/news?id=dec9bd2e01523c295dd9f7e48f83f44fb2127089b26a13d6d95ebbf1e9b66844",
+   "publishedAt": "2026-11-22T00:01:01+00:00",
+   "tone": -0.046,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NVDA"
+   ],
+   "impact": {
+    "summary": "Nvidia shares fell after longtime CEO Jensen Huang stepped down, with analysis weighing potential upsides and risks for the company's outlook.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "NVDA",
+      "direction": "mixed",
+      "confidence": "medium",
+      "reason": "Leadership transition after the departure of the longtime CEO creates both potential upside (continuity, strategy execution) and downside (execution risk, investor uncertainty), and the shares have already sold off.",
+      "link": "direct",
+      "evidence": "Headline and summary state Nvidia shares have sunk after Jensen Huang stepped down, with an article outlining three positives and three negatives.",
+      "counter": "Huang may have groomed a strong successor and the selloff could be an overreaction, leading to a rebound; the article itself frames the situation as not all lost.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "6bbe402b3d9d",
+   "source": "Yahoo",
+   "headline": "Michael Burry Says He's Looking at Netflix Stock in the High $30s. I'd Consider It Now, Well Above That.",
+   "summary": "The famous investor is eyeing a price around a third lower. Is it worth waiting for?",
+   "url": "https://finnhub.io/api/news?id=833d6cf2ad69c489839b2188fcdc9df55d6a0495a403930486726da119063aaf",
+   "publishedAt": "2026-11-21T23:42:02+00:00",
+   "tone": 0.06,
+   "toneLabel": "neutral",
+   "tickers": [
+    "NFLX"
+   ],
+   "impact": {
+    "summary": "A Motley Fool-style opinion piece says Michael Burry is eyeing Netflix stock in the high $30s, about a third below its current price, and the author would buy at today's higher level. It is commentary about a hypothetical entry point rather than company news, so any price effect is speculative and likely small.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "NFLX",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "The article reports a famous investor's reported valuation target a third below the current price, which could weigh on sentiment if taken as a sign of overvaluation. The author's view that the stock is attractive at current levels points the other way. Neither reflects a change in Netflix's fundamentals.",
+      "link": "direct",
+      "evidence": "Headline and summary: Burry is reportedly looking at Netflix stock in the high $30s, and the author would consider buying well above that level, with the target about a third lower than the current price.",
+      "counter": "This is an opinion piece about a hypothetical buy price, not new information about Netflix's business, earnings, or guidance, so it is unlikely to move the stock in a sustained way.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "77e49897fea4",
+   "source": "Yahoo",
+   "headline": "AppLovin vs. Reddit: Which Technology Stock Is a Better Buy for 2027?",
+   "summary": "AppLovin is growing fast and is highly profitable, but its stock has been volatile. Reddit is profitable and still growing, but Google's AI search is sending it fewer visitors.",
+   "url": "https://finnhub.io/api/news?id=1f919bdef503726774b890bbd1d7912ac077608e8a29b240fe9a0c3e96002df1",
+   "publishedAt": "2026-11-21T23:39:26+00:00",
+   "tone": 0.055,
+   "toneLabel": "neutral",
+   "tickers": [
+    "GOOGL"
+   ],
+   "impact": {
+    "summary": "A comparison piece weighing AppLovin against Reddit as 2027 buys. It notes AppLovin's fast growth and high profitability alongside volatile stock, and Reddit's profitability and growth alongside traffic pressure from Google's AI search. Neither AppLovin nor Reddit is in the covered ticker list, so the only relevant link is Alphabet, which is named as the source of the traffic pressure.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "GOOGL",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "The article credits Google's AI search with reducing traffic to Reddit, which signals competitive strength in AI search. It is an opinion comparison of other stocks, so it offers little new information about Alphabet's financial outlook.",
+      "link": "indirect",
+      "evidence": "Reddit is profitable and still growing, but Google's AI search is sending it fewer visitors.",
+      "counter": "The article is a stock-comparison opinion piece, not news about Alphabet, and the traffic effect on Reddit does not necessarily translate into a measurable impact on Alphabet's earnings or share price.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "0cebcd8fb7f5",
+   "source": "Yahoo",
+   "headline": "Alphabet Stock Just Hit a 1-Year Low. Why Is Google's Parent Borrowing So Much Money?",
+   "summary": "Alphabet has added more than $78 billion of long-term debt this year, and it isn't done.",
+   "url": "https://finnhub.io/api/news?id=475fb3de7e6a4768ab2afc2f57b595b9700285ecf3198f5acc521129cedd61e4",
+   "publishedAt": "2026-11-21T23:20:48+00:00",
+   "tone": -0.627,
+   "toneLabel": "negative",
+   "tickers": [
+    "GOOGL"
+   ],
+   "impact": {
+    "summary": "Alphabet has hit a one-year low while borrowing heavily, adding over $78 billion of long-term debt this year with more possibly to come. The story centers on GOOGL's own financing and stock weakness, with limited direct read-through to other listed companies.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "GOOGL",
+      "direction": "down",
+      "confidence": "medium",
+      "reason": "Rapid debt accumulation of more than $78 billion alongside a one-year low in the stock signals investor concern about balance sheet strain or capital spending needs, which can pressure the share price.",
+      "link": "direct",
+      "evidence": "Headline states the stock hit a 1-year low and the summary says Alphabet added more than $78 billion of long-term debt this year and is not done borrowing.",
+      "counter": "Debt may be cheap and used for productive AI or buyback investments, and Alphabet's large cash flows could make the borrowing routine rather than alarming, so the stock could recover quickly.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "81941f34df1c",
+   "source": "Yahoo",
+   "headline": "Nvidia Falls 48% From Peak as AI Selloff Spreads to Bitcoin and Crypto",
+   "summary": "Nvidia (NASDAQ: $NVDA) plunged 14% on Friday and the Nasdaq Composite lost 5.3%, capping the index's worst week...",
+   "url": "https://finnhub.io/api/news?id=9805cc13b6778ae827f6992b1f2afa18ee0326c85da658309b9cfc264c3074cd",
+   "publishedAt": "2026-11-21T22:50:00+00:00",
+   "tone": -0.939,
+   "toneLabel": "negative",
+   "tickers": [
+    "NVDA"
+   ],
+   "impact": {
+    "summary": "Nvidia fell 14% on Friday and the Nasdaq Composite dropped 5.3%, its worst week, as an AI-driven selloff spread into bitcoin and crypto. The story frames Nvidia as down 48% from its peak.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "NVDA",
+      "direction": "down",
+      "confidence": "high",
+      "reason": "The headline and summary directly report a 14% single-day drop and a 48% decline from peak for Nvidia.",
+      "link": "direct",
+      "evidence": "Nvidia plunged 14% on Friday and is down 48% from its peak, per the headline and summary.",
+      "counter": "A sharp drawdown can be followed by a rebound if earnings or AI demand expectations hold up, and oversold conditions may attract buyers.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "COIN",
+      "direction": "down",
+      "confidence": "medium",
+      "reason": "The selloff reportedly spread to bitcoin and crypto, which would weigh on crypto-exposed Coinbase's trading volumes and token prices.",
+      "link": "indirect",
+      "evidence": "The headline says the AI selloff spread to Bitcoin and Crypto.",
+      "counter": "Crypto may be driven by its own catalysts, and Coinbase revenue can be less tied to price moves than to longer-term adoption.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "AMD",
+      "direction": "down",
+      "confidence": "low",
+      "reason": "AMD is a peer AI chip stock, so sentiment hitting Nvidia and the AI trade may pull it lower too.",
+      "link": "indirect",
+      "evidence": "Nvidia's plunge and the Nasdaq's worst week point to broad pressure on AI-linked semiconductor names.",
+      "counter": "AMD could diverge if investors rotate from Nvidia toward cheaper alternatives, or if its own AI demand stays strong.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "AVGO",
+      "direction": "down",
+      "confidence": "low",
+      "reason": "Broadcom sells AI networking and custom chips, so a broad AI selloff could hit its valuation and sentiment.",
+      "link": "indirect",
+      "evidence": "The article describes a broad AI selloff across tech, with the Nasdaq's worst week.",
+      "counter": "Broadcom's custom AI chip and software businesses may insulate it from the moves in Nvidia's shares.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "1b41390aef31",
+   "source": "Yahoo",
+   "headline": "Better High-Yield Dividend Stock: Pfizer vs. Amcor",
+   "summary": "Key TakeawaysPfizer and Amcor both yield 6%, and Amcor raised its quarterly dividend to $0. 66 a share on Nov.",
+   "url": "https://finnhub.io/api/news?id=a9428ca86e13c2636b0f898466a938f4c75b2f87eb7d6b38bddf1afb8616b6de",
+   "publishedAt": "2026-11-21T22:35:15+00:00",
+   "tone": 0.907,
+   "toneLabel": "positive",
+   "tickers": [
+    "PFE"
+   ],
+   "impact": {
+    "summary": "A Motley Fool-style comparison pitting Pfizer against Amcor as high-yield dividend stocks, noting both yield about 6% and Amcor recently raised its quarterly dividend. The story is a stock-selection opinion piece with no new Pfizer-specific corporate event, so any price impact is likely minimal.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "PFE",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "The article frames Pfizer as a high-yield income stock alongside Amcor, which could draw some income-focused interest, but it reports no new Pfizer fundamentals, dividend change, or company news.",
+      "link": "direct",
+      "evidence": "Headline and summary say Pfizer and Amcor both yield 6%, and Amcor raised its quarterly dividend to $0.66 a share; Pfizer is named as a subject of the comparison.",
+      "counter": "Pfizer's yield is already public and widely known, so the comparison likely adds little new information, and the stock's direction will depend on pipeline, earnings, and sector news rather than this article.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "ffebbfe26c18",
+   "source": "Yahoo",
+   "headline": "Defense Stocks Fell After the Midterms. Here’s the 1 Defense Name I’d Buy Anyway -- and Why It Isn’t Lockheed Martin.",
+   "summary": "RTX is positioned to do well regardless of the political climate.",
+   "url": "https://finnhub.io/api/news?id=7683076852048da1adfe4d8f7f9df6b7acca345f526f4e169a0b8f23f797c6ab",
+   "publishedAt": "2026-11-21T22:25:02+00:00",
+   "tone": -0.415,
+   "toneLabel": "neutral",
+   "tickers": [
+    "LMT"
+   ],
+   "impact": {
+    "summary": "An opinion piece says defense stocks fell after the midterm elections and recommends RTX as a defense pick that should do well regardless of the political climate, while steering readers away from Lockheed Martin.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "LMT",
+      "direction": "down",
+      "confidence": "medium",
+      "reason": "The article says defense stocks fell after the midterms and singles out Lockheed Martin as the defense name not to buy, which points to continued pressure on its shares.",
+      "link": "direct",
+      "evidence": "Headline: 'Defense Stocks Fell After the Midterms... and Why It Isn't Lockheed Martin.' Lockheed is the named company.",
+      "counter": "The piece is a single author's opinion, not new company data. Defense stocks often rebound, and the drop may already be priced in.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "RTX",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "RTX is the author's recommended defense buy and is described as positioned to do well regardless of politics, but the sector it belongs to also fell after the midterms.",
+      "link": "direct",
+      "evidence": "Summary: 'RTX is positioned to do well regardless of the political climate.' Headline says defense stocks fell after the midterms.",
+      "counter": "The recommendation is an opinion without stated financial figures. RTX may have fallen with the sector, and the thesis may not hold.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "ae0a11b7516f",
+   "source": "Reuters",
+   "headline": "Bahrain says Iranian attack hits industrial facility as air defences intercept attacks",
+   "summary": "Bahrain says Iranian attack hits industrial facility as air defences intercept attacks  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp?oc=5",
+   "publishedAt": "2026-11-21T21:24:10+00:00",
+   "tone": -0.888,
+   "toneLabel": "negative",
+   "tickers": [],
+   "impact": {
+    "summary": "Bahrain reports an Iranian attack hit an industrial facility while its air defences intercepted other incoming attacks. No companies are named. The main read-through is Gulf geopolitical escalation, which could lift oil prices and defence demand while pressuring airlines through fuel costs and airspace disruption.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "CVX",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Higher geopolitical risk premium in Gulf oil markets can support upstream energy earnings.",
+      "link": "indirect",
+      "evidence": "Iranian attack on Bahrain industrial infrastructure signals regional conflict risk.",
+      "counter": "Chevron's exposure to Gulf disruption is limited relative to its global portfolio, so the effect may be muted.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "XOM",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Escalating Iran-linked attacks in the Gulf raise supply-disruption risk and can lift crude prices, benefiting integrated oil producers.",
+      "link": "indirect",
+      "evidence": "Headline reports an Iranian attack on a Bahrain industrial facility, a Gulf energy-region escalation.",
+      "counter": "Attack may be contained with no lasting supply impact, and oil prices could stay flat or fall if the conflict does not spread to producing infrastructure.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "COP",
+      "direction": "up",
+      "confidence": "low",
+      "reason": "Oil price spikes from Middle East tensions typically benefit independent producers like ConocoPhillips.",
+      "link": "indirect",
+      "evidence": "Regional attacks raise crude price expectations.",
+      "counter": "Price moves may fade quickly if the incident is isolated.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "LMT",
+      "direction": "up",
+      "confidence": "low",
+      "reason": "Armed conflict involving Iran tends to boost demand expectations for missile defence and military systems.",
+      "link": "indirect",
+      "evidence": "Air defences intercepting attacks highlights demand for missile defence systems.",
+      "counter": "Defence stocks often react little to single incidents, and contract timing is slow.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "ebb3aace7188",
+   "source": "Yahoo",
+   "headline": "Stanley Druckenmiller, David Tepper and 45 Other Big Funds Sold Alphabet Last Quarter, While 31 Bought. Who’s Right?",
+   "summary": "Key TakeawaysOf the 460 big funds that have filed 13Fs for the quarter ended Sept. 30, 47 sold Alphabet and 31 bought, and 19 of the sellers added to Meta Platforms in the same quarter.",
+   "url": "https://finnhub.io/api/news?id=471ad896c8de03d8f06d8b73da37bd1ac2ff42bf7ecd1225dce12df79e506ed6",
+   "publishedAt": "2026-11-21T21:19:08+00:00",
+   "tone": 0.01,
+   "toneLabel": "neutral",
+   "tickers": [
+    "GOOGL",
+    "META"
+   ],
+   "impact": {
+    "summary": "A headline and summary report that 47 large funds sold Alphabet and 31 bought it in the quarter ended Sept. 30, with 19 of the sellers adding to Meta Platforms. The story is about fund positioning shifts rather than company fundamentals, so it implies mixed sentiment toward Alphabet and a possible rotation toward Meta.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "GOOGL",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "Net selling by large funds (47 sellers vs 31 buyers) signals cooling institutional sentiment, but the buyers offset it and the data reflects past positioning, not new company results.",
+      "link": "direct",
+      "evidence": "47 big funds sold Alphabet and 31 bought in the quarter ended Sept. 30, per 13F filings.",
+      "counter": "Fund 13F moves are backward-looking and often reflect portfolio rebalancing rather than a view on Alphabet's prospects; the buyers may be accumulating.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "META",
+      "direction": "up",
+      "confidence": "low",
+      "reason": "19 funds that sold Alphabet added to Meta in the same quarter, suggesting rotation of institutional capital toward Meta.",
+      "link": "direct",
+      "evidence": "19 of the sellers added to Meta Platforms in the same quarter.",
+      "counter": "The overlap of 19 funds is a small subset of the 460 filers, and the rotation may be unrelated to Meta-specific fundamentals or could reverse in later quarters.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "a7bb16d7f31c",
+   "source": "Yahoo",
+   "headline": "Cathie Wood, Brad Gerstner and 16 Other Big Funds Bought Tesla Last Quarter, While 15 Sold. Who’s Right?",
+   "summary": "Key TakeawaysOf the 460 big funds that have filed 13Fs for the quarter ended Sept. 30, 18 bought Tesla and 15 sold, with Brad Gerstner’s Altimeter Capital and Cathie Wood’s ARK Invest among the buyers.",
+   "url": "https://finnhub.io/api/news?id=981f1c99ba9e8420285d382574e4079ce34c3ff038a76fb5020b7fca4cf8c5b6",
+   "publishedAt": "2026-11-21T21:19:05+00:00",
+   "tone": 0.017,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSLA"
+   ],
+   "impact": {
+    "summary": "A news item reports that 18 large funds bought Tesla and 15 sold in the quarter ended Sept. 30, with Altimeter Capital and ARK Invest among the buyers. This is fund positioning data rather than a company-specific operational event, so the implied effect on TSLA stock is modest and uncertain.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "TSLA",
+      "direction": "mixed",
+      "confidence": "low",
+      "reason": "Net buying by a small number of high-profile funds could signal some institutional confidence, but the buyer and seller counts are nearly even and 13F data is backward-looking, reported after the quarter ended.",
+      "link": "direct",
+      "evidence": "Of the 460 big funds that filed 13Fs for the quarter ended Sept. 30, 18 bought Tesla and 15 sold, with Altimeter Capital and ARK Invest among the buyers.",
+      "counter": "Buyer and seller counts are nearly balanced, the data is stale by the time it is published, and fund flows into a single stock rarely move it meaningfully on their own.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "8d95578d858a",
+   "source": "Yahoo",
+   "headline": "Tesla (TSLA) Stock Looks Richly Priced After Its 47% Three Year Run",
+   "summary": "Tesla has been busy reshaping its business around robotaxis, humanoid robots and energy projects while the share price has swung sharply, and that leaves a basic question for you as an investor. Is the current US$345.82 price tag adequately backed by what the company is generating through its sales today? Over the past 3 years the stock has gained 46.9%, which puts a lot of weight on whether recent top line performance can carry that kind of market value. A planned €3b expansion of the...",
+   "url": "https://finnhub.io/api/news?id=adc21ddaf27645ba440741675c40ab3940758e76f205d6a92c601ed1d7690c52",
+   "publishedAt": "2026-11-21T21:08:54+00:00",
+   "tone": 0.893,
+   "toneLabel": "positive",
+   "tickers": [
+    "TSLA"
+   ],
+   "impact": {
+    "summary": "An article questions whether Tesla's US$345.82 share price, after a 46.9% three-year gain, is supported by current sales, while the company pursues robotaxis, humanoid robots and energy projects. The story is valuation-focused and concerns Tesla directly.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "TSLA",
+      "direction": "mixed",
+      "confidence": "medium",
+      "reason": "The article frames the stock as richly priced relative to current sales, which could weigh on sentiment, but the emphasis on robotaxi, robot and energy growth could also support the share price.",
+      "link": "direct",
+      "evidence": "Headline states Tesla stock looks richly priced after a 47% three-year run; summary questions whether the US$345.82 price is backed by current sales and notes a 46.9% three-year gain.",
+      "counter": "Valuation commentary from a single article rarely moves a stock on its own, and investors may focus on future growth initiatives instead of current sales.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "a936099ab988",
+   "source": "Yahoo",
+   "headline": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
+   "summary": "Tesla Full Self Driving version 15 rolled out to initial FSD users on Saturday. A wide release is planned for next month, CEO Elon Musk said.",
+   "url": "https://finnhub.io/api/news?id=4c3763653020f888f8f3d04dd324d38837277935ea4307044491371c4da7d748",
+   "publishedAt": "2026-11-21T20:46:52+00:00",
+   "tone": 0.336,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSLA"
+   ],
+   "impact": {
+    "summary": "Tesla's FSD V15 has begun rolling out to initial users, with a wide release planned for next month per CEO Elon Musk, who called it 'something special'. This is a direct product catalyst for Tesla, though the impact depends on execution and regulatory reception.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "TSLA",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Broader release of a major FSD upgrade could support expectations for autonomous driving revenue and software value, and reinforce Tesla's technology narrative.",
+      "link": "direct",
+      "evidence": "Tesla FSD version 15 rolled out to initial FSD users on Saturday, with a wide release planned for next month according to CEO Elon Musk.",
+      "counter": "Musk's timelines have often slipped, the announcement is largely promotional without independent performance data, and the market may already price in FSD progress; regulatory scrutiny of driver-assistance systems could also limit gains.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "f4f5c1973fbf",
+   "source": "SeekingAlpha",
+   "headline": "Intel's Turnaround Story Remains Firmly Intact, Buy The Panic",
+   "summary": "Analyst rates Intel a Buy: its turnaround remains intact, with a 0.50 forward PEG and forward P/E below 40x offering an accumulation opportunity.",
+   "url": "https://finnhub.io/api/news?id=40c4f80c381e4ed093d996f1ba25d8ad54b18c348ac3e7e055729fbd68a4339b",
+   "publishedAt": "2026-11-21T20:45:47+00:00",
+   "tone": 0.626,
+   "toneLabel": "positive",
+   "tickers": [
+    "INTC"
+   ],
+   "impact": {
+    "summary": "An analyst rates Intel a Buy, arguing its turnaround is intact and that its low forward PEG and forward P/E offer an accumulation opportunity after a selloff. The story is a single analyst opinion on one named company, Intel.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "INTC",
+      "direction": "up",
+      "confidence": "low",
+      "reason": "A Buy rating from an analyst, framed as a buy-the-dip opportunity, may support sentiment and demand for Intel shares.",
+      "link": "direct",
+      "evidence": "Headline says the turnaround remains intact and 'buy the panic'; summary cites a 0.50 forward PEG and forward P/E below 40x as an accumulation opportunity.",
+      "counter": "Single analyst opinion with no new company results or catalysts; a forward P/E below 40x is not cheap for a company with uncertain turnaround progress, and the stock may keep falling regardless of ratings.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "c41acab128ff",
+   "source": "Yahoo",
+   "headline": "Boeing's 2,500 job cuts come with a troubling unanswered question",
+   "summary": "Boeing managers and union representatives met, gave new details on job cuts, but left out crucial information.",
+   "url": "https://finnhub.io/api/news?id=deb0eca9953523446062558e7448ec3b9b35983c9a32bf7c93ac8218f92ae799",
+   "publishedAt": "2026-11-21T20:37:00+00:00",
+   "tone": -0.959,
+   "toneLabel": "negative",
+   "tickers": [
+    "BA"
+   ],
+   "impact": {
+    "summary": "Boeing's announced 2,500 job cuts are drawing scrutiny after management and union talks left key details unanswered. The story is primarily about Boeing itself, with limited read-through to peers.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "BA",
+      "direction": "mixed",
+      "confidence": "medium",
+      "reason": "Workforce reductions can lower costs and signal restructuring, but the unanswered questions and labor friction create uncertainty about execution and operational stability.",
+      "link": "direct",
+      "evidence": "Boeing managers and union representatives met and gave new details on 2,500 job cuts but left out crucial information.",
+      "counter": "Job cuts may be already priced in and could improve margins, and the missing details may prove minor or be disclosed soon.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "4ce8be64692f",
+   "source": "Yahoo",
+   "headline": "A $3.2 Billion Fund Just Bought These 3 Stocks",
+   "summary": "Key TakeawaysA $3. 2 billion fund opened new positions in Snowflake, TTM Technologies and Meta Platforms in the third quarter, its 13F shows.",
+   "url": "https://finnhub.io/api/news?id=6f03bbd8a0d582ff0e50482f498bfee6bba688253aa67db1f9704f14da48c723",
+   "publishedAt": "2026-11-21T19:52:12+00:00",
+   "tone": 0.032,
+   "toneLabel": "neutral",
+   "tickers": [
+    "META"
+   ],
+   "impact": {
+    "summary": "A $3.2 billion fund opened new positions in Snowflake, TTM Technologies and Meta Platforms in Q3, per its 13F filing. Only Meta is in the covered ticker list; the news is a fund position disclosure with modest signal for Meta.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "META",
+      "direction": "up",
+      "confidence": "low",
+      "reason": "A $3.2B fund initiating a new position in Meta may signal institutional interest and modest buying pressure.",
+      "link": "direct",
+      "evidence": "Headline and summary state the fund opened new positions in Snowflake, TTM Technologies and Meta Platforms in the third quarter per its 13F.",
+      "counter": "13F filings are backward-looking, reveal positions as of quarter-end, and a single small fund's stake is unlikely to move a mega-cap stock; the move may already be priced in.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "7192a8a83036",
+   "source": "Yahoo",
+   "headline": "Musk Says Cybercab “Covers About 90%” of Passenger Miles. Tesla’s Next Robotaxi Is a Wheel-Less Model Y",
+   "summary": "Key TakeawaysElon Musk said at the DealBook Summit that Tesla plans an autonomous Model Y with no steering wheel or pedals, built for groups of six or seven riders. Building robotaxis from Tesla’s most popular car could get it to volume faster than the two-seat Cybercab alone.",
+   "url": "https://finnhub.io/api/news?id=20d7d6208a7b588ebc3ac13a74fdcfd35e755d5db220b0275538cf1b5f0f2c7f",
+   "publishedAt": "2026-11-21T19:52:03+00:00",
+   "tone": 0.106,
+   "toneLabel": "neutral",
+   "tickers": [
+    "TSLA"
+   ],
+   "impact": {
+    "summary": "Elon Musk said at the DealBook Summit that Tesla plans a wheel-less, pedal-less autonomous Model Y for groups of six or seven riders, alongside the two-seat Cybercab, which he says covers about 90% of passenger miles. Building robotaxis on the best-selling Model Y could help Tesla reach volume faster, a potentially positive development for Tesla's autonomous ambitions.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "TSLA",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Plans for a driverless Model Y robotaxi built on Tesla's most popular vehicle could accelerate scaling of its robotaxi business and expand its addressable autonomous ride-hailing market.",
+      "link": "direct",
+      "evidence": "Musk said Tesla plans an autonomous Model Y with no steering wheel or pedals for groups of six or seven riders; the article says building robotaxis from its most popular car could reach volume faster than the Cybercab alone.",
+      "counter": "These are announced plans from a CEO at a conference, with no timeline or regulatory approval given; execution risk, safety scrutiny, and regulatory hurdles for wheel-less vehicles could delay or derail the benefit.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "515d134dba5d",
+   "source": "Yahoo",
+   "headline": "A $2.2 Billion Fund Just Bought These 3 Stocks",
+   "summary": "Key TakeawaysDiscovery Capital Management’s latest 13F shows its three biggest new or added positions in the third quarter were Amazon, Take-Two Interactive and First Solar. Analysts’ average targets sit 32% to 82% above the last close for all three.",
+   "url": "https://finnhub.io/api/news?id=31654f1b457ec7df642469eaa0b4995f599c0d84318bb612dec15a677065af52",
+   "publishedAt": "2026-11-21T19:35:35+00:00",
+   "tone": 0.032,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AMZN"
+   ],
+   "impact": {
+    "summary": "A $2.2 billion fund's 13F filing shows it added Amazon, Take-Two Interactive and First Solar as major positions in Q3, with analysts' average targets well above recent closes. Only Amazon (AMZN) is among the permitted tickers, so the effect is limited to that stock. A single fund's position change is a modest signal, and the price-target upside reflects analyst opinion rather than fundamental news.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "AMZN",
+      "direction": "up",
+      "confidence": "low",
+      "reason": "A $2.2B fund disclosed adding Amazon as one of its three biggest new or increased positions in Q3, which can signal institutional confidence and modest buying pressure.",
+      "link": "direct",
+      "evidence": "Discovery Capital Management's 13F shows Amazon among its three biggest new or added positions in the third quarter; analysts' average targets sit 32% to 82% above the last close for the three stocks.",
+      "counter": "13F filings are backward-looking, reveal only a snapshot of holdings, and a single fund's buying is small relative to Amazon's market capitalization; analyst targets are often overly optimistic.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "123cd843d4d4",
+   "source": "Yahoo",
+   "headline": "Cathie Wood Doubles Down On ‘Highest Conviction Names’ Nvidia, Tesla and AMD As Cyclical Tech Stocks Get ‘Slaughtered’ Amid Market Pullback",
+   "summary": "ARK Invest founder, CEO, and Chief Investment Officer Cathie Wood stated her firm used the recent market pullback to purchase shares of Nvidia Corp., Tesla Inc., and Advanced Micro Devices Inc., while noting that cyclical technology and memory stocks fell...",
+   "url": "https://finnhub.io/api/news?id=5bab88f4f2ec1f8bd767ca9c316eaebca8540c53c40e71d08b3a73a5c1d8694f",
+   "publishedAt": "2026-11-21T19:30:08+00:00",
+   "tone": -0.945,
+   "toneLabel": "negative",
+   "tickers": [
+    "AMD",
+    "NVDA",
+    "TSLA"
+   ],
+   "impact": {
+    "summary": "Cathie Wood's ARK Invest bought shares of Nvidia, Tesla and AMD during a market pullback, calling them her highest conviction names while cyclical tech and memory stocks sold off.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "AMD",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Buying by ARK during a sell-off in cyclical tech may support AMD's share price and investor sentiment.",
+      "link": "direct",
+      "evidence": "Wood said ARK bought Advanced Micro Devices shares during the pullback and listed it among highest conviction names.",
+      "counter": "AMD was hit by the same cyclical tech sell-off, and one fund's purchases may not offset broader selling pressure.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "NVDA",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "ARK Invest buying during a pullback signals institutional conviction and may attract other buyers, supporting the share price.",
+      "link": "direct",
+      "evidence": "Wood said her firm used the recent market pullback to purchase shares of Nvidia Corp. and called it a highest conviction name.",
+      "counter": "ARK's buying is a single fund's move and may have little effect on a heavily traded megacap; broader market selling could outweigh it.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "TSLA",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Fresh buying from a prominent investor during a dip can boost sentiment and support Tesla's shares.",
+      "link": "direct",
+      "evidence": "Wood said ARK used the pullback to buy Tesla Inc. and named it among her highest conviction names.",
+      "counter": "Tesla is highly volatile and sensitive to its own fundamentals, so this endorsement may not move the stock meaningfully.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
    "id": "8066312bb075",
    "source": "Yahoo",
    "headline": "Amazon tells NYC shoppers a Mamdani-backed delivery bill could cost them up to $664 a year per household",
@@ -4237,6 +5392,44 @@
       "link": "direct",
       "evidence": "Headline names Microsoft as the only big AI buyer paying down debt and asks how much more it can spend.",
       "counter": "Debt paydown and strong cash generation could let Microsoft keep funding AI buildout without strain, making the spending concern overstated.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "9db1bebe3818",
+   "source": "Yahoo",
+   "headline": "Eli Lilly’s Next Weight-Loss Drug Helped Patients Lose Up to 54 Pounds. Why the FDA’s New Warning Didn’t Hurt LLY Stock.",
+   "summary": "Eli Lilly's next weight-loss drug helped patients lose up to 54 pounds, and LLY stock shrugged off the FDA's new warning.",
+   "url": "https://finnhub.io/api/news?id=f94a7fb4a8fe5152c83b6e4d6d6a64896805e699ba3933c00c4389c1fac63ae9",
+   "publishedAt": "2026-11-21T18:30:03+00:00",
+   "tone": 0.083,
+   "toneLabel": "neutral",
+   "tickers": [
+    "LLY"
+   ],
+   "impact": {
+    "summary": "Eli Lilly's next weight-loss drug showed trial results of up to 54 pounds lost, and LLY stock was not hurt by a new FDA warning. The news is positive for Lilly's obesity drug pipeline and suggests investors are looking past the regulatory caution.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "LLY",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Strong weight-loss efficacy data for the next-generation obesity drug supports Lilly's pipeline and revenue outlook, and the stock held up despite the FDA warning.",
+      "link": "direct",
+      "evidence": "Headline and summary state the drug helped patients lose up to 54 pounds and that LLY stock shrugged off the FDA's new warning.",
+      "counter": "The FDA warning could lead to label restrictions or safety scrutiny later, and the headline alone does not give full trial details or market reaction size.",
       "check": {
        "status": "early",
        "from": "2026-11-20",
@@ -5285,7 +6478,7 @@
    "summary": "Key TakeawaysElon Musk said at the DealBook Summit that he shouldn’t receive Tesla stock awards just for merging Tesla with SpaceX. That eases a real dilution worry, since his 2025 pay package covers 423.",
    "url": "https://finnhub.io/api/news?id=a3ebd02f9652f834d3b9eb0fc344a93d49555ee102644c26648ad5580d9e8b19",
    "publishedAt": "2026-11-21T15:06:01+00:00",
-   "tone": -0.0,
+   "tone": 0.0,
    "toneLabel": "neutral",
    "tickers": [
     "TSLA"
@@ -5491,6 +6684,82 @@
       "link": "indirect",
       "evidence": "The headline reports Qatari-Iranian diplomatic talks in Tehran, a possible de-escalation signal in a major oil-producing region.",
       "counter": "Talks may produce no concrete outcome, and oil prices are driven far more by OPEC supply decisions and global demand than by diplomatic visits.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "e40f8519a13a",
+   "source": "Yahoo",
+   "headline": "TD Cowen Just Upgraded UnitedHealth Stock. Here’s Why.",
+   "summary": "UnitedHealth shares rally on a bullish TD Cowen research note. Here’s why analyst Ryan Langston named UNH stock as his top pick for 2027.",
+   "url": "https://finnhub.io/api/news?id=f1fe1b582d548024810bd007ab5c9aa326ae1446fda3b9845e496d0bfb5cf443",
+   "publishedAt": "2026-11-21T15:00:03+00:00",
+   "tone": 0.046,
+   "toneLabel": "neutral",
+   "tickers": [
+    "UNH"
+   ],
+   "impact": {
+    "summary": "A TD Cowen analyst upgraded UnitedHealth and named it a top pick for 2027, prompting a share rally. The news is directly about UNH, so the expected effect is positive for UNH with moderate confidence given the single-analyst source.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "UNH",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "A TD Cowen upgrade and top-pick designation for 2027 is a bullish analyst signal that drove a share rally.",
+      "link": "direct",
+      "evidence": "Headline states TD Cowen upgraded UnitedHealth stock; summary says shares rally on the bullish research note and UNH is named a top pick for 2027.",
+      "counter": "Analyst upgrades often produce short-lived gains, and a single firm's view may not change the longer-term outlook for managed care margins or regulatory pressure.",
+      "check": {
+       "status": "early",
+       "from": "2026-11-20",
+       "d1": {
+        "status": "early"
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "b4f947ccc9b6",
+   "source": "Yahoo",
+   "headline": "Apple Is Now Worth Over $5 Trillion Without Betting Big on AI Data Centers. AAPL Stock Now Trades Near Wall Street’s Targets.",
+   "summary": "Apple is worth more than $5 trillion after skipping the AI data-center spending race.",
+   "url": "https://finnhub.io/api/news?id=7e229d72216742b2e368b06ff6e0690f0755776d9f81cadfc663ee9ee269210c",
+   "publishedAt": "2026-11-21T15:00:03+00:00",
+   "tone": 0.406,
+   "toneLabel": "neutral",
+   "tickers": [
+    "AAPL"
+   ],
+   "impact": {
+    "summary": "Apple's market value has surpassed $5 trillion, and its stock is trading near Wall Street price targets, with the company having avoided heavy AI data-center spending.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "AAPL",
+      "direction": "mixed",
+      "confidence": "medium",
+      "reason": "The headline reports a record valuation milestone, but also notes the shares now trade near analyst targets, which may limit near-term upside; the lack of big AI data-center capex is framed as a positive for valuation.",
+      "link": "direct",
+      "evidence": "Apple is worth more than $5 trillion after skipping the AI data-center spending race, and AAPL stock now trades near Wall Street's targets.",
+      "counter": "Valuation milestones often reflect already-priced-in expectations, and investors may question whether Apple's avoidance of AI infrastructure spending leaves it behind in the AI race.",
       "check": {
        "status": "early",
        "from": "2026-11-20",
@@ -11646,6 +12915,22 @@
    }
   },
   {
+   "id": "d8218b4d467e",
+   "source": "Bloomberg",
+   "headline": "Bond has Robert Pattinson. Now comes the hard part",
+   "summary": "Bond's villains offer the clearest route to updating the franchise.",
+   "url": "https://www.bloomberg.com/opinion/articles/2026-11-16/bond-has-robert-pattinson-finding-the-right-villain-will-be-harder",
+   "publishedAt": "2026-11-20T21:00:00+00:00",
+   "tone": -0.07,
+   "toneLabel": "neutral",
+   "tickers": [],
+   "impact": {
+    "summary": "Headline and summary concern the James Bond film franchise casting and creative direction; no companies are named and the story has no clear link to any listed public company.",
+    "model": "claude-haiku-5-5",
+    "effects": []
+   }
+  },
+  {
    "id": "f0de7747c729",
    "source": "Yahoo",
    "headline": "Is Apple Stock Increasing Your Market Risk?",
@@ -11831,6 +13116,143 @@
       }
      }
     ]
+   }
+  },
+  {
+   "id": "27c6f3906b77",
+   "source": "Reuters",
+   "headline": "Oil gains on Iran war worries and short-covering ahead of Thanksgiving holiday",
+   "summary": "Oil gains on Iran war worries and short-covering ahead of Thanksgiving holiday  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPb3pQREZDSHE2RmNHdDdGdExDUXhYeWljc2VualVoQ09oQV90WnFQQlZkYW1rWnl5ODJ6N2haaVBDVUY4VmFvRmtLSlZKbU5kR1lHNklrUUR3X3JGc181OHZCUHpXalZFUllBZXVEczJPUUdZZUt1MmpsTEN0MkJGSDNCVHhoa25pZFBSb1lldS1US0VJNVNBWWN1U2VwQmd0WmlQR1RKWmgyS2lyUDVfNHdWeWhzaFhmZ1E?oc=5",
+   "publishedAt": "2026-11-20T20:45:32+00:00",
+   "tone": 0.116,
+   "toneLabel": "positive",
+   "tickers": [],
+   "impact": {
+    "summary": "Oil prices rose on Iran war concerns and short-covering ahead of the Thanksgiving holiday, which could support upstream energy producers while airlines may face higher fuel costs.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "COP",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "ConocoPhillips is a pure-play upstream producer with high sensitivity to crude price moves.",
+      "link": "indirect",
+      "evidence": "Headline states oil gains on Iran war worries and short-covering.",
+      "counter": "Short-lived price spikes often do not change production plans or valuations much.",
+      "check": {
+       "status": "right",
+       "from": "2026-11-19",
+       "to": "2026-11-20",
+       "days": 1,
+       "stock": 0.84,
+       "market": -3.64,
+       "excess": 4.48,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-20",
+        "excess": 4.48
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "CVX",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Chevron benefits from higher crude prices through upstream production revenue.",
+      "link": "indirect",
+      "evidence": "Headline states oil gains on Iran war worries and short-covering.",
+      "counter": "Chevron's hedging and refining exposure could dampen the net effect of higher crude.",
+      "check": {
+       "status": "right",
+       "from": "2026-11-19",
+       "to": "2026-11-20",
+       "days": 1,
+       "stock": 0.91,
+       "market": -3.64,
+       "excess": 4.55,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-20",
+        "excess": 4.55
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "XOM",
+      "direction": "up",
+      "confidence": "medium",
+      "reason": "Higher crude prices from geopolitical risk premium typically lift integrated oil majors' revenue and margins.",
+      "link": "indirect",
+      "evidence": "Headline states oil gains on Iran war worries and short-covering.",
+      "counter": "Oil gains driven by short-term positioning may reverse quickly if tensions ease, and the move may be too brief to affect earnings.",
+      "check": {
+       "status": "right",
+       "from": "2026-11-19",
+       "to": "2026-11-20",
+       "days": 1,
+       "stock": 0.67,
+       "market": -3.64,
+       "excess": 4.31,
+       "d1": {
+        "status": "right",
+        "to": "2026-11-20",
+        "excess": 4.31
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     },
+     {
+      "ticker": "DAL",
+      "direction": "down",
+      "confidence": "low",
+      "reason": "Airlines face higher jet fuel costs when crude prices rise, pressuring margins.",
+      "link": "indirect",
+      "evidence": "Headline states oil gains, and jet fuel generally tracks crude prices.",
+      "counter": "Airlines often hedge fuel and can pass costs to fares, and the move may be temporary.",
+      "check": {
+       "status": "flat",
+       "from": "2026-11-19",
+       "to": "2026-11-20",
+       "days": 1,
+       "stock": -3.8,
+       "market": -3.64,
+       "excess": -0.16,
+       "d1": {
+        "status": "flat",
+        "to": "2026-11-20",
+        "excess": -0.16
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "fb00213348c8",
+   "source": "Reuters",
+   "headline": "Trump's personalized diplomacy hits its limits with 3-way summit",
+   "summary": "Trump's personalized diplomacy hits its limits with 3-way summit  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdERQSHBUWVRvbktIZEo4ZDFTS2FKNzZjRUwzamQ5VjkwUE9RQl9KSkoxdmJ2QmNnT2tzNkdKc2dYNjNNQ2Q3RVNERlB3X1NOa3FUTU5XdmNocGtRdWdSSzIyelZhd3Mwc0JEd0t6dXhicEd4TVRPclNPcy1TTkQwcFE5OVV1WFBrUmNEcWFRenA0TGJYMDh2OWMtaV9PZmd1LXJWa0hUMWU1bE5JSjcwTw?oc=5",
+   "publishedAt": "2026-11-20T20:44:09+00:00",
+   "tone": 0.115,
+   "toneLabel": "neutral",
+   "tickers": [],
+   "impact": {
+    "summary": "Headline covers Trump's personalized diplomacy reaching limits at a three-way summit; no companies are named and the story is geopolitical, so any stock effects are speculative and indirect at best.",
+    "model": "claude-haiku-5-5",
+    "effects": []
    }
   },
   {
@@ -21191,6 +22613,22 @@
    }
   },
   {
+   "id": "e8475dd1c78a",
+   "source": "Reuters",
+   "headline": "India's infrastructure output rises 10.9% y/y in October in new series record",
+   "summary": "India's infrastructure output rises 10.9% y/y in October in new series record  Reuters",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcFpENFphT2tqZXc1MEFJczVLUHFkU1RSb01aUnJmN2UzbUNzeTdqNW1JWVFpejdiMUxpeWNhTEZPejdaSTYtaWdKYnpTYmR1Z2t5M0VhVFRmNHl6MF8tN3ZOY19oWnVMYXRWTTNVUDlzQnhPVEV4dVhtd0xueUNiN203N0tjS0NMckE2UWFxNUhHRERvc2FmR1pVZWpCdw?oc=5",
+   "publishedAt": "2026-11-20T12:00:48+00:00",
+   "tone": 0.912,
+   "toneLabel": "positive",
+   "tickers": [],
+   "impact": {
+    "summary": "India's infrastructure output rose 10.9% year-on-year in October, a record under a new series. No listed company is directly named, and none of the tickers in the approved universe has a clear, direct exposure to Indian infrastructure output, so no effects are linked.",
+    "model": "claude-haiku-5-5",
+    "effects": []
+   }
+  },
+  {
    "id": "139e9c8f20cb",
    "source": "Yahoo",
    "headline": "GTA 6 vs. Sam Bankman-Fried: Netflix Drops FTX Series on Same Day as Take-Two’s Blockbuster Launch",
@@ -21214,49 +22652,6 @@
       "link": "direct",
       "evidence": "Headline states Netflix dropped its FTX series on the same day as Take-Two's GTA 6 launch, and the summary describes fans worldwide focused on the game.",
       "counter": "A single series launch has little effect on Netflix's subscriber base or revenue, the audiences for gaming and streaming overlap only partly, and the FTX topic may draw its own audience.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -2.96,
-       "market": -3.64,
-       "excess": 0.68,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 0.68
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "3db175524562",
-   "source": "CNBC",
-   "headline": "A24 is having a great year at the box office. That could give HBO Max a streaming edge",
-   "summary": "A24 films \"Backrooms,\" \"The Drama\" and the Elizabeth Holmes documentary, \"You Can See Everything,\" are fueling a banner year at the box office.",
-   "url": "https://www.cnbc.com/2026/11/20/a24-box-office-hbo-max.html",
-   "publishedAt": "2026-11-20T12:00:02+00:00",
-   "tone": 0.923,
-   "toneLabel": "positive",
-   "tickers": [],
-   "impact": {
-    "summary": "A24 films such as Backrooms, The Drama, and the Elizabeth Holmes documentary You Can See Everything are driving a strong box office year, which the headline suggests could give HBO Max a streaming advantage. A24 and HBO Max parent Warner Bros. Discovery are not in the covered ticker list, so any effect would reach listed companies only indirectly through streaming competition.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "NFLX",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "If A24's box office success makes HBO Max a stronger streaming competitor, Netflix could face more subscriber and engagement pressure in premium film and series content.",
-      "link": "indirect",
-      "evidence": "The headline links A24's box office strength to a possible streaming edge for HBO Max, a rival to Netflix in US subscription streaming.",
-      "counter": "The article only speculates about an HBO Max advantage, and box office hits do not necessarily translate into streaming subscriptions or viewing share. Netflix's scale and content slate may be unaffected.",
       "check": {
        "status": "wrong",
        "from": "2026-11-19",
@@ -21338,6 +22733,49 @@
         "status": "wrong",
         "to": "2026-11-20",
         "excess": 5.16
+       },
+       "d5": {
+        "status": "early"
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "3db175524562",
+   "source": "CNBC",
+   "headline": "A24 is having a great year at the box office. That could give HBO Max a streaming edge",
+   "summary": "A24 films \"Backrooms,\" \"The Drama\" and the Elizabeth Holmes documentary, \"You Can See Everything,\" are fueling a banner year at the box office.",
+   "url": "https://www.cnbc.com/2026/11/20/a24-box-office-hbo-max.html",
+   "publishedAt": "2026-11-20T12:00:02+00:00",
+   "tone": 0.923,
+   "toneLabel": "positive",
+   "tickers": [],
+   "impact": {
+    "summary": "A24 films such as Backrooms, The Drama, and the Elizabeth Holmes documentary You Can See Everything are driving a strong box office year, which the headline suggests could give HBO Max a streaming advantage. A24 and HBO Max parent Warner Bros. Discovery are not in the covered ticker list, so any effect would reach listed companies only indirectly through streaming competition.",
+    "model": "claude-haiku-5-5",
+    "effects": [
+     {
+      "ticker": "NFLX",
+      "direction": "down",
+      "confidence": "low",
+      "reason": "If A24's box office success makes HBO Max a stronger streaming competitor, Netflix could face more subscriber and engagement pressure in premium film and series content.",
+      "link": "indirect",
+      "evidence": "The headline links A24's box office strength to a possible streaming edge for HBO Max, a rival to Netflix in US subscription streaming.",
+      "counter": "The article only speculates about an HBO Max advantage, and box office hits do not necessarily translate into streaming subscriptions or viewing share. Netflix's scale and content slate may be unaffected.",
+      "check": {
+       "status": "wrong",
+       "from": "2026-11-19",
+       "to": "2026-11-20",
+       "days": 1,
+       "stock": -2.96,
+       "market": -3.64,
+       "excess": 0.68,
+       "d1": {
+        "status": "wrong",
+        "to": "2026-11-20",
+        "excess": 0.68
        },
        "d5": {
         "status": "early"
@@ -23625,1789 +25063,6 @@
         "status": "unscored",
         "to": "2026-11-20",
         "excess": -4.0
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "bd152b7ff086",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of JPMorgan Chase (JPM) on Nov. 18",
-   "summary": "ETFs sold a net $151.2 million of JPMorgan Chase on Wednesday, Nov. 18.",
-   "url": "https://finnhub.io/api/news?id=3c153255091cc9c486077bbbddfa9eaeea59e64376b8f6c27c70cbfed3734358",
-   "publishedAt": "2026-11-20T11:03:00+00:00",
-   "tone": -0.005,
-   "toneLabel": "neutral",
-   "tickers": [
-    "JPM"
-   ],
-   "impact": {
-    "summary": "Headline reports that ETFs were net sellers of JPMorgan Chase (JPM) on Nov. 18, with a net outflow of $151.2 million. This is a flow-level signal about ETF positioning rather than company fundamentals, so any price impact is likely small and short-lived.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "JPM",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of about $151.2 million can add modest near-term selling pressure on JPM shares, though the amount is small relative to the stock's daily trading volume.",
-      "link": "direct",
-      "evidence": "ETFs sold a net $151.2 million of JPMorgan Chase on Wednesday, Nov. 18.",
-      "counter": "ETF flows often reflect index rebalancing, hedging, or creation/redemption activity rather than directional views, and the net outflow may be offset by other buyers, so no reliable price move is implied.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -3.03,
-       "market": -3.64,
-       "excess": 0.61,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 0.61
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "ca92973d2500",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Meta Platforms (META) on Wednesday",
-   "summary": "ETFs sold a net $163.8 million of Meta Platforms stock on Wednesday, Nov. 18.",
-   "url": "https://finnhub.io/api/news?id=7c7ce308b08d2633749aa8734f0657ab93e76bac929f23859e5877497b39923c",
-   "publishedAt": "2026-11-20T11:02:54+00:00",
-   "tone": 0.007,
-   "toneLabel": "neutral",
-   "tickers": [
-    "META"
-   ],
-   "impact": {
-    "summary": "ETFs were net sellers of Meta Platforms (META) stock to the tune of $163.8 million on Wednesday, Nov. 18, a modest outflow that signals some institutional selling pressure on the stock.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "META",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of about $163.8 million signals near-term institutional selling pressure on Meta shares.",
-      "link": "direct",
-      "evidence": "ETFs sold a net $163.8 million of Meta Platforms stock on Wednesday, Nov. 18.",
-      "counter": "The amount is small relative to Meta's daily trading volume and market capitalization, and ETF flows often reflect index rebalancing, hedging, or creation/redemption mechanics rather than a directional view on the company.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -5.93,
-       "market": -3.64,
-       "excess": -2.29,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -2.29
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "3fe60403b921",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Broadcom (AVGO) on Nov. 18",
-   "summary": "ETFs sold a net $188.4 million of Broadcom (AVGO) on Nov. 18.",
-   "url": "https://finnhub.io/api/news?id=7e6ca5e647a26c03427ce9fb7ab8ffaf91ea91471a7fe289fdbd578ca02eb828",
-   "publishedAt": "2026-11-20T11:02:50+00:00",
-   "tone": 0.008,
-   "toneLabel": "neutral",
-   "tickers": [
-    "AVGO"
-   ],
-   "impact": {
-    "summary": "ETFs were net sellers of Broadcom (AVGO) to the tune of $188.4 million on Nov. 18, a flow signal that may weigh on the stock's near-term price.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "AVGO",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling adds institutional selling pressure on the shares, which can weigh on near-term price.",
-      "link": "direct",
-      "evidence": "ETFs sold a net $188.4 million of Broadcom (AVGO) on Nov. 18.",
-      "counter": "The amount is small relative to Broadcom's market capitalization and daily trading volume, and ETF flows often reflect index rebalancing or hedging rather than a view on the company, so the price impact may be negligible.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -12.19,
-       "market": -3.64,
-       "excess": -8.54,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -8.54
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "1ccc7f4caa66",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Chevron (CVX) on Nov. 18",
-   "summary": "ETFs sold $197.3 million of Chevron stock on Nov. 18.",
-   "url": "https://finnhub.io/api/news?id=b129752033a1d778c61d96031a975d78036fb1e0e2845a9ade3dee3fd403c0ef",
-   "publishedAt": "2026-11-20T11:02:44+00:00",
-   "tone": 0.005,
-   "toneLabel": "neutral",
-   "tickers": [
-    "CVX"
-   ],
-   "impact": {
-    "summary": "Headline reports that ETFs were net sellers of Chevron (CVX) stock on Nov. 18, with about $197.3 million in net selling. The story is a flow-data observation about Chevron itself, with no stated fundamental news.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "CVX",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of roughly $197.3 million can add short-term selling pressure on the stock, though the amount is small relative to Chevron's trading volume and market capitalization.",
-      "link": "direct",
-      "evidence": "ETFs sold $197.3 million of Chevron stock on Nov. 18.",
-      "counter": "Net ETF flows often reflect index rebalancing or creation/redemption mechanics rather than directional views, and the effect may be negligible or reversed quickly.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": 0.91,
-       "market": -3.64,
-       "excess": 4.55,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 4.55
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "4979f32b3600",
-   "source": "Yahoo",
-   "headline": "Tesla Stock Gets An HSBC Upgrade — But Analyst Says Strategic Logic Of TSLA-SPCX Merger Is ‘Limited’",
-   "summary": "Analyst Michael Tyndall raised Tesla’s rating to ‘Hold’ from ‘Reduce’ and increased its price target by 129% to $359, according to The Fly.",
-   "url": "https://finnhub.io/api/news?id=f74d791cc99b61d8a75517a232d5b8562a182c907170d5d4f6248b3007a0a33d",
-   "publishedAt": "2026-11-20T11:02:42+00:00",
-   "tone": -0.122,
-   "toneLabel": "negative",
-   "tickers": [
-    "TSLA"
-   ],
-   "impact": {
-    "summary": "HSBC analyst Michael Tyndall upgraded Tesla to Hold from Reduce and raised the price target 129% to $359, though he called the strategic logic of the TSLA-SPCX merger limited.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "TSLA",
-      "direction": "up",
-      "confidence": "medium",
-      "reason": "A rating upgrade from Reduce to Hold and a 129% price target increase signal improved analyst sentiment toward Tesla.",
-      "link": "direct",
-      "evidence": "Analyst Michael Tyndall raised Tesla's rating to 'Hold' from 'Reduce' and increased its price target by 129% to $359, according to The Fly.",
-      "counter": "The upgrade only reaches Hold, not Buy, and the analyst described the strategic logic of the TSLA-SPCX merger as limited, which could weigh on sentiment.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -7.64,
-       "market": -3.64,
-       "excess": -4.0,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -4.0
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "caef7e66029b",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Alphabet (GOOG) on Nov. 18",
-   "summary": "ETFs sold a net $215.5 million of Alphabet (GOOG) on Wednesday, Nov. 18.",
-   "url": "https://finnhub.io/api/news?id=625a80d7b238b8f897ace539315a39e4f33a497946330eeb91fb1e149079a9dd",
-   "publishedAt": "2026-11-20T11:02:31+00:00",
-   "tone": -0.002,
-   "toneLabel": "neutral",
-   "tickers": [
-    "GOOGL"
-   ],
-   "impact": {
-    "summary": "ETFs were net sellers of about $215.5 million of Alphabet (GOOG) on Wednesday, Nov. 18. This is a small flow signal for a mega-cap stock and is only weakly informative about fundamentals.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "GOOGL",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of Alphabet shares can add modest near-term selling pressure, and the headline is about the Alphabet share class GOOG, which maps to the GOOGL ticker in this list.",
-      "link": "direct",
-      "evidence": "ETFs sold a net $215.5 million of Alphabet (GOOG) on Wednesday, Nov. 18.",
-      "counter": "$215.5 million is small relative to Alphabet's market capitalization and daily trading volume, and ETF flows often reflect index rebalancing, hedging, or creation/redemption activity rather than a directional view on the company.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -2.7,
-       "market": -3.64,
-       "excess": 0.94,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 0.94
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "25a2ec2169fb",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Alphabet (GOOGL) on Nov. 18",
-   "summary": "ETFs sold a net $243.5 million of Alphabet (GOOGL) shares on Nov. 18.",
-   "url": "https://finnhub.io/api/news?id=77210c95891742276c76e20e86c296d807c0f399748de66d6c08fa4f53ddb3f8",
-   "publishedAt": "2026-11-20T11:02:28+00:00",
-   "tone": 0.006,
-   "toneLabel": "neutral",
-   "tickers": [
-    "GOOGL"
-   ],
-   "impact": {
-    "summary": "Headline reports that ETFs were net sellers of Alphabet (GOOGL) shares on Nov. 18, totaling a net $243.5 million in outflows. The story is about fund flows in a single Big Tech name, with no stated company-specific fundamental news.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "GOOGL",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of $243.5 million signals institutional or passive fund outflows, which can add modest near-term selling pressure on the stock.",
-      "link": "direct",
-      "evidence": "ETFs sold a net $243.5 million of Alphabet (GOOGL) shares on Nov. 18.",
-      "counter": "A $243.5 million net outflow is small relative to Alphabet's trading volume and market cap, and ETF flows often reflect rebalancing or creation/redemption mechanics rather than a directional view, so the price impact may be negligible.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -2.7,
-       "market": -3.64,
-       "excess": 0.94,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 0.94
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "116011da574d",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Eli Lilly (LLY) on Nov. 18",
-   "summary": "ETFs sold $252.2 million of Eli Lilly (LLY) on Wednesday, with 39 buying and 20 selling.",
-   "url": "https://finnhub.io/api/news?id=15dce13857c0eb539065beff434b5411c648f95bd2f3bc3c6399bdfd47ace1cf",
-   "publishedAt": "2026-11-20T11:02:21+00:00",
-   "tone": 0.009,
-   "toneLabel": "neutral",
-   "tickers": [
-    "LLY"
-   ],
-   "impact": {
-    "summary": "Headline reports net ETF selling of Eli Lilly (LLY) on Nov. 18: $252.2 million sold on Wednesday, with 39 ETFs buying and 20 selling. This is a flow/positioning signal about one stock, not a company-specific fundamental event, so the expected price impact is small and ambiguous.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "LLY",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of $252.2 million signals some near-term institutional outflow pressure on LLY shares.",
-      "link": "direct",
-      "evidence": "ETFs sold $252.2 million of Eli Lilly (LLY) on Wednesday, with 39 buying and 20 selling.",
-      "counter": "More ETFs were buying (39) than selling (20), and ETF flow data often reflects index rebalancing or creation/redemption activity rather than directional conviction, so the dollar outflow may not move the price.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -0.3,
-       "market": -3.64,
-       "excess": 3.34,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 3.34
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "11c3f7609b96",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of ExxonMobil (XOM) on Nov. 18",
-   "summary": "ETFs sold $305.7 million of ExxonMobil on Wednesday, Nov. 18, with 32 funds buying and 26 selling.",
-   "url": "https://finnhub.io/api/news?id=2e1ca7d1937af559c40ba9cb0f21e519e063bc448b967325745b417bb04e46cd",
-   "publishedAt": "2026-11-20T11:02:14+00:00",
-   "tone": 0.006,
-   "toneLabel": "neutral",
-   "tickers": [
-    "XOM"
-   ],
-   "impact": {
-    "summary": "Headline reports net ETF selling of Exxon Mobil (XOM) on Nov. 18: about $305.7 million sold, with 32 funds buying and 26 selling. This is a flow signal about XOM specifically; the article does not give a cause, so any price impact is uncertain.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "XOM",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF outflows of $305.7 million can add selling pressure to the stock, but the size is modest relative to Exxon's trading volume and the article gives no cause.",
-      "link": "direct",
-      "evidence": "ETFs sold $305.7 million of ExxonMobil on Wednesday, Nov. 18, with 32 funds buying and 26 selling.",
-      "counter": "Net selling by ETFs often reflects index rebalancing or creation/redemption mechanics rather than a bearish view, and 32 funds bought, so the flow may have little effect on price.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": 0.67,
-       "market": -3.64,
-       "excess": 4.31,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 4.31
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "67b67e3b1806",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Amazon (AMZN) on Nov. 18",
-   "summary": "ETFs sold a net $411.8 million of Amazon.com (AMZN) shares in Wednesday's session.",
-   "url": "https://finnhub.io/api/news?id=04c7bc53258eec89074e64352a9ed68467eeb080d855941906ee001029783279",
-   "publishedAt": "2026-11-20T11:02:09+00:00",
-   "tone": 0.012,
-   "toneLabel": "neutral",
-   "tickers": [
-    "AMZN"
-   ],
-   "impact": {
-    "summary": "Headline reports ETFs were net sellers of Amazon (AMZN) shares to the tune of $411.8 million in a single session. This is a flow-based data point about institutional/ETF positioning rather than a company-specific fundamental event, so the direct price implication is modest and uncertain.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "AMZN",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of about $411.8 million can add short-term selling pressure and signal reduced institutional demand for the stock.",
-      "link": "direct",
-      "evidence": "ETFs sold a net $411.8 million of Amazon.com (AMZN) shares in Wednesday's session.",
-      "counter": "ETF net flows often reflect index rebalancing, creation/redemption mechanics, or hedging rather than directional views, and the amount may be small relative to Amazon's daily trading volume, so the impact may be negligible.",
-      "check": {
-       "status": "flat",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -4.1,
-       "market": -3.64,
-       "excess": -0.46,
-       "d1": {
-        "status": "flat",
-        "to": "2026-11-20",
-        "excess": -0.46
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "b694f3fc90fd",
-   "source": "Yahoo",
-   "headline": "ETFs Are Net Sellers of Apple (AAPL) on Nov. 18",
-   "summary": "ETFs sold $866.5 million of Apple stock on Wednesday, with 45 funds buying and 28 selling.",
-   "url": "https://finnhub.io/api/news?id=488ef722d66452e94348e25b30251d814a4e6c157b1a6222addf8310ca47e0ce",
-   "publishedAt": "2026-11-20T11:01:53+00:00",
-   "tone": 0.01,
-   "toneLabel": "neutral",
-   "tickers": [
-    "AAPL"
-   ],
-   "impact": {
-    "summary": "Headline and summary report that ETFs were net sellers of Apple stock on Nov. 18, with about $866.5 million sold on Wednesday, 45 funds buying and 28 selling. This is flow data rather than company news, so the implied effect on Apple's share price is modest and uncertain.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "AAPL",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Net ETF selling of roughly $866.5 million can add short-term selling pressure on Apple shares, though the amount is small relative to Apple's market capitalization and daily trading volume.",
-      "link": "direct",
-      "evidence": "ETFs sold $866.5 million of Apple stock on Wednesday, with 45 funds buying and 28 selling.",
-      "counter": "Flow data often reflects routine index rebalancing or creation/redemption activity rather than a directional view, and the buyer count (45) suggests mixed positioning, so the net flow may have little price impact.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -1.9,
-       "market": -3.64,
-       "excess": 1.74,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 1.74
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "5da61c01061a",
-   "source": "Yahoo",
-   "headline": "When Nvidia Falls 30%, How Far Does AMD Fall?",
-   "summary": "Today's big story: Will 2027 Be A 2022 Repeat For Stocks.",
-   "url": "https://finnhub.io/api/news?id=9bf69ce1b2b7f0a7d524e1e952504bbcc7ffd0ed12d6c75eccd23eef7ac3ec21",
-   "publishedAt": "2026-11-20T11:01:10+00:00",
-   "tone": -0.287,
-   "toneLabel": "neutral",
-   "tickers": [
-    "AMD",
-    "NVDA"
-   ],
-   "impact": {
-    "summary": "The headline is a hypothetical scenario about a 30% Nvidia drop and how far AMD might fall as a result, set against a broader market-outlook story about whether 2027 could repeat 2022. It reports no actual price move, so the effects below are speculative sector-correlation reads.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "AMD",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "AMD is a fellow semiconductor name, and the headline asks how far it would fall if Nvidia drops 30%, implying correlated selling in AI-chip stocks.",
-      "link": "indirect",
-      "evidence": "Headline pairs AMD with Nvidia in a downside scenario; both are classified as Semiconductors and the summary raises a 2022-style broad stock selloff.",
-      "counter": "AMD could diverge from Nvidia if its own AI or CPU business is seen as more resilient, and the scenario itself is unconfirmed.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -13.25,
-       "market": -3.64,
-       "excess": -9.61,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -9.61
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "NVDA",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "The headline's premise is a 30% decline in Nvidia shares, which is the scenario being analyzed, so Nvidia is the directly named subject of a downside move.",
-      "link": "direct",
-      "evidence": "Headline names Nvidia and frames the story around it falling 30%; summary points to a broader 2022-style market downturn risk.",
-      "counter": "The article is speculative and no actual decline is reported, so Nvidia may not fall at all and could hold up on AI demand.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -14.01,
-       "market": -3.64,
-       "excess": -10.37,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -10.37
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "b30575ec88b2",
-   "source": "Yahoo",
-   "headline": "16 ETFs Add to Taiwan Semiconductor (TSM) on Wednesday",
-   "summary": "ETFs bought $74.5 million of Taiwan Semiconductor (TSM) shares on Wednesday, Nov. 18.",
-   "url": "https://finnhub.io/api/news?id=0a30f7b88b5365860d7d69fd52e30ada426fddfe535099a7eba03e802a726f02",
-   "publishedAt": "2026-11-20T11:01:00+00:00",
-   "tone": 0.272,
-   "toneLabel": "neutral",
-   "tickers": [
-    "TSM"
-   ],
-   "impact": {
-    "summary": "Sixteen ETFs collectively added Taiwan Semiconductor (TSM) shares on Wednesday, Nov. 18, with about $74.5 million in buying reported. This is a flow-based signal about fund positioning rather than company-specific news.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "TSM",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "Net ETF buying of about $74.5 million signals institutional demand for TSM shares, which can provide modest upward price pressure.",
-      "link": "direct",
-      "evidence": "ETFs bought $74.5 million of Taiwan Semiconductor (TSM) shares on Wednesday, Nov. 18, across 16 funds.",
-      "counter": "The amount is small relative to TSM's daily trading volume, and ETF flows often reflect index rebalancing or creation activity rather than a view on the company, so the price impact may be negligible.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -9.48,
-       "market": -3.64,
-       "excess": -5.84,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -5.84
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "38960f549f34",
-   "source": "CNBC",
-   "headline": "Anthropic defies the odds, holding record IPO despite ‘massively disruptive’ market",
-   "summary": "Anthropic faced a market selloff, raging anti-AI sentiment and a crisis at Nvidia in pulling off the largest IPO on record.",
-   "url": "https://www.cnbc.com/2026/11/20/anthropic-defies-odds-holding-ipo-despite-massively-disruptive-market.html",
-   "publishedAt": "2026-11-20T11:00:01+00:00",
-   "tone": 0.655,
-   "toneLabel": "positive",
-   "tickers": [
-    "NVDA"
-   ],
-   "impact": {
-    "summary": "Anthropic completed a record-setting IPO despite a market selloff, raging anti-AI sentiment, and a reported crisis at Nvidia. The story frames the offering as resilient, but the Nvidia problem is mentioned only briefly, so its nature and scale are unclear.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "NVDA",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "The summary cites a crisis at Nvidia during a market selloff and anti-AI sentiment, which would likely weigh on the stock's near-term sentiment.",
-      "link": "direct",
-      "evidence": "Summary: Anthropic faced a market selloff, raging anti-AI sentiment and a crisis at Nvidia in pulling off the largest IPO on record.",
-      "counter": "The Nvidia 'crisis' is undefined in the text, and a successful record AI IPO could signal strong investor appetite for AI, which may benefit Nvidia as a core AI chip supplier.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -14.01,
-       "market": -3.64,
-       "excess": -10.37,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -10.37
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "c8df536b5911",
-   "source": "Yahoo",
-   "headline": "Update: Market Chatter: TSMC Tightening Restrictions on Chinese Chip Designers in Response to New US Rules",
-   "summary": "(Updated with a response from a TSM spokesperson in the fifth paragraph and stock movement in the fi",
-   "url": "https://finnhub.io/api/news?id=b71fc1e62086be3b639f36e2d721fc1300aa6c61e7916273876336d7e73766d9",
-   "publishedAt": "2026-11-20T10:59:33+00:00",
-   "tone": -0.731,
-   "toneLabel": "negative",
-   "tickers": [
-    "TSM"
-   ],
-   "impact": {
-    "summary": "Headline reports TSMC is tightening restrictions on Chinese chip designers in response to new US rules, with an update citing a TSMC spokesperson response and stock movement. The summary is truncated, so the details of the restrictions and the size of the stock move are unclear.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "TSM",
-      "direction": "down",
-      "confidence": "medium",
-      "reason": "Tighter restrictions on Chinese chip design customers could reduce TSMC's addressable revenue from China and raise compliance costs.",
-      "link": "direct",
-      "evidence": "Headline says TSMC is tightening restrictions on Chinese chip designers in response to new US rules; update references a TSMC spokesperson response and stock movement.",
-      "counter": "The restrictions may be mainly compliance-driven and limited in scope, and TSMC may gain share from non-Chinese customers or benefit from clearer rules that reduce regulatory uncertainty.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -9.48,
-       "market": -3.64,
-       "excess": -5.84,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -5.84
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "NVDA",
-      "direction": "mixed",
-      "confidence": "low",
-      "reason": "Restrictions on Chinese chip designers could reduce Chinese competition for Nvidia in some segments, but could also reflect broader US export tightening that limits Nvidia's own China sales.",
-      "link": "indirect",
-      "evidence": "The story ties TSMC's restrictions to new US rules affecting Chinese chip designers; Nvidia is not named in the available text.",
-      "counter": "The effect depends on which US rules apply and whether they target Nvidia's products, which the truncated summary does not clarify.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -14.01,
-       "market": -3.64,
-       "excess": -10.37,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -10.37
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "42349faf7552",
-   "source": "Yahoo",
-   "headline": "David Tepper Just Sold All His AMD Shares",
-   "summary": "AMD Shares Climbed in Q3. Several Major Hedge Funds Were Selling",
-   "url": "https://finnhub.io/api/news?id=8fd71d2d1ab560d0197618aade21dba760aeb2c0895d4858cbff4225f754c1df",
-   "publishedAt": "2026-11-20T10:55:23+00:00",
-   "tone": 0.016,
-   "toneLabel": "neutral",
-   "tickers": [
-    "AMD"
-   ],
-   "impact": {
-    "summary": "Headline reports hedge fund manager David Tepper sold all his AMD shares, with several major hedge funds also selling after AMD shares climbed in Q3. This is a signal of institutional selling pressure on AMD.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "AMD",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Notable hedge fund exits and broader institutional selling can add near-term selling pressure on the stock, though a single fund's sale is a weak signal on its own.",
-      "link": "direct",
-      "evidence": "Headline states David Tepper sold all his AMD shares; summary says several major hedge funds were selling after AMD shares climbed in Q3.",
-      "counter": "Fund sales after a strong quarter often reflect profit-taking or portfolio rebalancing rather than a bearish view on fundamentals, and the sales may already be priced in.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -13.25,
-       "market": -3.64,
-       "excess": -9.61,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -9.61
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "b78a050f223e",
-   "source": "Yahoo",
-   "headline": "TSMC Tightens Restrictions on Chinese AI Chip Production Following New US Export Rules",
-   "summary": "Taiwan Semiconductor Manufacturing Company (NYSE:TSM) is introducing stricter manufacturing restrictions for Chinese semiconductor designers following changes to US export regulations, potentially limiting China’s ability to develop advanced artificial intelligence processors. According to Reuters, citing two people familiar with the matter, TSMC has suspended certain advanced chip manufacturing orders previously permitted under US regulations and is restricting affected Chinese customers to old",
-   "url": "https://finnhub.io/api/news?id=a6915af6a21180a90d7d04f7823c2803f45593ddb2715e8c83e0c479560a076c",
-   "publishedAt": "2026-11-20T10:47:05+00:00",
-   "tone": -0.153,
-   "toneLabel": "negative",
-   "tickers": [
-    "TSM"
-   ],
-   "impact": {
-    "summary": "TSMC is tightening manufacturing restrictions on Chinese AI chip designers after new US export rules, suspending certain advanced chip orders. The direct subject is TSMC itself; the news may reduce demand for advanced-node work from Chinese customers and reflects tighter US export controls that affect the broader semiconductor sector.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "TSM",
-      "direction": "mixed",
-      "confidence": "medium",
-      "reason": "TSMC is suspending certain advanced chip orders from Chinese customers, which removes some revenue from China but may be offset by stronger compliance-driven positioning and demand from non-restricted customers.",
-      "link": "direct",
-      "evidence": "TSMC has suspended certain advanced chip manufacturing orders previously permitted under US regulations and is restricting affected Chinese customers to older technology, per Reuters sources.",
-      "counter": "Chinese customer revenue may be a small share of TSMC sales, and non-China AI demand could dominate, leaving little net impact.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -9.48,
-       "market": -3.64,
-       "excess": -5.84,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -5.84
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "AMD",
-      "direction": "mixed",
-      "confidence": "low",
-      "reason": "Export restrictions on advanced AI chips for China could limit AMD's China sales, but reduced Chinese competition could help its market position.",
-      "link": "indirect",
-      "evidence": "Stricter US export rules are limiting China's access to advanced AI processor manufacturing.",
-      "counter": "AMD's China exposure is limited and the news only directly targets TSMC's Chinese customers.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -13.25,
-       "market": -3.64,
-       "excess": -9.61,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -9.61
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "INTC",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "If Chinese chip designers are restricted to older process technology, Western and other non-restricted foundry and chipmaker alternatives may gain relative position, though Intel's direct link is weak.",
-      "link": "indirect",
-      "evidence": "TSMC is restricting affected Chinese customers to older technology under new US export regulations.",
-      "counter": "Intel's foundry business is small and the story does not mention it, so the link is speculative.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -7.97,
-       "market": -3.64,
-       "excess": -4.33,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -4.33
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "NVDA",
-      "direction": "mixed",
-      "confidence": "low",
-      "reason": "Tighter US export rules and limits on Chinese AI chip production could constrain Nvidia's China-related sales, though it may also reduce competition from Chinese AI chip designers.",
-      "link": "indirect",
-      "evidence": "The story says the changes could limit China's ability to develop advanced AI processors following new US export regulations.",
-      "counter": "Nvidia's supply and demand are driven mainly by non-China hyperscalers, so the effect may be negligible.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -14.01,
-       "market": -3.64,
-       "excess": -10.37,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -10.37
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "04d5a146a8a7",
-   "source": "Yahoo",
-   "headline": "Coinbase Asks CFTC to Keep Crypto Contracts in Play Under Prediction Market Swap Rule",
-   "summary": "In a Nov. 18 comment letter, Coinbase urged regulators to keep the proposal’s sports, politics, culture and weather examples an open-ended list.",
-   "url": "https://finnhub.io/api/news?id=06a8bfecd545c67857110c2cee194a655bd0877b8093571b7faf53cb42e78e3f",
-   "publishedAt": "2026-11-20T10:30:53+00:00",
-   "tone": 0.055,
-   "toneLabel": "neutral",
-   "tickers": [
-    "COIN"
-   ],
-   "impact": {
-    "summary": "Coinbase submitted a comment letter to the CFTC urging that crypto-related contracts remain within the scope of a proposed prediction market swap rule, and that the list of covered event categories (sports, politics, culture, weather) stay open-ended. The story directly concerns Coinbase's regulatory position and business exposure.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "COIN",
-      "direction": "mixed",
-      "confidence": "medium",
-      "reason": "A broader regulatory scope that keeps crypto contracts in play could expand Coinbase's ability to offer event-based crypto derivatives, but an open-ended rule could also bring added compliance burdens and uncertainty.",
-      "link": "direct",
-      "evidence": "Coinbase's Nov. 18 comment letter urged the CFTC to keep crypto contracts within the proposed prediction market swap rule and to keep the list of examples open-ended.",
-      "counter": "The CFTC may narrow or reject Coinbase's requested scope, and a comment letter is advocacy rather than a finalized rule change, so any business impact is speculative and far off.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -6.34,
-       "market": -3.64,
-       "excess": -2.7,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -2.7
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "628e8154a189",
-   "source": "Reuters",
-   "headline": "UK-EU reset deal agreed, Downing Street says",
-   "summary": "UK-EU reset deal agreed, Downing Street says  Reuters",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMFZfOXJRS2RFTTlMenB0cXUxNG1mNnVFaThZUGVfM0J0cnY5ckZmRTZDbWZGVWtWSFBhR3lHMF9ZZWVMOHpOSFNMZjNROTc0Z3JFSkJzaUdXYVpQWmg2T1E5ckIyYk82bXpHUzUzTTRkc1dTX2hzYi12RHVVYUxPM0ExbDRNb29tcVhPdEJaZ3RrUQ?oc=5",
-   "publishedAt": "2026-11-20T10:30:27+00:00",
-   "tone": 0.835,
-   "toneLabel": "positive",
-   "tickers": [],
-   "impact": {
-    "summary": "Headline reports the UK and EU have agreed a reset deal, per Downing Street. No companies are named. The story concerns trade relations between the UK and EU, which could indirectly affect sectors with cross-border exposure such as autos and airlines, but the impact on specific listed tickers is speculative and the headline provides no details on terms.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "DAL",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "A reset could ease travel and aviation-related frictions between the UK and EU, potentially supporting transatlantic and European route demand for Delta.",
-      "link": "indirect",
-      "evidence": "Headline: UK-EU reset deal agreed, Downing Street says; no company named and no deal terms given. Aviation was not mentioned.",
-      "counter": "The headline does not mention aviation, and Delta's exposure to UK-EU routes is minor compared with its transatlantic network, so the link is weak.",
-      "check": {
-       "status": "flat",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -3.8,
-       "market": -3.64,
-       "excess": -0.16,
-       "d1": {
-        "status": "flat",
-        "to": "2026-11-20",
-        "excess": -0.16
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "F",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "A UK-EU reset could ease trade frictions and tariffs for automakers with European supply chains and cross-border sales, a possible modest benefit for Ford's European operations.",
-      "link": "indirect",
-      "evidence": "Headline: UK-EU reset deal agreed, Downing Street says; no company named and no deal terms given.",
-      "counter": "Deal terms are unknown and may not touch auto tariffs or rules of origin; Ford's European exposure is limited relative to its North American business, so the effect may be negligible.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -0.62,
-       "market": -3.64,
-       "excess": 3.02,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": 3.02
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "GM",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "Easier UK-EU trade rules could reduce cost and friction for automotive supply chains that cross the Channel, which may modestly help General Motors' Vauxhall-related and European-linked operations.",
-      "link": "indirect",
-      "evidence": "Headline: UK-EU reset deal agreed, Downing Street says; no company named and no deal terms given.",
-      "counter": "General Motors' European business is small and the deal's auto-specific provisions are unknown; any benefit may be immaterial to the stock.",
-      "check": {
-       "status": "flat",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -3.72,
-       "market": -3.64,
-       "excess": -0.08,
-       "d1": {
-        "status": "flat",
-        "to": "2026-11-20",
-        "excess": -0.08
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "UAL",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "Improved UK-EU travel and aviation arrangements could support demand on European routes, which United Airlines operates through its transatlantic network.",
-      "link": "indirect",
-      "evidence": "Headline: UK-EU reset deal agreed, Downing Street says; no company named and no deal terms given. Aviation was not mentioned.",
-      "counter": "No aviation terms are confirmed in the headline, and United's results are driven mainly by US domestic and broader transatlantic demand rather than UK-EU policy.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -4.26,
-       "market": -3.64,
-       "excess": -0.62,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -0.62
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "3b45436575e7",
-   "source": "Benzinga",
-   "headline": "Taiwan Stocks Just Had Their Worst Week Since 1990 — And The AI Trade Is Unwinding From The East",
-   "summary": "Taiwan&#39;s index had its worst week since 1990, as new U.S. export rules hit chips at 16nm. TSMC and the EWT ETF slid as the AI trade unwound.",
-   "url": "https://finnhub.io/api/news?id=3fcbe0f280254c62240ce04e290e65a8d5087719383ccb233d014bd4cd308a9f",
-   "publishedAt": "2026-11-20T10:23:09+00:00",
-   "tone": -0.925,
-   "toneLabel": "negative",
-   "tickers": [
-    "TSM"
-   ],
-   "impact": {
-    "summary": "Taiwan's stock index had its worst week since 1990 after new U.S. export rules targeting chips at 16nm and below hit the AI trade. TSMC, the company named in the story, slid along with the broader market.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "TSM",
-      "direction": "down",
-      "confidence": "high",
-      "reason": "TSMC is named directly as having slid during the sell-off, and new U.S. export rules on advanced chips weigh on its fabrication business and AI-related demand.",
-      "link": "direct",
-      "evidence": "The summary states TSMC and the EWT ETF slid as the AI trade unwound, after new U.S. export rules hit chips at 16nm.",
-      "counter": "Export restrictions could be partly priced in already after a sharp week-long drop, and TSMC may keep strong AI demand from customers outside the restricted categories, allowing a rebound.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -9.48,
-       "market": -3.64,
-       "excess": -5.84,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -5.84
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "2662c81dde19",
-   "source": "Yahoo",
-   "headline": "Why Is AMD Down 5% In Premarket Today?",
-   "summary": "AMD extended its slide for a second day after reports questioned its China business even though analysts see little merit in the allegations.",
-   "url": "https://finnhub.io/api/news?id=73b7e372a3e0474e0dd9bdb372b7455f56e05b0668ce6b055cf5fc5cdd9c5a73",
-   "publishedAt": "2026-11-20T10:22:33+00:00",
-   "tone": -0.944,
-   "toneLabel": "negative",
-   "tickers": [
-    "AMD"
-   ],
-   "impact": {
-    "summary": "AMD shares are falling premarket after reports questioned its China business, though analysts see little merit in the allegations. The story is directly about AMD, with possible spillover to other semiconductor names exposed to China.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "AMD",
-      "direction": "down",
-      "confidence": "medium",
-      "reason": "Premarket decline following reports questioning AMD's China business, extending a two-day slide.",
-      "link": "direct",
-      "evidence": "AMD extended its slide for a second day after reports questioned its China business.",
-      "counter": "Analysts see little merit in the allegations, so the selloff may reverse once the concerns are seen as overblown.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -13.25,
-       "market": -3.64,
-       "excess": -9.61,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -9.61
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "INTC",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "Semiconductor sentiment may weaken if China-related concerns spread to other chipmakers.",
-      "link": "indirect",
-      "evidence": "AMD is a semiconductor peer, and the report questions its China business.",
-      "counter": "Intel's China exposure and the allegations may be unrelated, so no read-through is guaranteed.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -7.97,
-       "market": -3.64,
-       "excess": -4.33,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -4.33
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "NVDA",
-      "direction": "down",
-      "confidence": "low",
-      "reason": "China-related scrutiny of AI chipmakers could weigh on sentiment across semiconductor peers with China exposure.",
-      "link": "indirect",
-      "evidence": "The story centers on AMD's China business, a sector-wide China risk theme.",
-      "counter": "No company other than AMD is named, and the allegations appear specific to AMD, so sympathy moves may be minimal.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -14.01,
-       "market": -3.64,
-       "excess": -10.37,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": -10.37
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "1728bfc3c32f",
-   "source": "Yahoo",
-   "headline": "Google Stock Is Back Near Its 2025 Bottom Valuation. Can It Rebound Again?",
-   "summary": "Google stock trades near 15 times earnings, close to its spring 2025 valuation low, as Alphabet’s AI spending climbs.",
-   "url": "https://finnhub.io/api/news?id=3a1a3ca9117a2f6c12ab83b886d0824beb44e5abd28ae72394d29f38e3f4e57c",
-   "publishedAt": "2026-11-20T10:14:07+00:00",
-   "tone": 0.253,
-   "toneLabel": "positive",
-   "tickers": [
-    "GOOGL"
-   ],
-   "impact": {
-    "summary": "Alphabet (GOOGL) shares are trading near about 15 times earnings, close to their spring 2025 valuation low, even as the company ramps up AI spending. The story frames this as a question of whether the stock can rebound, pointing to valuation compression amid heavy AI investment costs.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "GOOGL",
-      "direction": "mixed",
-      "confidence": "medium",
-      "reason": "The headline and summary say the stock sits near its spring 2025 valuation low at roughly 15x earnings, which could attract value buyers, while rising AI spending pressures margins and near-term earnings, so the rebound question is open.",
-      "link": "direct",
-      "evidence": "Google stock trades near 15 times earnings, close to its spring 2025 valuation low, as Alphabet's AI spending climbs.",
-      "counter": "Cheap valuations can stay depressed if AI capex keeps weighing on profits, and the article gives no evidence of a catalyst that would drive a rebound.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -2.7,
-       "market": -3.64,
-       "excess": 0.94,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": 0.94
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "5bbcf841454a",
-   "source": "Yahoo",
-   "headline": "A SpaceX-Tesla Merger Needs \"Yes\" From 50% of All Tesla Shares, Not Just Votes Cast. Here's Why That Math Is Harder Than Wall Street Thinks.",
-   "summary": "Musk wants to merge SpaceX and Tesla, but the voting math is tougher than it looks.",
-   "url": "https://finnhub.io/api/news?id=5ec699bb5095314fe9070826d5545f8434c530d6b486ceb49aff3440ae1431c4",
-   "publishedAt": "2026-11-20T10:04:00+00:00",
-   "tone": -0.051,
-   "toneLabel": "neutral",
-   "tickers": [
-    "TSLA"
-   ],
-   "impact": {
-    "summary": "Coverage says a SpaceX-Tesla merger would need approval from 50% of all Tesla shares outstanding, not just a majority of votes cast, which makes the vote harder to pass than markets assume. The story concerns a possible deal and its approval hurdle, not a finalized transaction.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "TSLA",
-      "direction": "mixed",
-      "confidence": "medium",
-      "reason": "A requirement for 50% of all outstanding shares, rather than votes cast, raises the bar for approving the merger, which could weigh on sentiment if investors expected an easy path. The deal itself could also be seen as strategically positive or dilutive depending on terms, so the net effect on the stock is unclear.",
-      "link": "direct",
-      "evidence": "Headline: A SpaceX-Tesla Merger Needs \"Yes\" From 50% of All Tesla Shares, Not Just Votes Cast. Summary: Musk wants to merge SpaceX and Tesla, but the voting math is tougher than it looks.",
-      "counter": "Markets may already price in the approval hurdle, and a merger that is seen as value-accretive could lift Tesla shares regardless of the voting math. Any stock reaction may also be driven by broader market moves rather than this story.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -7.64,
-       "market": -3.64,
-       "excess": -4.0,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -4.0
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "69a290b790c9",
-   "source": "Yahoo",
-   "headline": "Chevron or Mondelez: I Can Only Pick One Dividend Stock for the Next 20 Years. Here’s Mine",
-   "summary": "Key TakeawaysChevron (CVX:NYSE) yields 3. 4% and Mondelez International (MDLZ:NASDAQ) yields 3.",
-   "url": "https://finnhub.io/api/news?id=f0e55add63b470dffae44cad65e5f06a7cf490fb726fa2600c61193449820c94",
-   "publishedAt": "2026-11-20T10:03:07+00:00",
-   "tone": 0.003,
-   "toneLabel": "neutral",
-   "tickers": [
-    "CVX"
-   ],
-   "impact": {
-    "summary": "This is a dividend-investing opinion piece comparing Chevron (CVX, yield about 3.4%) with Mondelez (MDLZ, not in the ticker list). It reports no new company event, earnings, or policy change, so it is unlikely to move CVX meaningfully.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "CVX",
-      "direction": "mixed",
-      "confidence": "low",
-      "reason": "The article is a generic stock-pick opinion about long-term dividend yield, with no new fundamental information about Chevron's operations, earnings, or payouts.",
-      "link": "direct",
-      "evidence": "Headline names Chevron as a candidate dividend stock, and the summary cites its roughly 3.4% yield alongside Mondelez's yield.",
-      "counter": "Opinion pieces can still draw income-focused investors toward CVX, which could support the shares modestly, but the effect is likely negligible and could reverse if investors favor Mondelez instead.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": 0.91,
-       "market": -3.64,
-       "excess": 4.55,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": 4.55
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "4704c0f98d4a",
-   "source": "Yahoo",
-   "headline": "TSMC Is 28% Below Its High. Another Director Just Bought $500,000 of Stock as Demand Stays “Extremely Robust”",
-   "summary": "Key TakeawaysTSMC director Ursula Burns bought 1,375 American depositary shares (ADSs) for $500,039 on Nov. 17.",
-   "url": "https://finnhub.io/api/news?id=48491b281a1ab46b3ea4f3bc21e198b9f9940b7e14a79c6784097efd93f13d74",
-   "publishedAt": "2026-11-20T09:50:51+00:00",
-   "tone": -0.897,
-   "toneLabel": "negative",
-   "tickers": [
-    "TSM"
-   ],
-   "impact": {
-    "summary": "TSMC director Ursula Burns bought 1,375 American depositary shares worth about $500,039 on Nov. 17, while the stock sits roughly 28% below its high and management describes demand as extremely robust. This is a sentiment-positive story for TSMC, with a possible read-through to other AI chip suppliers.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "TSM",
-      "direction": "up",
-      "confidence": "medium",
-      "reason": "A director's open-market purchase of about $500,000 and commentary that demand remains extremely robust can signal insider confidence and support sentiment for a stock trading well off its high.",
-      "link": "direct",
-      "evidence": "Director Ursula Burns bought 1,375 ADSs for $500,039 on Nov. 17, and the stock is 28% below its high while demand is described as extremely robust.",
-      "counter": "A single director's purchase is a small signal relative to TSMC's size, and insider buys often reflect personal portfolio decisions rather than near-term fundamentals. Broader market or geopolitical pressure on semiconductors could outweigh it.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -9.48,
-       "market": -3.64,
-       "excess": -5.84,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -5.84
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "AMD",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "AMD also relies on TSMC for advanced chip manufacturing, so robust foundry demand may indicate supportive conditions for AMD's production and AI product ramps.",
-      "link": "indirect",
-      "evidence": "TSMC describes demand as extremely robust, and TSMC fabricates chips for AMD.",
-      "counter": "The link is indirect and AMD's results depend on its own product cycle and competition. The headline's demand comment may refer mainly to specific customers that do not include AMD.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -13.25,
-       "market": -3.64,
-       "excess": -9.61,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -9.61
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "NVDA",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "TSMC is a key foundry for Nvidia's AI accelerators, so strong demand commentary from TSMC may suggest healthy AI chip orders that benefit Nvidia.",
-      "link": "indirect",
-      "evidence": "TSMC reports demand as extremely robust, and TSMC manufactures leading-edge chips used by Nvidia.",
-      "counter": "The story does not mention Nvidia, and demand strength at the foundry level does not guarantee Nvidia's own order flow, margins, or share, which could shift to competitors.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -14.01,
-       "market": -3.64,
-       "excess": -10.37,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -10.37
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "350a750778ad",
-   "source": "Yahoo",
-   "headline": "Amazon vs. Alphabet: Which Cloud Computing Stock Is the Better Buy?",
-   "summary": "Both stocks are critical players in the artificial intelligence trade.",
-   "url": "https://finnhub.io/api/news?id=aef2aaaec476767b11776e6f4e45c0d59062e3a2e75531668b373821be35380c",
-   "publishedAt": "2026-11-20T09:50:02+00:00",
-   "tone": 0.029,
-   "toneLabel": "neutral",
-   "tickers": [
-    "AMZN",
-    "GOOGL"
-   ],
-   "impact": {
-    "summary": "A comparison piece weighing Amazon and Alphabet as cloud computing and AI investments; it names no new fundamental event, so any price impact is speculative and mainly reflects sentiment about the two cloud businesses.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "AMZN",
-      "direction": "mixed",
-      "confidence": "low",
-      "reason": "The article frames Amazon as a critical AI and cloud player, but as an opinion comparison it reports no new results, guidance, or deal that would move the stock.",
-      "link": "direct",
-      "evidence": "Headline asks which cloud computing stock is the better buy; summary says both stocks are critical players in the AI trade.",
-      "counter": "Comparison articles are generic and often have no market impact; the piece may simply be recycled commentary already priced in.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -4.1,
-       "market": -3.64,
-       "excess": -0.46,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -0.46
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "GOOGL",
-      "direction": "mixed",
-      "confidence": "low",
-      "reason": "The article positions Alphabet as a major AI and cloud competitor, but offers no new company-specific information that would drive a directional move.",
-      "link": "direct",
-      "evidence": "Headline pairs Alphabet with Amazon as a cloud computing stock; summary says both are critical in the AI trade.",
-      "counter": "Relative-valuation pieces rarely move either stock; any reaction would likely be noise rather than a signal.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -2.7,
-       "market": -3.64,
-       "excess": 0.94,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": 0.94
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "41a1d8b58159",
-   "source": "Yahoo",
-   "headline": "Forget UnitedHealth: Humana Has More to Lose From CMS’s Medicare Advantage Audit Crackdown",
-   "summary": "Key TakeawaysUnitedHealth fell 5% on Tuesday after CMS proposed applying Medicare Advantage audit findings to whole contracts, going back to payment year 2018. Humana and CVS Health fell with it, and Humana dropped another 13% on Wednesday.",
-   "url": "https://finnhub.io/api/news?id=3ae616607580bc984f6a969ef11aa61ebfb2ca4b796fe9431ac2a919227b80ce",
-   "publishedAt": "2026-11-20T09:45:57+00:00",
-   "tone": -0.918,
-   "toneLabel": "negative",
-   "tickers": [
-    "UNH"
-   ],
-   "impact": {
-    "summary": "CMS proposed applying Medicare Advantage audit findings to whole contracts, back to payment year 2018. UnitedHealth fell 5% on Tuesday on the proposal, and the headline argues Humana has more to lose. Humana is not in the permitted ticker list, so only UNH is mapped.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "UNH",
-      "direction": "down",
-      "confidence": "medium",
-      "reason": "CMS proposed extending Medicare Advantage audit findings to whole contracts back to payment year 2018, which could claw back payments and raise UnitedHealth's regulatory and financial exposure. The stock fell 5% on that news.",
-      "link": "direct",
-      "evidence": "UnitedHealth fell 5% on Tuesday after CMS proposed applying Medicare Advantage audit findings to whole contracts, going back to payment year 2018.",
-      "counter": "The headline says Humana has more to lose, which suggests UnitedHealth's exposure may be smaller than peers'. The proposal is not final, and the 5% drop may already reflect much of the risk.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": 2.84,
-       "market": -3.64,
-       "excess": 6.48,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 6.48
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "1fc5cbe95e3e",
-   "source": "Yahoo",
-   "headline": "Coinbase Plans to Launch Its Own US Prediction Market Contracts in Early 2027",
-   "summary": "Coinbase plans to launch its own US prediction market contracts for retail and institutional traders in the first half of 2027. Issuing its own contracts…",
-   "url": "https://finnhub.io/api/news?id=0246d631bc56fb9b59a0fe32ca44956695a2afbeca978939a49ed7567903f510",
-   "publishedAt": "2026-11-20T09:39:00+00:00",
-   "tone": 0.128,
-   "toneLabel": "neutral",
-   "tickers": [
-    "COIN"
-   ],
-   "impact": {
-    "summary": "Coinbase plans to launch its own US prediction market contracts for retail and institutional traders in the first half of 2027, a new product line expanding its offerings beyond crypto trading.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "COIN",
-      "direction": "up",
-      "confidence": "medium",
-      "reason": "A new US prediction market product gives Coinbase a potential additional revenue stream and broadens its retail and institutional business, though the launch is still roughly a year away and execution and regulatory risks remain.",
-      "link": "direct",
-      "evidence": "Headline and summary state Coinbase plans to launch its own US prediction market contracts for retail and institutional traders in the first half of 2027.",
-      "counter": "The launch is far off, prediction markets face regulatory scrutiny and competition, and the news may already be priced in, so the impact on near-term earnings could be minimal.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -6.34,
-       "market": -3.64,
-       "excess": -2.7,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": -2.7
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "e087bd38ace6",
-   "source": "Reuters",
-   "headline": "Russia pushes back against US idea of NATO-style security guarantees for Ukraine",
-   "summary": "Russia pushes back against US idea of NATO-style security guarantees for Ukraine  Reuters",
-   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOamN2T09McmJvdzlKWjl1YkJvNmxtZHJRbGJuXzRqeUtjQnQ2R0M2eXVFcTBhcGNiM0tQaTRoZ3ctb1pUdkFFVjFoSzBGcEJvRnZXMXA5X1RMc1NhZ0NsYzk5OFlGOTZkNzBmRTRyM0pXUVZBV3hIQmFKak04V0ZoQUtxSjdpb2NfTDhXWHNfYUMzeG5IVWdMQm42UXJtdUZoV0FXcGZZSTk1Qk45d185UldTWlpYUTdsVkNV?oc=5",
-   "publishedAt": "2026-11-20T09:36:36+00:00",
-   "tone": 0.36,
-   "toneLabel": "positive",
-   "tickers": [],
-   "impact": {
-    "summary": "Russia has rejected the US idea of NATO-style security guarantees for Ukraine, which signals that diplomatic progress on the war is stalled. The main market channel is defence spending expectations and energy-risk sentiment, and the effects are indirect and uncertain.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "LMT",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "Prolonged or expanded security commitments to Ukraine could sustain demand for Western defence equipment and munitions.",
-      "link": "indirect",
-      "evidence": "The headline centres on NATO-style security guarantees for Ukraine, which would imply ongoing military support and procurement.",
-      "counter": "Guarantees may stay a political idea with no concrete procurement, and the story itself names no companies.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -1.11,
-       "market": -3.64,
-       "excess": 2.53,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": 2.53
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "RTX",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "Continued military aid and a stronger NATO posture could support demand for missile and air defence systems.",
-      "link": "indirect",
-      "evidence": "Security guarantees for Ukraine would likely be backed by Western military capability and funding.",
-      "counter": "Any impact would depend on future policy decisions that are not yet made, and the link is speculative.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -1.32,
-       "market": -3.64,
-       "excess": 2.32,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": 2.32
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     },
-     {
-      "ticker": "XOM",
-      "direction": "up",
-      "confidence": "low",
-      "reason": "Geopolitical stalemate with Russia can add a risk premium to oil and gas prices.",
-      "link": "indirect",
-      "evidence": "Rejection of a diplomatic framework keeps the Russia-Ukraine conflict and related energy-supply risks alive.",
-      "counter": "Energy markets often react more to supply and demand than to diplomatic headlines, and the effect may be negligible.",
-      "check": {
-       "status": "right",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": 0.67,
-       "market": -3.64,
-       "excess": 4.31,
-       "d1": {
-        "status": "right",
-        "to": "2026-11-20",
-        "excess": 4.31
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "c811fef2991b",
-   "source": "Yahoo",
-   "headline": "Could Alibaba Actually Climb 112%? Or Is Goldman Sachs Totally Wrong?",
-   "summary": "Key TakeawaysGoldman Sachs kept its Buy rating and $177 target on Alibaba after the Nov. 19 report, 112% above that day’s close and after a 53% fall from January’s high.",
-   "url": "https://finnhub.io/api/news?id=b6f22db1bc6f62850583bfd6fc740732f8efc80eec31984a9299778a6a760088",
-   "publishedAt": "2026-11-20T09:35:23+00:00",
-   "tone": -0.086,
-   "toneLabel": "neutral",
-   "tickers": [
-    "GS"
-   ],
-   "impact": {
-    "summary": "Goldman Sachs kept its Buy rating and $177 target on Alibaba after the Nov. 19 report, implying about 112% upside from that day's close and following a 53% fall from January's high. Alibaba is not in the ticker list, so the only linkable company is Goldman Sachs, and the effect on it is likely minor.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "GS",
-      "direction": "mixed",
-      "confidence": "low",
-      "reason": "Goldman reaffirmed a bullish call on Alibaba, which may reflect well on its research franchise, but a single analyst rating on a foreign stock is unlikely to move Goldman's own share price materially.",
-      "link": "indirect",
-      "evidence": "Goldman Sachs kept its Buy rating and $177 target on Alibaba after the Nov. 19 report, 112% above that day's close and after a 53% fall from January's high.",
-      "counter": "Analyst ratings rarely move the issuing bank's stock, and the headline itself questions whether Goldman is wrong, which could raise reputational doubts rather than help.",
-      "check": {
-       "status": "unscored",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -6.71,
-       "market": -3.64,
-       "excess": -3.07,
-       "d1": {
-        "status": "unscored",
-        "to": "2026-11-20",
-        "excess": -3.07
-       },
-       "d5": {
-        "status": "early"
-       }
-      }
-     }
-    ]
-   }
-  },
-  {
-   "id": "718b74bc228f",
-   "source": "Yahoo",
-   "headline": "Boeing Is Down 37% From Its High, and Its Jet Unit Is in an “Overstaffed Position.” Is the Selling Overdone?",
-   "summary": "Key TakeawaysBoeing just hit a fresh 52-week low, 37% below its January high, because its 737 production ramp keeps slipping and its cash targets keep moving to later years. A 5% cut to its jet workforce and lower October deliveries show the slower ramp is real, and it also matters for engine maker GE Aerospace and for Southwest Airlines, which flies only 737s.",
-   "url": "https://finnhub.io/api/news?id=a4bc1616b3ff659839f27d4231ca0c30373b0c338f4fbac2acafe0285db9ff13",
-   "publishedAt": "2026-11-20T09:35:21+00:00",
-   "tone": -0.961,
-   "toneLabel": "negative",
-   "tickers": [
-    "BA"
-   ],
-   "impact": {
-    "summary": "Boeing hit a fresh 52-week low, 37% below its January high, as its 737 production ramp keeps slipping and cash flow targets move later. A 5% cut to its jet workforce and lower October deliveries point to a real slowdown. The story also flags knock-on effects for airlines that fly only 737s, though the summary names only Boeing among the listed tickers.",
-    "model": "claude-haiku-5-5",
-    "effects": [
-     {
-      "ticker": "BA",
-      "direction": "down",
-      "confidence": "medium",
-      "reason": "Repeated slippage in the 737 production ramp and deferred cash targets, plus lower October deliveries, point to continued pressure on Boeing's near-term results and sentiment, though the headline asks whether the selling is overdone.",
-      "link": "direct",
-      "evidence": "Boeing hit a fresh 52-week low, 37% below its January high, as its 737 production ramp keeps slipping and cash targets keep moving to later years; a 5% jet workforce cut and lower October deliveries show the slower ramp is real.",
-      "counter": "The headline itself questions whether the selling is overdone, and a 37% drawdown could already reflect much of the bad news, leaving room for a rebound if the ramp stabilizes.",
-      "check": {
-       "status": "wrong",
-       "from": "2026-11-19",
-       "to": "2026-11-20",
-       "days": 1,
-       "stock": -2.88,
-       "market": -3.64,
-       "excess": 0.76,
-       "d1": {
-        "status": "wrong",
-        "to": "2026-11-20",
-        "excess": 0.76
        },
        "d5": {
         "status": "early"
